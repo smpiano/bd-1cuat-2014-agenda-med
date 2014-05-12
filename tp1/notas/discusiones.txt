@@ -1,0 +1,70 @@
+Hipótesis
+---------
+
+
+demanda espontanea: El paciente se presenta fisicamente y pide el turno el mismo día.
+
+Recibir solicitud de recurso: los turnos los solicita el paciente.
+
+Los hospitales o clínicas aceptan todas las obras sociales.
+
+Los intervalos de tiempo se diferencian por especialidad y no por subespecialidad del profesional.
+
+Se reserva al menos 2 consultas por día para demanda espontanea. Éstos 2 turnos se van a encontrar al finalizar la agenda.
+
+Siempre que se da de alta una Especialidad clasifica en una subespecialidad.
+
+Suponemos que los bloques tienen sobreturno para poder darle la flexibilidad al profesional que decida que días acepta hacer sobreturnos.
+
+Cuando un profesional anula un bloque de horas, las instancias de turnos creadas para dicho bloque, deben ser modificadas. En tal caso la recepcionista llama a cada paciente para reasignar el turno. No se altera el atributo de anulado sobre el turno.
+
+Los turnos solamente se asignan por teléfono y personalmente.
+
+Los turnos se asignan solamente por Mesa de Turno.
+
+Tipo de turno se considera a primera vez, visita subsiguiente, demanda espontánea, cualquier otro tipo que determine profesional, especialidad o servicio.
+
+Los turnos se asignan por profesional, especialidad o servicio.
+
+Los turnos son solicitados por pacientes.
+
+Los servicios, quirófanos y camas son solicitados por médicos. No existe el sobreturno en éste caso.
+
+
+
+
+Definiciones:
+-------------
+
+Convenio es el plan que tiene el paciente con la obra social.
+
+Agenda: Posee un periodo de tiempo.
+
+CONVENCIONES
+------------
+
+Nombres en minúscula y separados por "_"
+
+Trabajo sobre DIA.
+
+Informe LaTex
+
+DUDAS:
+------
+
+Que es condicion de paciente, aparece en pág6.
+deficiencias?
+interno o por obra social?
+
+Que pasa si se solicita un turno telefónico para otro día, se usa o no el reserva de una demanda espontanea.
+Pag6: "(..) La seleccion del turno puede afectar a la reserva de la demanda espontanea"
+
+Preveer la posibilidad de brindar turnos de un horario de block hacia otro block de horario... NO SE ENTIENDE. Pag7. 
+
+Los servicios, qquirófanos y camas son solicitados por médicos (no existe el subre turnos)
+IDEA planteamos una jerarquía de Turnos -> SobreTurno, Comun
+
+QUE VAN EN EL MODELO:
+--------------------
+
+Unidades de tiempo de un block.. en lugar de hora desde y hora hasta.
