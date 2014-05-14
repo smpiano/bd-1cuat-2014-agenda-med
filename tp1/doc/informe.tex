@@ -407,7 +407,7 @@ la especialidad.
 
 \begin{itemize}
 
-     \item \textbf{codigo} (ESPECIALIDAD)
+     \item \textbf{codigo} (especialidad)
 
      \item \textbf{nombre}
 
@@ -503,7 +503,7 @@ Prestaciones y servicios que ofrece una obra social determinada para la asistenc
 
 \begin{itemize}
 
-     \item \textbf{nombre} Proviene de la entidad Obra Social (obra\_social)
+     \item \textbf{nombre} (obra\_social)
 
      \item \textbf{nombre}
 
@@ -651,6 +651,8 @@ Rol que cumple el usuario o los usuarios dentro de la aplicación.
 
 \end{itemize}
 
+
+
 \subsection{\textbf{Interrelaciones}}
 
 \subsubsection{\textbf{localizado}}
@@ -679,15 +681,15 @@ Relaciona a un PROFESIONAL o un PACIENTE con el DOMICILIO donde reside.
 
 \subsubsection{\textbf{solicita}}
 
-\textit{Definición}
+\textbf{Definición}
 
 Asocia a un PACIENTE y al TURNO que le ha sido asignado.
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
 -
 
-\textit{Especificación de identificador único}
+\textbf{Especificación de identificador único}
 
 \begin{itemize}
 
@@ -699,183 +701,291 @@ Asocia a un PACIENTE y al TURNO que le ha sido asignado.
 
 \end{itemize}
 
-\subsubsection{\textbf{Asignado a}}
+\subsubsection{\textbf{atendido por}}
 
-\textit{Definición}
+\textbf{Definición}
 
 Relaciona al PROFESIONAL con los TURNOS que le hayan sido asignados.
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
 -
 
-\textit{Especificación de identificador único}
+\textbf{Especificación de identificador único}
 
-• Código de turno\label{HToc293405821}
+\begin{itemize}
 
-\subsubsection{\textbf{Se realiza}}
+     \item \textbf{codigo} (turno)
 
-\textit{Definición}
+\end{itemize}
 
-Indica qué ACCIÓN MÉDICA se realizará en un TURNO.
+\subsubsection{\textbf{motivo}}
 
-\textit{Especificación de atributos}
+\textbf{Definición}
+
+Indica qué PROCEDIMIENTO MÉDICO motivó la solicitud del TURNO.
+
+\textbf{Especificación de atributos}
 
 -
 
-\textit{Especificación de identificador único}
+\textbf{Especificación de identificador único}
 
-• Código de turno\label{HToc293405822}
+\begin{itemize}
 
-\subsubsection{\textbf{Cubierto por}}
+     \item \textbf{codigo}
 
-\textit{Definición}
+\end{itemize}
+
+\subsubsection{\textbf{cubierto por}}
+
+\textbf{Definición}
 
 Indica qué PLAN de OBRA SOCIAL cubre a un PACIENTE.
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
 -
 
-\textit{Especificación de identificador único}
+\textbf{Especificación de identificador único}
 
-• Tipo de documento
+\begin{itemize}
 
-• Número de documento\label{HToc293405823}
+     \item \textbf{tipo\_documento}
 
-\subsubsection{\textbf{Convenio}}
+     \item \textbf{numero\_documento}
 
-\textit{Definición}
+\end{itemize}
 
-Indica las caracterísiticas del convenio que tiene la el hospital con el PLAN 
-de una OBRA SOCIAL determinada en relación a una ACCIÓN MÉDICA.
+\subsubsection{\textbf{cubre}}
 
-\textit{Especificación de atributos}
+\textbf{Definición}
 
-• Documentación requerida: Texto de la documentación del convenio, en la cual 
-indica lo que el paciente debe presentar para realizarse el procedimiento médico 
-a aplicar.
+Indica las caracterísiticas de la covertura que tiene el PLAN de una 
+OBRA SOCIAL determinada en relación a un PROCEDIMIENTO MÉDICO.
 
-• Monto: cantidad de dinero aportado en el plan para la ACCIÓN MÉDICA. Es calculable.
+\textbf{Especificación de atributos}
 
-• Porcentaje de exención: indica qué porcentaje del total del monto requerido 
-para la ACCIÓN MÉDICA es cubierto por el PLAN.
+\begin{itemize}
 
-\textit{Especificación de identificador único}
+     \item \textbf{documentacion:} Texto de la documentación del convenio, en la cual 
+     indica lo que el paciente debe presentar para realizarse el procedimiento médico 
+     a aplicar.
 
-• Código de acción médica
+     \item \textbf{porcentaje\_exención:} indica qué porcentaje de cobertura brinda
+     el PLAN para el PROCEDIMIENTO MÉDICO.
 
-• Razón social
+\end{itemize}
 
-• Nombre plan\label{HToc293405824}
+\textbf{Especificación de identificador único}
 
-\subsubsection{\textbf{Autorización}}
+\begin{itemize}
 
-\textit{Definición}
+     \item \textbf{codigo} (procedimiento\_medico)
 
-Indica qué ACCIONes MÉDICAS un PROFESIONAL está autorizado a realizar.
+     \item \textbf{nombre} (obra\_social)
 
-\textit{Especificación de atributos}
+     \item \textbf{nombre} (plan)
 
--
+\end{itemize}
 
-\textit{Especificación de identificador único}
+\subsubsection{\textbf{autoriza}}
 
-• Código de acción médica
+\textbf{Definición}
 
-• Tipo de documento
+Indica qué PROCEDIMIENTOS MÉDICOS está autorizado a realizar un PROFESIONAL.
 
-• Número de documento\label{HToc293405825}
-
-\subsubsection{\textbf{Realizada por}}
-
-\textit{Definición}
-
-Indica qué SUBESPECIALIDAD realizará una ACCIÓN MEDICA.
-
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
 -
 
-\textit{Especificación de identificador único}
+\textbf{Especificación de identificador único}
 
-• Código de acción médica
+\begin{itemize}
 
-• Código de especialidad
+     \item \textbf{codigo} (procedimiento\_medico)
 
-• Descripción de subespecialidad\label{HToc293405826}
+     \item \textbf{tipo\_documento} (profesional)
 
-\subsubsection{\textbf{Tiene}}
+     \item \textbf{numero\_documento} (profesional)
 
-\textit{Definición}
+\end{itemize}
 
-Indica qué SUBESPECIALIDADes tiene un PROFESIONAL del hospital.
+\subsubsection{\textbf{requiere}}
 
-\textit{Especificación de atributos}
+\textbf{Definición}
 
-\textit{Especificación de identificador único}
+Indica qué SUBESPECIALIDAD requiere un PROCEDIMIENTO MEDICO.
 
-• Código de especialidad
-
-• Descripción de subespecialidad
-
-• Tipo de documento
-
-• Número de documento\label{HToc293405827}
-
-\subsubsection{\textbf{Prevalece}}
-
-\textit{Definición}
-
-Permite modelar el requerimiento de que un PROFESIONAL solo puede tener una ESPECIALIDAD 
-que prevalezca.
-
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
 -
 
-\textit{Especificación de identificador único}
+\textbf{Especificación de identificador único}
 
-• Tipo de documento
+\begin{itemize}
 
-• Número de documento\label{HToc293405828}
+     \item \textbf{codigo} (procedimiento\_medico)
 
-\subsubsection{\textbf{Comprende}}
+     \item \textbf{codigo} (especialidad)
 
-\textit{Definición}
+     \item \textbf{nombre} (subespecialidad)
 
-Indica los TURNOs que componen un BLOCK HORA.
+\end{itemize}
 
-\textit{Especificación de atributos}
+\subsubsection{\textbf{ejerce}}
+
+\textbf{Definición}
+
+Indica qué SUBESPECIALIDAD ejerce un PROFESIONAL del hospital.
+
+\textbf{Especificación de atributos}
 
 -
 
-\textit{Especificación de identificador único}
+\textbf{Especificación de identificador único}
 
-• Código de turno\label{HToc293405829}
+\begin{itemize}
 
-\subsubsection{\textbf{Define}}
+     \item \textbf{codigo} (especialidad)
 
-\textit{Definición}
+     \item \textbf{nombre} (subespecialidad)
 
-Indica a qué PROFESIONAL, desempeñando qué SUBESPECIALIDAD definió un BLOCK 
+     \item \textbf{tipo\_documento} (profesional)
+
+     \item \textbf{numero\_documento} (profesional)
+
+\end{itemize}
+
+\subsubsection{\textbf{predomina}}
+
+\textbf{Definición}
+
+Permite modelar el requerimiento de que un PROFESIONAL sólo puede tener una ESPECIALIDAD 
+que predomine.
+
+\textbf{Especificación de atributos}
+
+-
+
+\textbf{Especificación de identificador único}
+
+\begin{itemize}
+
+     \item \textbf{tipo\_documento} (profesional)
+
+     \item \textbf{numero\_documento} (profesional)
+
+\end{itemize}
+
+\subsubsection{\textbf{pertenece}}
+
+\textbf{Definición}
+
+Indica que TURNOS pertencen a un BLOCK HORA.
+
+\textbf{Especificación de atributos}
+
+-
+
+\textbf{Especificación de identificador único}
+
+\begin{itemize}
+
+     \item \textbf{codigo} (turno)
+
+     \item \textbf{codigo} (block\_hora)
+
+\end{itemize}
+
+\subsubsection{\textbf{atiende}}
+
+\textbf{Definición}
+
+Indica que PROFESIONAL, desempeñando tal SUBESPECIALIDAD definió un BLOCK 
 HORAS determinado.
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
 -
 
-\textit{Especificación de identificador único}
+\textbf{Especificación de identificador único}
 
-• Tipo de documento (PACIENTE)
+\begin{itemize}
 
-• Número de documento (PACIENTE)
+     \item \textbf{tipo\_documento} (profesional)
 
-• Tipo de documento (PROFESIONAL)
+     \item \textbf{numero\_documento} (profesional)
 
-• Número de documento (PROFESIONAL)
+     \item \textbf{nombre} (subespecialidad)
 
-• Código de block horas\pagebreak{}\label{HToc293405830}
+     \item \textbf{codigo} (block\_hora)
+
+\end{itemize}
+
+\subsubsection{\textbf{verifica}}
+
+\textbf{Definición}
+
+Indica que COMPROBANTES verifican la validez del TURNO solicitado.
+
+\textbf{Especificación de atributos}
+
+-
+
+\textbf{Especificación de identificador único}
+
+\begin{itemize}
+
+     \item \textbf{codigo} (turno)
+
+     \item \textbf{numero} (comprobante)
+
+\end{itemize}
+
+\subsubsection{\textbf{emitido por}}
+
+\textbf{Definición}
+
+Indica que USUARIO de la aplicación generó dicho COMPROBATE.
+
+\textbf{Especificación de atributos}
+
+-
+
+\textbf{Especificación de identificador único}
+
+\begin{itemize}
+
+     \item \textbf{codigo} (turno)
+
+     \item \textbf{numero} (comprobante)
+
+     \item \textbf{nombre} (usuario)
+
+\end{itemize}
+
+\subsubsection{\textbf{tiene}}
+
+\textbf{Definición}
+
+Indica que ROLES tiene cada USUARIO.
+
+\textbf{Especificación de atributos}
+
+-
+
+\textbf{Especificación de identificador único}
+
+\begin{itemize}
+
+     \item \textbf{nombre} (usuario)
+
+     \item \textbf{tipo} (rol)
+
+\end{itemize}
+
+
 
 \section{\textbf{Modelo relacional\label{HToc293405831}}}
 
