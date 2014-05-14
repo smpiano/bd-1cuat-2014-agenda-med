@@ -70,8 +70,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Título
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % Título principal del documento.
+
 \title{\textbf{Trabajo Práctico: Agenda Médica}}
 
 % Información sobre los autores.
@@ -88,7 +88,6 @@
   \normalsize{Facultad de Ingeniería, Universidad de Buenos Aires}
 }
 \date{}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Documento
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -99,6 +98,13 @@
 % Top matter
 % ----------------------------------------------------------------------
 \thispagestyle{empty}
+
+\null  % Empty line
+\nointerlineskip  % No skip for prev line
+\vfill
+\let\snewpage \newpage
+\let\newpage \relax
+
 \maketitle
 
 \begin{abstract}
@@ -111,6 +117,9 @@
 
 \end{abstract}
 
+\let \newpage \snewpage
+\vfill 
+\break % page break
 \clearpage
 
 % ----------------------------------------------------------------------
@@ -131,7 +140,7 @@
 \subsection{Hipótesis}
 
 \begin{enumerate}
-  \item demanda espontanea: El paciente se presenta fisicamente y pide el turno el mismo día.
+\item Se entiende por demanda espontanea, que el paciente se presenta fisicamente y pide el turno el mismo día.
 
 \item Recibir solicitud de recurso: los turnos los solicita el paciente.
 
@@ -164,7 +173,8 @@
 
 \item Los servicios, quirófanos y camas son solicitados por médicos. No existe el sobreturno en éste caso.
 
-DUDAS?
+DUDAS? CORROBORAR LAS SIGUIENTES:
+
 \item Puede existir un mismo domicilio asociado a varios pacientes o profesionales.
 
 \item Los turnos se generarán a partir de los block horas que no se encuentren 
@@ -194,6 +204,7 @@ solo tipo de turno.
 
 \FloatBarrier
 
+
 \section{\textbf{Dependencias}}
 \begin{enumerate}
 \item Existe una dependencia de existencia de la entidad Turno con la entidad Block 
@@ -214,299 +225,459 @@ Comprobante es una identidad débil, para poder identificarla utilizamos el cód
 del Turno (que es clave de la entidad fuerte) y como atributo discriminante el 
 número de Comprobante.\pagebreak{}
 \end{enumerate}
+
+
 \section{\textbf{Diccionario de datos}}
 
-\subsection{\textbf{Entidades\label{HToc293405806}}}
+\subsection{\textbf{Entidades}}
 
-\subsubsection{\textbf{Paciente}}
+\subsubsection{\textbf{paciente}}
 
-\textit{Definición}
+\textbf{Definición}
 
-Persona que recibe atención médica en el hospital. 
+Persona que recibe atención médica en el hospital. Es quién solicita el turno. 
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
-• Número de documento: número de documento del paciente.
+\begin{itemize}
 
-• Tipo de documento: tipo de documento presentado por el paciente. Puede ser 
-LE, LC, DNI, PASAPORTE.
+   \item \textbf{numero\_documento:} número de documento del paciente.
 
-• Número de afiliado: número asignado al paciente dentro del hospital.
+   \item \textbf{tipo\_documento:} tipo de documento presentado por el paciente. Puede ser 
+   LE, LC, DNI, PASAPORTE.
 
-• Nombre y apellido: nombre y apellido del paciente.
+   \item \textbf{nombre:} nombre del paciente.
 
-• Fecha de nacimiento: día, mes y año en que nació el afiliado.
+   \item \textbf{apellido\_paterno:} apellido paterno del paciente.
 
-• Lugar de nacimiento: ciudad o pueblo y país donde nació el paciente.
+   \item \textbf{apellido\_materno:} apellido materno del paciente.
 
-• Tipo beneficiario: indica la condición del paciente frente al hospital. Puede 
-ser titular o adicional.
+   \item \textbf{fecha\_nacimiento:} día, mes y año en que nació el afiliado.
 
-• Teléfono: número de teléfono del paciente.
+   \item \textbf{lugar\_nacimiento:} ciudad o pueblo y país donde nació el paciente.
 
-• Email: dirección de correo electrónico del paciente.
+   \item \textbf{telefono:} número de teléfono del paciente.
 
-• Condición IVA: condición del paciente frente al impuesto al valor agregado 
-definido por la AFIP.
+   \item \textbf{email:} dirección de correo electrónico del paciente.
 
-• Condición paciente: estado del paciente.
+   \item \textbf{condicion\_iva:} condición del paciente frente al impuesto al valor agregado 
+   definido por la AFIP.
 
-• Número de historia clínica: referencia el número de historia clínica que 
-contiene tratamientos y diagnósticos del paciente.
+   \item \textbf{condicion\_paciente:} estado del paciente.
 
-\textit{Especificación de identificador único}
+   \item \textbf{numero\_historia\_clinica:} referencia el número de historia clínica que 
+   contiene tratamientos y diagnósticos del paciente.
 
-• Tipo documento
+   \item \textbf{numero\_afiliado:} número asignado al paciente dentro de la obra social.
 
-• DNI\label{HToc293405807}
+   \item \textbf{titular:} indica la condición del paciente frente a la obra social. En caso que sea verdadero 
+   es titular, sino adicional.
+\end{itemize}
 
-\subsubsection{\textbf{Domicilio}}
+\textbf{Especificación de identificador único}
 
-\textit{Definición}
+\begin{itemize}
+
+    \item \textbf{tipo\_documento}
+
+    \item \textbf{numero\_documento}
+
+\end{itemize}
+
+\subsubsection{\textbf{domicilio}}
+
+\textbf{Definición}
 
 Lugar donde un PACIENTE o un PROFESIONAL tiene residencia.
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
-• Código de domicilio: número entero que identifica al domicilio.
+\begin{itemize}
 
-• Localidad: lugar perteneciente a una PROVINCIA.
+     \item \textbf{codigo\_postal:} número que identifica el código postal dónde se ubica el domicilio.
 
-• Provincia: subdivisión administrativa de un país.
+     \item \textbf{provincia:} subdivisión administrativa de un país.
 
-• Calle: nombre de la calle correspondiente al domicilio.
+     \item \textbf{localidad:} lugar perteneciente a una PROVINCIA.
 
-• Número: número que identifica al terreno correspondiente al domicilio.
+     \item \textbf{calle:} nombre de la calle correspondiente al domicilio.
 
-• Piso: nivel correspondiente al domicilio, en caso de que se trate de un edificio.
+     \item \textbf{numero:} número que identifica al terreno correspondiente al domicilio.
 
-\textit{Especificación de identificador único}
+     \item \textbf{piso:} nivel correspondiente al domicilio, en caso de que se trate de un edificio.
+\end{itemize}
 
-• Código de domicilio\label{HToc293405808}
+\textbf{Especificación de identificador único}
 
-\subsubsection{\textbf{Profesional}}
+\begin{itemize}
 
-\textit{Definición}
+     \item \textbf{codigo\_postal}
+
+     \item \textbf{provincia}
+
+     \item \textbf{localidad}
+
+     \item \textbf{calle}
+
+     \item \textbf{numero}
+
+     \item \textbf{piso}
+
+     \item \textbf{departamento}
+
+\end{itemize}
+
+\subsubsection{\textbf{profesional}}
+
+\textbf{Definición}
 
 Un médico del hospital que diagnostica, atiende o trata a un PACIENTE.
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
-• Nombre y apellido: nombre y apellido del profesional.
+\begin{itemize}
 
-• Número de documento: número de documento del profesional.
+     \item \textbf{nombre:} nombre del profesional.
 
-• Tipo de documento: tipo de documento presentado por el profesional. Puede ser 
-LE, LC, DNI, PASAPORTE.
+     \item \textbf{apellido:} apellido del profesional.
 
-• Celular: número de celular del profesional.
+     \item \textbf{numero\_documento:} número de documento del profesional.
 
-• Email: dirección de correo electrónico del profesional.
+     \item \textbf{tipo\_documento:} tipo de documento presentado por el profesional. Puede ser 
+     LE, LC, DNI, PASAPORTE.
 
-\textit{Especificación de identificador único}
+     \item \textbf{celular:} número de celular del profesional.
 
-• Tipo de documento
+     \item \textbf{email:} dirección de correo electrónico del profesional.
 
-• Número de documento\label{HToc293405809}
+\end{itemize}
 
-\subsubsection{\textbf{Especialidad}}
+\textbf{Especificación de identificador único}
 
-\textit{Definición}
+\begin{itemize}
 
-área de la medicina en que se especializa un PROFESIONAL.
+     \item \textbf{tipo\_documento}
 
-\textit{Especificación de atributos}
+     \item \textbf{numero\_documento}
 
-• Código de especialidad: número entero que identifica la especialidad.
+\end{itemize}
 
-• Descripción: nombre de la especialidad.
+\subsubsection{\textbf{especialidad}}
 
-\textit{Especificación de identificador único}
+\textbf{Definición}
 
-• Código de especialidad\label{HToc293405810}
+Área de la medicina en que se especializa un PROFESIONAL.
 
-\subsubsection{\textbf{Subespecialidad}}
+\textbf{Especificación de atributos}
 
-\textit{Definición}
+\begin{itemize}
 
-área dentro de la especialidad en que se especializa un PROFESIONAL. Depende de 
+     \item \textbf{codigo:} número entero que identifica la especialidad.
+
+     \item \textbf{descripcion:} nombre de la especialidad.
+
+\end{itemize}
+
+\textbf{Especificación de identificador único}
+
+\begin{itemize}
+
+     \item \textbf{codigo}
+
+\end{itemize}
+
+\subsubsection{\textbf{subespecialidad}}
+
+\textbf{Definición}
+
+Área dentro de la especialidad en que se especializa un PROFESIONAL. Depende de 
 la especialidad.
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
-• Descripción: nombre de la subespecialidad.
+\begin{itemize}
 
-\textit{Especificación de identificador único}
+     \item \textbf{nombre:} nombre de la subespecialidad.
 
-• Código de especialidad
+     \item \textbf{descripcion:} descripción de la subespecialidad.
 
-• Descripción\label{HToc293405811}
+\end{itemize}
 
-\subsubsection{\textbf{Acción médica}}
+\textbf{Especificación de identificador único}
 
-\textit{Definición}
+\begin{itemize}
+
+     \item \textbf{codigo} (ESPECIALIDAD)
+
+     \item \textbf{nombre}
+
+\end{itemize}
+
+\subsubsection{\textbf{procedimiento\_medico}}
+
+\textbf{Definición}
 
 Todo procedimiento médico, servicio, estudio o tratamiento brindado por el hospital. 
 Incluye servicio de quirófano y camas.
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
-• Código de acción médica: número entero que identifica la acción médica.
+\begin{itemize}
 
-• Unidades: cantidad de unidades de tiempo asignadas a la acción médica. La 
-unidad es 5 minutos.
+     \item \textbf{codigo:} número entero que identifica el procedimiento médico.
 
-• Descripción: denominación de la acción médica.
+     \item \textbf{duracion:} cantidad de unidades de tiempo asignadas al procedimiento médico. La 
+     unidad es 5 minutos.
 
-• Condiciones paciente: Texto de las condiciones médicas en la cual el paciente 
-debe presentarse para realizarse el procedimiento médico a aplicar
+     \item \textbf{descripcion:} denominación del procedimiento médico.
 
-\textit{Especificación de identificador único}
+     \item \textbf{condiciones\_paciente:} Texto de las condiciones médicas en la cual el paciente 
+     debe presentarse para realizarse el procedimiento médico a aplicar.
 
-• Código de acción médica\label{HToc293405812}
+     \item \textbf{monto:} valor en moneda nacional del costo económico que conlleva el procedimiento médico.
 
-\subsubsection{\textbf{Turno}}
+\end{itemize}
 
-\textit{Definición}
+\textbf{Especificación de identificador único}
+
+\begin{itemize}
+
+     \item \textbf{codigo}
+
+\end{itemize}
+
+\subsubsection{\textbf{turno}}
+
+\textbf{Definición}
 
 Fecha y hora en que se cita a un paciente que debe ser atendido en el hospital.
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
-• Código de turno: número entero que identifica al turno.
+\begin{itemize}
 
-• Fecha turno: día, mes y año en que se cita al paciente.
+     \item \textbf{codigo:} número entero que identifica al turno.
 
-• Hora turno: hora y minutos en que el paciente fue citado.
+     \item \textbf{fecha:} día, mes y año en que se cita al paciente.
 
-• Sobreturno: atributo que puede valer si o no según el turno sea un sobreturno 
-o no lo sea.
+     \item \textbf{hora:} hora y minutos en que el paciente fue citado.
 
-• Bloquado: atributo que puede valer si o no según el turno se encuentre bloqueado 
-o no por el profesional asignado al turno.
+     \item \textbf{sobreturno:} atributo que puede valer si o no según el turno sea un sobreturno 
+     o no lo sea.
 
-• Lugar: dónde se atenderá al paciente citado.
+     \item \textbf{anulado:} atributo que puede valer si o no según el turno se encuentre bloqueado 
+     o no por el profesional asignado al turno.
 
-\textit{Especificación de identificador único}
+     \item \textbf{lugar:} dónde se atenderá al paciente citado.
 
-• Código de turno\label{HToc293405813}
+     \item \textbf{tipo:} tipo de turno. Los valores pueden ser primera vez, visita subsiguiente, 
+     demanda espontanea dentro de la agenda, demanda espontanea fuera de la agenda.
 
-\subsubsection{\textbf{Plan}}
+     \item \textbf{observaciones:} observaciones que deben ser mencionadas en la solicitud del turno.
 
-\textit{Definición}
+\end{itemize}
 
-Prestaciones y servicios que ofrece una obra social determinada.
+\textbf{Especificación de identificador único}
 
-\textit{Especificación de atributos}
+\begin{itemize}
 
-• Nombre: denominación del plan
+     \item \textbf{codigo}
 
-\textit{Especificación de identificador único}
+\end{itemize}
 
-• Razón social de la obra social asociada
+\subsubsection{\textbf{plan}}
 
-• Nombre del plan\label{HToc293405814}
+\textbf{Definición}
 
-\subsubsection{\textbf{Obra social}}
+Prestaciones y servicios que ofrece una obra social determinada para la asistencia médica.
 
-\textit{Definición}
+\textbf{Especificación de atributos}
 
-Entidad que recibe aportes de un paciente y la brinda cobertura.
+\begin{itemize}
 
-\textit{Especificación de atributos}
+     \item \textbf{nombre:} denominación del plan
 
-• Tipo de entidad: si la obra social es prepaga o pertenece a un sindicato.
+\end{itemize}
 
-• Razón social: denominacion legal de la obra social
+\textbf{Especificación de identificador único}
 
-\textit{Especificación de identificador único}
+\begin{itemize}
 
-• Razón social\label{HToc293405815}
+     \item \textbf{nombre} Proviene de la entidad Obra Social (obra\_social)
 
-\subsubsection{\textbf{Block horas}}
+     \item \textbf{nombre}
 
-\textit{Definición}
+\end{itemize}
+
+\subsubsection{\textbf{obra\_social}}
+
+\textbf{Definición}
+
+Entidad encargada de organizar la prestación de la atención médica de los 
+trabajadores brindándole diversas coberturas.
+
+\textbf{Especificación de atributos}
+
+\begin{itemize}
+
+     \item \textbf{prepaga:} identifica si la obra social es prepaga o pertenece a un sindicato.
+
+     \item \textbf{nombre:} denominacion legal de la obra social
+
+\end{itemize}
+
+\textbf{Especificación de identificador único}
+
+\begin{itemize}
+
+     \item \textbf{nombre}
+
+\end{itemize}
+
+\subsubsection{\textbf{block\_horas}}
+
+\textbf{Definición}
 
 Designa los días y horarios en que un PROFESIONAL estará disponible para atender 
 PACIENTES.
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
-• Código de block de hora: número entero que identifica al block de horas.
+\begin{itemize}
 
-• Hora desde: hora en que el PROFESIONAL comienza a atender PACIENTES.
+     \item \textbf{codigo:} número entero que identifica al block de horas.
 
-• Hora desde: hora en que el PROFESIONAL finaliza la atención de PACIENTES.
+     \item \textbf{hora\_inicio:} hora en que el PROFESIONAL comienza a atender PACIENTES.
 
-• Día: día de la semana en que atiende el PROFESIONAL.
+     \item \textbf{hora\_fin:} hora en que el PROFESIONAL finaliza la atención de PACIENTES.
 
-• Semana: semana del año en que es válido el block.
+     \item \textbf{dia:} día de la semana en que atiende el PROFESIONAL.
 
-• Tipo de turno: indica características de los turnos que se generan a partir 
-del block. Puede ser primera vez, visita subsiguiente, demanda espontánea.
+     \item \textbf{semana:} semana del año en que es válido el block.
 
-• Tipo de agenda: indica la modalidad de atención de PACIENTES. Puede ser por 
-orden de llegada o sin orden en particular.
+     \item \textbf{tipo\_agenda:} indica la modalidad de atención de PACIENTES. Puede ser por 
+     turnos a intervalos de tiempo fijo o por orden de llegada.
 
-• Bloqueado: permite indicar si un block está bloqueado por un PROFESIONAL o 
-no.
+     \item \textbf{bloqueado:} permite indicar si un block está bloqueado por un PROFESIONAL o 
+     no.
 
-• Acepta sobreturnos: vale sí si el PROFESIONAL decide aceptar sobreturnos dentro 
-del block de horas, no si no.
+     \item \textbf{acepta\_sobreturnos:} vale sí si el PROFESIONAL decide aceptar sobreturnos dentro 
+     del block de horas, no si no.
 
-• Acepta turnos fuera de agenda: toma el valor sí si el PROFESIONAL aceptará 
-turnos fuera de agenda durante el horario del block, no, si no.
+     \item \textbf{cantidad\_pacientes:} número de pacientes que el PROFESIONAL atenderá durante 
+     el tiempo que dure el block de horas.
 
-• Cantidad de pacientes: número de pacientes que el PROFESIONAL atenderá durante 
-el tiempo que dure el block de horas.
+\end{itemize}
 
-\textit{Especificación de identificador único}
+\textbf{Especificación de identificador único}
 
-• Código de block de hora\label{HToc293405816}
+\begin{itemize}
 
-\subsubsection{\textbf{Comprobante}}
+     \item \textbf{codigo}
 
-\textit{Definición}
+\end{itemize}
+
+\subsubsection{\textbf{comprobante}}
+
+\textbf{Definición}
 
 Contiene información relacionada con el turno que se conoce al momento que un 
 PACIENTE reserva un turno.
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
-• Número de comprobante: número entero que identifica el comprobante asociado 
-al turno.
+\begin{itemize}
 
-• Fecha de alta: fecha de alta del turno.
+     \item \textbf{numero:} de comprobante: número entero que identifica el comprobante asociado 
+     al turno.
 
-• Usuario: nombre del usuario que dio de alta el turno en el sistema.
+     \item \textbf{fecha:} día, mes y año en que se solicita el turno.
 
-\textit{Especificación de identificador único}
+     \item \textbf{hora:} hora y minutos en que se solicita el turno.
 
-• Número de comprobante\label{HToc293405817}
+\end{itemize}
 
-\subsection{\textbf{Interrelaciones\label{HToc293405818}}}
+\textbf{Especificación de identificador único}
 
-\subsubsection{\textbf{Vive en}}
+\begin{itemize}
 
-\textit{Definición}
+     \item \textbf{codigo} Proviene de la entidad Turno (turno)
+
+     \item \textbf{numero}
+
+\end{itemize}
+
+\subsubsection{\textbf{usuario}}
+
+\textbf{Definición}
+
+Usuario encargado de generar los turnos, administrarlos, o bloquear horarios.
+
+\textbf{Especificación de atributos}
+
+\begin{itemize}
+
+     \item \textbf{nombre:} nombre que identifica unívocamente el usuario. 
+
+\end{itemize}
+
+\textbf{Especificación de identificador único}
+
+\begin{itemize}
+
+     \item \textbf{nombre}
+
+\end{itemize}
+
+\subsubsection{\textbf{rol}}
+
+\textbf{Definición}
+
+Rol que cumple el usuario o los usuarios dentro de la aplicación.
+
+\textbf{Especificación de atributos}
+
+\begin{itemize}
+
+     \item \textbf{tipo:} tipo de rol. Puede ser Administrador, Médico o Administrativo. 
+
+\end{itemize}
+
+\textbf{Especificación de identificador único}
+
+\begin{itemize}
+
+     \item \textbf{tipo}
+
+\end{itemize}
+
+\subsection{\textbf{Interrelaciones}}
+
+\subsubsection{\textbf{localizado}}
+
+\textbf{Definición}
 
 Relaciona a un PROFESIONAL o un PACIENTE con el DOMICILIO donde reside.
 
-\textit{Especificación de atributos}
+\textbf{Especificación de atributos}
 
 -
 
-\textit{Especificación de identificador único}
+\textbf{Especificación de identificador único}
 
-• Tipo de documento (PACIENTE)
+\begin{itemize}
 
-• Número de documento (PACIENTE)
+     \item \textbf{tipo\_documento} (paciente)
 
-• Tipo de documento (PROFESIONAL)
+     \item \textbf{numero\_documento} (paciente)
 
-• Número de documento (PROFESIONAL)\label{HToc293405819}
+     \item \textbf{tipo\_documento} (profesional)
 
-\subsubsection{\textbf{Se atiende}}
+     \item \textbf{numero\_documento} (profesional)
+
+\end{itemize}
+
+\subsubsection{\textbf{solicita}}
 
 \textit{Definición}
 
@@ -518,11 +689,15 @@ Asocia a un PACIENTE y al TURNO que le ha sido asignado.
 
 \textit{Especificación de identificador único}
 
-• Tipo de documento
+\begin{itemize}
 
-• Número de documento
+     \item \textbf{tipo\_documento} (paciente)
 
-• Código de turno\label{HToc293405820}
+     \item \textbf{numero\_documento} (paciente)
+
+     \item \textbf{codigo} (turno)
+
+\end{itemize}
 
 \subsubsection{\textbf{Asignado a}}
 
