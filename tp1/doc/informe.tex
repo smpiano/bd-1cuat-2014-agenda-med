@@ -140,51 +140,59 @@
 \subsection{Hipótesis}
 
 \begin{enumerate}
-\item Se entiende por demanda espontanea, que el paciente se presenta fisicamente y pide el turno el mismo día.
 
-\item Recibir solicitud de recurso: los turnos los solicita el paciente.
-
-\item Los hospitales o clínicas aceptan todas las obras sociales.
-
-\item Los intervalos de tiempo se diferencian por especialidad y no por subespecialidad del profesional.
-
-\item Se reserva al menos 2 consultas por día para demanda espontanea.
-      Éstos 2 turnos se van a encontrar al finalizar la agenda.
-
-\item Siempre que se da de alta una Especialidad clasifica en una subespecialidad.
-
-\item Suponemos que los bloques tienen sobreturno para poder darle la flexibilidad al profesional 
-      que decida que días acepta hacer sobreturnos.
-
-\item Cuando un profesional anula un bloque de horas, las instancias de turnos creadas para dicho bloque, 
-      deben ser modificadas. En tal caso la recepcionista llama a cada paciente para reasignar el turno.
-      No se altera el atributo de anulado sobre el turno.
-
-\item Los turnos solamente se asignan por teléfono y personalmente.
-
-\item Los turnos se asignan solamente por Mesa de Turno.
-
-\item Tipo de turno se considera a primera vez, visita subsiguiente, demanda espontánea, cualquier otro 
-      tipo que determine profesional, especialidad o servicio.
-
-\item Los turnos se asignan por profesional, especialidad o servicio.
-
-\item Los turnos son solicitados por pacientes.
-
-\item Los servicios, quirófanos y camas son solicitados por médicos. No existe el sobreturno en éste caso.
-
-DUDAS? CORROBORAR LAS SIGUIENTES:
-
-\item Puede existir un mismo domicilio asociado a varios pacientes o profesionales.
-
-\item Los turnos se generarán a partir de los block horas que no se encuentren 
-bloqueados al momento de crear la agenda.
-
-\item Cada profesional está asociado a por lo menos una subespecialidad. No existen 
-profesionales que no esten asociados a alguna subespecialidad.
-
-\item Por cada block de hora existe una sola forma de atención a pacientes y un 
-solo tipo de turno.
+    \item Se entiende por demanda espontanea, que el paciente se presenta 
+    fisicamente y pide el turno el mismo día.
+    
+    \item Los turnos los solicita el paciente y los recursos son autorizados 
+    solamente por los profesionales.
+    
+    \item Los hospitales o clínicas aceptan todas las obras sociales.
+    
+    \item La duración del procedimiento médico se diferencia por especialidad
+    y no por subespecialidad del profesional.
+    
+    \item Se reserva al menos 2 consultas por día para demanda espontanea.
+    Éstos 2 turnos se van a encontrar al finalizar la agenda. La idea corresponde
+    a que el hospital o clínica esté con la posibilidad de antender la demanda
+    espontanea.
+    
+    \item Siempre que se da de alta una especialidad clasifica en una subespecialidad.
+    
+    \item Suponemos que los bloques hora deben saber si el profesional acepta 
+    sobreturnos para poder darle la flexibilidad al profesional por día y semana 
+    que decida que días acepta hacer sobreturnos.
+    
+    \item Cuando un profesional bloquea un bloque de horas, los turnos creadas 
+    para dicho bloque, deben ser modificadas. En tal caso, la recepcionista llama
+    a cada paciente para reasignar el turno. No se altera el atributo de anulado 
+    sobre el turno.
+    
+    \item Los turnos solamente se asignan por teléfono o personalmente.
+    
+    \item Los turnos se asignan solamente por Mesa de Turno.
+    
+    \item Tipo de turno se considera a primera vez, visita subsiguiente, demanda 
+    espontánea, cualquier otro 
+    tipo que determine profesional, especialidad o servicio.
+    
+    \item Los turnos se asignan por profesional, procedimiento médico, especialidad
+    o servicio o cualquiera de sus combinaciones.
+    
+    \item Los servicios, quirófanos y camas son solicitados por médicos. No existe 
+    el sobreturno en éste caso.
+    
+    \item Puede existir un mismo domicilio asociado a varios pacientes (ej. familia)
+    o profesionales.
+    
+    \item Los turnos se generarán a partir de los block horas que no se encuentren 
+    bloqueados al momento de crear la agenda.
+    
+    \item Cada profesional está asociado a por lo menos una subespecialidad. No existen 
+    profesionales que no esten asociados a alguna subespecialidad.
+    
+    \item Por cada block de hora existe una sóla forma de atención a pacientes y un 
+    sólo tipo de turno.
 
 \end{enumerate}
 
@@ -205,26 +213,26 @@ solo tipo de turno.
 \FloatBarrier
 
 
-\section{\textbf{Dependencias}}
-\begin{enumerate}
-\item Existe una dependencia de existencia de la entidad Turno con la entidad Block 
-hora.
-
-\item Existe una dependencia de identidad entre las entidades Plan y Obra social. 
-Plan es una identidad débil, para poder identificarla utilizamos la razón social 
-de la Obra Social (que es clave de la entidad fuerte) y como atributo discriminante 
-el nombre del plan.
-
-\item Existe una dependencia de identidad entre las entidades Especialidad y Subespecialidad. 
-Subespecialidad es una identidad débil, para poder identificarla utilizamos el 
-código de la Especialidad (que es clave de la entidad fuerte) y como atributo 
-discriminante la descripción de la Subespecialidad.
-
-\item Existe una dependencia de identidad entre las entidades Turno y Comprobante. 
-Comprobante es una identidad débil, para poder identificarla utilizamos el código 
-del Turno (que es clave de la entidad fuerte) y como atributo discriminante el 
-número de Comprobante.\pagebreak{}
-\end{enumerate}
+%\section{\textbf{Dependencias}}
+%\begin{enumerate}
+%\item Existe una dependencia de existencia de la entidad Turno con la entidad Block 
+%hora.
+%
+%\item Existe una dependencia de identidad entre las entidades Plan y Obra social. 
+%Plan es una identidad débil, para poder identificarla utilizamos la razón social 
+%de la Obra Social (que es clave de la entidad fuerte) y como atributo discriminante 
+%el nombre del plan.
+%
+%\item Existe una dependencia de identidad entre las entidades Especialidad y Subespecialidad. 
+%Subespecialidad es una identidad débil, para poder identificarla utilizamos el 
+%código de la Especialidad (que es clave de la entidad fuerte) y como atributo 
+%discriminante la descripción de la Subespecialidad.
+%
+%\item Existe una dependencia de identidad entre las entidades Turno y Comprobante. 
+%Comprobante es una identidad débil, para poder identificarla utilizamos el código 
+%del Turno (que es clave de la entidad fuerte) y como atributo discriminante el 
+%número de Comprobante.\pagebreak{}
+%\end{enumerate}
 
 
 \section{\textbf{Diccionario de datos}}
@@ -446,6 +454,30 @@ Incluye servicio de quirófano y camas.
 
 \end{itemize}
 
+\subsubsection{\textbf{recurso}}
+
+\textbf{Definición}
+
+Identifica a cada uno de los recursos existentes dentro del hospital o clínica
+que pueden ser autorizados por el PROFESIONAL para un PROCEDIMIENTO MEDICO.
+Dichos recursos pueden ser camas, camillas, salas, quirófanos, etc.
+
+\textbf{Especificación de atributos}
+
+\begin{itemize}
+
+     \item \textbf{nombre:} nombre que indentifica unívocamente el recurso dentro del hospital o clínica.
+
+\end{itemize}
+
+\textbf{Especificación de identificador único}
+
+\begin{itemize}
+
+     \item \textbf{nombre}
+
+\end{itemize}
+
 \subsubsection{\textbf{turno}}
 
 \textbf{Definición}
@@ -612,6 +644,7 @@ PACIENTE reserva un turno.
 \textbf{Definición}
 
 Usuario encargado de generar los turnos, administrarlos, o bloquear horarios.
+Dichos usuarios van a interactuar con la aplicación.
 
 \textbf{Especificación de atributos}
 
@@ -793,7 +826,8 @@ OBRA SOCIAL determinada en relación a un PROCEDIMIENTO MÉDICO.
 
 \textbf{Definición}
 
-Indica qué PROCEDIMIENTOS MÉDICOS está autorizado a realizar un PROFESIONAL.
+Indica qué RECURSOS están siendo autorizados por un PROFESIONAL para utlizarse en 
+un PROCEDIMIENTO MÉDICO.
 
 \textbf{Especificación de atributos}
 
@@ -803,7 +837,7 @@ Indica qué PROCEDIMIENTOS MÉDICOS está autorizado a realizar un PROFESIONAL.
 
 \begin{itemize}
 
-     \item \textbf{codigo} (procedimiento\_medico)
+     \item \textbf{nombre} (recurso)
 
      \item \textbf{tipo\_documento} (profesional)
 
@@ -985,626 +1019,647 @@ Indica que ROLES tiene cada USUARIO.
 
 \end{itemize}
 
+\subsubsection{\textbf{demanda}}
+
+\textbf{Definición}
+
+Indica que PROCEDIMIENTO MÉDICO demanda o requiere cierto RECURSO del hospital o clínica
+para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
+
+\textbf{Especificación de atributos}
+
+-
+
+\textbf{Especificación de identificador único}
+
+\begin{itemize}
+
+     \item \textbf{codigo} (procedimiento\_medico)
+
+     \item \textbf{nombre} (recurso)
+
+\end{itemize}
+
 
 
 \section{\textbf{Modelo relacional\label{HToc293405831}}}
 
 \subsection{\textbf{Diseño del modelo\label{HToc293405832}}}
 
-\subsubsection{\textbf{Domicilio}}
-
-DOMICILIO(\emph{codigo\_domicilio}, localidad, número, provincia, calle, piso);
-\begin{itemize}
-\item PK: (codigo\_domicilio)
-
-\item FK: -
-
-\item CC:
-
-o (codigo\_domicilio)
-
-\item ATRIBUTOS CON VALORES NULOS: -\label{HToc293405833}
-\end{itemize}
-
-\subsubsection{\textbf{Obra social}}
-
-OBRA\_SOCIAL(\emph{razon\_social}, tipo\_entidad);
-
-\begin{itemize}
-\item PK: (razon social)
-
-\item FK: -
-
-\item CC:
-
-o (razon\_social)
-
-\item ATRIBUTOS CON VALORES NULOS: -\label{HToc293405834}
-\end{itemize}
-
-\subsubsection{\textbf{Plan}}
-
-PLAN(\emph{razon\_social}, nombre\_plan);
-
-\begin{itemize}
-\item PK: (razon social, nombre\_plan)
-
-\item FK: (razon\_social)
-
-\item CC:
-
-o (razon social, nombre\_plan)
-
-\item ATRIBUTOS CON VALORES NULOS: -\label{HToc293405835}
-\end{itemize}
-
-\subsubsection{\textbf{Paciente}}
-
-PACIENTE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente}, numero\_afiliado, fecha\_nacimiento, 
-lugar\_nacimiento, tipo\_beneficiario, telefono, email, condicion\_iva, condicion\_paciente, 
-numero\_historia\_clinica, apellido\_nombre, codigo\_domicilio, razon\_social, 
- nombre\_plan);
-
-\begin{itemize}
-\item PK: (tipo\_doc\_paciente, numero\_doc\_paciente)
-
-\item FK: 
-
-o (codigo\_domicilio) 
-
-o (razon\_social , nombre\_plan)
-
-\item CC:
-
-o (tipo\_doc\_paciente, numero\_doc\_paciente)
-
-o (razon\_social, numero\_afiliado)
-
-\item ATRIBUTOS CON VALORES NULOS:  fecha\_nacimiento, lugar\_nacimiento, tipo\_beneficiario, 
-email, condicion\_iva, condicion\_paciente\label{HToc293405836}
-\end{itemize}
-
-\subsubsection{\textbf{Acción médica}}
-
-ACCION\_MEDICA(\emph{codigo\_accion\_medica}, unidades, condiciones\_paciente, 
-descripción);
-
-\begin{itemize}
-\item PK: (codigo\_accion\_medica)
-
-\item FK:-
-
-\item CC:
-
-o (codigo\_accion\_medica)
-
-\item ATRIBUTOS CON VALORES NULOS:  condiciones\_paciente.\label{HToc293405837}
-\end{itemize}
-
-\subsubsection{\textbf{Especialidad}}
-
-ESPECIALIDAD(\emph{codigo\_especialidad}, descripción);
-
-\begin{itemize}
-\item PK: (codigo\_especialidad)
-
-\item FK:-
-
-\item CC:
-
-o (codigo\_especialidad)
-
-\item ATRIBUTOS CON VALORES NULOS: - \label{HToc293405838}
-\end{itemize}
-
-\subsubsection{\textbf{Subespecialidad}}
-
-SUBESPECIALIDAD(\emph{codigo\_especialidad}, descripcion\_subespecialidad);
-
-\begin{itemize}
-\item PK: (codigo\_especialidad, descripcion\_subespecialidad)
-
-\item FK: (codigo\_especialidad)
-
-\item CC:
-
-o (codigo\_especialidad, descripcion\_subespecialidad)
-
-\item ATRIBUTOS CON VALORES NULOS: -\label{HToc293405839}
-\end{itemize}
-
-\subsubsection{\textbf{Profesional}}
-
-PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
-email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
-
-\begin{itemize}
-\item PK: (tipo\_doc\_profesional, numero\_doc\_profesional)
-
-\item FK: 
-
-o (codigo\_domicilio)
-
-o (código\_especialidad)
-
-\item CC:
-
-o (tipo\_doc\_profesional, numero\_doc\_profesional) 
-
-\item ATRIBUTOS CON VALORES NULOS:  email.\label{HToc293405840}
-\end{itemize}
-
-\subsubsection{\textbf{Block horas}}
-
-BLOCK\_HORAS(\emph{codigo\_block\_horas}, día, semana, hora\_desde,hora\_hasta, 
-acepta\_sobreturnos, acepta\_fuera\_agenda, bloqueado, tipo\_turno, tipo\_agenda, 
-cantidad\_pacientes, unidades,\emph{ }tipo\_doc\_profesional, numero\_doc\_profesional, 
-codigo\_especialidad, descripcion\_subespecialidad);
-
-\begin{itemize}
-\item PK: (codigo\_block\_horas)
-
-\item FK: 
-
-o (tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad, descripcion\_subespecialidad)
-
-\item CC:
-
-o (codigo\_block\_horas)
-
-\item ATRIBUTOS CON VALORES NULOS: acepta\_sobreturnos, acepta\_fuera\_agenda, bloqueado, 
-tipo\_turno, tipo\_agenda, cantidad\_pacientes, unidades.\label{HToc293405841}
-\end{itemize}
-
-\subsubsection{\textbf{Turno}}
-
-TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
-bloqueado, código\_block\_horas,código\_acción\_medica);
-
-\begin{itemize}
-\item PK: (codigo\_turno)
-
-\item FK: 
-
-o (codigo\_block\_horas)
-
-o (codigo\_accion\_medica)
-
-\item CC:
-
-o (codigo\_turno)
-
-\item ATRIBUTOS CON VALORES NULOS:  observaciones, lugar.\label{HToc293405842}
-\end{itemize}
-
-\subsubsection{\textbf{Comprobante}}
-
-COMPROBANTE(\emph{código\_turno}, número\_comprobante, fecha\_alta, usuario);
-
-\begin{itemize}
-\item PK: (codigo\_turno, numero\_comprobante)
-
-\item FK: 
-
-o (codigo\_turno)
-
-\item CC:
-
-o (codigo\_turno, numero\_comprobante)
-
-\item ATRIBUTOS CON VALORES NULOS:  fecha alta, usuario.
-\end{itemize}
-
-\textbf{Vive en (profesional)}
-
-\textit{Diseño 1}
-
-VIVE\_EN\_PROFESIONAL(\emph{ tipo\_doc\_profesional, numero\_doc\_profesional, 
-}codigo\_domicilio)
-
-\begin{itemize}
-\item PK: (tipo\_doc\_profesional, numero\_doc\_profesional)
-
-\item FK: 
-
-o (codigo\_domicilio)
-
-o (tipo\_doc\_profesional, numero\_doc\_profesional)
-
-\item CC:
-
-o (tipo\_doc\_profesional, numero\_doc\_profesional)
-
-\item ATRIBUTOS CON VALORES NULOS: -
-\end{itemize}
-
-DOMICILIO(\emph{codigo\_domicilio}, localidad, número, provincia, calle, piso)
-
-PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
-email, número\_matrícula, celular, codigo\_especialidad)
-
-\textit{Diseño 2}
-
-DOMICILIO(\emph{codigo\_domicilio}, localidad, número, provincia, calle, piso)
-
-PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
-email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
-
-Se optó por el diseño 2 porque reduce el número de tablas.\label{HToc293405843}
-
-\subsubsection{\textbf{Vive en (paciente)}}
-
-\textit{Diseño 1}
-
-VIVE\_EN\_PACIENTE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente,} codigo\_domicilio)
-
-\begin{itemize}
-\item PK: (tipo\_doc\_paciente, numero\_doc\_paciente)
-
-\item FK: 
-
-o (codigo\_domicilio)
-
-o (tipo\_doc\_paciente, numero\_doc\_paciente)
-
-\item CC:
-
-o (tipo\_doc\_paciente, numero\_doc\_paciente)
-
-\item ATRIBUTOS CON VALORES NULOS: -
-\end{itemize}
-
-DOMICILIO(\emph{codigo\_domicilio}, localidad, número, provincia, calle, piso);
-
-PACIENTE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente}, numero\_afiliado, fecha\_nacimiento, 
-lugar\_nacimiento, tipo\_beneficiario, telefono, email, condicion\_iva, condicion\_paciente, 
-numero\_historia\_clinica, apellido\_nombre, razon\_social,  nombre\_plan);
-
-\textit{Diseño 2}
-
-DOMICILIO(\emph{codigo\_domicilio}, localidad, número, provincia, calle, piso);
-
-PACIENTE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente}, numero\_afiliado, fecha\_nacimiento, 
-lugar\_nacimiento, tipo\_beneficiario, telefono, email, condicion\_iva, condicion\_paciente, 
-numero\_historia\_clinica, apellido\_nombre, codigo\_domicilio, razon\_social, 
- nombre\_plan);
-
-Se optó por el diseño 2 porque reduce el número de tablas.\label{HToc293405844}
-
-\subsubsection{\textbf{Tiene\_Especialidad}}
-
-TIENE\_ESPECIALIDAD(\emph{tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad,} 
-\emph{descripcion\_subespecialidad});
-
-\begin{itemize}
-\item PK: (tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad, 
-descripcion\_subespecialidad)
-
-\item FK: 
-
-o (tipo\_doc\_profesional, numero\_doc\_profesional)
-
-o (codigo\_especialidad, descripcion\_subespecialidad)
-
-\item CC:
-
-o (tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad, descripcion\_subespecialidad)
-
-\item ATRIBUTOS CON VALORES NULOS:  -.
-\end{itemize}
-
-PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
-email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
-
-SUBESPECIALIDAD(\emph{codigo\_especialidad, }descripcion\_subespecialidad);\label{HToc293405845}
-
-\subsubsection{\textbf{Prevalece}}
-
-\textit{Diseño 1}
-
-PREVALECE(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}\textit{, }codigo\_especialidad);
-
-\begin{itemize}
-\item PK: (tipo\_doc\_profesional, numero\_doc\_profesional)
-
-\item FK: 
-
-o (tipo\_doc\_profesional, numero\_doc\_profesional)
-
-o (codigo\_especialidad)
-
-\item CC:
-
-o (tipo\_doc\_profesional, numero\_doc\_profesional)
-
-\item ATRIBUTOS CON VALORES NULOS:  -.
-\end{itemize}
-
-PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
-email, número\_matrícula, celular\textit{\textbf{, }}codigo\_domicilio);
-
-ESPECIALIDAD(\emph{codigo\_especialidad}, descripción);
-
-\textit{Diseño 2}
-
-PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
-email, número\_matrícula, celular\textit{\textbf{, }}codigo\_domicilio,\textit{\textbf{ 
-}}codigo\_especialidad);
-
-ESPECIALIDAD(\emph{codigo\_especialidad}, descripción);
-
-Se optó por el diseño 2 porque reduce el número de tablas.\label{HToc293405846}
-
-\subsubsection{\textbf{Convenio}}
-
-CONVENIO(\emph{codigo\_accion\_medica, razon\_social , nombre\_plan}, porcentaje\_exencion, 
-documentación\_requerida, monto);
-
-\begin{itemize}
-\item PK: (codigo\_accion\_medica, razon social, nombre\_plan)
-
-\item FK: 
-
-o (codigo\_accion\_medica)
-
-o (razon\_social,  nombre\_plan)
-
-\item CC:
-
-o (codigo\_accion\_medica, razon social, nombre\_plan)
-
-\item ATRIBUTOS CON VALORES NULOS:  -
-
-ACCION\_MEDICA(\emph{codigo\_accion\_medica}, unidades, condiciones\_paciente, 
-descripción);
-\end{itemize}
-
-PLAN(\emph{razon\_social, }nombre\_plan);\label{HToc293405847}
-
-\subsubsection{\textbf{Autorización}}
-
-AUTORIZACIÓN(\emph{código\_accion\_medica, tipo\_doc\_profesional, numero\_doc\_profesional});
-
-\begin{itemize}
-\item PK: (codigo\_accion\_medica, tipo\_doc\_profesional, numero\_doc\_profesional)
-
-\item FK: 
-
-o (codigo\_accion\_medica)
-
-o (tipo\_doc\_profesional, numero\_doc\_profesional)
-
-\item CC:
-
-o (codigo\_accion\_medica, tipo\_doc\_profesional, numero\_doc\_profesional)
-
-\item ATRIBUTOS CON VALORES NULOS:  -.
-\end{itemize}
-
-ACCION\_MEDICA(\emph{codigo\_accion\_medica}, unidades, condiciones\_paciente, 
-descripción);
-
-PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
-email, número\_matrícula, celular\textit{\textbf{, }}codigo\_domicilio, codigo\_especialidad);\label{HToc293405848}
-
-\subsubsection{\textbf{Realiza\_Accion}}
-
-REALIZA\_ACCION(\emph{codigo\_accion\_medica, codigo\_especialidad, descripcion\_subespecialidad});
-
-\begin{itemize}
-\item PK: (codigo\_accion\_medica, codigo\_especialidad, descripcion\_subespecialidad)
-
-\item FK: 
-
-o (codigo\_accion\_medica)
-
-o (codigo\_especialidad, descripcion\_subespecialidad)
-
-\item CC:
-
-o (codigo\_accion\_medica, codigo\_especialidad, descripcion\_subespecialidad)
-
-\item ATRIBUTOS CON VALORES NULOS:  -.
-\end{itemize}
-
-ACCION\_MEDICA(\emph{codigo\_accion\_medica}, unidades, condiciones\_paciente, 
-descripción);
-
-SUBESPECIALIDAD(\emph{codigo\_especialidad, }descripcion\_subespecialidad);\label{HToc293405849}
-
-\subsubsection{\textbf{Comprende}}
-
-\textit{Diseño 1}
-
-COMPRENDE(\emph{codigo\_turno} , código\_block\_horas);
-
-\begin{itemize}
-\item PK: (codigo\_turno)
-
-\item FK: 
-
-o (codigo turno)
-
-o (codigo\_block\_horas)
-
-\item CC:
-
-o (codigo\_turno)
-
-\item ATRIBUTOS CON VALORES NULOS:  -.
-\end{itemize}
-
-TURNO(\emph{código\_turno},fecha\_turno,hora\_turno,observaciones,lugar,sobreturno,bloqueado, 
-código\_acción\_medica);
-
-BLOCK\_HORAS(\emph{codigo\_block\_horas}, día, semana, hora\_desde, hora\_hasta, 
-acepta\_sobreturnos, acepta\_fuera\_agenda, bloqueado, tipo\_turno, tipo\_agenda, 
-cantidad\_pacientes, unidades,\emph{ }tipo\_doc\_profesional, numero\_doc\_profesional, 
-codigo\_especialidad, descripcion\_subespecialidad);
-
-\textit{Diseño 2}
-
-TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno,observaciones, lugar, sobreturno, 
-bloqueado, código\_block\_horas, código\_acción\_medica);
-
-BLOCK\_HORAS(\emph{codigo\_block\_horas}, día, semana, hora\_desde,hora\_hasta, 
-acepta\_sobreturnos, acepta\_fuera\_agenda, bloqueado, tipo\_turno, tipo\_agenda, 
-cantidad\_pacientes, unidades,\emph{ }tipo\_doc\_profesional, numero\_doc\_profesional, 
-codigo\_especialidad, descripcion\_subespecialidad);
-
-Se optó por el diseño 2 porque reduce el número de tablas.\label{HToc293405850}
-
-\subsubsection{\textbf{Se realiza}}
-
-\textit{Diseño 1}
-
-SE\_REALIZA(\emph{código\_turno, }código\_accion\_medica);
-
-\begin{itemize}
-\item PK: (codigo\_turno)
-
-\item FK: 
-
-o (codigo\_accion\_medica)
-
-o (codigo turno)
-
-\item CC:
-
-o (codigo\_turno)
-
-\item ATRIBUTOS CON VALORES NULOS:-
-\end{itemize}
-
-TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
-bloqueado, código\_block\_horas);
-
-ACCION\_MEDICA(\emph{código\_accion\_medica}, unidades, condiciones\_paciente, 
-descripción);
-
-\textit{Diseño 2}
-
-TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno 
-,bloqueado, código\_block\_horas, codigo\_accion\_medica);
-
-ACCION\_MEDICA(\emph{código\_accion\_medica}, unidades, condiciones\_paciente, 
-descripción);
-
-Se opto por el diseño 2 porque reduce el número de tablas.\label{HToc293405851}
-
-\subsubsection{\textbf{Define\label{HToc293405852}}}
-
-\subsubsection{\textit{Diseño 1}}
-
-DEFINE\_BLOCK\_HORAS (\emph{codigo\_block\_horas},  tipo\_doc\_profesional, numero\_doc\_profesional, 
-codigo\_especialidad, descripcion\_subespecialidad);
-
-\begin{itemize}
-\item PK: (codigo\_block\_horas)
-
-\item FK: 
-
-o (tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad, descripcion\_subespecialidad)
-
-o (codigo\_block\_horas)
-
-\item CC:
-
-o (codigo\_block\_horas)
-
-\item ATRIBUTOS CON VALORES NULOS:-
-\end{itemize}
-
-BLOCK\_HORAS(\emph{codigo\_block\_horas}, día, semana, hora\_desde,hora\_hasta, 
-acepta\_sobreturnos, acepta\_fuera\_agenda, bloqueado, tipo\_turno, tipo\_agenda, 
-cantidad\_pacientes, unidades);
-
-TIENE\_ESPECIALIDAD(\emph{tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad,} 
-\emph{descripcion\_subespecialidad})
-
-\textit{Diseño 2}
-
-BLOCK\_HORAS(\emph{codigo\_block\_horas}, día, semana, hora\_desde,hora\_hasta, 
-acepta\_sobreturnos, acepta\_fuera\_agenda, bloqueado, tipo\_turno, tipo\_agenda, 
-cantidad\_pacientes, unidades,\emph{ }tipo\_doc\_profesional, numero\_doc\_profesional, 
-codigo\_especialidad, descripcion\_subespecialidad);
-
-TIENE\_ESPECIALIDAD(\emph{tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad,} 
-\emph{descripcion\_subespecialidad})
-
-Se optó por el diseño 2 porque reduce el número de tablas.\label{HToc293405853}
-
-\subsubsection{\textbf{Se atiende}}
-
-SE\_ATIENDE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente, código\_turno})
-
-\begin{itemize}
-\item PK: (tipo\_doc\_paciente, numero\_doc\_paciente, codigo\_turno)
-
-\item FK: 
-
-o (codigo\_turno)
-
-o (tipo\_doc\_paciente, numero\_doc\_paciente)
-
-\item CC:
-
-o (tipo\_doc\_paciente, numero\_doc\_paciente, código\_turno)
-
-\item ATRIBUTOS CON VALORES NULOS:  -.
-\end{itemize}
-
-TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
-bloqueado, código\_block\_horas,código\_acción\_medica);
-
-PACIENTE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente}, numero\_afiliado, fecha\_nacimiento, 
-lugar\_nacimiento, tipo\_beneficiario, telefono, email, condicion\_iva, condicion\_paciente, 
-numero\_historia\_clinica, apellido\_nombre, codigo\_domicilio, razon\_social, 
- nombre\_plan);\label{HToc293405854}
-
-\subsubsection{\textbf{Turno\_Asignado}}
-
-\textit{Diseño 1}
-
-TURNO\_ASIGNADO(\emph{código\_turno}, tipo\_doc\_profesional, numero\_doc\_profesional);
-
-\begin{itemize}
-\item PK: (codigo\_turno)
-
-\item FK: 
-
-o (codigo\_turno)
-
-o (tipo\_doc\_profesional, numero\_doc\_profesional)
-
-\item CC:
-
-o (codigo\_turno)
-
-\item ATRIBUTOS CON VALORES NULOS: -
-\end{itemize}
-
-TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
-bloqueado, código\_block\_horas,código\_acción\_medica);
-
-PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
-email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
-
-\textit{Diseño 2}
-
-TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
-bloqueado, código\_block\_horas,código\_acción\_medica, tipo\_doc\_profesional, 
-numero\_doc\_profesional)
-
-PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
-email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
-
-Se optó por el diseño 1 porque facilita las búsquedas de turnos asignados a 
-un profesional.\pagebreak{}\label{HToc293405855}
+%\subsubsection{\textbf{Domicilio}}
+%
+%DOMICILIO(\emph{codigo\_domicilio}, localidad, número, provincia, calle, piso);
+%\begin{itemize}
+%\item PK: (codigo\_domicilio)
+%
+%\item FK: -
+%
+%\item CC:
+%
+%o (codigo\_domicilio)
+%
+%\item ATRIBUTOS CON VALORES NULOS: -\label{HToc293405833}
+%\end{itemize}
+%
+%\subsubsection{\textbf{Obra social}}
+%
+%OBRA\_SOCIAL(\emph{razon\_social}, tipo\_entidad);
+%
+%\begin{itemize}
+%\item PK: (razon social)
+%
+%\item FK: -
+%
+%\item CC:
+%
+%o (razon\_social)
+%
+%\item ATRIBUTOS CON VALORES NULOS: -\label{HToc293405834}
+%\end{itemize}
+%
+%\subsubsection{\textbf{Plan}}
+%
+%PLAN(\emph{razon\_social}, nombre\_plan);
+%
+%\begin{itemize}
+%\item PK: (razon social, nombre\_plan)
+%
+%\item FK: (razon\_social)
+%
+%\item CC:
+%
+%o (razon social, nombre\_plan)
+%
+%\item ATRIBUTOS CON VALORES NULOS: -\label{HToc293405835}
+%\end{itemize}
+%
+%\subsubsection{\textbf{Paciente}}
+%
+%PACIENTE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente}, numero\_afiliado, fecha\_nacimiento, 
+%lugar\_nacimiento, tipo\_beneficiario, telefono, email, condicion\_iva, condicion\_paciente, 
+%numero\_historia\_clinica, apellido\_nombre, codigo\_domicilio, razon\_social, 
+% nombre\_plan);
+%
+%\begin{itemize}
+%\item PK: (tipo\_doc\_paciente, numero\_doc\_paciente)
+%
+%\item FK: 
+%
+%o (codigo\_domicilio) 
+%
+%o (razon\_social , nombre\_plan)
+%
+%\item CC:
+%
+%o (tipo\_doc\_paciente, numero\_doc\_paciente)
+%
+%o (razon\_social, numero\_afiliado)
+%
+%\item ATRIBUTOS CON VALORES NULOS:  fecha\_nacimiento, lugar\_nacimiento, tipo\_beneficiario, 
+%email, condicion\_iva, condicion\_paciente\label{HToc293405836}
+%\end{itemize}
+%
+%\subsubsection{\textbf{Acción médica}}
+%
+%ACCION\_MEDICA(\emph{codigo\_accion\_medica}, unidades, condiciones\_paciente, 
+%descripción);
+%
+%\begin{itemize}
+%\item PK: (codigo\_accion\_medica)
+%
+%\item FK:-
+%
+%\item CC:
+%
+%o (codigo\_accion\_medica)
+%
+%\item ATRIBUTOS CON VALORES NULOS:  condiciones\_paciente.\label{HToc293405837}
+%\end{itemize}
+%
+%\subsubsection{\textbf{Especialidad}}
+%
+%ESPECIALIDAD(\emph{codigo\_especialidad}, descripción);
+%
+%\begin{itemize}
+%\item PK: (codigo\_especialidad)
+%
+%\item FK:-
+%
+%\item CC:
+%
+%o (codigo\_especialidad)
+%
+%\item ATRIBUTOS CON VALORES NULOS: - \label{HToc293405838}
+%\end{itemize}
+%
+%\subsubsection{\textbf{Subespecialidad}}
+%
+%SUBESPECIALIDAD(\emph{codigo\_especialidad}, descripcion\_subespecialidad);
+%
+%\begin{itemize}
+%\item PK: (codigo\_especialidad, descripcion\_subespecialidad)
+%
+%\item FK: (codigo\_especialidad)
+%
+%\item CC:
+%
+%o (codigo\_especialidad, descripcion\_subespecialidad)
+%
+%\item ATRIBUTOS CON VALORES NULOS: -\label{HToc293405839}
+%\end{itemize}
+%
+%\subsubsection{\textbf{Profesional}}
+%
+%PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
+%email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
+%
+%\begin{itemize}
+%\item PK: (tipo\_doc\_profesional, numero\_doc\_profesional)
+%
+%\item FK: 
+%
+%o (codigo\_domicilio)
+%
+%o (código\_especialidad)
+%
+%\item CC:
+%
+%o (tipo\_doc\_profesional, numero\_doc\_profesional) 
+%
+%\item ATRIBUTOS CON VALORES NULOS:  email.\label{HToc293405840}
+%\end{itemize}
+%
+%\subsubsection{\textbf{Block horas}}
+%
+%BLOCK\_HORAS(\emph{codigo\_block\_horas}, día, semana, hora\_desde,hora\_hasta, 
+%acepta\_sobreturnos, acepta\_fuera\_agenda, bloqueado, tipo\_turno, tipo\_agenda, 
+%cantidad\_pacientes, unidades,\emph{ }tipo\_doc\_profesional, numero\_doc\_profesional, 
+%codigo\_especialidad, descripcion\_subespecialidad);
+%
+%\begin{itemize}
+%\item PK: (codigo\_block\_horas)
+%
+%\item FK: 
+%
+%o (tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad, descripcion\_subespecialidad)
+%
+%\item CC:
+%
+%o (codigo\_block\_horas)
+%
+%\item ATRIBUTOS CON VALORES NULOS: acepta\_sobreturnos, acepta\_fuera\_agenda, bloqueado, 
+%tipo\_turno, tipo\_agenda, cantidad\_pacientes, unidades.\label{HToc293405841}
+%\end{itemize}
+%
+%\subsubsection{\textbf{Turno}}
+%
+%TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
+%bloqueado, código\_block\_horas,código\_acción\_medica);
+%
+%\begin{itemize}
+%\item PK: (codigo\_turno)
+%
+%\item FK: 
+%
+%o (codigo\_block\_horas)
+%
+%o (codigo\_accion\_medica)
+%
+%\item CC:
+%
+%o (codigo\_turno)
+%
+%\item ATRIBUTOS CON VALORES NULOS:  observaciones, lugar.\label{HToc293405842}
+%\end{itemize}
+%
+%\subsubsection{\textbf{Comprobante}}
+%
+%COMPROBANTE(\emph{código\_turno}, número\_comprobante, fecha\_alta, usuario);
+%
+%\begin{itemize}
+%\item PK: (codigo\_turno, numero\_comprobante)
+%
+%\item FK: 
+%
+%o (codigo\_turno)
+%
+%\item CC:
+%
+%o (codigo\_turno, numero\_comprobante)
+%
+%\item ATRIBUTOS CON VALORES NULOS:  fecha alta, usuario.
+%\end{itemize}
+%
+%\textbf{Vive en (profesional)}
+%
+%\textit{Diseño 1}
+%
+%VIVE\_EN\_PROFESIONAL(\emph{ tipo\_doc\_profesional, numero\_doc\_profesional, 
+%}codigo\_domicilio)
+%
+%\begin{itemize}
+%\item PK: (tipo\_doc\_profesional, numero\_doc\_profesional)
+%
+%\item FK: 
+%
+%o (codigo\_domicilio)
+%
+%o (tipo\_doc\_profesional, numero\_doc\_profesional)
+%
+%\item CC:
+%
+%o (tipo\_doc\_profesional, numero\_doc\_profesional)
+%
+%\item ATRIBUTOS CON VALORES NULOS: -
+%\end{itemize}
+%
+%DOMICILIO(\emph{codigo\_domicilio}, localidad, número, provincia, calle, piso)
+%
+%PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
+%email, número\_matrícula, celular, codigo\_especialidad)
+%
+%\textit{Diseño 2}
+%
+%DOMICILIO(\emph{codigo\_domicilio}, localidad, número, provincia, calle, piso)
+%
+%PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
+%email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
+%
+%Se optó por el diseño 2 porque reduce el número de tablas.\label{HToc293405843}
+%
+%\subsubsection{\textbf{Vive en (paciente)}}
+%
+%\textit{Diseño 1}
+%
+%VIVE\_EN\_PACIENTE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente,} codigo\_domicilio)
+%
+%\begin{itemize}
+%\item PK: (tipo\_doc\_paciente, numero\_doc\_paciente)
+%
+%\item FK: 
+%
+%o (codigo\_domicilio)
+%
+%o (tipo\_doc\_paciente, numero\_doc\_paciente)
+%
+%\item CC:
+%
+%o (tipo\_doc\_paciente, numero\_doc\_paciente)
+%
+%\item ATRIBUTOS CON VALORES NULOS: -
+%\end{itemize}
+%
+%DOMICILIO(\emph{codigo\_domicilio}, localidad, número, provincia, calle, piso);
+%
+%PACIENTE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente}, numero\_afiliado, fecha\_nacimiento, 
+%lugar\_nacimiento, tipo\_beneficiario, telefono, email, condicion\_iva, condicion\_paciente, 
+%numero\_historia\_clinica, apellido\_nombre, razon\_social,  nombre\_plan);
+%
+%\textit{Diseño 2}
+%
+%DOMICILIO(\emph{codigo\_domicilio}, localidad, número, provincia, calle, piso);
+%
+%PACIENTE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente}, numero\_afiliado, fecha\_nacimiento, 
+%lugar\_nacimiento, tipo\_beneficiario, telefono, email, condicion\_iva, condicion\_paciente, 
+%numero\_historia\_clinica, apellido\_nombre, codigo\_domicilio, razon\_social, 
+% nombre\_plan);
+%
+%Se optó por el diseño 2 porque reduce el número de tablas.\label{HToc293405844}
+%
+%\subsubsection{\textbf{Tiene\_Especialidad}}
+%
+%TIENE\_ESPECIALIDAD(\emph{tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad,} 
+%\emph{descripcion\_subespecialidad});
+%
+%\begin{itemize}
+%\item PK: (tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad, 
+%descripcion\_subespecialidad)
+%
+%\item FK: 
+%
+%o (tipo\_doc\_profesional, numero\_doc\_profesional)
+%
+%o (codigo\_especialidad, descripcion\_subespecialidad)
+%
+%\item CC:
+%
+%o (tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad, descripcion\_subespecialidad)
+%
+%\item ATRIBUTOS CON VALORES NULOS:  -.
+%\end{itemize}
+%
+%PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
+%email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
+%
+%SUBESPECIALIDAD(\emph{codigo\_especialidad, }descripcion\_subespecialidad);\label{HToc293405845}
+%
+%\subsubsection{\textbf{Prevalece}}
+%
+%\textit{Diseño 1}
+%
+%PREVALECE(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}\textit{, }codigo\_especialidad);
+%
+%\begin{itemize}
+%\item PK: (tipo\_doc\_profesional, numero\_doc\_profesional)
+%
+%\item FK: 
+%
+%o (tipo\_doc\_profesional, numero\_doc\_profesional)
+%
+%o (codigo\_especialidad)
+%
+%\item CC:
+%
+%o (tipo\_doc\_profesional, numero\_doc\_profesional)
+%
+%\item ATRIBUTOS CON VALORES NULOS:  -.
+%\end{itemize}
+%
+%PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
+%email, número\_matrícula, celular\textit{\textbf{, }}codigo\_domicilio);
+%
+%ESPECIALIDAD(\emph{codigo\_especialidad}, descripción);
+%
+%\textit{Diseño 2}
+%
+%PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
+%email, número\_matrícula, celular\textit{\textbf{, }}codigo\_domicilio,\textit{\textbf{ 
+%}}codigo\_especialidad);
+%
+%ESPECIALIDAD(\emph{codigo\_especialidad}, descripción);
+%
+%Se optó por el diseño 2 porque reduce el número de tablas.\label{HToc293405846}
+%
+%\subsubsection{\textbf{Convenio}}
+%
+%CONVENIO(\emph{codigo\_accion\_medica, razon\_social , nombre\_plan}, porcentaje\_exencion, 
+%documentación\_requerida, monto);
+%
+%\begin{itemize}
+%\item PK: (codigo\_accion\_medica, razon social, nombre\_plan)
+%
+%\item FK: 
+%
+%o (codigo\_accion\_medica)
+%
+%o (razon\_social,  nombre\_plan)
+%
+%\item CC:
+%
+%o (codigo\_accion\_medica, razon social, nombre\_plan)
+%
+%\item ATRIBUTOS CON VALORES NULOS:  -
+%
+%ACCION\_MEDICA(\emph{codigo\_accion\_medica}, unidades, condiciones\_paciente, 
+%descripción);
+%\end{itemize}
+%
+%PLAN(\emph{razon\_social, }nombre\_plan);\label{HToc293405847}
+%
+%\subsubsection{\textbf{Autorización}}
+%
+%AUTORIZACIÓN(\emph{código\_accion\_medica, tipo\_doc\_profesional, numero\_doc\_profesional});
+%
+%\begin{itemize}
+%\item PK: (codigo\_accion\_medica, tipo\_doc\_profesional, numero\_doc\_profesional)
+%
+%\item FK: 
+%
+%o (codigo\_accion\_medica)
+%
+%o (tipo\_doc\_profesional, numero\_doc\_profesional)
+%
+%\item CC:
+%
+%o (codigo\_accion\_medica, tipo\_doc\_profesional, numero\_doc\_profesional)
+%
+%\item ATRIBUTOS CON VALORES NULOS:  -.
+%\end{itemize}
+%
+%ACCION\_MEDICA(\emph{codigo\_accion\_medica}, unidades, condiciones\_paciente, 
+%descripción);
+%
+%PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
+%email, número\_matrícula, celular\textit{\textbf{, }}codigo\_domicilio, codigo\_especialidad);\label{HToc293405848}
+%
+%\subsubsection{\textbf{Realiza\_Accion}}
+%
+%REALIZA\_ACCION(\emph{codigo\_accion\_medica, codigo\_especialidad, descripcion\_subespecialidad});
+%
+%\begin{itemize}
+%\item PK: (codigo\_accion\_medica, codigo\_especialidad, descripcion\_subespecialidad)
+%
+%\item FK: 
+%
+%o (codigo\_accion\_medica)
+%
+%o (codigo\_especialidad, descripcion\_subespecialidad)
+%
+%\item CC:
+%
+%o (codigo\_accion\_medica, codigo\_especialidad, descripcion\_subespecialidad)
+%
+%\item ATRIBUTOS CON VALORES NULOS:  -.
+%\end{itemize}
+%
+%ACCION\_MEDICA(\emph{codigo\_accion\_medica}, unidades, condiciones\_paciente, 
+%descripción);
+%
+%SUBESPECIALIDAD(\emph{codigo\_especialidad, }descripcion\_subespecialidad);\label{HToc293405849}
+%
+%\subsubsection{\textbf{Comprende}}
+%
+%\textit{Diseño 1}
+%
+%COMPRENDE(\emph{codigo\_turno} , código\_block\_horas);
+%
+%\begin{itemize}
+%\item PK: (codigo\_turno)
+%
+%\item FK: 
+%
+%o (codigo turno)
+%
+%o (codigo\_block\_horas)
+%
+%\item CC:
+%
+%o (codigo\_turno)
+%
+%\item ATRIBUTOS CON VALORES NULOS:  -.
+%\end{itemize}
+%
+%TURNO(\emph{código\_turno},fecha\_turno,hora\_turno,observaciones,lugar,sobreturno,bloqueado, 
+%código\_acción\_medica);
+%
+%BLOCK\_HORAS(\emph{codigo\_block\_horas}, día, semana, hora\_desde, hora\_hasta, 
+%acepta\_sobreturnos, acepta\_fuera\_agenda, bloqueado, tipo\_turno, tipo\_agenda, 
+%cantidad\_pacientes, unidades,\emph{ }tipo\_doc\_profesional, numero\_doc\_profesional, 
+%codigo\_especialidad, descripcion\_subespecialidad);
+%
+%\textit{Diseño 2}
+%
+%TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno,observaciones, lugar, sobreturno, 
+%bloqueado, código\_block\_horas, código\_acción\_medica);
+%
+%BLOCK\_HORAS(\emph{codigo\_block\_horas}, día, semana, hora\_desde,hora\_hasta, 
+%acepta\_sobreturnos, acepta\_fuera\_agenda, bloqueado, tipo\_turno, tipo\_agenda, 
+%cantidad\_pacientes, unidades,\emph{ }tipo\_doc\_profesional, numero\_doc\_profesional, 
+%codigo\_especialidad, descripcion\_subespecialidad);
+%
+%Se optó por el diseño 2 porque reduce el número de tablas.\label{HToc293405850}
+%
+%\subsubsection{\textbf{Se realiza}}
+%
+%\textit{Diseño 1}
+%
+%SE\_REALIZA(\emph{código\_turno, }código\_accion\_medica);
+%
+%\begin{itemize}
+%\item PK: (codigo\_turno)
+%
+%\item FK: 
+%
+%o (codigo\_accion\_medica)
+%
+%o (codigo turno)
+%
+%\item CC:
+%
+%o (codigo\_turno)
+%
+%\item ATRIBUTOS CON VALORES NULOS:-
+%\end{itemize}
+%
+%TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
+%bloqueado, código\_block\_horas);
+%
+%ACCION\_MEDICA(\emph{código\_accion\_medica}, unidades, condiciones\_paciente, 
+%descripción);
+%
+%\textit{Diseño 2}
+%
+%TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno 
+%,bloqueado, código\_block\_horas, codigo\_accion\_medica);
+%
+%ACCION\_MEDICA(\emph{código\_accion\_medica}, unidades, condiciones\_paciente, 
+%descripción);
+%
+%Se opto por el diseño 2 porque reduce el número de tablas.\label{HToc293405851}
+%
+%\subsubsection{\textbf{Define\label{HToc293405852}}}
+%
+%\subsubsection{\textit{Diseño 1}}
+%
+%DEFINE\_BLOCK\_HORAS (\emph{codigo\_block\_horas},  tipo\_doc\_profesional, numero\_doc\_profesional, 
+%codigo\_especialidad, descripcion\_subespecialidad);
+%
+%\begin{itemize}
+%\item PK: (codigo\_block\_horas)
+%
+%\item FK: 
+%
+%o (tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad, descripcion\_subespecialidad)
+%
+%o (codigo\_block\_horas)
+%
+%\item CC:
+%
+%o (codigo\_block\_horas)
+%
+%\item ATRIBUTOS CON VALORES NULOS:-
+%\end{itemize}
+%
+%BLOCK\_HORAS(\emph{codigo\_block\_horas}, día, semana, hora\_desde,hora\_hasta, 
+%acepta\_sobreturnos, acepta\_fuera\_agenda, bloqueado, tipo\_turno, tipo\_agenda, 
+%cantidad\_pacientes, unidades);
+%
+%TIENE\_ESPECIALIDAD(\emph{tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad,} 
+%\emph{descripcion\_subespecialidad})
+%
+%\textit{Diseño 2}
+%
+%BLOCK\_HORAS(\emph{codigo\_block\_horas}, día, semana, hora\_desde,hora\_hasta, 
+%acepta\_sobreturnos, acepta\_fuera\_agenda, bloqueado, tipo\_turno, tipo\_agenda, 
+%cantidad\_pacientes, unidades,\emph{ }tipo\_doc\_profesional, numero\_doc\_profesional, 
+%codigo\_especialidad, descripcion\_subespecialidad);
+%
+%TIENE\_ESPECIALIDAD(\emph{tipo\_doc\_profesional, numero\_doc\_profesional, codigo\_especialidad,} 
+%\emph{descripcion\_subespecialidad})
+%
+%Se optó por el diseño 2 porque reduce el número de tablas.\label{HToc293405853}
+%
+%\subsubsection{\textbf{Se atiende}}
+%
+%SE\_ATIENDE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente, código\_turno})
+%
+%\begin{itemize}
+%\item PK: (tipo\_doc\_paciente, numero\_doc\_paciente, codigo\_turno)
+%
+%\item FK: 
+%
+%o (codigo\_turno)
+%
+%o (tipo\_doc\_paciente, numero\_doc\_paciente)
+%
+%\item CC:
+%
+%o (tipo\_doc\_paciente, numero\_doc\_paciente, código\_turno)
+%
+%\item ATRIBUTOS CON VALORES NULOS:  -.
+%\end{itemize}
+%
+%TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
+%bloqueado, código\_block\_horas,código\_acción\_medica);
+%
+%PACIENTE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente}, numero\_afiliado, fecha\_nacimiento, 
+%lugar\_nacimiento, tipo\_beneficiario, telefono, email, condicion\_iva, condicion\_paciente, 
+%numero\_historia\_clinica, apellido\_nombre, codigo\_domicilio, razon\_social, 
+% nombre\_plan);\label{HToc293405854}
+%
+%\subsubsection{\textbf{Turno\_Asignado}}
+%
+%\textit{Diseño 1}
+%
+%TURNO\_ASIGNADO(\emph{código\_turno}, tipo\_doc\_profesional, numero\_doc\_profesional);
+%
+%\begin{itemize}
+%\item PK: (codigo\_turno)
+%
+%\item FK: 
+%
+%o (codigo\_turno)
+%
+%o (tipo\_doc\_profesional, numero\_doc\_profesional)
+%
+%\item CC:
+%
+%o (codigo\_turno)
+%
+%\item ATRIBUTOS CON VALORES NULOS: -
+%\end{itemize}
+%
+%TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
+%bloqueado, código\_block\_horas,código\_acción\_medica);
+%
+%PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
+%email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
+%
+%\textit{Diseño 2}
+%
+%TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
+%bloqueado, código\_block\_horas,código\_acción\_medica, tipo\_doc\_profesional, 
+%numero\_doc\_profesional)
+%
+%PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
+%email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
+%
+%Se optó por el diseño 1 porque facilita las búsquedas de turnos asignados a 
+%un profesional.\pagebreak{}\label{HToc293405855}
 
 \newpage
 
-\subsection{Scripts de creación}
+\subsection{\textbf{Scripts de creación}}
 
 %A continuación se incluyen los scripts de creación de las tablas del modelo
 %relacional para ser ejecutado en un sistema de bases de datos que interprete
@@ -1612,7 +1667,7 @@ un profesional.\pagebreak{}\label{HToc293405855}
 %las instrucciones, normalmente específicas al motor propiamente dicho, de
 %creación de usuarios, roles, schemas y bases de datos correspondientes.
 
-\lstinputlisting[inputencoding=latin1,language=SQL,caption={Script de definición de la base de datos}]{../script/agenda_medica.sql}
+%\lstinputlisting[inputencoding=latin1,language=SQL,caption={Script de definición de la base de datos}]{../script/agenda_medica.sql}
 
 \clearpage
 
