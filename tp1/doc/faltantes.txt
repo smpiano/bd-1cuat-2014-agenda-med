@@ -1,0 +1,15 @@
+HAVE TO DO
+----------------
+
+* Que Luis nos acepte el DER.
+
+* El diseño del modelo dentro del modelo relacional.
+
+* Scripts SQL. ANSI
+
+* En los casos en que existan diferentes alternativas para efectuar la transformación de MER al modelo de tablas, elegir una única alternativa y enumerar las ventajas y desventajas de la alternativa elegida.
+
+NICE TO HAVE
+------------
+
+* Generador automático de la estructura de tablas según script SQL.
