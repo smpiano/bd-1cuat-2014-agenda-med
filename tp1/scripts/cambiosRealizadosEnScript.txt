@@ -1,0 +1,94 @@
+En obra_social
+se cambio atributo nombre por nombre_obra_social para que no exista un problema de conflicto de atributos en plan(que tiene nombre y nombre_obra_social)
+
+
+
+En el DER obra-social tiene 0..1 plan, es correcto? Habría que corregir en DER
+
+
+
+En plan
+se cambia atributo "nombre" por "nombre_plan"
+
+
+"
+Especialidad se cambia atributo "nombre" por "nombre_especialidad"
+En el DER en vez de nombre_especialidad figura codigo, creo que se deberia cambiar
+
+
+Subespecialidad
+se cambia el atributo "nombre" por nombre_subespecialidad
+
+
+TABLA PROFESIONAL
+
+PROFESIONAL.CELULAR se cambia de Integer a char de 15 (el entero es muy chico)
+
+profesional tiene como atributo "nombre_subespecialidad" pero no podria ser porque puede tener N subespecialidades, por lo tanto 
+arme la relacion "profesional_ejerce" entre profesional y sub_especialidad
+Para que el profesional referencie a un domicilio necesita tener como clave todos los atributos de ese domicilio 
+que son los siguientes
+	codigo_postal_dom	CHAR(10) NOT NULL,	
+	provincia_dom		CHAR(20) NOT NULL,
+	localidad_dom		CHAR(100) NOT NULL,
+	calle_dom		CHAR(100) NOT NULL,
+	numero_dom		INTEGER NOT NULL,
+	departamento_dom	CHAR(10) DEFAULT '-',
+	piso_dom		CHAR(10) DEFAULT '-',
+Por lo tanto no veo la utilidad de una tabla domicilio, ya que estamos duplicando informacion entre profesional_domicilio y domicilio en si)
+-En el DER figura que un profesional tiene solo una especialidad, es correcto? Creo que podria tener de 1..N
+Por ello arme la relacion profesional_tiene (equivalente a lo que sería la relacion "predomina" del DER) relacionando un profesional con una especialidad, eliminando nombre_especialidad de profesional
+
+
+
+
+tabla procedimiento_medico:
+
+-Se cambia codigo por codigo_proced_medico
+en el der figura que tiene N recursos por lo tanto el atributo "recurso" no puede aparecer dentro de procedimiento_medico ya que para un mismo codigo(primary-key de procedimiento medico) podria haber n recursos con lo que no identificaria univocamente a todos sus atributo. Por lo tanto se agrega la relacion "demanda" al conjunto de tablas
+
+
+
+
+Paciente:
+El atrbuto numero_historia_clinica no referencia a ninguna historia clinica, se elimina de la DLL, habria que eliminar del der
+Se elimina referencia a Domicilio
+
+
+Relacion autoriza
+En vez de relacionar profesional con recurso , esta relacionando profesional con procedimiiento _medico, se cambio para relacionar profesiojnal con recurso
+
+
+tiene_especialidad
+vendria a ser lo mismo que la relacion "ejerce", no habria que cambiarle el nombre? Le cambie el nombre por "profesional_ejerce"
+
+
+
+
+Block_horas
+esta referenciando a tiene_especialidad, no deberia estar relacionado con la ternaria "atiende"? Por ello agregé la relacion profesional_atiende para contemplar este caso. Por ello elimine los atributos tipo_documento, numero_documento,nombre_especialidad,nombre_subespecialidad de Block_Horas ya que los agregue en profesional_atiende
+-Se agrega codigo_turno , para contemplar la relacion "pertenece" ya que un block_horas tiene un y solo un turno
+
+
+
+Turno
+-se agrega el atributo "horas"
+Un turno puede tener N block_horas por lo tanto se elimina codigo_block_horas de turno y se lo agrega a la tabla bloc_horas ya que por definicion esta asociada a un solo turno
+
+Un turno puede tener 0;N pacientes segun DER, es correcto?  Creo que tienen 1.1 por lo tanto ya no es necesaria la relacion turno_asignado, tampoco atendido_poatributo r ya que tiene un solo profesional asignado
+-se cambia "codigo" por codigo_turno
+
+
+
+
+Se agrega la relacion/ tabla  "requiere" que relaciona una subespecialidad con un procedimiento_medico
+
+
+
+
+
+Dudas
+¿que seria un recurso?
+
+en procedimiento_medico ,¿que es condicion_paciente?
+condicion_pcaiente esta tanto en paciente como en procedimiento_medico, es correcto?
