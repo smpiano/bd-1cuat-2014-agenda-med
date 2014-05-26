@@ -13,7 +13,7 @@ build:
 	-mkdir -p build/images
 	-mkdir -p build/schema
 
-build/informe.pdf: build build/images/der.jpeg
+build/informe.pdf: build build/images/der.jpeg relacional build/images/relacional.png 
 	@echo ''
 	@echo 'Convirtiendo el informe de TEX >> PDF'
 	@echo ''
@@ -54,4 +54,5 @@ relacional: psql tools/schemaSpy_5.0.0.jar
 	@echo 'Generando los escquemas del diagrama relacional a partir de la información alojada en la base de datos.'
 	@echo ''
 	java -jar tools/schemaSpy_5.0.0.jar -t $(DB_TYPE) -dp $(DB_DRIVER) -host $(DB_SERVER) -db $(DB_NAME) -s public -u $(DB_USER) -o build/schema
+	cp build/schema/diagrams/summary/relationships.real.large.png build/images/relacional.png
 

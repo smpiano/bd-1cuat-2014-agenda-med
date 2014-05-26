@@ -1395,6 +1395,21 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 
 \newpage
 
+\subsection{Diagrama relacional}
+
+ En la figura \ref{fig:relacional} se incluye un diagrama representativo del
+ modelo relacional desarrollado para el modelo de entidad-interrelación
+ detallado en la sección.
+
+\begin{figure}[h!t]
+  \centering
+  \includegraphics[width=15cm,height=25cm,angle=0]{build/images/relacional.png}
+  \caption{Modelo relacional}
+  \label{fig:relacional}
+\end{figure}
+
+\FloatBarrier
+
 \subsection{\textbf{Scripts de creación}}
 
 %A continuación se incluyen los scripts de creación de las tablas del modelo
@@ -1403,7 +1418,7 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 %las instrucciones, normalmente específicas al motor propiamente dicho, de
 %creación de usuarios, roles, schemas y bases de datos correspondientes.
 
-%\lstinputlisting[inputencoding=latin1,language=SQL,caption={Script de definición de la base de datos}]{../script/agenda_medica.sql}
+\lstinputlisting[inputencoding=latin1,language=SQL,caption={Script de definición de la base de datos}]{../scripts/script_creacion_db.sql}
 
 \clearpage
 
