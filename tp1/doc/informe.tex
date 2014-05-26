@@ -6,33 +6,33 @@
 
 \usepackage[margin=0.8in]{geometry}
 
-% Gráficos complejos
+% GrÃ¡ficos complejos
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{placeins}
 
-% Soporte para el lenguaje español
+% Soporte para el lenguaje espaÃ±ol
 \usepackage{textcomp}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \DeclareUnicodeCharacter{B0}{\textdegree}
 \usepackage[spanish]{babel}
 
-% Código fuente embebido
+% CÃ³digo fuente embebido
 \usepackage{listings}
 \usepackage{courier}
 
-% PDFs embebidos para el apéndice
+% PDFs embebidos para el apÃ©ndice
 \usepackage{pdfpages}
 
-% Matemáticos
+% MatemÃ¡ticos
 \usepackage{amssymb,amsmath}
 
 % Tablas complejas
 \usepackage{multirow}
 
-% Formato de párrafo
+% Formato de pÃ¡rrafo
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
 % Subrayado de palabras
@@ -44,7 +44,7 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Formato de listados de código
+% Formato de listados de cÃ³digo
 \lstset{
   basicstyle=\footnotesize\ttfamily,
   numberstyle=\tiny,
@@ -68,24 +68,24 @@
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Título
+% TÃ­tulo
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Título principal del documento.
+% TÃ­tulo principal del documento.
 
-\title{\textbf{Trabajo Práctico: Agenda Médica}}
+\title{\textbf{Trabajo PrÃ¡ctico: Agenda MÃ©dica}}
 
-% Información sobre los autores.
+% InformaciÃ³n sobre los autores.
 \author{
   Celeste Maldonado,	\textit{P. 85.630},	\textit{maldonado.celeste@gmail.com}	\\
   Gisela Daye,		\textit{P. 87.602},	\textit{gisedaye@gmail.com}		\\
-  Sergio Matías Piano,	\textit{P. 85.191},	\textit{smpiano@gmail.com}		\\
+  Sergio MatÃ­as Piano,	\textit{P. 85.191},	\textit{smpiano@gmail.com}		\\
   Vanesa Conte,		\textit{P. 82.997},	\textit{vanexius@gmail.com}		\\
   \\
   \normalsize{Grupo 19}							\\
   \normalsize{Docente: Luis Fulco}					\\
   \normalsize{1er. Cuatrimestre de 2014}                           	\\
   \normalsize{75.15 - Bases de datos}                              	\\
-  \normalsize{Facultad de Ingeniería, Universidad de Buenos Aires}
+  \normalsize{Facultad de IngenierÃ­a, Universidad de Buenos Aires}
 }
 \date{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -109,11 +109,11 @@
 
 \begin{abstract}
 
-  Este informe resume el desarrollo del trabajo práctico de la materia Base
+  Este informe resume el desarrollo del trabajo prÃ¡ctico de la materia Base
   de Datos (75.15) dictada en el primer cuatrimestre de 2014 en la Facultad de
-  Ingeniería de la Universidad de Buenos Aires. El mismo consiste en el
-  modelado de datos de un software de agenda médica,
-  cuyos requisitos fueron extraído de un caso de estudio real.
+  IngenierÃ­a de la Universidad de Buenos Aires. El mismo consiste en el
+  modelado de datos de un software de agenda mÃ©dica,
+  cuyos requisitos fueron extraÃ­do de un caso de estudio real.
 
 \end{abstract}
 
@@ -135,79 +135,79 @@
 \part{Desarrollo}
 
 
-\section{Modelo de entidad-interrelación} \label{sec:der}
+\section{Modelo de entidad-interrelaciÃ³n} \label{sec:der}
 
-\subsection{Hipótesis}
+\subsection{HipÃ³tesis}
 
 \begin{enumerate}
 
     \item Se entiende por demanda espontanea, que el paciente se presenta 
-    fisicamente y pide el turno el mismo día.
+    fisicamente y pide el turno el mismo dÃ­a.
     
     \item Los turnos los solicita el paciente y los recursos son autorizados 
     solamente por los profesionales.
     
-    \item Los hospitales o clínicas aceptan todas las obras sociales.
+    \item Los hospitales o clÃ­nicas aceptan todas las obras sociales.
     
-    \item La duración del procedimiento médico se diferencia por especialidad
+    \item La duraciÃ³n del procedimiento mÃ©dico se diferencia por especialidad
     y no por subespecialidad del profesional.
     
-    \item Se reserva al menos 2 consultas por día para demanda espontanea.
-    Éstos 2 turnos se van a encontrar al finalizar la agenda. La idea corresponde
-    a que el hospital o clínica esté con la posibilidad de antender la demanda
+    \item Se reserva al menos 2 consultas por dÃ­a para demanda espontanea.
+    Ã‰stos 2 turnos se van a encontrar al finalizar la agenda. La idea corresponde
+    a que el hospital o clÃ­nica estÃ© con la posibilidad de antender la demanda
     espontanea.
     
     \item Siempre que se da de alta una especialidad clasifica en una subespecialidad.
     
     \item Suponemos que los bloques hora deben saber si el profesional acepta 
-    sobreturnos para poder darle la flexibilidad al profesional por día y semana 
-    que decida que días acepta hacer sobreturnos.
+    sobreturnos para poder darle la flexibilidad al profesional por dÃ­a y semana 
+    que decida que dÃ­as acepta hacer sobreturnos.
     
     \item Cuando un profesional bloquea un bloque de horas, los turnos creadas 
     para dicho bloque, deben ser modificadas. En tal caso, la recepcionista llama
     a cada paciente para reasignar el turno. No se altera el atributo de anulado 
     sobre el turno.
     
-    \item Los turnos solamente se asignan por teléfono o personalmente.
+    \item Los turnos solamente se asignan por telÃ©fono o personalmente.
     
     \item Los turnos se asignan solamente por Mesa de Turno.
     
     \item Tipo de turno se considera a primera vez, visita subsiguiente, demanda 
-    espontánea, cualquier otro 
+    espontÃ¡nea, cualquier otro 
     tipo que determine profesional, especialidad o servicio.
     
-    \item Los turnos se asignan por profesional, procedimiento médico, especialidad
+    \item Los turnos se asignan por profesional, procedimiento mÃ©dico, especialidad
     o servicio o cualquiera de sus combinaciones.
     
-    \item Los servicios, quirófanos y camas son solicitados por médicos. No existe 
-    el sobreturno en éste caso.
+    \item Los servicios, quirÃ³fanos y camas son solicitados por mÃ©dicos. No existe 
+    el sobreturno en Ã©ste caso.
     
     \item Puede existir un mismo domicilio asociado a varios pacientes (ej. familia)
     o profesionales.
     
-    \item Los turnos se generarán a partir de los block horas que no se encuentren 
+    \item Los turnos se generarÃ¡n a partir de los block horas que no se encuentren 
     bloqueados al momento de crear la agenda.
     
-    \item Cada profesional está asociado a por lo menos una subespecialidad. No existen 
+    \item Cada profesional estÃ¡ asociado a por lo menos una subespecialidad. No existen 
     profesionales que no esten asociados a alguna subespecialidad.
     
-    \item Por cada block de hora existe una sóla forma de atención a pacientes y un 
-    sólo tipo de turno.
+    \item Por cada block de hora existe una sÃ³la forma de atenciÃ³n a pacientes y un 
+    sÃ³lo tipo de turno.
 
 \end{enumerate}
 
 
 
-\subsection{Diagrama de entidad-interrelación}
+\subsection{Diagrama de entidad-interrelaciÃ³n}
 
- En la figura \ref{fig:der} se incluye el diagrama de entidad-interrelación
+ En la figura \ref{fig:der} se incluye el diagrama de entidad-interrelaciÃ³n
  final desarrollado para representar el dominio modelado cuyo relevamiento se
  detalla en el enunciado.
 
 \begin{figure}[h!t]
   \centering
   \includegraphics[width=1.4\textwidth, angle=90]{build/images/der.jpeg}
-  \caption{Diagrama de entidad-interrelación} \label{fig:der}
+  \caption{Diagrama de entidad-interrelaciÃ³n} \label{fig:der}
 \end{figure}
 
 \FloatBarrier
@@ -219,19 +219,19 @@
 %hora.
 %
 %\item Existe una dependencia de identidad entre las entidades Plan y Obra social. 
-%Plan es una identidad débil, para poder identificarla utilizamos la razón social 
+%Plan es una identidad dÃ©bil, para poder identificarla utilizamos la razÃ³n social 
 %de la Obra Social (que es clave de la entidad fuerte) y como atributo discriminante 
 %el nombre del plan.
 %
 %\item Existe una dependencia de identidad entre las entidades Especialidad y Subespecialidad. 
-%Subespecialidad es una identidad débil, para poder identificarla utilizamos el 
-%código de la Especialidad (que es clave de la entidad fuerte) y como atributo 
-%discriminante la descripción de la Subespecialidad.
+%Subespecialidad es una identidad dÃ©bil, para poder identificarla utilizamos el 
+%cÃ³digo de la Especialidad (que es clave de la entidad fuerte) y como atributo 
+%discriminante la descripciÃ³n de la Subespecialidad.
 %
 %\item Existe una dependencia de identidad entre las entidades Turno y Comprobante. 
-%Comprobante es una identidad débil, para poder identificarla utilizamos el código 
+%Comprobante es una identidad dÃ©bil, para poder identificarla utilizamos el cÃ³digo 
 %del Turno (que es clave de la entidad fuerte) y como atributo discriminante el 
-%número de Comprobante.\pagebreak{}
+%nÃºmero de Comprobante.\pagebreak{}
 %\end{enumerate}
 
 
@@ -241,15 +241,15 @@
 
 \subsubsection{\textbf{paciente}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Persona que recibe atención médica en el hospital. Es quién solicita el turno. 
+Persona que recibe atenciÃ³n mÃ©dica en el hospital. Es quiÃ©n solicita el turno. 
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-   \item \textbf{numero\_documento:} número de documento del paciente.
+   \item \textbf{numero\_documento:} nÃºmero de documento del paciente.
 
    \item \textbf{tipo\_documento:} tipo de documento presentado por el paciente. Puede ser 
    LE, LC, DNI, PASAPORTE.
@@ -260,29 +260,29 @@ Persona que recibe atención médica en el hospital. Es quién solicita el turno
 
    \item \textbf{apellido\_materno:} apellido materno del paciente.
 
-   \item \textbf{fecha\_nacimiento:} día, mes y año en que nació el afiliado.
+   \item \textbf{fecha\_nacimiento:} dÃ­a, mes y aÃ±o en que naciÃ³ el afiliado.
 
-   \item \textbf{lugar\_nacimiento:} ciudad o pueblo y país donde nació el paciente.
+   \item \textbf{lugar\_nacimiento:} ciudad o pueblo y paÃ­s donde naciÃ³ el paciente.
 
-   \item \textbf{telefono:} número de teléfono del paciente.
+   \item \textbf{telefono:} nÃºmero de telÃ©fono del paciente.
 
-   \item \textbf{email:} dirección de correo electrónico del paciente.
+   \item \textbf{email:} direcciÃ³n de correo electrÃ³nico del paciente.
 
-   \item \textbf{condicion\_iva:} condición del paciente frente al impuesto al valor agregado 
+   \item \textbf{condicion\_iva:} condiciÃ³n del paciente frente al impuesto al valor agregado 
    definido por la AFIP.
 
    \item \textbf{condicion\_paciente:} estado del paciente.
 
-   \item \textbf{numero\_historia\_clinica:} referencia el número de historia clínica que 
-   contiene tratamientos y diagnósticos del paciente.
+   \item \textbf{numero\_historia\_clinica:} referencia el nÃºmero de historia clÃ­nica que 
+   contiene tratamientos y diagnÃ³sticos del paciente.
 
-   \item \textbf{numero\_afiliado:} número asignado al paciente dentro de la obra social.
+   \item \textbf{numero\_afiliado:} nÃºmero asignado al paciente dentro de la obra social.
 
-   \item \textbf{titular:} indica la condición del paciente frente a la obra social. En caso que sea verdadero 
+   \item \textbf{titular:} indica la condiciÃ³n del paciente frente a la obra social. En caso que sea verdadero 
    es titular, sino adicional.
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -294,28 +294,28 @@ Persona que recibe atención médica en el hospital. Es quién solicita el turno
 
 \subsubsection{\textbf{domicilio}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
 Lugar donde un PACIENTE o un PROFESIONAL tiene residencia.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-     \item \textbf{codigo\_postal:} número que identifica el código postal dónde se ubica el domicilio.
+     \item \textbf{codigo\_postal:} nÃºmero que identifica el cÃ³digo postal dÃ³nde se ubica el domicilio.
 
-     \item \textbf{provincia:} subdivisión administrativa de un país.
+     \item \textbf{provincia:} subdivisiÃ³n administrativa de un paÃ­s.
 
      \item \textbf{localidad:} lugar perteneciente a una PROVINCIA.
 
      \item \textbf{calle:} nombre de la calle correspondiente al domicilio.
 
-     \item \textbf{numero:} número que identifica al terreno correspondiente al domicilio.
+     \item \textbf{numero:} nÃºmero que identifica al terreno correspondiente al domicilio.
 
      \item \textbf{piso:} nivel correspondiente al domicilio, en caso de que se trate de un edificio.
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -337,11 +337,11 @@ Lugar donde un PACIENTE o un PROFESIONAL tiene residencia.
 
 \subsubsection{\textbf{profesional}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Un médico del hospital que diagnostica, atiende o trata a un PACIENTE.
+Un mÃ©dico del hospital que diagnostica, atiende o trata a un PACIENTE.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
@@ -349,18 +349,18 @@ Un médico del hospital que diagnostica, atiende o trata a un PACIENTE.
 
      \item \textbf{apellido:} apellido del profesional.
 
-     \item \textbf{numero\_documento:} número de documento del profesional.
+     \item \textbf{numero\_documento:} nÃºmero de documento del profesional.
 
      \item \textbf{tipo\_documento:} tipo de documento presentado por el profesional. Puede ser 
      LE, LC, DNI, PASAPORTE.
 
-     \item \textbf{celular:} número de celular del profesional.
+     \item \textbf{celular:} nÃºmero de celular del profesional.
 
-     \item \textbf{email:} dirección de correo electrónico del profesional.
+     \item \textbf{email:} direcciÃ³n de correo electrÃ³nico del profesional.
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -372,21 +372,21 @@ Un médico del hospital que diagnostica, atiende o trata a un PACIENTE.
 
 \subsubsection{\textbf{especialidad}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Área de la medicina en que se especializa un PROFESIONAL.
+Ã�rea de la medicina en que se especializa un PROFESIONAL.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-     \item \textbf{nombre:} nombre que identifica la especialidad.
+     \item \textbf{nombre\_especialidad:} nombre que identifica la especialidad.
 
      \item \textbf{descripcion:} nombre de la especialidad.
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -396,81 +396,81 @@ Un médico del hospital que diagnostica, atiende o trata a un PACIENTE.
 
 \subsubsection{\textbf{subespecialidad}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Área dentro de la especialidad en que se especializa un PROFESIONAL. Depende de 
+Ã�rea dentro de la especialidad en que se especializa un PROFESIONAL. Depende de 
 la especialidad.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-     \item \textbf{nombre:} nombre de la subespecialidad.
+     \item \textbf{nombre\_subespecialidad:} nombre de la subespecialidad.
 
-     \item \textbf{descripcion:} descripción de la subespecialidad.
+     \item \textbf{descripcion:} descripciÃ³n de la subespecialidad.
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{codigo} (especialidad)
+     \item \textbf{nombre\_especialidad} (especialidad)
 
-     \item \textbf{nombre}
+     \item \textbf{nombre\_subespecialidad}
 
 \end{itemize}
 
 \subsubsection{\textbf{procedimiento\_medico}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Todo procedimiento médico, servicio, estudio o tratamiento brindado por el hospital. 
-Incluye servicio de quirófano y camas.
+Todo procedimiento mÃ©dico, servicio, estudio o tratamiento brindado por el hospital. 
+Incluye servicio de quirÃ³fano y camas.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-     \item \textbf{codigo:} número entero que identifica el procedimiento médico.
+     \item \textbf{codigo\_procedimiento\_medico:} nÃºmero entero que identifica el procedimiento mÃ©dico.
 
-     \item \textbf{duracion:} cantidad de unidades de tiempo asignadas al procedimiento médico. La 
+     \item \textbf{duracion:} cantidad de unidades de tiempo asignadas al procedimiento mÃ©dico. La 
      unidad es 5 minutos.
 
-     \item \textbf{descripcion:} denominación del procedimiento médico.
+     \item \textbf{descripcion:} denominaciÃ³n del procedimiento mÃ©dico.
 
-     \item \textbf{condiciones\_paciente:} Texto de las condiciones médicas en la cual el paciente 
-     debe presentarse para realizarse el procedimiento médico a aplicar.
+     \item \textbf{condiciones\_paciente:} Texto de las condiciones mÃ©dicas en la cual el paciente 
+     debe presentarse para realizarse el procedimiento mÃ©dico a aplicar.
 
-     \item \textbf{monto:} valor en moneda nacional del costo económico que conlleva el procedimiento médico.
+     \item \textbf{monto:} valor en moneda nacional del costo econÃ³mico que conlleva el procedimiento mÃ©dico.
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{codigo}
+     \item \textbf{codigo\_procedimiento\_medico}
 
 \end{itemize}
 
 \subsubsection{\textbf{recurso}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Identifica a cada uno de los recursos existentes dentro del hospital o clínica
+Identifica a cada uno de los recursos existentes dentro del hospital o clÃ­nica
 que pueden ser autorizados por el PROFESIONAL para un PROCEDIMIENTO MEDICO.
-Dichos recursos pueden ser camas, camillas, salas, quirófanos, etc.
+Dichos recursos pueden ser camas, camillas, salas, quirÃ³fanos, etc.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-     \item \textbf{nombre:} nombre que indentifica unívocamente el recurso dentro del hospital o clínica.
+     \item \textbf{nombre:} nombre que indentifica unÃ­vocamente el recurso dentro del hospital o clÃ­nica.
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -480,27 +480,27 @@ Dichos recursos pueden ser camas, camillas, salas, quirófanos, etc.
 
 \subsubsection{\textbf{turno}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
 Fecha y hora en que se cita a un paciente que debe ser atendido en el hospital.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-     \item \textbf{codigo:} número entero que identifica al turno.
+     \item \textbf{codigo\_turno:} nÃºmero entero que identifica al turno.
 
-     \item \textbf{fecha:} día, mes y año en que se cita al paciente.
+     \item \textbf{fecha:} dÃ­a, mes y aÃ±o en que se cita al paciente.
 
      \item \textbf{hora:} hora y minutos en que el paciente fue citado.
 
-     \item \textbf{sobreturno:} atributo que puede valer si o no según el turno sea un sobreturno 
+     \item \textbf{sobreturno:} atributo que puede valer si o no segÃºn el turno sea un sobreturno 
      o no lo sea.
 
-     \item \textbf{anulado:} atributo que puede valer si o no según el turno se encuentre bloqueado 
+     \item \textbf{anulado:} atributo que puede valer si o no segÃºn el turno se encuentre bloqueado 
      o no por el profesional asignado al turno.
 
-     \item \textbf{lugar:} dónde se atenderá al paciente citado.
+     \item \textbf{lugar:} dÃ³nde se atenderÃ¡ al paciente citado.
 
      \item \textbf{tipo:} tipo de turno. Los valores pueden ser primera vez, visita subsiguiente, 
      demanda espontanea dentro de la agenda, demanda espontanea fuera de la agenda.
@@ -509,7 +509,7 @@ Fecha y hora en que se cita a un paciente que debe ser atendido en el hospital.
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -519,23 +519,23 @@ Fecha y hora en que se cita a un paciente que debe ser atendido en el hospital.
 
 \subsubsection{\textbf{plan}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Prestaciones y servicios que ofrece una obra social determinada para la asistencia médica.
+Prestaciones y servicios que ofrece una obra social determinada para la asistencia mÃ©dica.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-     \item \textbf{nombre:} denominación del plan
+     \item \textbf{nombre\_plan:} denominaciÃ³n del plan
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{nombre} (obra\_social)
+     \item \textbf{nombre\_obra\_social} (obra\_social)
 
      \item \textbf{nombre}
 
@@ -543,22 +543,22 @@ Prestaciones y servicios que ofrece una obra social determinada para la asistenc
 
 \subsubsection{\textbf{obra\_social}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Entidad encargada de organizar la prestación de la atención médica de los 
-trabajadores brindándole diversas coberturas.
+Entidad encargada de organizar la prestaciÃ³n de la atenciÃ³n mÃ©dica de los 
+trabajadores brindÃ¡ndole diversas coberturas.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
      \item \textbf{prepaga:} identifica si la obra social es prepaga o pertenece a un sindicato.
 
-     \item \textbf{nombre:} denominacion legal de la obra social
+     \item \textbf{nombre\_obra\_social:} denominacion legal de la obra social
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -568,40 +568,40 @@ trabajadores brindándole diversas coberturas.
 
 \subsubsection{\textbf{block\_horas}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Designa los días y horarios en que un PROFESIONAL estará disponible para atender 
+Designa los dÃ­as y horarios en que un PROFESIONAL estarÃ¡ disponible para atender 
 PACIENTES.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-     \item \textbf{codigo:} número entero que identifica al block de horas.
+     \item \textbf{codigo:} nÃºmero entero que identifica al block de horas.
 
      \item \textbf{hora\_inicio:} hora en que el PROFESIONAL comienza a atender PACIENTES.
 
-     \item \textbf{hora\_fin:} hora en que el PROFESIONAL finaliza la atención de PACIENTES.
+     \item \textbf{hora\_fin:} hora en que el PROFESIONAL finaliza la atenciÃ³n de PACIENTES.
 
-     \item \textbf{dia:} día de la semana en que atiende el PROFESIONAL.
+     \item \textbf{dia:} dÃ­a de la semana en que atiende el PROFESIONAL.
 
-     \item \textbf{semana:} semana del año en que es válido el block.
+     \item \textbf{semana:} semana del aÃ±o en que es vÃ¡lido el block.
 
-     \item \textbf{tipo\_agenda:} indica la modalidad de atención de PACIENTES. Puede ser por 
+     \item \textbf{tipo\_agenda:} indica la modalidad de atenciÃ³n de PACIENTES. Puede ser por 
      turnos a intervalos de tiempo fijo o por orden de llegada.
 
-     \item \textbf{bloqueado:} permite indicar si un block está bloqueado por un PROFESIONAL o 
+     \item \textbf{bloqueado:} permite indicar si un block estÃ¡ bloqueado por un PROFESIONAL o 
      no.
 
-     \item \textbf{acepta\_sobreturnos:} vale sí si el PROFESIONAL decide aceptar sobreturnos dentro 
+     \item \textbf{acepta\_sobreturnos:} vale sÃ­ si el PROFESIONAL decide aceptar sobreturnos dentro 
      del block de horas, no si no.
 
-     \item \textbf{cantidad\_pacientes:} número de pacientes que el PROFESIONAL atenderá durante 
+     \item \textbf{cantidad\_pacientes:} nÃºmero de pacientes que el PROFESIONAL atenderÃ¡ durante 
      el tiempo que dure el block de horas.
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -611,29 +611,29 @@ PACIENTES.
 
 \subsubsection{\textbf{comprobante}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Contiene información relacionada con el turno que se conoce al momento que un 
+Contiene informaciÃ³n relacionada con el turno que se conoce al momento que un 
 PACIENTE reserva un turno.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-     \item \textbf{numero:} de comprobante: número entero que identifica el comprobante asociado 
+     \item \textbf{numero:} de comprobante: nÃºmero entero que identifica el comprobante asociado 
      al turno.
 
-     \item \textbf{fecha:} día, mes y año en que se solicita el turno.
+     \item \textbf{fecha:} dÃ­a, mes y aÃ±o en que se solicita el turno.
 
      \item \textbf{hora:} hora y minutos en que se solicita el turno.
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{codigo} Proviene de la entidad Turno (turno)
+     \item \textbf{codigo\_turno} Proviene de la entidad Turno (turno)
 
      \item \textbf{numero}
 
@@ -641,20 +641,20 @@ PACIENTE reserva un turno.
 
 \subsubsection{\textbf{usuario}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
 Usuario encargado de generar los turnos, administrarlos, o bloquear horarios.
-Dichos usuarios van a interactuar con la aplicación.
+Dichos usuarios van a interactuar con la aplicaciÃ³n.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-     \item \textbf{nombre:} nombre que identifica unívocamente el usuario. 
+     \item \textbf{nombre:} nombre que identifica unÃ­vocamente el usuario. 
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -664,19 +664,19 @@ Dichos usuarios van a interactuar con la aplicación.
 
 \subsubsection{\textbf{rol}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Rol que cumple el usuario o los usuarios dentro de la aplicación.
+Rol que cumple el usuario o los usuarios dentro de la aplicaciÃ³n.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-     \item \textbf{tipo:} tipo de rol. Puede ser Administrador, Médico o Administrativo. 
+     \item \textbf{tipo:} tipo de rol. Puede ser Administrador, MÃ©dico o Administrativo. 
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -690,15 +690,15 @@ Rol que cumple el usuario o los usuarios dentro de la aplicación.
 
 \subsubsection{\textbf{localizado}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
 Relaciona a un PROFESIONAL o un PACIENTE con el DOMICILIO donde reside.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -714,15 +714,15 @@ Relaciona a un PROFESIONAL o un PACIENTE con el DOMICILIO donde reside.
 
 \subsubsection{\textbf{solicita}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
 Asocia a un PACIENTE y al TURNO que le ha sido asignado.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -730,57 +730,57 @@ Asocia a un PACIENTE y al TURNO que le ha sido asignado.
 
      \item \textbf{numero\_documento} (paciente)
 
-     \item \textbf{codigo} (turno)
+     \item \textbf{codigo\_turno} (turno)
 
 \end{itemize}
 
 \subsubsection{\textbf{atendido por}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
 Relaciona al PROFESIONAL con los TURNOS que le hayan sido asignados.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{codigo} (turno)
+     \item \textbf{codigo\_turno} (turno)
 
 \end{itemize}
 
 \subsubsection{\textbf{motivo}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Indica qué PROCEDIMIENTO MÉDICO motivó la solicitud del TURNO.
+Indica quÃ© PROCEDIMIENTO MÃ‰DICO motivÃ³ la solicitud del TURNO.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{codigo}
+     \item \textbf{codigo\_turno}
 
 \end{itemize}
 
 \subsubsection{\textbf{cubierto por}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Indica qué PLAN de OBRA SOCIAL cubre a un PACIENTE.
+Indica quÃ© PLAN de OBRA SOCIAL cubre a un PACIENTE.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -792,48 +792,48 @@ Indica qué PLAN de OBRA SOCIAL cubre a un PACIENTE.
 
 \subsubsection{\textbf{cubre}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Indica las caracterísiticas de la covertura que tiene el PLAN de una 
-OBRA SOCIAL determinada en relación a un PROCEDIMIENTO MÉDICO.
+Indica las caracterÃ­siticas de la covertura que tiene el PLAN de una 
+OBRA SOCIAL determinada en relaciÃ³n a un PROCEDIMIENTO MÃ‰DICO.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 \begin{itemize}
 
-     \item \textbf{documentacion:} Texto de la documentación del convenio, en la cual 
-     indica lo que el paciente debe presentar para realizarse el procedimiento médico 
+     \item \textbf{documentacion:} Texto de la documentaciÃ³n del convenio, en la cual 
+     indica lo que el paciente debe presentar para realizarse el procedimiento mÃ©dico 
      a aplicar.
 
-     \item \textbf{porcentaje\_exención:} indica qué porcentaje de cobertura brinda
-     el PLAN para el PROCEDIMIENTO MÉDICO.
+     \item \textbf{porcentaje\_exenciÃ³n:} indica quÃ© porcentaje de cobertura brinda
+     el PLAN para el PROCEDIMIENTO MÃ‰DICO.
 
 \end{itemize}
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{codigo} (procedimiento\_medico)
+     \item \textbf{codigo\_procedimiento\_medico} (procedimiento\_medico)
 
-     \item \textbf{nombre} (obra\_social)
+     \item \textbf{nombre\_obra\_social} (obra\_social)
 
-     \item \textbf{nombre} (plan)
+     \item \textbf{nombre\_plan} (plan)
 
 \end{itemize}
 
 \subsubsection{\textbf{autoriza}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Indica qué RECURSOS están siendo autorizados por un PROFESIONAL para utlizarse en 
-un PROCEDIMIENTO MÉDICO.
+Indica quÃ© RECURSOS estÃ¡n siendo autorizados por un PROFESIONAL para utlizarse en 
+un PROCEDIMIENTO MÃ‰DICO.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -847,43 +847,43 @@ un PROCEDIMIENTO MÉDICO.
 
 \subsubsection{\textbf{requiere}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Indica qué SUBESPECIALIDAD requiere un PROCEDIMIENTO MEDICO.
+Indica quÃ© SUBESPECIALIDAD requiere un PROCEDIMIENTO MEDICO.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{codigo} (procedimiento\_medico)
+     \item \textbf{codigo\_procedimiento\_medico} (procedimiento\_medico)
 
-     \item \textbf{codigo} (especialidad)
+     \item \textbf{nombre\_especialidad} (especialidad)
 
-     \item \textbf{nombre} (subespecialidad)
+     \item \textbf{nombre\_subespecialidad} (subespecialidad)
 
 \end{itemize}
 
 \subsubsection{\textbf{ejerce}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Indica qué SUBESPECIALIDAD ejerce un PROFESIONAL del hospital.
+Indica quÃ© SUBESPECIALIDAD ejerce un PROFESIONAL del hospital.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{codigo} (especialidad)
+     \item \textbf{nombre\_especialidad} (especialidad)
 
-     \item \textbf{nombre} (subespecialidad)
+     \item \textbf{nombre\_subespecialidad} (subespecialidad)
 
      \item \textbf{tipo\_documento} (profesional)
 
@@ -893,16 +893,16 @@ Indica qué SUBESPECIALIDAD ejerce un PROFESIONAL del hospital.
 
 \subsubsection{\textbf{predomina}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Permite modelar el requerimiento de que un PROFESIONAL sólo puede tener una ESPECIALIDAD 
+Permite modelar el requerimiento de que un PROFESIONAL sÃ³lo puede tener una ESPECIALIDAD 
 que predomine.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -914,19 +914,19 @@ que predomine.
 
 \subsubsection{\textbf{pertenece}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
 Indica que TURNOS pertencen a un BLOCK HORA.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{codigo} (turno)
+     \item \textbf{codigo\_turno} (turno)
 
      \item \textbf{codigo} (block\_hora)
 
@@ -934,16 +934,16 @@ Indica que TURNOS pertencen a un BLOCK HORA.
 
 \subsubsection{\textbf{atiende}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Indica que PROFESIONAL, desempeñando tal SUBESPECIALIDAD definió un BLOCK 
+Indica que PROFESIONAL, desempeÃ±ando tal SUBESPECIALIDAD definiÃ³ un BLOCK 
 HORAS determinado.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -951,7 +951,7 @@ HORAS determinado.
 
      \item \textbf{numero\_documento} (profesional)
 
-     \item \textbf{nombre} (subespecialidad)
+     \item \textbf{nombre\_subespecialidad} (subespecialidad)
 
      \item \textbf{codigo} (block\_hora)
 
@@ -959,19 +959,19 @@ HORAS determinado.
 
 \subsubsection{\textbf{verifica}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
 Indica que COMPROBANTES verifican la validez del TURNO solicitado.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{codigo} (turno)
+     \item \textbf{codigo\_turno} (turno)
 
      \item \textbf{numero} (comprobante)
 
@@ -979,19 +979,19 @@ Indica que COMPROBANTES verifican la validez del TURNO solicitado.
 
 \subsubsection{\textbf{emitido por}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Indica que USUARIO de la aplicación generó dicho COMPROBATE.
+Indica que USUARIO de la aplicaciÃ³n generÃ³ dicho COMPROBATE.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{codigo} (turno)
+     \item \textbf{codigo\_turno} (turno)
 
      \item \textbf{numero} (comprobante)
 
@@ -1001,15 +1001,15 @@ Indica que USUARIO de la aplicación generó dicho COMPROBATE.
 
 \subsubsection{\textbf{tiene}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
 Indica que ROLES tiene cada USUARIO.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
@@ -1021,20 +1021,20 @@ Indica que ROLES tiene cada USUARIO.
 
 \subsubsection{\textbf{demanda}}
 
-\textbf{Definición}
+\textbf{DefiniciÃ³n}
 
-Indica que PROCEDIMIENTO MÉDICO demanda o requiere cierto RECURSO del hospital o clínica
-para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
+Indica que PROCEDIMIENTO MÃ‰DICO demanda o requiere cierto RECURSO del hospital o clÃ­nica
+para poder llevar a cabo el PROCEDIMIENTO MÃ‰DICO.
 
-\textbf{Especificación de atributos}
+\textbf{EspecificaciÃ³n de atributos}
 
 -
 
-\textbf{Especificación de identificador único}
+\textbf{EspecificaciÃ³n de identificador Ãºnico}
 
 \begin{itemize}
 
-     \item \textbf{codigo} (procedimiento\_medico)
+     \item \textbf{codigo\_procedimiento\_medico} (procedimiento\_medico)
 
      \item \textbf{nombre} (recurso)
 
@@ -1044,7 +1044,7 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 
 \section{\textbf{Modelo relacional\label{HToc293405831}}}
 
-\subsection{\textbf{Diseño del modelo\label{HToc293405832}}}
+\subsection{\textbf{DiseÃ±o del modelo\label{HToc293405832}}}
 
 %--------------------------------------------------
 \subsubsection{\textbf{Domicilio}}
@@ -1095,16 +1095,16 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: \emph{obra\_social\_nombre},\emph{nombre}
+\textbf{Atributos}: \emph{obra\_social\_nombre},\emph{nombre\_plan}
 
 \item 
-\textbf{PK}: (obra\_social\_nombre, nombre)
+\textbf{PK}: (obra\_social\_nombre, nombre\_plan)
 
 \item
 \textbf{FK}: obra\_social\_nombre
 
 \item 
-\textbf{CC}: (obra\_social\_nombre, nombre)
+\textbf{CC}: (obra\_social\_nombre, nombre\_plan)
 
 \item 
 \textbf{Atributos con posible valor nulo}: -
@@ -1199,16 +1199,16 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}:\emph{especialidad\_codigo}, \emph{nombre}, descripcion
+\textbf{Atributos}:\emph{especialidad\_codigo}, \emph{nombre\_subespecialidad}, descripcion
 
 \item 
-\textbf{PK}: (especialidad\_codigo, nombre)
+\textbf{PK}: (especialidad\_codigo, nombre\_subespecialidad)
 
 \item
 \textbf{FK}: especialidad\_codigo
 
 \item 
-\textbf{CC}: (especialidad\_codigo, nombre)
+\textbf{CC}: (especialidad\_codigo, nombre\_subespecialidad)
 
 \item 
 \textbf{Atributos con posible valor nulo}: descripcion
@@ -1220,16 +1220,16 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}:\emph{codigo}, sobreturno, tipo, observaciones, anulado, lugar, fecha, hora, profesional\_tipo\_documento, profesional\_documento, procedimiento\_medico\_codigo
+\textbf{Atributos}:\emph{codigo\_turno}, sobreturno, tipo, observaciones, anulado, lugar, fecha, hora, profesional\_tipo\_documento, profesional\_documento, procedimiento\_medico\_codigo
 
 \item 
-\textbf{PK}: (codigo)
+\textbf{PK}: (codigo\_turno)
 
 \item
 \textbf{FK}: profesional\_tipo\_documento, profesional\_documento, procedimiento\_medico\_codigo
 
 \item 
-\textbf{CC}: (codigo)
+\textbf{CC}: (codigo\_turno)
 
 \item 
 \textbf{Atributos con posible valor nulo}: observaciones
@@ -1299,7 +1299,7 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \end{itemize}
 %--------------------------------------------------
 
-\subsubsection{\textbf{Procedimiento Médico}}
+\subsubsection{\textbf{Procedimiento MÃ©dico}}
 
 \begin{itemize}
 
@@ -1345,8 +1345,8 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 %--------------------------------------------------
 
 %
-%TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
-%bloqueado, código\_block\_horas,código\_acción\_medica);
+%TURNO(\emph{cÃ³digo\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
+%bloqueado, cÃ³digo\_block\_horas,cÃ³digo\_acciÃ³n\_medica);
 %
 %PACIENTE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente}, numero\_afiliado, fecha\_nacimiento, 
 %lugar\_nacimiento, tipo\_beneficiario, telefono, email, condicion\_iva, condicion\_paciente, 
@@ -1355,9 +1355,9 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 %
 %\subsubsection{\textbf{Turno\_Asignado}}
 %
-%\textit{Diseño 1}
+%\textit{DiseÃ±o 1}
 %
-%TURNO\_ASIGNADO(\emph{código\_turno}, tipo\_doc\_profesional, numero\_doc\_profesional);
+%TURNO\_ASIGNADO(\emph{cÃ³digo\_turno}, tipo\_doc\_profesional, numero\_doc\_profesional);
 %
 %\begin{itemize}
 %\item PK: (codigo\_turno)
@@ -1375,22 +1375,22 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 %\item ATRIBUTOS CON VALORES NULOS: -
 %\end{itemize}
 %
-%TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
-%bloqueado, código\_block\_horas,código\_acción\_medica);
+%TURNO(\emph{cÃ³digo\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
+%bloqueado, cÃ³digo\_block\_horas,cÃ³digo\_acciÃ³n\_medica);
 %
 %PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
-%email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
+%email, nÃºmero\_matrÃ­cula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
 %
-%\textit{Diseño 2}
+%\textit{DiseÃ±o 2}
 %
-%TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
-%bloqueado, código\_block\_horas,código\_acción\_medica, tipo\_doc\_profesional, 
+%TURNO(\emph{cÃ³digo\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
+%bloqueado, cÃ³digo\_block\_horas,cÃ³digo\_acciÃ³n\_medica, tipo\_doc\_profesional, 
 %numero\_doc\_profesional)
 %
 %PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
-%email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
+%email, nÃºmero\_matrÃ­cula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
 %
-%Se optó por el diseño 1 porque facilita las búsquedas de turnos asignados a 
+%Se optÃ³ por el diseÃ±o 1 porque facilita las bÃºsquedas de turnos asignados a 
 %un profesional.\pagebreak{}\label{HToc293405855}
 
 \newpage
@@ -1398,8 +1398,8 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \subsection{Diagrama relacional}
 
  En la figura \ref{fig:relacional} se incluye un diagrama representativo del
- modelo relacional desarrollado para el modelo de entidad-interrelación
- detallado en la sección.
+ modelo relacional desarrollado para el modelo de entidad-interrelaciÃ³n
+ detallado en la secciÃ³n.
 
 \begin{figure}[h!t]
   \centering
@@ -1410,19 +1410,19 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 
 \FloatBarrier
 
-\subsection{\textbf{Scripts de creación}}
+\subsection{\textbf{Scripts de creaciÃ³n}}
 
-%A continuación se incluyen los scripts de creación de las tablas del modelo
+%A continuaciÃ³n se incluyen los scripts de creaciÃ³n de las tablas del modelo
 %relacional para ser ejecutado en un sistema de bases de datos que interprete
 %SQL, particularmente las instrucciones DDL de dicho lenguaje. No se incluyen
-%las instrucciones, normalmente específicas al motor propiamente dicho, de
-%creación de usuarios, roles, schemas y bases de datos correspondientes.
+%las instrucciones, normalmente especÃ­ficas al motor propiamente dicho, de
+%creaciÃ³n de usuarios, roles, schemas y bases de datos correspondientes.
 
-\lstinputlisting[inputencoding=latin1,language=SQL,caption={Script de definición de la base de datos}]{../scripts/script_creacion_db.sql}
+\lstinputlisting[inputencoding=latin1,language=SQL,caption={Script de definiciÃ³n de la base de datos}]{../scripts/script_creacion_db.sql}
 
 \clearpage
 
-\part{Apéndice}
+\part{ApÃ©ndice}
 \appendix
 
 \section{Enunciado original}\label{sec:enunciado}
@@ -1430,38 +1430,38 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 
 \clearpage
 
-\section{\textbf{Forma de presentación del trabajo práctico}}
+\section{\textbf{Forma de presentaciÃ³n del trabajo prÃ¡ctico}}
 
 \begin{enumerate}
-\item Presentar el diagrama de entidad - interrelación con indicaciones de restricciones 
+\item Presentar el diagrama de entidad - interrelaciÃ³n con indicaciones de restricciones 
 de cardinalidad. 
 
 \item Indicar dependencias de identidad y de existencia en el modelo. 
 
-\item Especificar supuestos que justifiquen el modelo (Hipótesis). 
+\item Especificar supuestos que justifiquen el modelo (HipÃ³tesis). 
 
-\item Presentar el diccionario de datos del diagrama con la siguiente información: 
+\item Presentar el diccionario de datos del diagrama con la siguiente informaciÃ³n: 
 
 Para cada tipo de entidad se debe especificar:
 
 \begin{enumerate}
-\item Definición. 
+\item DefiniciÃ³n. 
 
-\item Especificación de atributos. 
+\item EspecificaciÃ³n de atributos. 
 
-\item Especificación de identificador único. 
+\item EspecificaciÃ³n de identificador Ãºnico. 
 
-Para cada tipo de interrelación se debe especificar: ~ 
+Para cada tipo de interrelaciÃ³n se debe especificar: ~ 
 
-\item Definición. 
+\item DefiniciÃ³n. 
 
-\item Especificación de atributos. 
+\item EspecificaciÃ³n de atributos. 
 
-\item Especificación de identificador único. 
+\item EspecificaciÃ³n de identificador Ãºnico. 
 \end{enumerate}
 
 \item Presentar el modelo Relacional ( \texttt{"}de tablas\texttt{"} )~ indicando 
-para cada esquema de relación: 
+para cada esquema de relaciÃ³n: 
 
 \begin{enumerate}
 \item Atributos 
@@ -1470,7 +1470,7 @@ para cada esquema de relación:
 
 \item Clave primaria
 
-\item Claves foráneas 
+\item Claves forÃ¡neas 
 
 \item Atributos que pueden tomar valores nulos
 
@@ -1480,8 +1480,8 @@ para cada esquema de relación:
 \end{enumerate}
 \end{enumerate}
 
-Nota: en los casos en que existan diferentes alternativas para efectuar la transformación 
-de MER al modelo de tablas, elegir una única alternativa y enumerar las ventajas 
+Nota: en los casos en que existan diferentes alternativas para efectuar la transformaciÃ³n 
+de MER al modelo de tablas, elegir una Ãºnica alternativa y enumerar las ventajas 
 y desventajas de la alternativa elegida. \pagebreak{}\label{HToc293405800}
 
 \end{document}
