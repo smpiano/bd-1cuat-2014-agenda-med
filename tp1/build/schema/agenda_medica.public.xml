@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="agenda_medica" schema="public" type="PostgreSQL - 9.1.11">
+   <tables>
+      <table name="atendido_por" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="tipo_documento" nullable="false" remarks="" size="10" type="bpchar">
+            <parent column="tipo_documento" foreignKey="atendido_por_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="paciente"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="numero_documento" nullable="false" remarks="" size="10" type="int4">
+            <parent column="numero_documento" foreignKey="atendido_por_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="paciente"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="codigo_turno" nullable="false" remarks="" size="10" type="int4">
+            <parent column="codigo" foreignKey="atendido_por_codigo_turno_fkey" implied="false" onDeleteCascade="false" table="turno"/>
+         </column>
+         <primaryKey column="tipo_documento" sequenceNumberInPK="1"/>
+         <primaryKey column="numero_documento" sequenceNumberInPK="2"/>
+         <primaryKey column="codigo_turno" sequenceNumberInPK="3"/>
+         <index name="atendido_por_pkey" unique="true">
+            <column ascending="true" name="tipo_documento"/>
+            <column ascending="true" name="numero_documento"/>
+            <column ascending="true" name="codigo_turno"/>
+         </index>
+      </table>
+      <table name="autoriza" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="tipo_documento" nullable="false" remarks="" size="10" type="bpchar">
+            <parent column="tipo_documento" foreignKey="autoriza_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="numero_documento" nullable="false" remarks="" size="10" type="int4">
+            <parent column="numero_documento" foreignKey="autoriza_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="codigo_proced_medico" nullable="false" remarks="" size="10" type="bpchar">
+            <parent column="codigo" foreignKey="autoriza_codigo_proced_medico_fkey" implied="false" onDeleteCascade="false" table="procedimiento_medico"/>
+         </column>
+         <primaryKey column="tipo_documento" sequenceNumberInPK="1"/>
+         <primaryKey column="numero_documento" sequenceNumberInPK="2"/>
+         <primaryKey column="codigo_proced_medico" sequenceNumberInPK="3"/>
+         <index name="autoriza_pkey" unique="true">
+            <column ascending="true" name="tipo_documento"/>
+            <column ascending="true" name="numero_documento"/>
+            <column ascending="true" name="codigo_proced_medico"/>
+         </index>
+      </table>
+      <table name="block_horas" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="codigo" nullable="false" remarks="" size="10" type="int4">
+            <child column="codigo" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="turno"/>
+            <child column="codigo_block_horas" foreignKey="turno_codigo_block_horas_fkey" implied="false" onDeleteCascade="false" table="turno"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="acepta_sobreturno" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="2" name="semana" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="dia" nullable="false" remarks="" size="10" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="hora_desde" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="5" name="hora_hasta" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="6" name="tipo_agenda" nullable="true" remarks="" size="100" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="bloqueado" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="8" name="cantidad_pacientes" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="9" name="tipo_documento" nullable="false" remarks="" size="10" type="bpchar">
+            <parent column="tipo_documento" foreignKey="block_horas_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="tiene_especialidad"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="10" name="numero_documento" nullable="false" remarks="" size="10" type="int4">
+            <parent column="numero_documento" foreignKey="block_horas_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="tiene_especialidad"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="11" name="nombre_especialidad" nullable="false" remarks="" size="100" type="bpchar">
+            <parent column="nombre_especialidad" foreignKey="block_horas_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="tiene_especialidad"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="12" name="nombre_subespecialidad" nullable="false" remarks="" size="100" type="bpchar">
+            <parent column="nombre_subespecialidad" foreignKey="block_horas_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="tiene_especialidad"/>
+         </column>
+         <primaryKey column="codigo" sequenceNumberInPK="1"/>
+         <index name="block_horas_pkey" unique="true">
+            <column ascending="true" name="codigo"/>
+         </index>
+      </table>
+      <table name="comprobante" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="codigo_turno" nullable="false" remarks="" size="10" type="int4">
+            <parent column="codigo" foreignKey="comprobante_codigo_turno_fkey" implied="false" onDeleteCascade="false" table="turno"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="numero" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="2" name="fecha" nullable="false" remarks="" size="13" type="date"/>
+         <column autoUpdated="false" digits="6" id="3" name="hora" nullable="false" remarks="" size="15" type="time"/>
+         <column autoUpdated="false" digits="0" id="4" name="usuario" nullable="true" remarks="" size="20" type="bpchar"/>
+         <primaryKey column="codigo_turno" sequenceNumberInPK="1"/>
+         <primaryKey column="numero" sequenceNumberInPK="2"/>
+         <index name="comprobante_pkey" unique="true">
+            <column ascending="true" name="codigo_turno"/>
+            <column ascending="true" name="numero"/>
+         </index>
+      </table>
+      <table name="cubre" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="nombre_plan" nullable="false" remarks="" size="100" type="bpchar">
+            <parent column="nombre" foreignKey="cubre_nombre_plan_fkey" implied="false" onDeleteCascade="false" table="plan"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="nombre_obra_social" nullable="false" remarks="" size="100" type="bpchar">
+            <parent column="nombre_obra_social" foreignKey="cubre_nombre_plan_fkey" implied="false" onDeleteCascade="false" table="plan"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="codigo_proced_medico" nullable="false" remarks="" size="10" type="bpchar">
+            <parent column="codigo" foreignKey="cubre_codigo_proced_medico_fkey" implied="false" onDeleteCascade="false" table="procedimiento_medico"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="documentacion" nullable="true" remarks="" size="100" type="bpchar"/>
+         <column autoUpdated="false" digits="2" id="4" name="porcentaje_exencion" nullable="true" remarks="" size="10" type="numeric"/>
+         <primaryKey column="nombre_plan" sequenceNumberInPK="1"/>
+         <primaryKey column="nombre_obra_social" sequenceNumberInPK="2"/>
+         <primaryKey column="codigo_proced_medico" sequenceNumberInPK="3"/>
+         <index name="cubre_pkey" unique="true">
+            <column ascending="true" name="nombre_plan"/>
+            <column ascending="true" name="nombre_obra_social"/>
+            <column ascending="true" name="codigo_proced_medico"/>
+         </index>
+      </table>
+      <table name="domicilio" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="codigo_postal" nullable="false" remarks="" size="10" type="bpchar">
+            <child column="codigo_postal_dom" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="paciente"/>
+            <child column="codigo_postal_dom" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="provincia" nullable="false" remarks="" size="20" type="bpchar">
+            <child column="provincia_dom" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="paciente"/>
+            <child column="provincia_dom" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="localidad" nullable="false" remarks="" size="100" type="bpchar">
+            <child column="localidad_dom" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="paciente"/>
+            <child column="localidad_dom" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="calle" nullable="false" remarks="" size="100" type="bpchar">
+            <child column="calle_dom" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="paciente"/>
+            <child column="calle_dom" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="numero" nullable="false" remarks="" size="10" type="int4">
+            <child column="numero_dom" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="paciente"/>
+            <child column="numero_dom" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <column autoUpdated="false" defaultValue="'-'::bpchar" digits="0" id="5" name="departamento" nullable="false" remarks="" size="10" type="bpchar">
+            <child column="departamento_dom" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="paciente"/>
+            <child column="departamento_dom" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <column autoUpdated="false" defaultValue="'-'::bpchar" digits="0" id="6" name="piso" nullable="false" remarks="" size="10" type="bpchar">
+            <child column="piso_dom" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="paciente"/>
+            <child column="piso_dom" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <primaryKey column="codigo_postal" sequenceNumberInPK="1"/>
+         <primaryKey column="provincia" sequenceNumberInPK="2"/>
+         <primaryKey column="localidad" sequenceNumberInPK="3"/>
+         <primaryKey column="calle" sequenceNumberInPK="4"/>
+         <primaryKey column="numero" sequenceNumberInPK="5"/>
+         <primaryKey column="departamento" sequenceNumberInPK="6"/>
+         <primaryKey column="piso" sequenceNumberInPK="7"/>
+         <index name="domicilio_pkey" unique="true">
+            <column ascending="true" name="codigo_postal"/>
+            <column ascending="true" name="provincia"/>
+            <column ascending="true" name="localidad"/>
+            <column ascending="true" name="calle"/>
+            <column ascending="true" name="numero"/>
+            <column ascending="true" name="departamento"/>
+            <column ascending="true" name="piso"/>
+         </index>
+      </table>
+      <table name="especialidad" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="nombre" nullable="false" remarks="" size="100" type="bpchar">
+            <child column="nombre_especialidad" foreignKey="profesional_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+            <child column="nombre_especialidad" foreignKey="subespecialidad_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="subespecialidad"/>
+            <parent column="nombre" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="recurso"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="descripcion" nullable="true" remarks="" size="200" type="bpchar"/>
+         <primaryKey column="nombre" sequenceNumberInPK="1"/>
+         <index name="especialidad_pkey" unique="true">
+            <column ascending="true" name="nombre"/>
+         </index>
+      </table>
+      <table name="obra_social" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="nombre" nullable="false" remarks="" size="100" type="bpchar">
+            <child column="nombre_obra_social" foreignKey="plan_nombre_obra_social_fkey" implied="false" onDeleteCascade="false" table="plan"/>
+            <parent column="nombre" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="recurso"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="prepaga" nullable="true" remarks="" size="1" type="bool"/>
+         <primaryKey column="nombre" sequenceNumberInPK="1"/>
+         <index name="obra_social_pkey" unique="true">
+            <column ascending="true" name="nombre"/>
+         </index>
+      </table>
+      <table name="paciente" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="tipo_documento" nullable="false" remarks="" size="10" type="bpchar">
+            <child column="tipo_documento" foreignKey="atendido_por_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="atendido_por"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="numero_documento" nullable="false" remarks="" size="10" type="int4">
+            <child column="numero_documento" foreignKey="atendido_por_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="atendido_por"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="numero_afiliado" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="3" name="nombre" nullable="false" remarks="" size="200" type="bpchar">
+            <parent column="nombre" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="usuario"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="4" name="apellido_materno" nullable="false" remarks="" size="200" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="apellido_paterno" nullable="false" remarks="" size="200" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="6" name="numero_historia_clinica" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="7" name="lugar_nacimiento" nullable="true" remarks="" size="200" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="8" name="fecha_nacimiento" nullable="true" remarks="" size="13" type="date"/>
+         <column autoUpdated="false" digits="0" id="9" name="email" nullable="true" remarks="" size="200" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="10" name="titular" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="11" name="condicion_paciente" nullable="true" remarks="" size="500" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="12" name="condicion_iva" nullable="true" remarks="" size="100" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="13" name="telefono" nullable="false" remarks="" size="20" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="14" name="nombre_plan" nullable="true" remarks="" size="100" type="bpchar">
+            <parent column="nombre" foreignKey="paciente_nombre_plan_fkey" implied="false" onDeleteCascade="false" table="plan"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="15" name="nombre_obra_social" nullable="true" remarks="" size="100" type="bpchar">
+            <parent column="nombre_obra_social" foreignKey="paciente_nombre_plan_fkey" implied="false" onDeleteCascade="false" table="plan"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="16" name="codigo_postal_dom" nullable="false" remarks="" size="10" type="bpchar">
+            <parent column="codigo_postal" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="17" name="provincia_dom" nullable="false" remarks="" size="20" type="bpchar">
+            <parent column="provincia" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="18" name="localidad_dom" nullable="false" remarks="" size="100" type="bpchar">
+            <parent column="localidad" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="19" name="calle_dom" nullable="false" remarks="" size="100" type="bpchar">
+            <parent column="calle" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="20" name="numero_dom" nullable="false" remarks="" size="10" type="int4">
+            <parent column="numero" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <column autoUpdated="false" defaultValue="'-'::bpchar" digits="0" id="21" name="departamento_dom" nullable="true" remarks="" size="10" type="bpchar">
+            <parent column="departamento" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <column autoUpdated="false" defaultValue="'-'::bpchar" digits="0" id="22" name="piso_dom" nullable="true" remarks="" size="10" type="bpchar">
+            <parent column="piso" foreignKey="paciente_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <primaryKey column="tipo_documento" sequenceNumberInPK="1"/>
+         <primaryKey column="numero_documento" sequenceNumberInPK="2"/>
+         <index name="paciente_pkey" unique="true">
+            <column ascending="true" name="tipo_documento"/>
+            <column ascending="true" name="numero_documento"/>
+         </index>
+      </table>
+      <table name="plan" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="nombre" nullable="false" remarks="" size="100" type="bpchar">
+            <child column="nombre_plan" foreignKey="cubre_nombre_plan_fkey" implied="false" onDeleteCascade="false" table="cubre"/>
+            <child column="nombre_plan" foreignKey="paciente_nombre_plan_fkey" implied="false" onDeleteCascade="false" table="paciente"/>
+            <parent column="nombre" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="recurso"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="nombre_obra_social" nullable="false" remarks="" size="100" type="bpchar">
+            <child column="nombre_obra_social" foreignKey="cubre_nombre_plan_fkey" implied="false" onDeleteCascade="false" table="cubre"/>
+            <child column="nombre_obra_social" foreignKey="paciente_nombre_plan_fkey" implied="false" onDeleteCascade="false" table="paciente"/>
+            <parent column="nombre" foreignKey="plan_nombre_obra_social_fkey" implied="false" onDeleteCascade="false" table="obra_social"/>
+         </column>
+         <primaryKey column="nombre" sequenceNumberInPK="1"/>
+         <primaryKey column="nombre_obra_social" sequenceNumberInPK="2"/>
+         <index name="plan_pkey" unique="true">
+            <column ascending="true" name="nombre"/>
+            <column ascending="true" name="nombre_obra_social"/>
+         </index>
+      </table>
+      <table name="procedimiento_medico" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="codigo" nullable="false" remarks="" size="10" type="bpchar">
+            <child column="codigo_proced_medico" foreignKey="autoriza_codigo_proced_medico_fkey" implied="false" onDeleteCascade="false" table="autoriza"/>
+            <child column="codigo_proced_medico" foreignKey="cubre_codigo_proced_medico_fkey" implied="false" onDeleteCascade="false" table="cubre"/>
+            <child column="codigo_proced_medico" foreignKey="requiere_codigo_proced_medico_fkey" implied="false" onDeleteCascade="false" table="requiere"/>
+            <child column="codigo_proced_medico" foreignKey="turno_codigo_proced_medico_fkey" implied="false" onDeleteCascade="false" table="turno"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="descripcion" nullable="true" remarks="" size="500" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="2" name="condiciones_paciente" nullable="true" remarks="" size="500" type="bpchar"/>
+         <column autoUpdated="false" digits="2" id="3" name="duracion" nullable="true" remarks="" size="10" type="numeric"/>
+         <column autoUpdated="false" digits="2" id="4" name="monto" nullable="true" remarks="" size="10" type="numeric"/>
+         <column autoUpdated="false" digits="0" id="5" name="recurso" nullable="true" remarks="" size="100" type="bpchar">
+            <parent column="nombre" foreignKey="procedimiento_medico_recurso_fkey" implied="false" onDeleteCascade="false" table="recurso"/>
+         </column>
+         <primaryKey column="codigo" sequenceNumberInPK="1"/>
+         <index name="procedimiento_medico_pkey" unique="true">
+            <column ascending="true" name="codigo"/>
+         </index>
+      </table>
+      <table name="profesional" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="tipo_documento" nullable="false" remarks="" size="10" type="bpchar">
+            <child column="tipo_documento" foreignKey="autoriza_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="autoriza"/>
+            <child column="tipo_documento" foreignKey="tiene_especialidad_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="tiene_especialidad"/>
+            <child column="tipo_documento" foreignKey="turno_asignado_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="turno_asignado"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="numero_documento" nullable="false" remarks="" size="10" type="int4">
+            <child column="numero_documento" foreignKey="autoriza_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="autoriza"/>
+            <child column="numero_documento" foreignKey="tiene_especialidad_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="tiene_especialidad"/>
+            <child column="numero_documento" foreignKey="turno_asignado_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="turno_asignado"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="nombre" nullable="true" remarks="" size="200" type="bpchar">
+            <parent column="nombre" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="usuario"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="apellido" nullable="true" remarks="" size="200" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="4" name="email" nullable="true" remarks="" size="200" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="matricula" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="6" name="celular" nullable="true" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" digits="0" id="7" name="nombre_especialidad" nullable="false" remarks="" size="100" type="bpchar">
+            <parent column="nombre" foreignKey="profesional_nombre_especialidad_fkey1" implied="false" onDeleteCascade="false" table="subespecialidad"/>
+            <parent column="nombre" foreignKey="profesional_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="especialidad"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="8" name="nombre_subespecialidad" nullable="false" remarks="" size="100" type="bpchar">
+            <parent column="nombre_especialidad" foreignKey="profesional_nombre_especialidad_fkey1" implied="false" onDeleteCascade="false" table="subespecialidad"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="9" name="codigo_postal_dom" nullable="false" remarks="" size="10" type="bpchar">
+            <parent column="codigo_postal" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="10" name="provincia_dom" nullable="false" remarks="" size="20" type="bpchar">
+            <parent column="provincia" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="11" name="localidad_dom" nullable="false" remarks="" size="100" type="bpchar">
+            <parent column="localidad" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="12" name="calle_dom" nullable="false" remarks="" size="100" type="bpchar">
+            <parent column="calle" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="13" name="numero_dom" nullable="false" remarks="" size="10" type="int4">
+            <parent column="numero" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <column autoUpdated="false" defaultValue="'-'::bpchar" digits="0" id="14" name="departamento_dom" nullable="true" remarks="" size="10" type="bpchar">
+            <parent column="departamento" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <column autoUpdated="false" defaultValue="'-'::bpchar" digits="0" id="15" name="piso_dom" nullable="true" remarks="" size="10" type="bpchar">
+            <parent column="piso" foreignKey="profesional_codigo_postal_dom_fkey" implied="false" onDeleteCascade="false" table="domicilio"/>
+         </column>
+         <primaryKey column="tipo_documento" sequenceNumberInPK="1"/>
+         <primaryKey column="numero_documento" sequenceNumberInPK="2"/>
+         <index name="profesional_pkey" unique="true">
+            <column ascending="true" name="tipo_documento"/>
+            <column ascending="true" name="numero_documento"/>
+         </index>
+      </table>
+      <table name="recurso" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="nombre" nullable="false" remarks="" size="100" type="bpchar">
+            <child column="nombre" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="especialidad"/>
+            <child column="nombre" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="obra_social"/>
+            <child column="nombre" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="plan"/>
+            <child column="recurso" foreignKey="procedimiento_medico_recurso_fkey" implied="false" onDeleteCascade="false" table="procedimiento_medico"/>
+            <child column="nombre" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="subespecialidad"/>
+         </column>
+         <primaryKey column="nombre" sequenceNumberInPK="1"/>
+         <index name="recurso_pkey" unique="true">
+            <column ascending="true" name="nombre"/>
+         </index>
+      </table>
+      <table name="requiere" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="codigo_proced_medico" nullable="false" remarks="" size="10" type="bpchar">
+            <parent column="codigo" foreignKey="requiere_codigo_proced_medico_fkey" implied="false" onDeleteCascade="false" table="procedimiento_medico"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="nombre_especialidad" nullable="false" remarks="" size="100" type="bpchar">
+            <parent column="nombre" foreignKey="requiere_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="subespecialidad"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="nombre_subespecialidad" nullable="false" remarks="" size="100" type="bpchar">
+            <parent column="nombre_especialidad" foreignKey="requiere_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="subespecialidad"/>
+         </column>
+         <primaryKey column="codigo_proced_medico" sequenceNumberInPK="1"/>
+         <primaryKey column="nombre_especialidad" sequenceNumberInPK="2"/>
+         <primaryKey column="nombre_subespecialidad" sequenceNumberInPK="3"/>
+         <index name="requiere_pkey" unique="true">
+            <column ascending="true" name="codigo_proced_medico"/>
+            <column ascending="true" name="nombre_especialidad"/>
+            <column ascending="true" name="nombre_subespecialidad"/>
+         </index>
+      </table>
+      <table name="rol" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="tipo" nullable="false" remarks="" size="10" type="bpchar">
+            <child column="tipo_rol" foreignKey="usuario_rol_tipo_rol_fkey" implied="false" onDeleteCascade="false" table="usuario_rol"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="descripcion" nullable="true" remarks="" size="100" type="bpchar"/>
+         <primaryKey column="tipo" sequenceNumberInPK="1"/>
+         <index name="rol_pkey" unique="true">
+            <column ascending="true" name="tipo"/>
+         </index>
+      </table>
+      <table name="subespecialidad" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="nombre" nullable="false" remarks="" size="100" type="bpchar">
+            <child column="nombre_especialidad" foreignKey="profesional_nombre_especialidad_fkey1" implied="false" onDeleteCascade="false" table="profesional"/>
+            <child column="nombre_especialidad" foreignKey="requiere_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="requiere"/>
+            <child column="nombre_especialidad" foreignKey="tiene_especialidad_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="tiene_especialidad"/>
+            <parent column="nombre" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="recurso"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="nombre_especialidad" nullable="false" remarks="" size="100" type="bpchar">
+            <child column="nombre_subespecialidad" foreignKey="profesional_nombre_especialidad_fkey1" implied="false" onDeleteCascade="false" table="profesional"/>
+            <child column="nombre_subespecialidad" foreignKey="requiere_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="requiere"/>
+            <child column="nombre_subespecialidad" foreignKey="tiene_especialidad_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="tiene_especialidad"/>
+            <parent column="nombre" foreignKey="subespecialidad_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="especialidad"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="descripcion" nullable="false" remarks="" size="200" type="bpchar"/>
+         <primaryKey column="nombre" sequenceNumberInPK="1"/>
+         <primaryKey column="nombre_especialidad" sequenceNumberInPK="2"/>
+         <index name="subespecialidad_pkey" unique="true">
+            <column ascending="true" name="nombre"/>
+            <column ascending="true" name="nombre_especialidad"/>
+         </index>
+      </table>
+      <table name="tiene_especialidad" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="tipo_documento" nullable="false" remarks="" size="10" type="bpchar">
+            <child column="tipo_documento" foreignKey="block_horas_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="block_horas"/>
+            <parent column="tipo_documento" foreignKey="tiene_especialidad_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="numero_documento" nullable="false" remarks="" size="10" type="int4">
+            <child column="numero_documento" foreignKey="block_horas_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="block_horas"/>
+            <parent column="numero_documento" foreignKey="tiene_especialidad_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="nombre_especialidad" nullable="false" remarks="" size="100" type="bpchar">
+            <child column="nombre_especialidad" foreignKey="block_horas_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="block_horas"/>
+            <parent column="nombre" foreignKey="tiene_especialidad_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="subespecialidad"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="3" name="nombre_subespecialidad" nullable="false" remarks="" size="100" type="bpchar">
+            <child column="nombre_subespecialidad" foreignKey="block_horas_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="block_horas"/>
+            <parent column="nombre_especialidad" foreignKey="tiene_especialidad_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="subespecialidad"/>
+         </column>
+         <primaryKey column="tipo_documento" sequenceNumberInPK="1"/>
+         <primaryKey column="numero_documento" sequenceNumberInPK="2"/>
+         <primaryKey column="nombre_especialidad" sequenceNumberInPK="3"/>
+         <primaryKey column="nombre_subespecialidad" sequenceNumberInPK="4"/>
+         <index name="tiene_especialidad_pkey" unique="true">
+            <column ascending="true" name="tipo_documento"/>
+            <column ascending="true" name="numero_documento"/>
+            <column ascending="true" name="nombre_especialidad"/>
+            <column ascending="true" name="nombre_subespecialidad"/>
+         </index>
+      </table>
+      <table name="turno" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="codigo" nullable="false" remarks="" size="10" type="int4">
+            <child column="codigo_turno" foreignKey="atendido_por_codigo_turno_fkey" implied="false" onDeleteCascade="false" table="atendido_por"/>
+            <child column="codigo_turno" foreignKey="comprobante_codigo_turno_fkey" implied="false" onDeleteCascade="false" table="comprobante"/>
+            <child column="codigo_turno" foreignKey="turno_asignado_codigo_turno_fkey" implied="false" onDeleteCascade="false" table="turno_asignado"/>
+            <parent column="codigo" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="block_horas"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="sobreturno" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="2" name="observaciones" nullable="true" remarks="" size="500" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="3" name="fecha" nullable="false" remarks="" size="13" type="date"/>
+         <column autoUpdated="false" digits="0" id="4" name="lugar" nullable="true" remarks="" size="100" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="5" name="anulado" nullable="true" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" digits="0" id="6" name="tipo" nullable="true" remarks="" size="100" type="bpchar"/>
+         <column autoUpdated="false" digits="0" id="7" name="codigo_block_horas" nullable="true" remarks="" size="10" type="int4">
+            <parent column="codigo" foreignKey="turno_codigo_block_horas_fkey" implied="false" onDeleteCascade="false" table="block_horas"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="8" name="codigo_proced_medico" nullable="true" remarks="" size="10" type="bpchar">
+            <parent column="codigo" foreignKey="turno_codigo_proced_medico_fkey" implied="false" onDeleteCascade="false" table="procedimiento_medico"/>
+         </column>
+         <primaryKey column="codigo" sequenceNumberInPK="1"/>
+         <index name="turno_pkey" unique="true">
+            <column ascending="true" name="codigo"/>
+         </index>
+      </table>
+      <table name="turno_asignado" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="tipo_documento" nullable="false" remarks="" size="10" type="bpchar">
+            <parent column="tipo_documento" foreignKey="turno_asignado_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="numero_documento" nullable="false" remarks="" size="10" type="int4">
+            <parent column="numero_documento" foreignKey="turno_asignado_tipo_documento_fkey" implied="false" onDeleteCascade="false" table="profesional"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="codigo_turno" nullable="false" remarks="" size="10" type="int4">
+            <parent column="codigo" foreignKey="turno_asignado_codigo_turno_fkey" implied="false" onDeleteCascade="false" table="turno"/>
+         </column>
+         <primaryKey column="tipo_documento" sequenceNumberInPK="1"/>
+         <primaryKey column="numero_documento" sequenceNumberInPK="2"/>
+         <primaryKey column="codigo_turno" sequenceNumberInPK="3"/>
+         <index name="turno_asignado_pkey" unique="true">
+            <column ascending="true" name="tipo_documento"/>
+            <column ascending="true" name="numero_documento"/>
+            <column ascending="true" name="codigo_turno"/>
+         </index>
+      </table>
+      <table name="usuario" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="nombre" nullable="false" remarks="" size="200" type="bpchar">
+            <child column="nombre" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="paciente"/>
+            <child column="nombre" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="profesional"/>
+            <child column="nombre_usuario" foreignKey="usuario_rol_nombre_usuario_fkey" implied="false" onDeleteCascade="false" table="usuario_rol"/>
+         </column>
+         <primaryKey column="nombre" sequenceNumberInPK="1"/>
+         <index name="usuario_pkey" unique="true">
+            <column ascending="true" name="nombre"/>
+         </index>
+      </table>
+      <table name="usuario_rol" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="false" digits="0" id="0" name="nombre_usuario" nullable="false" remarks="" size="200" type="bpchar">
+            <parent column="nombre" foreignKey="usuario_rol_nombre_usuario_fkey" implied="false" onDeleteCascade="false" table="usuario"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="1" name="tipo_rol" nullable="false" remarks="" size="10" type="bpchar">
+            <parent column="tipo" foreignKey="usuario_rol_tipo_rol_fkey" implied="false" onDeleteCascade="false" table="rol"/>
+         </column>
+         <primaryKey column="nombre_usuario" sequenceNumberInPK="1"/>
+         <primaryKey column="tipo_rol" sequenceNumberInPK="2"/>
+         <index name="usuario_rol_pkey" unique="true">
+            <column ascending="true" name="nombre_usuario"/>
+            <column ascending="true" name="tipo_rol"/>
+         </index>
+      </table>
+   </tables>
+</database>
