@@ -285,8 +285,8 @@
          <column autoUpdated="false" digits="0" id="5" name="matricula" nullable="true" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="6" name="celular" nullable="true" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="7" name="nombre_especialidad" nullable="false" remarks="" size="100" type="bpchar">
-            <parent column="nombre" foreignKey="profesional_nombre_especialidad_fkey1" implied="false" onDeleteCascade="false" table="subespecialidad"/>
             <parent column="nombre" foreignKey="profesional_nombre_especialidad_fkey" implied="false" onDeleteCascade="false" table="especialidad"/>
+            <parent column="nombre" foreignKey="profesional_nombre_especialidad_fkey1" implied="false" onDeleteCascade="false" table="subespecialidad"/>
          </column>
          <column autoUpdated="false" digits="0" id="8" name="nombre_subespecialidad" nullable="false" remarks="" size="100" type="bpchar">
             <parent column="nombre_especialidad" foreignKey="profesional_nombre_especialidad_fkey1" implied="false" onDeleteCascade="false" table="subespecialidad"/>

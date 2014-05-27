@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='odd'>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>tipo_documento</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>10</td>
@@ -110,7 +110,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="atendido_por.[tipo_documento, numero_documento] refs paciente.[tipo_documento, numero_documento] via atendido_por_tipo_documento_fkey"><a href='atendido_por.html'>atendido_por</a><span class='relatedKey'>.tipo_documento</span>
     </td>
     <td class='constraint detail'>atendido_por_tipo_documento_fkey<span title='Restrict delete:
@@ -121,7 +121,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='primaryKey' title='Primary Key'>numero_documento</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -130,7 +130,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="atendido_por.[tipo_documento, numero_documento] refs paciente.[tipo_documento, numero_documento] via atendido_por_tipo_documento_fkey"><a href='atendido_por.html'>atendido_por</a><span class='relatedKey'>.numero_documento</span>
     </td>
     <td class='constraint detail'>atendido_por_tipo_documento_fkey<span title='Restrict delete:
@@ -141,7 +141,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>numero_afiliado</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -152,7 +152,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>nombre</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>200</td>
@@ -162,7 +162,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='impliedRelationship relative even' valign='top'>
+   <tr class='impliedRelationship relative odd' valign='top'>
     <td class='relatedTable detail' title="paciente.nombre's name implies that it's a child of usuario.nombre, but it doesn't reference that column."><a href='usuario.html'>usuario</a><span class='relatedKey'>.nombre</span>
     </td>
     <td class='constraint detail'>Implied Constraint<span title='Restrict delete:
@@ -172,7 +172,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>apellido_materno</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>200</td>
@@ -183,7 +183,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>apellido_paterno</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>200</td>
@@ -194,7 +194,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>numero_historia_clinica</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -205,7 +205,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>lugar_nacimiento</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>200</td>
@@ -216,7 +216,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>fecha_nacimiento</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>13</td>
@@ -227,7 +227,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>email</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>200</td>
@@ -238,7 +238,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>titular</td>
  <td class='detail'>bool</td>
  <td class='detail' align='right'>1</td>
@@ -249,7 +249,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>condicion_paciente</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>500</td>
@@ -260,7 +260,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>condicion_iva</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
@@ -271,7 +271,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>telefono</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>20</td>
@@ -282,7 +282,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>nombre_plan</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
@@ -292,7 +292,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="paciente.[nombre_plan, nombre_obra_social] refs plan.[nombre, nombre_obra_social] via paciente_nombre_plan_fkey"><a href='plan.html'>plan</a><span class='relatedKey'>.nombre</span>
     </td>
     <td class='constraint detail'>paciente_nombre_plan_fkey<span title='Restrict delete:
@@ -302,7 +302,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>nombre_obra_social</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
@@ -312,7 +312,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="paciente.[nombre_plan, nombre_obra_social] refs plan.[nombre, nombre_obra_social] via paciente_nombre_plan_fkey"><a href='plan.html'>plan</a><span class='relatedKey'>.nombre_obra_social</span>
     </td>
     <td class='constraint detail'>paciente_nombre_plan_fkey<span title='Restrict delete:
@@ -322,7 +322,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>codigo_postal_dom</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>10</td>
@@ -332,7 +332,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.codigo_postal</span>
     </td>
     <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
@@ -342,7 +342,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>provincia_dom</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>20</td>
@@ -352,7 +352,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.provincia</span>
     </td>
     <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
@@ -362,7 +362,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>localidad_dom</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
@@ -372,7 +372,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.localidad</span>
     </td>
     <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
@@ -382,7 +382,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>calle_dom</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
@@ -392,7 +392,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.calle</span>
     </td>
     <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
@@ -402,7 +402,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>numero_dom</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -412,7 +412,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.numero</span>
     </td>
     <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
@@ -422,7 +422,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>departamento_dom</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>10</td>
@@ -432,7 +432,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.departamento</span>
     </td>
     <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
@@ -442,7 +442,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>piso_dom</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>10</td>
@@ -452,7 +452,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.piso</span>
     </td>
     <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
@@ -463,7 +463,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='23 columns'>Table contained 0 rows at Mon May 26 22:15 ART 2014<p/>
+<p title='23 columns'>Table contained 0 rows at Mon May 26 22:43 ART 2014<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
