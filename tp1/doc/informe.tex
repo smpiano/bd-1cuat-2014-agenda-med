@@ -159,12 +159,12 @@
     
     \item Siempre que se da de alta una especialidad clasifica en una subespecialidad.
     
-    \item Suponemos que los bloques hora deben saber si el profesional acepta 
+    \item Suponemos que los blocks hora deben saber si el profesional acepta 
     sobreturnos para poder darle la flexibilidad al profesional por día y semana 
     que decida que días acepta hacer sobreturnos.
     
-    \item Cuando un profesional bloquea un bloque de horas, los turnos creadas 
-    para dicho bloque, deben ser modificadas. En tal caso, la recepcionista llama
+    \item Cuando un profesional blocka un block de horas, los turnos creadas 
+    para dicho block, deben ser modificadas. En tal caso, la recepcionista llama
     a cada paciente para reasignar el turno. No se altera el atributo de anulado 
     sobre el turno.
     
@@ -186,7 +186,7 @@
     o profesionales.
     
     \item Los turnos se generarán a partir de los block horas que no se encuentren 
-    bloqueados al momento de crear la agenda.
+    blockados al momento de crear la agenda.
     
     \item Cada profesional está asociado a por lo menos una subespecialidad. No existen 
     profesionales que no esten asociados a alguna subespecialidad.
@@ -497,7 +497,7 @@ Fecha y hora en que se cita a un paciente que debe ser atendido en el hospital.
      \item \textbf{sobreturno:} atributo que puede valer si o no según el turno sea un sobreturno 
      o no lo sea.
 
-     \item \textbf{anulado:} atributo que puede valer si o no según el turno se encuentre bloqueado 
+     \item \textbf{anulado:} atributo que puede valer si o no según el turno se encuentre blockado 
      o no por el profesional asignado al turno.
 
      \item \textbf{lugar:} dónde se atenderá al paciente citado.
@@ -590,7 +590,7 @@ PACIENTES.
      \item \textbf{tipo\_agenda:} indica la modalidad de atención de PACIENTES. Puede ser por 
      turnos a intervalos de tiempo fijo o por orden de llegada.
 
-     \item \textbf{bloqueado:} permite indicar si un block está bloqueado por un PROFESIONAL o 
+     \item \textbf{blockado:} permite indicar si un block está blockado por un PROFESIONAL o 
      no.
 
      \item \textbf{acepta\_sobreturnos:} vale sí si el PROFESIONAL decide aceptar sobreturnos dentro 
@@ -643,7 +643,7 @@ PACIENTE reserva un turno.
 
 \textbf{Definición}
 
-Usuario encargado de generar los turnos, administrarlos, o bloquear horarios.
+Usuario encargado de generar los turnos, administrarlos, o blockar horarios.
 Dichos usuarios van a interactuar con la aplicación.
 
 \textbf{Especificación de atributos}
@@ -1047,27 +1047,70 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \subsection{\textbf{Diseño del modelo\label{HToc293405832}}}
 
 %--------------------------------------------------
-\subsubsection{\textbf{Domicilio}}
+\subsubsection{\textbf{Persona}}
 
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: \emph{id\_domicilio}, provincia, localidad, departamento, calle, numero, piso
+\textbf{Atributos}: \emph{tipo\_documento},\emph{numero\_documento}, apellido, nombre, provincia, localidad, departamento, calle, numero, piso, codigo\_postal, email, telefono
 
 \item 
-\textbf{PK}: (id\_domicilio)
+\textbf{PK}: (tipo\_documento, numero\_documento)
 
 \item
 \textbf{FK}: -
 
 \item 
-\textbf{CC}: (id\_domicilio),  (provincia, localidad, departamento, calle, numero, piso)
+\textbf{CC}:(tipo\_documento, numero\_documento)
 
 \item 
-\textbf{Atributos con posible valor nulo}: -
+\textbf{Atributos con posible valor nulo}: 
 \end{itemize}
 
 %--------------------------------------------------
+\subsubsection{\textbf{Paciente}}
+
+\begin{itemize}
+
+\item 
+\textbf{Atributos}:\emph{tipo\_documento\_persona},\emph{numero\_documento\_persona}, apellido\_paterno,apellido\_materno, lugar\_nacimiento, fecha\_nacimiento,  numero\_afiliado, titular, historia\_clinica, condicion\_iva, condicion\_paciente, nombre\_plan, nombre\_obra\_social
+
+\item 
+\textbf{PK}: (tipo\_documento\_persona, numero\_documento\_persona)
+
+\item
+\textbf{FK}:  tipo\_documento\_persona, numero\_documento\_persona, nombre\_plan, nombre\_obra\_social
+
+\item 
+\textbf{CC}: (tipo\_documento\_persona, numero\_documento\_persona)
+
+\item 
+\textbf{Atributos con posible valor nulo}: telefono, condicion\_paciente, lugar\_nacimiento
+
+\end{itemize}
+%--------------------------------------------------
+\subsubsection{\textbf{Profesional}}
+
+\begin{itemize}
+
+\item 
+\textbf{Atributos}:\emph{tipo\_documento\_persona},\emph{numero\_documento\_persona}, matricula, celular,  nombre\_especialidad
+
+\item 
+\textbf{PK}: (tipo\_documento\_persona, numero\_documento\_persona)
+
+\item
+\textbf{FK}: tipo\_documento\_persona, numero\_documento\_persona,nombre\_especialidad
+
+\item 
+\textbf{CC}: (tipo\_documento\_persona, numero\_documento\_persona), (matricula)
+
+\item 
+\textbf{Atributos con posible valor nulo}:
+
+\end{itemize}
+%--------------------------------------------------
+
 \subsubsection{\textbf{Obra Social}}
 
 \begin{itemize}
@@ -1095,16 +1138,16 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: \emph{obra\_social\_nombre},\emph{nombre}
+\textbf{Atributos}: \emph{nombre\_obra\_social},\emph{nombre}
 
 \item 
-\textbf{PK}: (obra\_social\_nombre, nombre)
+\textbf{PK}: (nombre\_obra\_social, nombre)
 
 \item
-\textbf{FK}: obra\_social\_nombre
+\textbf{FK}: nombre\_obra\_social
 
 \item 
-\textbf{CC}: (obra\_social\_nombre, nombre)
+\textbf{CC}: (nombre\_obra\_social, nombre)
 
 \item 
 \textbf{Atributos con posible valor nulo}: -
@@ -1132,62 +1175,21 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 
 \end{itemize}
 %--------------------------------------------------
-\subsubsection{\textbf{Paciente}}
-
-\begin{itemize}
-
-\item 
-\textbf{Atributos}:\emph{tipo\_documento},\emph{numero\_documento}, nombre, apellido\_paterno,apellido\_materno, lugar\_nacimiento, fecha\_nacimiento, telefono, email, numero\_afiliado, titular, numero\_historia\_clinica, condicion\_iva, condicion\_paciente
-\item 
-\textbf{PK}: (tipo\_documento, numero\_documento)
-
-\item
-\textbf{FK}:
-
-\item 
-\textbf{CC}: (nombre)
-
-\item 
-\textbf{Atributos con posible valor nulo}: email, telefono, condicion\_paciente, lugar\_nacimiento
-
-\end{itemize}
-%--------------------------------------------------
-\subsubsection{\textbf{Profesional}}
-
-\begin{itemize}
-
-\item 
-\textbf{Atributos}:\emph{tipo\_documento},\emph{numero\_documento}, nombre, apellido, matricula, celular, email, especialidad\_codigo
-
-\item 
-\textbf{PK}: (tipo\_documento, numero\_documento)
-
-\item
-\textbf{FK}: especialidad\_codigo
-
-\item 
-\textbf{CC}: (nombre)
-
-\item 
-\textbf{Atributos con posible valor nulo}: email, telefono, condicion\_paciente, lugar\_nacimiento
-
-\end{itemize}
-%--------------------------------------------------
 \subsubsection{\textbf{Especialidad}}
 
 \begin{itemize}
 
 \item 
-\textbf{Atributos}:\emph{codigo}, nombre, descripcion
+\textbf{Atributos}:\emph{nombre}, descripcion
 
 \item 
-\textbf{PK}: (codigo)
+\textbf{PK}: (nombre)
 
 \item
 \textbf{FK}:
 
 \item 
-\textbf{CC}: (codigo), (nombre)
+\textbf{CC}: (nombre)
 
 \item 
 \textbf{Atributos con posible valor nulo}: descripcion
@@ -1199,16 +1201,16 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}:\emph{especialidad\_codigo}, \emph{nombre}, descripcion
+\textbf{Atributos}:\emph{nombre\_especialidad}, \emph{nombre}, descripcion
 
 \item 
-\textbf{PK}: (especialidad\_codigo, nombre)
+\textbf{PK}: (nombre\_especialidad, nombre)
 
 \item
-\textbf{FK}: especialidad\_codigo
+\textbf{FK}: nombre\_especialidad
 
 \item 
-\textbf{CC}: (especialidad\_codigo, nombre)
+\textbf{CC}: (nombre\_especialidad, nombre)
 
 \item 
 \textbf{Atributos con posible valor nulo}: descripcion
@@ -1220,16 +1222,25 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}:\emph{codigo}, sobreturno, tipo, observaciones, anulado, lugar, fecha, hora, profesional\_tipo\_documento, profesional\_documento, procedimiento\_medico\_codigo
+\textbf{Atributos}:\emph{codigo}, sobreturno, tipo, observaciones, anulado, lugar, fecha, hora,  codigo\_procedimiento\_medico, 
+anio\_block\_horas, semana\_block\_horas, dia\_block\_horas, hora\_inicio\_block\_horas, hora\_fin\_block\_horas,
+tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, 
+nombre\_subespecialidad, tipo\_documento\_paciente, numero\_documento\_paciente
 
 \item 
 \textbf{PK}: (codigo)
 
 \item
-\textbf{FK}: profesional\_tipo\_documento, profesional\_documento, procedimiento\_medico\_codigo
+\textbf{FK}: codigo\_procedimiento\_medico, 
+anio\_block\_horas, semana\_block\_horas, dia\_block\_horas, hora\_inicio\_block\_horas, hora\_fin\_block\_horas,
+tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad,
+nombre\_subespecialidad, tipo\_documento\_paciente, numero\_documento\_paciente
 
 \item 
-\textbf{CC}: (codigo)
+\textbf{CC}: (codigo), 
+(anio\_block\_horas, semana\_block\_horas, dia\_block\_horas, hora\_inicio\_block\_horas, hora\_fin\_block\_horas,
+tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, 
+nombre\_subespecialidad)
 
 \item 
 \textbf{Atributos con posible valor nulo}: observaciones
@@ -1241,16 +1252,16 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: \emph{turno\_codigo}, fecha, hora, usuario\_nombre
+\textbf{Atributos}: \emph{codigo\_turno}, numero, fecha, hora, nombre\_usuario
 
 \item 
-\textbf{PK}: (turno\_codigo)
+\textbf{PK}: (codigo\_turno)
 
 \item
-\textbf{FK}: turno\_codigo, usuario\_nombre
+\textbf{FK}:  nombre\_usuario, codigo\_turno
 
 \item 
-\textbf{CC}: (turno\_codigo)
+\textbf{CC}: (codigo\_turno)
 
 \item 
 \textbf{Atributos con posible valor nulo}: 
@@ -1262,7 +1273,7 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}:\emph{nombre}
+\textbf{Atributos}:\emph{nombre}, clave
 
 \item 
 \textbf{PK}: (nombre)
@@ -1285,13 +1296,13 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \textbf{Atributos}:\emph{tipo}, descripcion
 
 \item 
-\textbf{PK}: (codigo)
+\textbf{PK}: (tipo)
 
 \item
 \textbf{FK}: - 
 
 \item 
-\textbf{CC}: (codigo)
+\textbf{CC}: (tipo)
 
 \item 
 \textbf{Atributos con posible valor nulo}: descripcion
@@ -1327,16 +1338,16 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}:\emph{codigo}, acepta\_sobreturnos, semana, dia, hora\_inicio, hora\_fin, tipo\_agenda, bloqueado, cantidad\_pacientes, profesional\_tipo\_documento, profesional\_documento, especialidad\_codigo, subespecialidad\_nombre
+\textbf{Atributos}:  anio, semana, dia, hora\_inicio, hora\_fin, tipo\_agenda, acepta\_sobreturnos,  bloqueado, cantidad\_pacientes, tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, nombre\_subespecialidad
 
 \item 
-\textbf{PK}: (codigo), (semana, dia, hora\_inicio, hora\_fin, profesional\_tipo\_documento, profesional\_documento, especialidad\_codigo, subespecialidad\_nombre)
+\textbf{PK}: (anio, semana, dia, hora\_inicio, hora\_fin,tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, nombre\_subespecialidad)
 
 \item
-\textbf{FK}:  profesional\_tipo\_documento, profesional\_documento, especialidad\_codigo, subespecialidad\_nombre
+\textbf{FK}:  tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, nombre\_subespecialidad
 
 \item 
-\textbf{CC}: (codigo)
+\textbf{CC}: (anio, semana, dia, hora\_inicio, hora\_fin,tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, nombre\_subespecialidad)
 
 \item 
 \textbf{Atributos con posible valor nulo}:
@@ -1346,7 +1357,7 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 
 %
 %TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
-%bloqueado, código\_block\_horas,código\_acción\_medica);
+%blockado, código\_block\_horas,código\_acción\_medica);
 %
 %PACIENTE(\emph{tipo\_doc\_paciente, numero\_doc\_paciente}, numero\_afiliado, fecha\_nacimiento, 
 %lugar\_nacimiento, tipo\_beneficiario, telefono, email, condicion\_iva, condicion\_paciente, 
@@ -1376,7 +1387,7 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 %\end{itemize}
 %
 %TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
-%bloqueado, código\_block\_horas,código\_acción\_medica);
+%blockado, código\_block\_horas,código\_acción\_medica);
 %
 %PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
 %email, número\_matrícula, celular,\textit{\textbf{ }}codigo\_domicilio, codigo\_especialidad)
@@ -1384,7 +1395,7 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 %\textit{Diseño 2}
 %
 %TURNO(\emph{código\_turno}, fecha\_turno, hora\_turno, observaciones, lugar, sobreturno, 
-%bloqueado, código\_block\_horas,código\_acción\_medica, tipo\_doc\_profesional, 
+%blockado, código\_block\_horas,código\_acción\_medica, tipo\_doc\_profesional, 
 %numero\_doc\_profesional)
 %
 %PROFESIONAL(\emph{tipo\_doc\_profesional, numero\_doc\_profesional}, apellido\_nombre, 
