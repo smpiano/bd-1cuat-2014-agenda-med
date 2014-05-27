@@ -1,86 +1,109 @@
-create table domicilio(
-	codigo_postal		CHAR(10) NOT NULL,	
-	provincia		CHAR(20) NOT NULL,
-	localidad		CHAR(100) NOT NULL,
-	calle			CHAR(100) NOT NULL,
-	numero			INTEGER NOT NULL,
-	departamento		CHAR(10) DEFAULT '-',
-	piso			CHAR(10) DEFAULT '-',
-	PRIMARY KEY (codigo_postal, provincia, localidad, calle, numero, departamento, piso)
-);
-	
 
 create table obra_social(
-	nombre			CHAR(100) NOT NULL,	
-	prepaga			BOOLEAN,
+	nombre	CHAR(100) NOT NULL,	
+	prepaga			BIT,
 	PRIMARY KEY (nombre)
 );	
 	
 
+create table procedimiento_medico(
+	codigo CHAR(10) NOT NULL,	
+	descripcion		CHAR(500),
+	condiciones_paciente	CHAR(500),
+	duracion		DECIMAL(10,2),
+	monto			DECIMAL(10,2),
+	PRIMARY KEY (codigo)
+
+);	
+
+
 create table plan(
-	nombre			CHAR(100) NOT NULL,
 	nombre_obra_social	CHAR(100) NOT NULL,	
-	PRIMARY KEY (nombre, nombre_obra_social),
+	nombre			CHAR(100) NOT NULL,
+	PRIMARY KEY (nombre_obra_social,nombre),
 	FOREIGN KEY (nombre_obra_social) REFERENCES obra_social
 );
 
 
 create table especialidad(
-	nombre			CHAR(100) NOT NULL,	
+	nombre	CHAR(100) NOT NULL,	
 	descripcion		CHAR(200),
 	PRIMARY KEY (nombre)
 );
 
 	
 create table subespecialidad(
-	nombre			CHAR(100) NOT NULL,	
 	nombre_especialidad	CHAR(100) NOT NULL,	
+	nombre	CHAR(100) NOT NULL,	
 	descripcion		CHAR(200) NOT NULL,
-	PRIMARY KEY (nombre, nombre_especialidad),
+	PRIMARY KEY (nombre_especialidad, nombre),
 	FOREIGN KEY (nombre_especialidad) REFERENCES especialidad
 );
 
 
 create table recurso(
-	nombre			CHAR(100) NOT NULL,
+	nombre		CHAR(100) NOT NULL,
 	PRIMARY KEY (nombre)
 );	
-		
-	
-create table profesional(
+----- no
+create table demanda(
+	nombre_recurso			CHAR(100) NOT NULL,
+	codigo_proced_medico CHAR(10) NOT NULL,	
+	PRIMARY KEY (nombre_recurso,codigo_proced_medico),
+	FOREIGN KEY (nombre_recurso) REFERENCES recurso,
+	FOREIGN KEY (codigo_proced_medico) REFERENCES procedimiento_medico
+);			
+------	
+create table persona(
 	tipo_documento		CHAR(10) NOT NULL,
 	numero_documento	INTEGER NOT NULL,	
 	nombre			CHAR(200),
 	apellido		CHAR(200),
 	email			CHAR(200),
+	telefono		CHAR(20) NOT NULL,
+	codigo_postal	CHAR(10) NOT NULL,	
+	provincia	CHAR(20) NOT NULL,
+	localidad	CHAR(100) NOT NULL,
+	calle	CHAR(100) NOT NULL,
+	numero	INTEGER NOT NULL,
+	departamento	CHAR(10) DEFAULT '-',
+	piso	CHAR(10) DEFAULT '-',
+	PRIMARY KEY (tipo_documento, numero_documento)
+);
+
+create table profesional(
+	tipo_documento_persona		CHAR(10) NOT NULL,
+	numero_documento_persona	INTEGER NOT NULL,	
 	matricula		INTEGER,
-	celular			INTEGER,
-	nombre_especialidad	CHAR(100) NOT NULL,
-	nombre_subespecialidad	CHAR(100) NOT NULL,
-	codigo_postal_dom	CHAR(10) NOT NULL,	
-	provincia_dom		CHAR(20) NOT NULL,
-	localidad_dom		CHAR(100) NOT NULL,
-	calle_dom		CHAR(100) NOT NULL,
-	numero_dom		INTEGER NOT NULL,
-	departamento_dom	CHAR(10) DEFAULT '-',
-	piso_dom		CHAR(10) DEFAULT '-',
-	PRIMARY KEY (tipo_documento, numero_documento),
-	FOREIGN KEY (nombre_especialidad) REFERENCES especialidad,
-	FOREIGN KEY (nombre_especialidad, nombre_subespecialidad) REFERENCES subespecialidad,
-	FOREIGN KEY (codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom) REFERENCES domicilio
+	nombre_especialidad 	CHAR(100) NOT NULL,	
+	PRIMARY KEY (tipo_documento_persona, numero_documento_persona),
+	FOREIGN KEY (tipo_documento_persona, numero_documento_persona) REFERENCES persona,
+	FOREIGN KEY (nombre_especialidad) REFERENCES especialidad
+);
+--- no
+create table profesional_tiene(
+	tipo_documento		CHAR(10) NOT NULL,
+	numero_documento	INTEGER NOT NULL,
+	nombre_especialidad	CHAR(100) NOT NULL,	
+	PRIMARY KEY (tipo_documento, numero_documento,nombre_especialidad),
+	FOREIGN KEY (nombre_especialidad) REFERENCES especialidad
+	
 );
 
 
-create table procedimiento_medico(
-	codigo			CHAR(10) NOT NULL,	
-	descripcion		CHAR(500),
-	condiciones_paciente	CHAR(500),
-	duracion		DECIMAL(10,2),
-	monto			DECIMAL(10,2),
-	recurso			CHAR(100),
-	PRIMARY KEY (codigo),
-	FOREIGN KEY (recurso) REFERENCES recurso
-);	
+create table profesional_ejerce(
+	tipo_documento		CHAR(10) NOT NULL,
+	numero_documento	INTEGER NOT NULL,
+	nombre_especialidad	CHAR(100) NOT NULL,	
+	nombre_subespecialidad	CHAR(100) NOT NULL,	
+	PRIMARY KEY (tipo_documento, numero_documento,nombre_especialidad,nombre_subespecialidad),
+	FOREIGN KEY (nombre_especialidad,nombre_subespecialidad) REFERENCES subespecialidad
+	
+);
+
+
+
+
 
 create table cubre(
 	nombre_plan		CHAR(100) NOT NULL,	
@@ -93,55 +116,36 @@ create table cubre(
 	FOREIGN KEY (codigo_proced_medico) REFERENCES procedimiento_medico
 );	
 	
-	
+----	
 create table paciente(
-	tipo_documento		CHAR(10) NOT NULL,	
-	numero_documento	INTEGER NOT NULL,
+	tipo_documento_persona		CHAR(10) NOT NULL,	
+	numero_documento_persona	INTEGER NOT NULL,
 	numero_afiliado		INTEGER NOT NULL,
-    	nombre			CHAR(200) NOT NULL,
     	apellido_materno	CHAR(200) NOT NULL,
     	apellido_paterno	CHAR(200) NOT NULL,
-	numero_historia_clinica	INTEGER,
 	lugar_nacimiento	CHAR(200),
 	fecha_nacimiento	DATE,
-    	email			CHAR(200),
-	titular			BOOLEAN,
+    	titular			BIT,
+	historia_clinica	INTEGER NOT NULL,	
 	condicion_paciente	CHAR(500),
     	condicion_iva		CHAR(100),
-    	telefono		CHAR(20) NOT NULL,
     	nombre_plan		CHAR(100),
     	nombre_obra_social	CHAR(100),
-	codigo_postal_dom	CHAR(10) NOT NULL,	
-	provincia_dom		CHAR(20) NOT NULL,
-	localidad_dom		CHAR(100) NOT NULL,
-	calle_dom		CHAR(100) NOT NULL,
-	numero_dom		INTEGER NOT NULL,
-	departamento_dom	CHAR(10) DEFAULT '-',
-	piso_dom		CHAR(10) DEFAULT '-',
-	PRIMARY KEY (tipo_documento ,  numero_documento),
-	FOREIGN KEY (nombre_plan, nombre_obra_social) REFERENCES plan,
-	FOREIGN KEY (codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom) REFERENCES domicilio
+	PRIMARY KEY (tipo_documento_persona , numero_documento_persona),
+	FOREIGN KEY (tipo_documento_persona, numero_documento_persona) REFERENCES persona,
+	FOREIGN KEY (nombre_plan, nombre_obra_social) REFERENCES plan
 );	
 	
 		
-create table tiene_especialidad(
-	tipo_documento		CHAR(10) NOT NULL,
-	numero_documento	INTEGER NOT NULL,
-	nombre_especialidad	CHAR(100) NOT NULL,	
-	nombre_subespecialidad	CHAR(100) NOT NULL,
-	PRIMARY KEY (tipo_documento, numero_documento, nombre_especialidad, nombre_subespecialidad),
-	FOREIGN KEY (tipo_documento, numero_documento) REFERENCES profesional,
-	FOREIGN KEY (nombre_especialidad, nombre_subespecialidad) REFERENCES subespecialidad
-);
-	
+--- no
 
 create table autoriza(
 	tipo_documento		CHAR(10) NOT NULL,
 	numero_documento	INTEGER NOT NULL,
-	codigo_proced_medico	CHAR(10) NOT NULL,	
-	PRIMARY KEY (tipo_documento, numero_documento, codigo_proced_medico),
+	nombre_recurso			CHAR(100) NOT NULL,
+	PRIMARY KEY (tipo_documento, numero_documento, nombre_recurso),
 	FOREIGN KEY (tipo_documento, numero_documento) REFERENCES profesional,
-	FOREIGN KEY (codigo_proced_medico) REFERENCES procedimiento_medico
+	FOREIGN KEY (nombre_recurso) REFERENCES recurso
 );	
 	
 
@@ -154,61 +158,68 @@ create table requiere(
 	FOREIGN KEY (codigo_proced_medico) REFERENCES procedimiento_medico
 );		
 
-	
+---
 create table block_horas(
-	codigo			INTEGER NOT NULL,	
-	acepta_sobreturno	BOOLEAN,
+	
+	anio			INTEGER NOT NULL,	
 	semana			INTEGER NOT NULL,
 	dia			CHAR(10) NOT NULL,
-	hora_desde		INTEGER NOT NULL,
-	hora_hasta		INTEGER NOT NULL,
-    	tipo_agenda		CHAR(100),
-    	bloqueado		BOOLEAN,
-    	cantidad_pacientes	INTEGER,
+	hora_inicio		INTEGER NOT NULL,
+	hora_fin		INTEGER NOT NULL,
+	acepta_sobreturno	BIT,	
+	tipo_agenda		CHAR(100),
+	bloqueado		BIT,
+	cantidad_pacientes	INTEGER,
+	tipo_documento_profesional		CHAR(10) NOT NULL,	
+	numero_documento_profesional	INTEGER NOT NULL,
+	nombre_especialidad		CHAR(100) NOT NULL,
+	nombre_subespecialidad		CHAR(100) NOT NULL,
+    	PRIMARY KEY (anio,semana,dia,hora_inicio,hora_fin,tipo_documento_profesional, numero_documento_profesional,nombre_especialidad, nombre_subespecialidad),
+	FOREIGN KEY (tipo_documento_profesional, numero_documento_profesional) REFERENCES profesional,
+	FOREIGN KEY (nombre_especialidad, nombre_subespecialidad) REFERENCES subespecialidad
+);		
+create table turno(
+	codigo			INTEGER NOT NULL,
+	sobreturno		BIT,
+	tipo			CHAR(100),
+	observaciones		CHAR(500),
+    	anulado			BIT,
+	fecha			DATE NOT NULL,
+	lugar			CHAR(100),
+	hora			INTEGER NOT NULL,	
+	codigo_procedimiento_medico	CHAR(10),
+	anio_block_horas	INTEGER NOT NULL,
+	semana_block_horas	INTEGER NOT NULL,
+	dia_block_horas	CHAR(20),
+	hora_inicio_block_horas	INTEGER NOT NULL,	
+	hora_fin_block_horas	INTEGER NOT NULL,
+	tipo_documento_profesional		CHAR(10) NOT NULL,	
+	numero_documento_profesional	INTEGER NOT NULL,
+	tipo_documento_paciente		CHAR(10) NOT NULL,	
+	numero_documento_paciente	INTEGER NOT NULL,	
+	PRIMARY KEY (codigo),
+	FOREIGN KEY (tipo_documento_profesional, numero_documento_profesional) REFERENCES profesional,
+	FOREIGN KEY (tipo_documento_paciente, numero_documento_paciente) REFERENCES paciente,
+	FOREIGN KEY (codigo_procedimiento_medico) REFERENCES procedimiento_medico
+	FOREIGN KEY (anio_block_horas,semana_block_horas,dia_block_horas,hora_inicio_block_horas,hora_fin_block_horas) REFERENCES block_horas
+);	
+
+--no
+
+	
+create table profesional_atiende(
 	tipo_documento		CHAR(10) NOT NULL,
 	numero_documento	INTEGER NOT NULL,
 	nombre_especialidad	CHAR(100) NOT NULL,	
-	nombre_subespecialidad	CHAR(100) NOT NULL,
-    	PRIMARY KEY (codigo),
-	FOREIGN KEY (tipo_documento, numero_documento, nombre_especialidad, nombre_subespecialidad) REFERENCES tiene_especialidad
-);	
-	
-	
-create table turno(
-	codigo			INTEGER NOT NULL,	
-	sobreturno		BOOLEAN,
-	observaciones		CHAR(500),
-	fecha			DATE NOT NULL,
-	lugar			CHAR(100),
-    	anulado			BOOLEAN,
-    	tipo			CHAR(100),
-    	codigo_block_horas	INTEGER,
-	codigo_proced_medico	CHAR(10),
-    	PRIMARY KEY (codigo),
-	FOREIGN KEY (codigo_block_horas) REFERENCES block_horas,
-	FOREIGN KEY (codigo_proced_medico) REFERENCES procedimiento_medico
-);	
-	
-	
-create table atendido_por(
-	tipo_documento		CHAR(10) NOT NULL,
-	numero_documento	INTEGER NOT NULL,
-	codigo_turno		INTEGER NOT NULL,
-	PRIMARY KEY (tipo_documento, numero_documento, codigo_turno),
-	FOREIGN KEY (tipo_documento, numero_documento) REFERENCES paciente,
-	FOREIGN KEY (codigo_turno) REFERENCES turno
+	nombre_subespecialidad	CHAR(100) NOT NULL,	
+	codigo_block_horas	INTEGER NOT NULL,	
+	PRIMARY KEY (tipo_documento, numero_documento,nombre_especialidad,nombre_subespecialidad,codigo_block_horas),
+	FOREIGN KEY (nombre_especialidad,nombre_subespecialidad) REFERENCES subespecialidad,
+	FOREIGN KEY (tipo_documento,numero_documento) REFERENCES profesional,
+	FOREIGN KEY (codigo_block_horas) REFERENCES block_horas
 );
-
-
-create table turno_asignado(
-	tipo_documento		CHAR(10) NOT NULL,
-	numero_documento	INTEGER NOT NULL,
-	codigo_turno		INTEGER NOT NULL,
-	PRIMARY KEY (tipo_documento, numero_documento, codigo_turno),
-	FOREIGN KEY (tipo_documento, numero_documento) REFERENCES profesional,
-	FOREIGN KEY (codigo_turno) REFERENCES turno
-);
-
+-----	
+	
 
 create table rol(
 	tipo			CHAR(10),
@@ -219,10 +230,11 @@ create table rol(
 
 create table usuario(
 	nombre			CHAR(200),
+	clave			CHAR(200),
 	PRIMARY KEY (nombre)
 );
 
-
+-- no
 create table usuario_rol(
 	nombre_usuario		CHAR(200),
 	tipo_rol		CHAR(10),
@@ -231,13 +243,24 @@ create table usuario_rol(
 	FOREIGN KEY (tipo_rol) REFERENCES rol
 );
 
-
+---
 create table comprobante(
-	codigo_turno		INTEGER NOT NULL,
+	codigo_turno	INTEGER NOT NULL,
 	numero			INTEGER NOT NULL,	
 	fecha			DATE NOT NULL,
 	hora			TIME NOT NULL,
-	usuario			CHAR(20),
-	PRIMARY KEY (codigo_turno, numero),
+	nombre_usuario		CHAR(200),
+	PRIMARY KEY (codigo_turno),
+	FOREIGN KEY (nombre_usuario) REFERENCES usuario,
 	FOREIGN KEY (codigo_turno) REFERENCES turno
 );
+--no
+create table requiere(
+	nombre_especialidad	CHAR(100) NOT NULL,	
+	nombre_subespecialidad	CHAR(100) NOT NULL,	
+	codigo_proced_medico CHAR(10) NOT NULL,	
+	PRIMARY KEY (nombre_especialidad, nombre_subespecialidad, codigo_proced_medico),
+	FOREIGN KEY (nombre_especialidad,nombre_subespecialidad) REFERENCES subespecialidad,
+	FOREIGN KEY (codigo_proced_medico ) REFERENCES procedimiento_medico
+);
+---
