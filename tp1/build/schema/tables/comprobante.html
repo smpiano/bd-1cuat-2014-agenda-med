@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='even'>
+<tr class='odd'>
  <td class='primaryKey' title='Primary Key'>codigo_turno</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -111,7 +111,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="comprobante.codigo_turno refs turno.codigo via comprobante_codigo_turno_fkey"><a href='turno.html'>turno</a><span class='relatedKey'>.codigo</span>
     </td>
     <td class='constraint detail'>comprobante_codigo_turno_fkey<span title='Restrict delete:
@@ -121,8 +121,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
- <td class='primaryKey' title='Primary Key'>numero</td>
+<tr class='even'>
+ <td class='detail'>numero</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -132,7 +132,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>fecha</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>13</td>
@@ -143,7 +143,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>hora</td>
  <td class='detail'>time</td>
  <td class='detail' align='right'>15,6</td>
@@ -154,19 +154,28 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
- <td class='detail'>usuario</td>
+<tr class='odd'>
+ <td class='detail'>nombre_usuario</td>
  <td class='detail'>bpchar</td>
- <td class='detail' align='right'>20</td>
+ <td class='detail' align='right'>200</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>null</td>
  <td class='detail'></td>
- <td class='detail'> </td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="comprobante.nombre_usuario refs usuario.nombre via comprobante_nombre_usuario_fkey"><a href='usuario.html'>usuario</a><span class='relatedKey'>.nombre</span>
+    </td>
+    <td class='constraint detail'>comprobante_nombre_usuario_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='5 columns'>Table contained 0 rows at Mon May 26 22:43 ART 2014<p/>
+<p title='5 columns'>Table contained 0 rows at Wed May 28 17:52 ART 2014<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -181,9 +190,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>codigo_turno + numero</td>
+  <td class='primaryKey'>codigo_turno</td>
   <td class='detail'>Primary key</td>
-  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>comprobante_pkey</td>
  </tr>
 </table>
@@ -192,27 +201,33 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from comprobante'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="235,5,437,181">
-<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="7,8,188,269">
+<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="291,197,517,373">
+<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="7,5,244,470">
+<area shape="rect" id="node5" href="usuario.html" title="usuario" alt="" coords="64,486,187,589">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/comprobante.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="impliedTwoDegreesRelationshipsDiagram" name="impliedTwoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="atendido_por.html" title="atendido_por" alt="" coords="489,5,628,85">
-<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="229,105,411,367">
-<area shape="rect" id="node7" href="block_horas.html" title="block_horas" alt="" coords="28,147,161,227">
-<area shape="rect" id="node10" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="5,287,184,367">
-<area shape="rect" id="node4" href="comprobante.html" title="comprobante" alt="" coords="457,103,660,279">
-<area shape="rect" id="node11" href="turno_asignado.html" title="turno_asignado" alt="" coords="485,296,632,376">
+<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="860,201,1087,377">
+<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="576,5,813,470">
+<area shape="rect" id="node5" href="usuario.html" title="usuario" alt="" coords="7,493,129,595">
+<area shape="rect" id="node6" href="paciente.html" title="paciente" alt="" coords="375,427,508,507">
+<area shape="rect" id="node11" href="profesional.html" title="profesional" alt="" coords="375,329,508,409">
+<area shape="rect" id="node17" href="block_horas.html" title="block_horas" alt="" coords="371,232,512,312">
+<area shape="rect" id="node19" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="352,135,531,215">
+<area shape="rect" id="node8" href="persona.html" title="persona" alt="" coords="175,427,308,507">
+<area shape="rect" id="node14" href="tiene.html" title="tiene" alt="" coords="181,560,301,640">
 </map>
 
   <a name='diagram'><img id='impliedTwoDegreesImg' src='../diagrams/comprobante.implied2degrees.png' usemap='#impliedTwoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="atendido_por.html" title="atendido_por" alt="" coords="489,5,628,85">
-<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="229,105,411,367">
-<area shape="rect" id="node7" href="block_horas.html" title="block_horas" alt="" coords="28,227,161,307">
-<area shape="rect" id="node9" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="5,324,184,404">
-<area shape="rect" id="node4" href="comprobante.html" title="comprobante" alt="" coords="457,103,660,279">
-<area shape="rect" id="node10" href="turno_asignado.html" title="turno_asignado" alt="" coords="485,296,632,376">
+<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="513,148,740,324">
+<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="229,5,467,470">
+<area shape="rect" id="node5" href="usuario.html" title="usuario" alt="" coords="287,486,409,589">
+<area shape="rect" id="node9" href="block_horas.html" title="block_horas" alt="" coords="24,240,165,320">
+<area shape="rect" id="node11" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="5,143,184,223">
+<area shape="rect" id="node16" href="paciente.html" title="paciente" alt="" coords="28,435,161,515">
+<area shape="rect" id="node18" href="profesional.html" title="profesional" alt="" coords="28,337,161,417">
+<area shape="rect" id="node6" href="tiene.html" title="tiene" alt="" coords="567,485,687,565">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/comprobante.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

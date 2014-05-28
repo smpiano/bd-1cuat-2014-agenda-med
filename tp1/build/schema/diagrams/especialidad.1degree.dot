@@ -20,8 +20,6 @@ digraph "oneDegreeRelationshipsDiagram" {
     arrowsize="0.8"
   ];
   "profesional":"nombre_especialidad":w -> "especialidad":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "profesional":"nombre_especialidad":w -> "subespecialidad":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
-  "profesional":"nombre_subespecialidad":w -> "subespecialidad":"nombre_especialidad":e [arrowhead=none dir=back arrowtail=crowodot];
   "subespecialidad":"nombre_especialidad":w -> "especialidad":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "especialidad" [
     label=<
@@ -38,23 +36,11 @@ digraph "oneDegreeRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">profesional</TD></TR>
-      <TR><TD PORT="tipo_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento</TD></TR>
-      <TR><TD PORT="numero_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento</TD></TR>
-      <TR><TD PORT="nombre" COLSPAN="3" ALIGN="LEFT">nombre</TD></TR>
-      <TR><TD PORT="apellido" COLSPAN="3" ALIGN="LEFT">apellido</TD></TR>
-      <TR><TD PORT="email" COLSPAN="3" ALIGN="LEFT">email</TD></TR>
+      <TR><TD PORT="tipo_documento_persona" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento_persona</TD></TR>
+      <TR><TD PORT="numero_documento_persona" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento_persona</TD></TR>
       <TR><TD PORT="matricula" COLSPAN="3" ALIGN="LEFT">matricula</TD></TR>
-      <TR><TD PORT="celular" COLSPAN="3" ALIGN="LEFT">celular</TD></TR>
       <TR><TD PORT="nombre_especialidad" COLSPAN="3" ALIGN="LEFT">nombre_especialidad</TD></TR>
-      <TR><TD PORT="nombre_subespecialidad" COLSPAN="3" ALIGN="LEFT">nombre_subespecialidad</TD></TR>
-      <TR><TD PORT="codigo_postal_dom" COLSPAN="3" ALIGN="LEFT">codigo_postal_dom</TD></TR>
-      <TR><TD PORT="provincia_dom" COLSPAN="3" ALIGN="LEFT">provincia_dom</TD></TR>
-      <TR><TD PORT="localidad_dom" COLSPAN="3" ALIGN="LEFT">localidad_dom</TD></TR>
-      <TR><TD PORT="calle_dom" COLSPAN="3" ALIGN="LEFT">calle_dom</TD></TR>
-      <TR><TD PORT="numero_dom" COLSPAN="3" ALIGN="LEFT">numero_dom</TD></TR>
-      <TR><TD PORT="departamento_dom" COLSPAN="3" ALIGN="LEFT">departamento_dom</TD></TR>
-      <TR><TD PORT="piso_dom" COLSPAN="3" ALIGN="LEFT">piso_dom</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="profesional.html"
     tooltip="profesional"
@@ -64,8 +50,8 @@ digraph "oneDegreeRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">subespecialidad</TD></TR>
       <TR><TD PORT="nombre" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre</TD></TR>
-      <TR><TD PORT="nombre_especialidad" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_especialidad</TD></TR>
       <TR><TD PORT="descripcion" COLSPAN="3" ALIGN="LEFT">descripcion</TD></TR>
+      <TR><TD PORT="nombre_especialidad" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_especialidad</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="subespecialidad.html"

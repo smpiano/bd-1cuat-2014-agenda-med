@@ -19,86 +19,92 @@ digraph "oneDegreeRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "atendido_por":"numero_documento":w -> "paciente":"numero_documento.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atendido_por":"tipo_documento":w -> "paciente":"tipo_documento.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"calle_dom":w -> "domicilio":"calle":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"codigo_postal_dom":w -> "domicilio":"codigo_postal":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"departamento_dom":w -> "domicilio":"departamento":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"localidad_dom":w -> "domicilio":"localidad":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"nombre_obra_social":w -> "plan":"nombre_obra_social":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"nombre_plan":w -> "plan":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"numero_dom":w -> "domicilio":"numero":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"piso_dom":w -> "domicilio":"piso":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"provincia_dom":w -> "domicilio":"provincia":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atendido_por" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">atendido_por</TD></TR>
-      <TR><TD PORT="tipo_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento</TD></TR>
-      <TR><TD PORT="numero_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento</TD></TR>
-      <TR><TD PORT="codigo_turno" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo_turno</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
-    </TABLE>>
-    URL="atendido_por.html"
-    tooltip="atendido_por"
-  ];
-  "domicilio" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">domicilio</TD></TR>
-      <TR><TD PORT="codigo_postal" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo_postal</TD></TR>
-      <TR><TD PORT="provincia" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">provincia</TD></TR>
-      <TR><TD PORT="localidad" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">localidad</TD></TR>
-      <TR><TD PORT="calle" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">calle</TD></TR>
-      <TR><TD PORT="numero" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero</TD></TR>
-      <TR><TD PORT="departamento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">departamento</TD></TR>
-      <TR><TD PORT="piso" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">piso</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">14 &gt;</TD></TR>
-    </TABLE>>
-    URL="domicilio.html"
-    tooltip="domicilio"
-  ];
+  "paciente":"nombre_obra_social":w -> "plan":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
+  "paciente":"nombre_plan":w -> "plan":"nombre_obra_social":e [arrowhead=none dir=back arrowtail=crowodot];
+  "paciente":"numero_documento_persona":w -> "persona":"numero_documento":e [arrowhead=none dir=back arrowtail=crowodot];
+  "paciente":"tipo_documento_persona":w -> "persona":"tipo_documento":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"numero_documento_paciente":w -> "paciente":"numero_documento_persona.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"tipo_documento_paciente":w -> "paciente":"tipo_documento_persona.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "paciente" [
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">paciente</TD></TR>
-      <TR><TD PORT="tipo_documento" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento</TD><TD PORT="tipo_documento.type" ALIGN="LEFT">bpchar[10]</TD></TR>
-      <TR><TD PORT="numero_documento" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento</TD><TD PORT="numero_documento.type" ALIGN="LEFT">int4[10]</TD></TR>
+      <TR><TD PORT="tipo_documento_persona" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento_persona</TD><TD PORT="tipo_documento_persona.type" ALIGN="LEFT">bpchar[10]</TD></TR>
+      <TR><TD PORT="numero_documento_persona" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento_persona</TD><TD PORT="numero_documento_persona.type" ALIGN="LEFT">int4[10]</TD></TR>
       <TR><TD PORT="numero_afiliado" COLSPAN="2" ALIGN="LEFT">numero_afiliado</TD><TD PORT="numero_afiliado.type" ALIGN="LEFT">int4[10]</TD></TR>
-      <TR><TD PORT="nombre" COLSPAN="2" ALIGN="LEFT">nombre</TD><TD PORT="nombre.type" ALIGN="LEFT">bpchar[200]</TD></TR>
       <TR><TD PORT="apellido_materno" COLSPAN="2" ALIGN="LEFT">apellido_materno</TD><TD PORT="apellido_materno.type" ALIGN="LEFT">bpchar[200]</TD></TR>
       <TR><TD PORT="apellido_paterno" COLSPAN="2" ALIGN="LEFT">apellido_paterno</TD><TD PORT="apellido_paterno.type" ALIGN="LEFT">bpchar[200]</TD></TR>
-      <TR><TD PORT="numero_historia_clinica" COLSPAN="2" ALIGN="LEFT">numero_historia_clinica</TD><TD PORT="numero_historia_clinica.type" ALIGN="LEFT">int4[10]</TD></TR>
       <TR><TD PORT="lugar_nacimiento" COLSPAN="2" ALIGN="LEFT">lugar_nacimiento</TD><TD PORT="lugar_nacimiento.type" ALIGN="LEFT">bpchar[200]</TD></TR>
       <TR><TD PORT="fecha_nacimiento" COLSPAN="2" ALIGN="LEFT">fecha_nacimiento</TD><TD PORT="fecha_nacimiento.type" ALIGN="LEFT">date[13]</TD></TR>
-      <TR><TD PORT="email" COLSPAN="2" ALIGN="LEFT">email</TD><TD PORT="email.type" ALIGN="LEFT">bpchar[200]</TD></TR>
-      <TR><TD PORT="titular" COLSPAN="2" ALIGN="LEFT">titular</TD><TD PORT="titular.type" ALIGN="LEFT">bool[1]</TD></TR>
+      <TR><TD PORT="titular" COLSPAN="2" ALIGN="LEFT">titular</TD><TD PORT="titular.type" ALIGN="LEFT">bit[1]</TD></TR>
+      <TR><TD PORT="historia_clinica" COLSPAN="2" ALIGN="LEFT">historia_clinica</TD><TD PORT="historia_clinica.type" ALIGN="LEFT">int4[10]</TD></TR>
       <TR><TD PORT="condicion_paciente" COLSPAN="2" ALIGN="LEFT">condicion_paciente</TD><TD PORT="condicion_paciente.type" ALIGN="LEFT">bpchar[500]</TD></TR>
       <TR><TD PORT="condicion_iva" COLSPAN="2" ALIGN="LEFT">condicion_iva</TD><TD PORT="condicion_iva.type" ALIGN="LEFT">bpchar[100]</TD></TR>
-      <TR><TD PORT="telefono" COLSPAN="2" ALIGN="LEFT">telefono</TD><TD PORT="telefono.type" ALIGN="LEFT">bpchar[20]</TD></TR>
       <TR><TD PORT="nombre_plan" COLSPAN="2" ALIGN="LEFT">nombre_plan</TD><TD PORT="nombre_plan.type" ALIGN="LEFT">bpchar[100]</TD></TR>
       <TR><TD PORT="nombre_obra_social" COLSPAN="2" ALIGN="LEFT">nombre_obra_social</TD><TD PORT="nombre_obra_social.type" ALIGN="LEFT">bpchar[100]</TD></TR>
-      <TR><TD PORT="codigo_postal_dom" COLSPAN="2" ALIGN="LEFT">codigo_postal_dom</TD><TD PORT="codigo_postal_dom.type" ALIGN="LEFT">bpchar[10]</TD></TR>
-      <TR><TD PORT="provincia_dom" COLSPAN="2" ALIGN="LEFT">provincia_dom</TD><TD PORT="provincia_dom.type" ALIGN="LEFT">bpchar[20]</TD></TR>
-      <TR><TD PORT="localidad_dom" COLSPAN="2" ALIGN="LEFT">localidad_dom</TD><TD PORT="localidad_dom.type" ALIGN="LEFT">bpchar[100]</TD></TR>
-      <TR><TD PORT="calle_dom" COLSPAN="2" ALIGN="LEFT">calle_dom</TD><TD PORT="calle_dom.type" ALIGN="LEFT">bpchar[100]</TD></TR>
-      <TR><TD PORT="numero_dom" COLSPAN="2" ALIGN="LEFT">numero_dom</TD><TD PORT="numero_dom.type" ALIGN="LEFT">int4[10]</TD></TR>
-      <TR><TD PORT="departamento_dom" COLSPAN="2" ALIGN="LEFT">departamento_dom</TD><TD PORT="departamento_dom.type" ALIGN="LEFT">bpchar[10]</TD></TR>
-      <TR><TD PORT="piso_dom" COLSPAN="2" ALIGN="LEFT">piso_dom</TD><TD PORT="piso_dom.type" ALIGN="LEFT">bpchar[10]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="paciente.html"
     tooltip="paciente"
+  ];
+  "persona" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">persona</TD></TR>
+      <TR><TD PORT="tipo_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento</TD></TR>
+      <TR><TD PORT="numero_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento</TD></TR>
+      <TR><TD PORT="nombre" COLSPAN="3" ALIGN="LEFT">nombre</TD></TR>
+      <TR><TD PORT="apellido" COLSPAN="3" ALIGN="LEFT">apellido</TD></TR>
+      <TR><TD PORT="email" COLSPAN="3" ALIGN="LEFT">email</TD></TR>
+      <TR><TD PORT="telefono" COLSPAN="3" ALIGN="LEFT">telefono</TD></TR>
+      <TR><TD PORT="codigo_postal" COLSPAN="3" ALIGN="LEFT">codigo_postal</TD></TR>
+      <TR><TD PORT="provincia" COLSPAN="3" ALIGN="LEFT">provincia</TD></TR>
+      <TR><TD PORT="localidad" COLSPAN="3" ALIGN="LEFT">localidad</TD></TR>
+      <TR><TD PORT="calle" COLSPAN="3" ALIGN="LEFT">calle</TD></TR>
+      <TR><TD PORT="numero" COLSPAN="3" ALIGN="LEFT">numero</TD></TR>
+      <TR><TD PORT="departamento" COLSPAN="3" ALIGN="LEFT">departamento</TD></TR>
+      <TR><TD PORT="piso" COLSPAN="3" ALIGN="LEFT">piso</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+    </TABLE>>
+    URL="persona.html"
+    tooltip="persona"
   ];
   "plan" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">plan</TD></TR>
-      <TR><TD PORT="nombre" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre</TD></TR>
       <TR><TD PORT="nombre_obra_social" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_obra_social</TD></TR>
+      <TR><TD PORT="nombre" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="plan.html"
     tooltip="plan"
+  ];
+  "turno" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">turno</TD></TR>
+      <TR><TD PORT="codigo" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo</TD></TR>
+      <TR><TD PORT="sobreturno" COLSPAN="3" ALIGN="LEFT">sobreturno</TD></TR>
+      <TR><TD PORT="tipo" COLSPAN="3" ALIGN="LEFT">tipo</TD></TR>
+      <TR><TD PORT="observaciones" COLSPAN="3" ALIGN="LEFT">observaciones</TD></TR>
+      <TR><TD PORT="anulado" COLSPAN="3" ALIGN="LEFT">anulado</TD></TR>
+      <TR><TD PORT="fecha" COLSPAN="3" ALIGN="LEFT">fecha</TD></TR>
+      <TR><TD PORT="lugar" COLSPAN="3" ALIGN="LEFT">lugar</TD></TR>
+      <TR><TD PORT="hora" COLSPAN="3" ALIGN="LEFT">hora</TD></TR>
+      <TR><TD PORT="codigo_procedimiento_medico" COLSPAN="3" ALIGN="LEFT">codigo_procedimiento_medico</TD></TR>
+      <TR><TD PORT="anio_block_horas" COLSPAN="3" ALIGN="LEFT">anio_block_horas</TD></TR>
+      <TR><TD PORT="semana_block_horas" COLSPAN="3" ALIGN="LEFT">semana_block_horas</TD></TR>
+      <TR><TD PORT="dia_block_horas" COLSPAN="3" ALIGN="LEFT">dia_block_horas</TD></TR>
+      <TR><TD PORT="hora_inicio_block_horas" COLSPAN="3" ALIGN="LEFT">hora_inicio_block_horas</TD></TR>
+      <TR><TD PORT="hora_fin_block_horas" COLSPAN="3" ALIGN="LEFT">hora_fin_block_horas</TD></TR>
+      <TR><TD PORT="tipo_documento_profesional" COLSPAN="3" ALIGN="LEFT">tipo_documento_profesional</TD></TR>
+      <TR><TD PORT="numero_documento_profesional" COLSPAN="3" ALIGN="LEFT">numero_documento_profesional</TD></TR>
+      <TR><TD PORT="tipo_documento_paciente" COLSPAN="3" ALIGN="LEFT">tipo_documento_paciente</TD></TR>
+      <TR><TD PORT="numero_documento_paciente" COLSPAN="3" ALIGN="LEFT">numero_documento_paciente</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+    </TABLE>>
+    URL="turno.html"
+    tooltip="turno"
   ];
 }

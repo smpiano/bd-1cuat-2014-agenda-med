@@ -110,22 +110,22 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='impliedRelationship relative odd' valign='top'>
-    <td class='relatedTable detail' title="paciente.nombre's name implies that it's a child of usuario.nombre, but it doesn't reference that column."><a href='paciente.html'>paciente</a><span class='relatedKey'>.nombre</span>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="comprobante.nombre_usuario refs usuario.nombre via comprobante_nombre_usuario_fkey"><a href='comprobante.html'>comprobante</a><span class='relatedKey'>.nombre_usuario</span>
     </td>
-    <td class='constraint detail'>Implied Constraint<span title='Restrict delete:
+    <td class='constraint detail'>comprobante_nombre_usuario_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
    <tr class='impliedRelationship relative odd' valign='top'>
-    <td class='relatedTable detail' title="profesional.nombre's name implies that it's a child of usuario.nombre, but it doesn't reference that column."><a href='profesional.html'>profesional</a><span class='relatedKey'>.nombre</span>
+    <td class='relatedTable detail' title="persona.nombre's name implies that it's a child of usuario.nombre, but it doesn't reference that column."><a href='persona.html'>persona</a><span class='relatedKey'>.nombre</span>
     </td>
     <td class='constraint detail'>Implied Constraint<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="usuario_rol.nombre_usuario refs usuario.nombre via usuario_rol_nombre_usuario_fkey"><a href='usuario_rol.html'>usuario_rol</a><span class='relatedKey'>.nombre_usuario</span>
+    <td class='relatedTable detail' title="tiene.nombre_usuario refs usuario.nombre via tiene_nombre_usuario_fkey"><a href='tiene.html'>tiene</a><span class='relatedKey'>.nombre_usuario</span>
     </td>
-    <td class='constraint detail'>usuario_rol_nombre_usuario_fkey<span title='Restrict delete:
+    <td class='constraint detail'>tiene_nombre_usuario_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
   </table>
@@ -133,8 +133,19 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
+<tr class='even'>
+ <td class='detail'>clave</td>
+ <td class='detail'>bpchar</td>
+ <td class='detail' align='right'>200</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='right'>null</td>
+ <td class='detail'></td>
+ <td class='detail'> </td>
+ <td class='comment detail'></td>
+</tr>
 </table>
-<p title='1 columns'>Table contained 0 rows at Mon May 26 22:43 ART 2014<p/>
+<p title='2 columns'>Table contained 0 rows at Wed May 28 17:52 ART 2014<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -160,31 +171,29 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from usuario'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="usuario_rol.html" title="usuario_rol" alt="" coords="244,9,396,111">
-<area shape="rect" id="node3" href="usuario.html" title="usuario" alt="" coords="5,5,200,91">
+<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="244,5,396,176">
+<area shape="rect" id="node3" href="usuario.html" title="usuario" alt="" coords="5,142,200,250">
+<area shape="rect" id="node4" href="tiene.html" title="tiene" alt="" coords="244,193,396,295">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/usuario.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="impliedTwoDegreesRelationshipsDiagram" name="impliedTwoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="atendido_por.html" title="atendido_por" alt="" coords="668,16,807,96">
-<area shape="rect" id="node3" href="paciente.html" title="paciente" alt="" coords="427,5,608,584">
-<area shape="rect" id="node10" href="domicilio.html" title="domicilio" alt="" coords="213,805,347,885">
-<area shape="rect" id="node15" href="usuario.html" title="usuario" alt="" coords="183,643,377,728">
-<area shape="rect" id="node17" href="plan.html" title="plan" alt="" coords="213,335,347,415">
-<area shape="rect" id="node5" href="autoriza.html" title="autoriza" alt="" coords="676,563,799,643">
-<area shape="rect" id="node7" href="profesional.html" title="profesional" alt="" coords="423,601,612,1021">
-<area shape="rect" id="node28" href="especialidad.html" title="especialidad" alt="" coords="5,820,139,900">
-<area shape="rect" id="node30" href="subespecialidad.html" title="subespecialidad" alt="" coords="205,903,355,983">
-<area shape="rect" id="node36" href="tiene_especialidad.html" title="tiene_especialidad" alt="" coords="657,885,817,965">
-<area shape="rect" id="node41" href="turno_asignado.html" title="turno_asignado" alt="" coords="664,660,811,740">
-<area shape="rect" id="node44" href="usuario_rol.html" title="usuario_rol" alt="" coords="441,1089,593,1191">
-<area shape="rect" id="node47" href="rol.html" title="rol" alt="" coords="220,1112,340,1192">
+<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="819,179,971,349">
+<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="633,103,775,183">
+<area shape="rect" id="node5" href="usuario.html" title="usuario" alt="" coords="5,334,200,442">
+<area shape="rect" id="node6" href="paciente.html" title="paciente" alt="" coords="456,103,589,183">
+<area shape="rect" id="node11" href="profesional.html" title="profesional" alt="" coords="456,5,589,85">
+<area shape="rect" id="node8" href="persona.html" title="persona" alt="" coords="244,7,412,359">
+<area shape="rect" id="node14" href="tiene.html" title="tiene" alt="" coords="252,427,404,530">
+<area shape="rect" id="node17" href="rol.html" title="rol" alt="" coords="43,459,163,539">
 </map>
 
   <a name='diagram'><img id='impliedTwoDegreesImg' src='../diagrams/usuario.implied2degrees.png' usemap='#impliedTwoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="usuario_rol.html" title="usuario_rol" alt="" coords="244,47,396,150">
-<area shape="rect" id="node3" href="usuario.html" title="usuario" alt="" coords="5,5,200,91">
-<area shape="rect" id="node5" href="rol.html" title="rol" alt="" coords="43,108,163,188">
+<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="244,11,396,181">
+<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="32,5,173,85">
+<area shape="rect" id="node5" href="usuario.html" title="usuario" alt="" coords="5,102,200,210">
+<area shape="rect" id="node6" href="tiene.html" title="tiene" alt="" coords="244,199,396,302">
+<area shape="rect" id="node9" href="rol.html" title="rol" alt="" coords="43,227,163,307">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/usuario.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

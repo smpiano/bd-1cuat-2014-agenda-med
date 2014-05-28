@@ -19,37 +19,34 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "atendido_por":"elipses":w -> "paciente":"numero_documento":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atendido_por":"elipses":w -> "paciente":"tipo_documento":e [arrowhead=none dir=back arrowtail=crowodot];
+  "autoriza":"elipses":w -> "recurso":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
   "cubre":"codigo_proced_medico":w -> "procedimiento_medico":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "cubre":"nombre_obra_social":w -> "plan":"nombre_obra_social.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "cubre":"nombre_plan":w -> "plan":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "cubre":"nombre_obra_social":w -> "plan":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "cubre":"nombre_plan":w -> "plan":"nombre_obra_social.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "demanda":"elipses":w -> "procedimiento_medico":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "demanda":"elipses":w -> "recurso":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
   "especialidad":"elipses":w -> "recurso":"nombre":e [arrowhead=none dir=back arrowtail=teeodot style=dashed];
   "obra_social":"nombre":w -> "recurso":"nombre":e [arrowhead=none dir=back arrowtail=teeodot style=dashed];
-  "paciente":"calle_dom":w -> "domicilio":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"codigo_postal_dom":w -> "domicilio":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"departamento_dom":w -> "domicilio":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"localidad_dom":w -> "domicilio":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"nombre":w -> "usuario":"elipses":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
-  "paciente":"nombre_obra_social":w -> "plan":"nombre_obra_social.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"nombre_plan":w -> "plan":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"numero_dom":w -> "domicilio":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"piso_dom":w -> "domicilio":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "paciente":"provincia_dom":w -> "domicilio":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "paciente":"nombre_obra_social":w -> "plan":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "paciente":"nombre_plan":w -> "plan":"nombre_obra_social.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "paciente":"numero_documento_persona":w -> "persona":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "paciente":"tipo_documento_persona":w -> "persona":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "plan":"nombre":w -> "recurso":"nombre":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
   "plan":"nombre_obra_social":w -> "obra_social":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
-  "procedimiento_medico":"elipses":w -> "recurso":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
   "subespecialidad":"elipses":w -> "recurso":"nombre":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
   "subespecialidad":"elipses":w -> "especialidad":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atendido_por" [
+  "turno":"elipses":w -> "procedimiento_medico":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"elipses":w -> "paciente":"numero_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"elipses":w -> "paciente":"tipo_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
+  "autoriza" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">atendido_por</TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">autoriza</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
-    URL="atendido_por.html"
-    tooltip="atendido_por"
+    URL="autoriza.html"
+    tooltip="autoriza"
   ];
   "cubre" [
     label=<
@@ -65,15 +62,15 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     URL="cubre.html"
     tooltip="cubre"
   ];
-  "domicilio" [
+  "demanda" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">domicilio</TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">demanda</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">14 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
-    URL="domicilio.html"
-    tooltip="domicilio"
+    URL="demanda.html"
+    tooltip="demanda"
   ];
   "especialidad" [
     label=<
@@ -100,40 +97,40 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">paciente</TD></TR>
-      <TR><TD PORT="tipo_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento</TD></TR>
-      <TR><TD PORT="numero_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento</TD></TR>
+      <TR><TD PORT="tipo_documento_persona" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento_persona</TD></TR>
+      <TR><TD PORT="numero_documento_persona" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento_persona</TD></TR>
       <TR><TD PORT="numero_afiliado" COLSPAN="3" ALIGN="LEFT">numero_afiliado</TD></TR>
-      <TR><TD PORT="nombre" COLSPAN="3" ALIGN="LEFT">nombre</TD></TR>
       <TR><TD PORT="apellido_materno" COLSPAN="3" ALIGN="LEFT">apellido_materno</TD></TR>
       <TR><TD PORT="apellido_paterno" COLSPAN="3" ALIGN="LEFT">apellido_paterno</TD></TR>
-      <TR><TD PORT="numero_historia_clinica" COLSPAN="3" ALIGN="LEFT">numero_historia_clinica</TD></TR>
       <TR><TD PORT="lugar_nacimiento" COLSPAN="3" ALIGN="LEFT">lugar_nacimiento</TD></TR>
       <TR><TD PORT="fecha_nacimiento" COLSPAN="3" ALIGN="LEFT">fecha_nacimiento</TD></TR>
-      <TR><TD PORT="email" COLSPAN="3" ALIGN="LEFT">email</TD></TR>
       <TR><TD PORT="titular" COLSPAN="3" ALIGN="LEFT">titular</TD></TR>
+      <TR><TD PORT="historia_clinica" COLSPAN="3" ALIGN="LEFT">historia_clinica</TD></TR>
       <TR><TD PORT="condicion_paciente" COLSPAN="3" ALIGN="LEFT">condicion_paciente</TD></TR>
       <TR><TD PORT="condicion_iva" COLSPAN="3" ALIGN="LEFT">condicion_iva</TD></TR>
-      <TR><TD PORT="telefono" COLSPAN="3" ALIGN="LEFT">telefono</TD></TR>
       <TR><TD PORT="nombre_plan" COLSPAN="3" ALIGN="LEFT">nombre_plan</TD></TR>
       <TR><TD PORT="nombre_obra_social" COLSPAN="3" ALIGN="LEFT">nombre_obra_social</TD></TR>
-      <TR><TD PORT="codigo_postal_dom" COLSPAN="3" ALIGN="LEFT">codigo_postal_dom</TD></TR>
-      <TR><TD PORT="provincia_dom" COLSPAN="3" ALIGN="LEFT">provincia_dom</TD></TR>
-      <TR><TD PORT="localidad_dom" COLSPAN="3" ALIGN="LEFT">localidad_dom</TD></TR>
-      <TR><TD PORT="calle_dom" COLSPAN="3" ALIGN="LEFT">calle_dom</TD></TR>
-      <TR><TD PORT="numero_dom" COLSPAN="3" ALIGN="LEFT">numero_dom</TD></TR>
-      <TR><TD PORT="departamento_dom" COLSPAN="3" ALIGN="LEFT">departamento_dom</TD></TR>
-      <TR><TD PORT="piso_dom" COLSPAN="3" ALIGN="LEFT">piso_dom</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="paciente.html"
     tooltip="paciente"
+  ];
+  "persona" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">persona</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+    </TABLE>>
+    URL="persona.html"
+    tooltip="persona"
   ];
   "plan" [
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">plan</TD></TR>
-      <TR><TD PORT="nombre" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre</TD><TD PORT="nombre.type" ALIGN="LEFT">bpchar[100]</TD></TR>
       <TR><TD PORT="nombre_obra_social" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_obra_social</TD><TD PORT="nombre_obra_social.type" ALIGN="LEFT">bpchar[100]</TD></TR>
+      <TR><TD PORT="nombre" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre</TD><TD PORT="nombre.type" ALIGN="LEFT">bpchar[100]</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="plan.html"
@@ -144,7 +141,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">procedimiento_medico</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="procedimiento_medico.html"
     tooltip="procedimiento_medico"
@@ -154,7 +151,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">recurso</TD></TR>
       <TR><TD PORT="nombre" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">5 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="recurso.html"
     tooltip="recurso"
@@ -169,14 +166,14 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     URL="subespecialidad.html"
     tooltip="subespecialidad"
   ];
-  "usuario" [
+  "turno" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">usuario</TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">turno</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
-    URL="usuario.html"
-    tooltip="usuario"
+    URL="turno.html"
+    tooltip="turno"
   ];
 }

@@ -19,74 +19,62 @@ digraph "twoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "autoriza":"elipses":w -> "procedimiento_medico":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
-  "cubre":"elipses":w -> "procedimiento_medico":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
-  "procedimiento_medico":"recurso":w -> "recurso":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "requiere":"elipses":w -> "procedimiento_medico":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno":"elipses":w -> "procedimiento_medico":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
+  "autoriza":"nombre_recurso":w -> "recurso":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "autoriza":"numero_documento_profesional":w -> "profesional":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "autoriza":"tipo_documento_profesional":w -> "profesional":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "demanda":"codigo_proced_medico":w -> "procedimiento_medico":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "demanda":"nombre_recurso":w -> "recurso":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "autoriza" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">autoriza</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD PORT="tipo_documento_profesional" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento_profesional</TD></TR>
+      <TR><TD PORT="numero_documento_profesional" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento_profesional</TD></TR>
+      <TR><TD PORT="nombre_recurso" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_recurso</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="autoriza.html"
     tooltip="autoriza"
   ];
-  "cubre" [
+  "demanda" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">cubre</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">demanda</TD></TR>
+      <TR><TD PORT="nombre_recurso" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_recurso</TD></TR>
+      <TR><TD PORT="codigo_proced_medico" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo_proced_medico</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
-    URL="cubre.html"
-    tooltip="cubre"
+    URL="demanda.html"
+    tooltip="demanda"
   ];
   "procedimiento_medico" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">procedimiento_medico</TD></TR>
-      <TR><TD PORT="codigo" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo</TD></TR>
-      <TR><TD PORT="descripcion" COLSPAN="3" ALIGN="LEFT">descripcion</TD></TR>
-      <TR><TD PORT="condiciones_paciente" COLSPAN="3" ALIGN="LEFT">condiciones_paciente</TD></TR>
-      <TR><TD PORT="duracion" COLSPAN="3" ALIGN="LEFT">duracion</TD></TR>
-      <TR><TD PORT="monto" COLSPAN="3" ALIGN="LEFT">monto</TD></TR>
-      <TR><TD PORT="recurso" COLSPAN="3" ALIGN="LEFT">recurso</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="procedimiento_medico.html"
     tooltip="procedimiento_medico"
+  ];
+  "profesional" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">profesional</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+    </TABLE>>
+    URL="profesional.html"
+    tooltip="profesional"
   ];
   "recurso" [
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">recurso</TD></TR>
       <TR><TD PORT="nombre" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre</TD><TD PORT="nombre.type" ALIGN="LEFT">bpchar[100]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 0</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="recurso.html"
     tooltip="recurso"
-  ];
-  "requiere" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">requiere</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
-    </TABLE>>
-    URL="requiere.html"
-    tooltip="requiere"
-  ];
-  "turno" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">turno</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
-    </TABLE>>
-    URL="turno.html"
-    tooltip="turno"
   ];
 }

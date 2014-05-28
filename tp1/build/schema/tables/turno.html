@@ -34,7 +34,6 @@
 <table width='100%' border='0'>
 <tr valign='top'><td class='container' align='left' valign='top'>
 <form name='options' action=''>
- <label for='implied'><input type=checkbox id='implied'>Implied relationships</label>
  <label for='showRelatedCols'><input type=checkbox id='showRelatedCols'>Related columns</label>
  <label for='showConstNames'><input type=checkbox id='showConstNames'>Constraints</label>
  <label for='showComments'><input type=checkbox id='showComments'>Comments</label>
@@ -111,40 +110,19 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="atendido_por.codigo_turno refs turno.codigo via atendido_por_codigo_turno_fkey"><a href='atendido_por.html'>atendido_por</a><span class='relatedKey'>.codigo_turno</span>
-    </td>
-    <td class='constraint detail'>atendido_por_codigo_turno_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="comprobante.codigo_turno refs turno.codigo via comprobante_codigo_turno_fkey"><a href='comprobante.html'>comprobante</a><span class='relatedKey'>.codigo_turno</span>
     </td>
     <td class='constraint detail'>comprobante_codigo_turno_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="turno_asignado.codigo_turno refs turno.codigo via turno_asignado_codigo_turno_fkey"><a href='turno_asignado.html'>turno_asignado</a><span class='relatedKey'>.codigo_turno</span>
-    </td>
-    <td class='constraint detail'>turno_asignado_codigo_turno_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
   </table>
 </td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='impliedRelationship relative odd' valign='top'>
-    <td class='relatedTable detail' title="turno.codigo's name implies that it's a child of block_horas.codigo, but it doesn't reference that column."><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.codigo</span>
-    </td>
-    <td class='constraint detail'>Implied Constraint<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
+ <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
  <td class='detail'>sobreturno</td>
- <td class='detail'>bool</td>
+ <td class='detail'>bit</td>
  <td class='detail' align='right'>1</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
@@ -154,9 +132,31 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
+ <td class='detail'>tipo</td>
+ <td class='detail'>bpchar</td>
+ <td class='detail' align='right'>100</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='right'>null</td>
+ <td class='detail'></td>
+ <td class='detail'> </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='even'>
  <td class='detail'>observaciones</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>500</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='right'>null</td>
+ <td class='detail'></td>
+ <td class='detail'> </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='odd'>
+ <td class='detail'>anulado</td>
+ <td class='detail'>bit</td>
+ <td class='detail' align='right'>1</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>null</td>
@@ -187,49 +187,18 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
- <td class='detail'>anulado</td>
- <td class='detail'>bool</td>
- <td class='detail' align='right'>1</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='odd'>
- <td class='detail'>tipo</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>100</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
- <td class='detail'>codigo_block_horas</td>
+ <td class='detail'>hora</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
+ <td class='detail' align='center'></td>
  <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="turno.codigo_block_horas refs block_horas.codigo via turno_codigo_block_horas_fkey"><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.codigo</span>
-    </td>
-    <td class='constraint detail'>turno_codigo_block_horas_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
+ <td class='detail'></td>
+ <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>codigo_proced_medico</td>
+ <td class='detail'>codigo_procedimiento_medico</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
@@ -239,9 +208,189 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="turno.codigo_proced_medico refs procedimiento_medico.codigo via turno_codigo_proced_medico_fkey"><a href='procedimiento_medico.html'>procedimiento_medico</a><span class='relatedKey'>.codigo</span>
+    <td class='relatedTable detail' title="turno.codigo_procedimiento_medico refs procedimiento_medico.codigo via turno_codigo_procedimiento_medico_fkey"><a href='procedimiento_medico.html'>procedimiento_medico</a><span class='relatedKey'>.codigo</span>
     </td>
-    <td class='constraint detail'>turno_codigo_proced_medico_fkey<span title='Restrict delete:
+    <td class='constraint detail'>turno_codigo_procedimiento_medico_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='even'>
+ <td class='detail'>anio_block_horas</td>
+ <td class='detail'>int4</td>
+ <td class='detail' align='right'>10</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='center'></td>
+ <td class='detail'></td>
+ <td class='detail'></td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="turno.[anio_block_horas, semana_block_horas, dia_block_horas, hora_inicio_block_horas, hora_fin_block_horas] refs block_horas.[anio, semana, dia, hora_inicio, hora_fin] via turno_anio_block_horas_fkey"><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.anio</span>
+    </td>
+    <td class='constraint detail'>turno_anio_block_horas_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='odd'>
+ <td class='detail'>semana_block_horas</td>
+ <td class='detail'>int4</td>
+ <td class='detail' align='right'>10</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='center'></td>
+ <td class='detail'></td>
+ <td class='detail'></td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="turno.[anio_block_horas, semana_block_horas, dia_block_horas, hora_inicio_block_horas, hora_fin_block_horas] refs block_horas.[anio, semana, dia, hora_inicio, hora_fin] via turno_anio_block_horas_fkey"><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.semana</span>
+    </td>
+    <td class='constraint detail'>turno_anio_block_horas_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='even'>
+ <td class='detail'>dia_block_horas</td>
+ <td class='detail'>bpchar</td>
+ <td class='detail' align='right'>10</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='right'>null</td>
+ <td class='detail'></td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="turno.[anio_block_horas, semana_block_horas, dia_block_horas, hora_inicio_block_horas, hora_fin_block_horas] refs block_horas.[anio, semana, dia, hora_inicio, hora_fin] via turno_anio_block_horas_fkey"><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.dia</span>
+    </td>
+    <td class='constraint detail'>turno_anio_block_horas_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='odd'>
+ <td class='detail'>hora_inicio_block_horas</td>
+ <td class='detail'>time</td>
+ <td class='detail' align='right'>15,6</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='center'></td>
+ <td class='detail'></td>
+ <td class='detail'></td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="turno.[anio_block_horas, semana_block_horas, dia_block_horas, hora_inicio_block_horas, hora_fin_block_horas] refs block_horas.[anio, semana, dia, hora_inicio, hora_fin] via turno_anio_block_horas_fkey"><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.hora_inicio</span>
+    </td>
+    <td class='constraint detail'>turno_anio_block_horas_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='even'>
+ <td class='detail'>hora_fin_block_horas</td>
+ <td class='detail'>time</td>
+ <td class='detail' align='right'>15,6</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='center'></td>
+ <td class='detail'></td>
+ <td class='detail'></td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="turno.[anio_block_horas, semana_block_horas, dia_block_horas, hora_inicio_block_horas, hora_fin_block_horas] refs block_horas.[anio, semana, dia, hora_inicio, hora_fin] via turno_anio_block_horas_fkey"><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.hora_fin</span>
+    </td>
+    <td class='constraint detail'>turno_anio_block_horas_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='odd'>
+ <td class='detail'>tipo_documento_profesional</td>
+ <td class='detail'>bpchar</td>
+ <td class='detail' align='right'>10</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='center'></td>
+ <td class='detail'></td>
+ <td class='detail'></td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="turno.[tipo_documento_profesional, numero_documento_profesional] refs profesional.[tipo_documento_persona, numero_documento_persona] via turno_tipo_documento_profesional_fkey"><a href='profesional.html'>profesional</a><span class='relatedKey'>.tipo_documento_persona</span>
+    </td>
+    <td class='constraint detail'>turno_tipo_documento_profesional_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='even'>
+ <td class='detail'>numero_documento_profesional</td>
+ <td class='detail'>int4</td>
+ <td class='detail' align='right'>10</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='center'></td>
+ <td class='detail'></td>
+ <td class='detail'></td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="turno.[tipo_documento_profesional, numero_documento_profesional] refs profesional.[tipo_documento_persona, numero_documento_persona] via turno_tipo_documento_profesional_fkey"><a href='profesional.html'>profesional</a><span class='relatedKey'>.numero_documento_persona</span>
+    </td>
+    <td class='constraint detail'>turno_tipo_documento_profesional_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='odd'>
+ <td class='detail'>tipo_documento_paciente</td>
+ <td class='detail'>bpchar</td>
+ <td class='detail' align='right'>10</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='center'></td>
+ <td class='detail'></td>
+ <td class='detail'></td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="turno.[tipo_documento_paciente, numero_documento_paciente] refs paciente.[tipo_documento_persona, numero_documento_persona] via turno_tipo_documento_paciente_fkey"><a href='paciente.html'>paciente</a><span class='relatedKey'>.tipo_documento_persona</span>
+    </td>
+    <td class='constraint detail'>turno_tipo_documento_paciente_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='even'>
+ <td class='detail'>numero_documento_paciente</td>
+ <td class='detail'>int4</td>
+ <td class='detail' align='right'>10</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='center'></td>
+ <td class='detail'></td>
+ <td class='detail'></td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="turno.[tipo_documento_paciente, numero_documento_paciente] refs paciente.[tipo_documento_persona, numero_documento_persona] via turno_tipo_documento_paciente_fkey"><a href='paciente.html'>paciente</a><span class='relatedKey'>.numero_documento_persona</span>
+    </td>
+    <td class='constraint detail'>turno_tipo_documento_paciente_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
   </table>
@@ -249,7 +398,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='9 columns'>Table contained 0 rows at Mon May 26 22:43 ART 2014<p/>
+<p title='18 columns'>Table contained 0 rows at Wed May 28 17:52 ART 2014<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -275,45 +424,30 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from turno'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="atendido_por.html" title="atendido_por" alt="" coords="557,5,725,131">
-<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="243,145,512,412">
-<area shape="rect" id="node7" href="block_horas.html" title="block_horas" alt="" coords="7,135,196,487">
-<area shape="rect" id="node9" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="12,503,191,697">
-<area shape="rect" id="node4" href="comprobante.html" title="comprobante" alt="" coords="572,148,711,319">
-<area shape="rect" id="node10" href="turno_asignado.html" title="turno_asignado" alt="" coords="557,336,725,461">
+<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="648,8,800,179">
+<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="275,5,603,475">
+<area shape="rect" id="node5" href="block_horas.html" title="block_horas" alt="" coords="36,212,199,473">
+<area shape="rect" id="node7" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="28,24,207,195">
+<area shape="rect" id="node12" href="paciente.html" title="paciente" alt="" coords="7,655,228,1007">
+<area shape="rect" id="node14" href="profesional.html" title="profesional" alt="" coords="7,490,228,638">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/turno.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
-<map id="impliedTwoDegreesRelationshipsDiagram" name="impliedTwoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="atendido_por.html" title="atendido_por" alt="" coords="1153,5,1321,131">
-<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="839,133,1108,400">
-<area shape="rect" id="node5" href="paciente.html" title="paciente" alt="" coords="907,15,1040,95">
-<area shape="rect" id="node9" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="175,238,353,431">
-<area shape="rect" id="node13" href="block_horas.html" title="block_horas" alt="" coords="603,216,792,568">
-<area shape="rect" id="node7" href="autoriza.html" title="autoriza" alt="" coords="416,391,539,471">
-<area shape="rect" id="node11" href="profesional.html" title="profesional" alt="" coords="193,488,335,568">
-<area shape="rect" id="node24" href="recurso.html" title="recurso" alt="" coords="7,352,129,432">
-<area shape="rect" id="node15" href="tiene_especialidad.html" title="tiene_especialidad" alt="" coords="397,488,557,568">
-<area shape="rect" id="node19" href="comprobante.html" title="comprobante" alt="" coords="1168,148,1307,319">
-<area shape="rect" id="node21" href="cubre.html" title="cubre" alt="" coords="417,196,537,276">
-<area shape="rect" id="node25" href="requiere.html" title="requiere" alt="" coords="415,293,540,373">
-<area shape="rect" id="node32" href="turno_asignado.html" title="turno_asignado" alt="" coords="1153,531,1321,656">
-</map>
-
-  <a name='diagram'><img id='impliedTwoDegreesImg' src='../diagrams/turno.implied2degrees.png' usemap='#impliedTwoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="atendido_por.html" title="atendido_por" alt="" coords="1153,5,1321,131">
-<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="839,133,1108,400">
-<area shape="rect" id="node5" href="paciente.html" title="paciente" alt="" coords="907,15,1040,95">
-<area shape="rect" id="node9" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="175,318,353,511">
-<area shape="rect" id="node13" href="block_horas.html" title="block_horas" alt="" coords="603,296,792,648">
-<area shape="rect" id="node7" href="autoriza.html" title="autoriza" alt="" coords="416,471,539,551">
-<area shape="rect" id="node11" href="profesional.html" title="profesional" alt="" coords="193,568,335,648">
-<area shape="rect" id="node24" href="recurso.html" title="recurso" alt="" coords="7,432,129,512">
-<area shape="rect" id="node15" href="tiene_especialidad.html" title="tiene_especialidad" alt="" coords="397,568,557,648">
-<area shape="rect" id="node19" href="comprobante.html" title="comprobante" alt="" coords="1168,148,1307,319">
-<area shape="rect" id="node21" href="cubre.html" title="cubre" alt="" coords="417,276,537,356">
-<area shape="rect" id="node25" href="requiere.html" title="requiere" alt="" coords="415,373,540,453">
-<area shape="rect" id="node31" href="turno_asignado.html" title="turno_asignado" alt="" coords="1153,611,1321,736">
+<area shape="rect" id="node1" href="atiende.html" title="atiende" alt="" coords="600,5,723,85">
+<area shape="rect" id="node3" href="block_horas.html" title="block_horas" alt="" coords="259,17,421,279">
+<area shape="rect" id="node8" href="profesional.html" title="profesional" alt="" coords="229,305,451,453">
+<area shape="rect" id="node31" href="persona.html" title="persona" alt="" coords="32,468,157,548">
+<area shape="rect" id="node34" href="especialidad.html" title="especialidad" alt="" coords="28,371,161,451">
+<area shape="rect" id="node11" href="autoriza.html" title="autoriza" alt="" coords="600,589,723,669">
+<area shape="rect" id="node14" href="comprobante.html" title="comprobante" alt="" coords="871,351,1023,521">
+<area shape="rect" id="node16" href="turno.html" title="turno" alt="" coords="497,102,825,573">
+<area shape="rect" id="node18" href="usuario.html" title="usuario" alt="" coords="600,687,723,767">
+<area shape="rect" id="node21" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="5,969,184,1140">
+<area shape="rect" id="node27" href="paciente.html" title="paciente" alt="" coords="229,469,451,821">
+<area shape="rect" id="node19" href="cubre.html" title="cubre" alt="" coords="280,839,400,919">
+<area shape="rect" id="node23" href="plan.html" title="plan" alt="" coords="28,791,161,871">
+<area shape="rect" id="node25" href="demanda.html" title="demanda" alt="" coords="276,1069,404,1149">
+<area shape="rect" id="node37" href="realiza.html" title="realiza" alt="" coords="280,936,400,1016">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/turno.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

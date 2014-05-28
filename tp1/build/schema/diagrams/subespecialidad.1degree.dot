@@ -19,16 +19,31 @@ digraph "oneDegreeRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "profesional":"nombre_especialidad":w -> "especialidad":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
-  "profesional":"nombre_especialidad":w -> "subespecialidad":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "profesional":"nombre_subespecialidad":w -> "subespecialidad":"nombre_especialidad.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "requiere":"nombre_especialidad":w -> "subespecialidad":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "requiere":"nombre_subespecialidad":w -> "subespecialidad":"nombre_especialidad.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende":"nombre_especialidad":w -> "subespecialidad":"nombre_especialidad.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende":"nombre_subespecialidad":w -> "subespecialidad":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "profesional_ejerce":"nombre_especialidad":w -> "subespecialidad":"nombre_especialidad.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "profesional_ejerce":"nombre_subespecialidad":w -> "subespecialidad":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "realiza":"nombre_especialidad":w -> "subespecialidad":"nombre_especialidad.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "realiza":"nombre_subespecialidad":w -> "subespecialidad":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "subespecialidad":"nombre_especialidad":w -> "especialidad":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tiene_especialidad":"nombre_especialidad":w -> "subespecialidad":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tiene_especialidad":"nombre_subespecialidad":w -> "subespecialidad":"nombre_especialidad.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tiene_especialidad":"numero_documento":w -> "profesional":"numero_documento":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tiene_especialidad":"tipo_documento":w -> "profesional":"tipo_documento":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">atiende</TD></TR>
+      <TR><TD PORT="anio" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">anio</TD></TR>
+      <TR><TD PORT="semana" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">semana</TD></TR>
+      <TR><TD PORT="dia" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">dia</TD></TR>
+      <TR><TD PORT="hora_inicio" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">hora_inicio</TD></TR>
+      <TR><TD PORT="hora_fin" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">hora_fin</TD></TR>
+      <TR><TD PORT="tipo_documento_profesional" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento_profesional</TD></TR>
+      <TR><TD PORT="numero_documento_profesional" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento_profesional</TD></TR>
+      <TR><TD PORT="nombre_especialidad" COLSPAN="3" ALIGN="LEFT">nombre_especialidad</TD></TR>
+      <TR><TD PORT="nombre_subespecialidad" COLSPAN="3" ALIGN="LEFT">nombre_subespecialidad</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="atiende.html"
+    tooltip="atiende"
+  ];
   "especialidad" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
@@ -40,66 +55,41 @@ digraph "oneDegreeRelationshipsDiagram" {
     URL="especialidad.html"
     tooltip="especialidad"
   ];
-  "profesional" [
+  "profesional_ejerce" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">profesional</TD></TR>
-      <TR><TD PORT="tipo_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento</TD></TR>
-      <TR><TD PORT="numero_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento</TD></TR>
-      <TR><TD PORT="nombre" COLSPAN="3" ALIGN="LEFT">nombre</TD></TR>
-      <TR><TD PORT="apellido" COLSPAN="3" ALIGN="LEFT">apellido</TD></TR>
-      <TR><TD PORT="email" COLSPAN="3" ALIGN="LEFT">email</TD></TR>
-      <TR><TD PORT="matricula" COLSPAN="3" ALIGN="LEFT">matricula</TD></TR>
-      <TR><TD PORT="celular" COLSPAN="3" ALIGN="LEFT">celular</TD></TR>
-      <TR><TD PORT="nombre_especialidad" COLSPAN="3" ALIGN="LEFT">nombre_especialidad</TD></TR>
-      <TR><TD PORT="nombre_subespecialidad" COLSPAN="3" ALIGN="LEFT">nombre_subespecialidad</TD></TR>
-      <TR><TD PORT="codigo_postal_dom" COLSPAN="3" ALIGN="LEFT">codigo_postal_dom</TD></TR>
-      <TR><TD PORT="provincia_dom" COLSPAN="3" ALIGN="LEFT">provincia_dom</TD></TR>
-      <TR><TD PORT="localidad_dom" COLSPAN="3" ALIGN="LEFT">localidad_dom</TD></TR>
-      <TR><TD PORT="calle_dom" COLSPAN="3" ALIGN="LEFT">calle_dom</TD></TR>
-      <TR><TD PORT="numero_dom" COLSPAN="3" ALIGN="LEFT">numero_dom</TD></TR>
-      <TR><TD PORT="departamento_dom" COLSPAN="3" ALIGN="LEFT">departamento_dom</TD></TR>
-      <TR><TD PORT="piso_dom" COLSPAN="3" ALIGN="LEFT">piso_dom</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
-    </TABLE>>
-    URL="profesional.html"
-    tooltip="profesional"
-  ];
-  "requiere" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">requiere</TD></TR>
-      <TR><TD PORT="codigo_proced_medico" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo_proced_medico</TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">profesional_ejerce</TD></TR>
+      <TR><TD PORT="tipo_documento_profesional" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento_profesional</TD></TR>
+      <TR><TD PORT="numero_documento_profesional" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento_profesional</TD></TR>
       <TR><TD PORT="nombre_especialidad" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_especialidad</TD></TR>
       <TR><TD PORT="nombre_subespecialidad" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_subespecialidad</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="profesional_ejerce.html"
+    tooltip="profesional_ejerce"
+  ];
+  "realiza" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">realiza</TD></TR>
+      <TR><TD PORT="codigo_proced_medico" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo_proced_medico</TD></TR>
+      <TR><TD PORT="nombre_subespecialidad" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_subespecialidad</TD></TR>
+      <TR><TD PORT="nombre_especialidad" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_especialidad</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
-    URL="requiere.html"
-    tooltip="requiere"
+    URL="realiza.html"
+    tooltip="realiza"
   ];
   "subespecialidad" [
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">subespecialidad</TD></TR>
       <TR><TD PORT="nombre" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre</TD><TD PORT="nombre.type" ALIGN="LEFT">bpchar[100]</TD></TR>
-      <TR><TD PORT="nombre_especialidad" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_especialidad</TD><TD PORT="nombre_especialidad.type" ALIGN="LEFT">bpchar[100]</TD></TR>
       <TR><TD PORT="descripcion" COLSPAN="2" ALIGN="LEFT">descripcion</TD><TD PORT="descripcion.type" ALIGN="LEFT">bpchar[200]</TD></TR>
+      <TR><TD PORT="nombre_especialidad" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_especialidad</TD><TD PORT="nombre_especialidad.type" ALIGN="LEFT">bpchar[100]</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="subespecialidad.html"
     tooltip="subespecialidad"
-  ];
-  "tiene_especialidad" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tiene_especialidad</TD></TR>
-      <TR><TD PORT="tipo_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento</TD></TR>
-      <TR><TD PORT="numero_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento</TD></TR>
-      <TR><TD PORT="nombre_especialidad" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_especialidad</TD></TR>
-      <TR><TD PORT="nombre_subespecialidad" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_subespecialidad</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
-    </TABLE>>
-    URL="tiene_especialidad.html"
-    tooltip="tiene_especialidad"
   ];
 }

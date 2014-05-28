@@ -102,7 +102,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody valign='top'>
 <tr class='even'>
- <td class='primaryKey' title='Primary Key'>tipo_documento</td>
+ <td class='primaryKey' title='Primary Key'>tipo_documento_persona</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -111,18 +111,27 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="atendido_por.[tipo_documento, numero_documento] refs paciente.[tipo_documento, numero_documento] via atendido_por_tipo_documento_fkey"><a href='atendido_por.html'>atendido_por</a><span class='relatedKey'>.tipo_documento</span>
+    <td class='relatedTable detail' title="turno.[tipo_documento_paciente, numero_documento_paciente] refs paciente.[tipo_documento_persona, numero_documento_persona] via turno_tipo_documento_paciente_fkey"><a href='turno.html'>turno</a><span class='relatedKey'>.tipo_documento_paciente</span>
     </td>
-    <td class='constraint detail'>atendido_por_tipo_documento_fkey<span title='Restrict delete:
+    <td class='constraint detail'>turno_tipo_documento_paciente_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
   </table>
 </td>
- <td class='detail'> </td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="paciente.[tipo_documento_persona, numero_documento_persona] refs persona.[tipo_documento, numero_documento] via paciente_tipo_documento_persona_fkey"><a href='persona.html'>persona</a><span class='relatedKey'>.tipo_documento</span>
+    </td>
+    <td class='constraint detail'>paciente_tipo_documento_persona_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='primaryKey' title='Primary Key'>numero_documento</td>
+ <td class='primaryKey' title='Primary Key'>numero_documento_persona</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -131,14 +140,23 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="atendido_por.[tipo_documento, numero_documento] refs paciente.[tipo_documento, numero_documento] via atendido_por_tipo_documento_fkey"><a href='atendido_por.html'>atendido_por</a><span class='relatedKey'>.numero_documento</span>
+    <td class='relatedTable detail' title="turno.[tipo_documento_paciente, numero_documento_paciente] refs paciente.[tipo_documento_persona, numero_documento_persona] via turno_tipo_documento_paciente_fkey"><a href='turno.html'>turno</a><span class='relatedKey'>.numero_documento_paciente</span>
     </td>
-    <td class='constraint detail'>atendido_por_tipo_documento_fkey<span title='Restrict delete:
+    <td class='constraint detail'>turno_tipo_documento_paciente_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
   </table>
 </td>
- <td class='detail'> </td>
+ <td class='detail'>
+  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="paciente.[tipo_documento_persona, numero_documento_persona] refs persona.[tipo_documento, numero_documento] via paciente_tipo_documento_persona_fkey"><a href='persona.html'>persona</a><span class='relatedKey'>.numero_documento</span>
+    </td>
+    <td class='constraint detail'>paciente_tipo_documento_persona_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+  </table>
+ </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
@@ -153,51 +171,20 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>nombre</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>200</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='impliedRelationship relative odd' valign='top'>
-    <td class='relatedTable detail' title="paciente.nombre's name implies that it's a child of usuario.nombre, but it doesn't reference that column."><a href='usuario.html'>usuario</a><span class='relatedKey'>.nombre</span>
-    </td>
-    <td class='constraint detail'>Implied Constraint<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
  <td class='detail'>apellido_materno</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>200</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='odd'>
- <td class='detail'>apellido_paterno</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>200</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
+ <td class='detail' align='right'>null</td>
  <td class='detail'></td>
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
- <td class='detail'>numero_historia_clinica</td>
- <td class='detail'>int4</td>
- <td class='detail' align='right'>10</td>
+ <td class='detail'>apellido_paterno</td>
+ <td class='detail'>bpchar</td>
+ <td class='detail' align='right'>200</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>null</td>
@@ -228,9 +215,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>email</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>200</td>
+ <td class='detail'>titular</td>
+ <td class='detail'>bit</td>
+ <td class='detail' align='right'>1</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>null</td>
@@ -239,9 +226,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
- <td class='detail'>titular</td>
- <td class='detail'>bool</td>
- <td class='detail' align='right'>1</td>
+ <td class='detail'>historia_clinica</td>
+ <td class='detail'>int4</td>
+ <td class='detail' align='right'>10</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='right'>null</td>
@@ -266,34 +253,23 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail' align='right'>100</td>
  <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
+ <td class='detail' align='right'>'Consumidor final'::bpchar</td>
  <td class='detail'></td>
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>telefono</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>20</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
  <td class='detail'>nombre_plan</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
+ <td class='detail' align='center'></td>
+ <td class='detail'></td>
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="paciente.[nombre_plan, nombre_obra_social] refs plan.[nombre, nombre_obra_social] via paciente_nombre_plan_fkey"><a href='plan.html'>plan</a><span class='relatedKey'>.nombre</span>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="paciente.[nombre_plan, nombre_obra_social] refs plan.[nombre_obra_social, nombre] via paciente_nombre_plan_fkey"><a href='plan.html'>plan</a><span class='relatedKey'>.nombre_obra_social</span>
     </td>
     <td class='constraint detail'>paciente_nombre_plan_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
@@ -302,160 +278,20 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>nombre_obra_social</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
  <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
+ <td class='detail' align='center'></td>
+ <td class='detail'></td>
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="paciente.[nombre_plan, nombre_obra_social] refs plan.[nombre, nombre_obra_social] via paciente_nombre_plan_fkey"><a href='plan.html'>plan</a><span class='relatedKey'>.nombre_obra_social</span>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="paciente.[nombre_plan, nombre_obra_social] refs plan.[nombre_obra_social, nombre] via paciente_nombre_plan_fkey"><a href='plan.html'>plan</a><span class='relatedKey'>.nombre</span>
     </td>
     <td class='constraint detail'>paciente_nombre_plan_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
- <td class='detail'>codigo_postal_dom</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>10</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.codigo_postal</span>
-    </td>
-    <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='odd'>
- <td class='detail'>provincia_dom</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>20</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.provincia</span>
-    </td>
-    <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
- <td class='detail'>localidad_dom</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>100</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.localidad</span>
-    </td>
-    <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='odd'>
- <td class='detail'>calle_dom</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>100</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.calle</span>
-    </td>
-    <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
- <td class='detail'>numero_dom</td>
- <td class='detail'>int4</td>
- <td class='detail' align='right'>10</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.numero</span>
-    </td>
-    <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='odd'>
- <td class='detail'>departamento_dom</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>10</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>'-'::bpchar</td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.departamento</span>
-    </td>
-    <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
- <td class='detail'>piso_dom</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>10</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>'-'::bpchar</td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="paciente.[codigo_postal_dom, provincia_dom, localidad_dom, calle_dom, numero_dom, departamento_dom, piso_dom] refs domicilio.[codigo_postal, provincia, localidad, calle, numero, departamento, piso] via paciente_codigo_postal_dom_fkey"><a href='domicilio.html'>domicilio</a><span class='relatedKey'>.piso</span>
-    </td>
-    <td class='constraint detail'>paciente_codigo_postal_dom_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
   </table>
@@ -463,7 +299,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='23 columns'>Table contained 0 rows at Mon May 26 22:43 ART 2014<p/>
+<p title='13 columns'>Table contained 0 rows at Wed May 28 17:52 ART 2014<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -478,7 +314,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>tipo_documento + numero_documento</td>
+  <td class='primaryKey'>tipo_documento_persona + numero_documento_persona</td>
   <td class='detail'>Primary key</td>
   <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>paciente_pkey</td>
@@ -489,36 +325,39 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from paciente'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="atendido_por.html" title="atendido_por" alt="" coords="536,8,704,133">
-<area shape="rect" id="node3" href="paciente.html" title="paciente" alt="" coords="219,5,491,589">
-<area shape="rect" id="node6" href="domicilio.html" title="domicilio" alt="" coords="17,372,161,588">
-<area shape="rect" id="node11" href="plan.html" title="plan" alt="" coords="5,253,173,355">
+<area shape="rect" id="node1" href="paciente.html" title="paciente" alt="" coords="219,367,528,724">
+<area shape="rect" id="node3" href="plan.html" title="plan" alt="" coords="5,678,173,781">
+<area shape="rect" id="node6" href="persona.html" title="persona" alt="" coords="5,309,173,661">
+<area shape="rect" id="node8" href="turno.html" title="turno" alt="" coords="575,5,812,470">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/paciente.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="impliedTwoDegreesRelationshipsDiagram" name="impliedTwoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="atendido_por.html" title="atendido_por" alt="" coords="883,203,1051,328">
-<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="635,801,768,881">
-<area shape="rect" id="node5" href="paciente.html" title="paciente" alt="" coords="565,200,837,784">
-<area shape="rect" id="node9" href="plan.html" title="plan" alt="" coords="352,78,520,181">
-<area shape="rect" id="node15" href="domicilio.html" title="domicilio" alt="" coords="364,665,508,881">
-<area shape="rect" id="node20" href="usuario.html" title="usuario" alt="" coords="375,269,497,349">
-<area shape="rect" id="node7" href="cubre.html" title="cubre" alt="" coords="641,5,761,85">
-<area shape="rect" id="node11" href="obra_social.html" title="obra_social" alt="" coords="175,124,308,204">
-<area shape="rect" id="node13" href="recurso.html" title="recurso" alt="" coords="7,91,129,171">
-<area shape="rect" id="node28" href="profesional.html" title="profesional" alt="" coords="631,899,772,979">
-<area shape="rect" id="node37" href="usuario_rol.html" title="usuario_rol" alt="" coords="636,103,767,183">
+<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="1215,387,1353,467">
+<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="932,5,1169,470">
+<area shape="rect" id="node5" href="usuario.html" title="usuario" alt="" coords="180,621,303,701">
+<area shape="rect" id="node8" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="352,101,531,181">
+<area shape="rect" id="node15" href="paciente.html" title="paciente" alt="" coords="576,427,885,784">
+<area shape="rect" id="node24" href="profesional.html" title="profesional" alt="" coords="664,329,797,409">
+<area shape="rect" id="node28" href="block_horas.html" title="block_horas" alt="" coords="660,232,801,312">
+<area shape="rect" id="node6" href="cubre.html" title="cubre" alt="" coords="671,135,791,215">
+<area shape="rect" id="node10" href="plan.html" title="plan" alt="" coords="357,271,525,374">
+<area shape="rect" id="node12" href="obra_social.html" title="obra_social" alt="" coords="175,251,308,331">
+<area shape="rect" id="node14" href="recurso.html" title="recurso" alt="" coords="7,284,129,364">
+<area shape="rect" id="node19" href="persona.html" title="persona" alt="" coords="357,429,525,781">
 </map>
 
   <a name='diagram'><img id='impliedTwoDegreesImg' src='../diagrams/paciente.implied2degrees.png' usemap='#impliedTwoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="atendido_por.html" title="atendido_por" alt="" coords="713,105,881,231">
-<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="465,704,599,784">
-<area shape="rect" id="node5" href="paciente.html" title="paciente" alt="" coords="396,103,668,687">
-<area shape="rect" id="node9" href="plan.html" title="plan" alt="" coords="183,214,351,317">
-<area shape="rect" id="node12" href="domicilio.html" title="domicilio" alt="" coords="195,568,339,784">
-<area shape="rect" id="node7" href="cubre.html" title="cubre" alt="" coords="472,5,592,85">
-<area shape="rect" id="node22" href="obra_social.html" title="obra_social" alt="" coords="7,237,137,317">
-<area shape="rect" id="node23" href="profesional.html" title="profesional" alt="" coords="461,801,603,881">
+<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="1045,5,1184,85">
+<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="763,6,1000,471">
+<area shape="rect" id="node6" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="183,227,361,307">
+<area shape="rect" id="node10" href="paciente.html" title="paciente" alt="" coords="407,533,716,891">
+<area shape="rect" id="node18" href="profesional.html" title="profesional" alt="" coords="495,339,628,419">
+<area shape="rect" id="node22" href="block_horas.html" title="block_horas" alt="" coords="491,241,632,321">
+<area shape="rect" id="node4" href="cubre.html" title="cubre" alt="" coords="501,436,621,516">
+<area shape="rect" id="node8" href="plan.html" title="plan" alt="" coords="188,765,356,867">
+<area shape="rect" id="node17" href="obra_social.html" title="obra_social" alt="" coords="7,764,137,844">
+<area shape="rect" id="node14" href="persona.html" title="persona" alt="" coords="188,359,356,711">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/paciente.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

@@ -111,21 +111,21 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="profesional.[nombre_especialidad, nombre_subespecialidad] refs subespecialidad.[nombre, nombre_especialidad] via profesional_nombre_especialidad_fkey1"><a href='profesional.html'>profesional</a><span class='relatedKey'>.nombre_especialidad</span>
+    <td class='relatedTable detail' title="atiende.[nombre_subespecialidad, nombre_especialidad] refs subespecialidad.[nombre, nombre_especialidad] via atiende_nombre_subespecialidad_fkey"><a href='atiende.html'>atiende</a><span class='relatedKey'>.nombre_subespecialidad</span>
     </td>
-    <td class='constraint detail'>profesional_nombre_especialidad_fkey1<span title='Restrict delete:
+    <td class='constraint detail'>atiende_nombre_subespecialidad_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="requiere.[nombre_especialidad, nombre_subespecialidad] refs subespecialidad.[nombre, nombre_especialidad] via requiere_nombre_especialidad_fkey"><a href='requiere.html'>requiere</a><span class='relatedKey'>.nombre_especialidad</span>
+    <td class='relatedTable detail' title="profesional_ejerce.[nombre_subespecialidad, nombre_especialidad] refs subespecialidad.[nombre, nombre_especialidad] via profesional_ejerce_nombre_subespecialidad_fkey"><a href='profesional_ejerce.html'>profesional_ejerce</a><span class='relatedKey'>.nombre_subespecialidad</span>
     </td>
-    <td class='constraint detail'>requiere_nombre_especialidad_fkey<span title='Restrict delete:
+    <td class='constraint detail'>profesional_ejerce_nombre_subespecialidad_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
    <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="tiene_especialidad.[nombre_especialidad, nombre_subespecialidad] refs subespecialidad.[nombre, nombre_especialidad] via tiene_especialidad_nombre_especialidad_fkey"><a href='tiene_especialidad.html'>tiene_especialidad</a><span class='relatedKey'>.nombre_especialidad</span>
+    <td class='relatedTable detail' title="realiza.[nombre_subespecialidad, nombre_especialidad] refs subespecialidad.[nombre, nombre_especialidad] via realiza_nombre_subespecialidad_fkey"><a href='realiza.html'>realiza</a><span class='relatedKey'>.nombre_subespecialidad</span>
     </td>
-    <td class='constraint detail'>tiene_especialidad_nombre_especialidad_fkey<span title='Restrict delete:
+    <td class='constraint detail'>realiza_nombre_subespecialidad_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
   </table>
@@ -143,6 +143,17 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
+ <td class='detail'>descripcion</td>
+ <td class='detail'>bpchar</td>
+ <td class='detail' align='right'>200</td>
+ <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
+ <td class='detail' align='center'></td>
+ <td class='detail' align='right'>null</td>
+ <td class='detail'></td>
+ <td class='detail'> </td>
+ <td class='comment detail'></td>
+</tr>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>nombre_especialidad</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
@@ -151,29 +162,29 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="profesional.[nombre_especialidad, nombre_subespecialidad] refs subespecialidad.[nombre, nombre_especialidad] via profesional_nombre_especialidad_fkey1"><a href='profesional.html'>profesional</a><span class='relatedKey'>.nombre_subespecialidad</span>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="atiende.[nombre_subespecialidad, nombre_especialidad] refs subespecialidad.[nombre, nombre_especialidad] via atiende_nombre_subespecialidad_fkey"><a href='atiende.html'>atiende</a><span class='relatedKey'>.nombre_especialidad</span>
     </td>
-    <td class='constraint detail'>profesional_nombre_especialidad_fkey1<span title='Restrict delete:
+    <td class='constraint detail'>atiende_nombre_subespecialidad_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="requiere.[nombre_especialidad, nombre_subespecialidad] refs subespecialidad.[nombre, nombre_especialidad] via requiere_nombre_especialidad_fkey"><a href='requiere.html'>requiere</a><span class='relatedKey'>.nombre_subespecialidad</span>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="profesional_ejerce.[nombre_subespecialidad, nombre_especialidad] refs subespecialidad.[nombre, nombre_especialidad] via profesional_ejerce_nombre_subespecialidad_fkey"><a href='profesional_ejerce.html'>profesional_ejerce</a><span class='relatedKey'>.nombre_especialidad</span>
     </td>
-    <td class='constraint detail'>requiere_nombre_especialidad_fkey<span title='Restrict delete:
+    <td class='constraint detail'>profesional_ejerce_nombre_subespecialidad_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="tiene_especialidad.[nombre_especialidad, nombre_subespecialidad] refs subespecialidad.[nombre, nombre_especialidad] via tiene_especialidad_nombre_especialidad_fkey"><a href='tiene_especialidad.html'>tiene_especialidad</a><span class='relatedKey'>.nombre_subespecialidad</span>
+   <tr class='relative even' valign='top'>
+    <td class='relatedTable detail' title="realiza.[nombre_subespecialidad, nombre_especialidad] refs subespecialidad.[nombre, nombre_especialidad] via realiza_nombre_subespecialidad_fkey"><a href='realiza.html'>realiza</a><span class='relatedKey'>.nombre_especialidad</span>
     </td>
-    <td class='constraint detail'>tiene_especialidad_nombre_especialidad_fkey<span title='Restrict delete:
+    <td class='constraint detail'>realiza_nombre_subespecialidad_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
   </table>
 </td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="subespecialidad.nombre_especialidad refs especialidad.nombre via subespecialidad_nombre_especialidad_fkey"><a href='especialidad.html'>especialidad</a><span class='relatedKey'>.nombre</span>
     </td>
     <td class='constraint detail'>subespecialidad_nombre_especialidad_fkey<span title='Restrict delete:
@@ -183,19 +194,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
- <td class='detail'>descripcion</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>200</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'> </td>
- <td class='comment detail'></td>
-</tr>
 </table>
-<p title='3 columns'>Table contained 0 rows at Mon May 26 22:43 ART 2014<p/>
+<p title='3 columns'>Table contained 0 rows at Wed May 28 17:52 ART 2014<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -221,42 +221,39 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from subespecialidad'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="profesional.html" title="profesional" alt="" coords="489,5,679,425">
-<area shape="rect" id="node3" href="especialidad.html" title="especialidad" alt="" coords="5,343,139,446">
-<area shape="rect" id="node5" href="subespecialidad.html" title="subespecialidad" alt="" coords="184,408,443,539">
-<area shape="rect" id="node7" href="requiere.html" title="requiere" alt="" coords="489,477,679,603">
-<area shape="rect" id="node11" href="tiene_especialidad.html" title="tiene_especialidad" alt="" coords="725,185,915,333">
+<area shape="rect" id="node1" href="atiende.html" title="atiende" alt="" coords="489,5,727,267">
+<area shape="rect" id="node3" href="subespecialidad.html" title="subespecialidad" alt="" coords="184,316,443,447">
+<area shape="rect" id="node12" href="especialidad.html" title="especialidad" alt="" coords="5,365,139,467">
+<area shape="rect" id="node5" href="profesional_ejerce.html" title="profesional_ejerce" alt="" coords="489,283,727,431">
+<area shape="rect" id="node8" href="realiza.html" title="realiza" alt="" coords="513,448,703,573">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/subespecialidad.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="impliedTwoDegreesRelationshipsDiagram" name="impliedTwoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="autoriza.html" title="autoriza" alt="" coords="928,85,1051,165">
-<area shape="rect" id="node3" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="393,103,572,183">
-<area shape="rect" id="node5" href="profesional.html" title="profesional" alt="" coords="659,318,848,738">
-<area shape="rect" id="node15" href="recurso.html" title="recurso" alt="" coords="7,137,129,217">
-<area shape="rect" id="node13" href="especialidad.html" title="especialidad" alt="" coords="175,241,308,343">
-<area shape="rect" id="node23" href="domicilio.html" title="domicilio" alt="" coords="416,591,549,671">
-<area shape="rect" id="node28" href="usuario.html" title="usuario" alt="" coords="421,363,544,443">
-<area shape="rect" id="node31" href="subespecialidad.html" title="subespecialidad" alt="" coords="353,213,612,344">
-<area shape="rect" id="node7" href="block_horas.html" title="block_horas" alt="" coords="1129,216,1263,296">
-<area shape="rect" id="node9" href="tiene_especialidad.html" title="tiene_especialidad" alt="" coords="895,182,1084,330">
-<area shape="rect" id="node16" href="obra_social.html" title="obra_social" alt="" coords="175,72,308,152">
-<area shape="rect" id="node18" href="plan.html" title="plan" alt="" coords="416,5,549,85">
-<area shape="rect" id="node36" href="requiere.html" title="requiere" alt="" coords="659,104,848,229">
-<area shape="rect" id="node46" href="turno_asignado.html" title="turno_asignado" alt="" coords="916,347,1063,427">
+<area shape="rect" id="node1" href="atiende.html" title="atiende" alt="" coords="659,5,896,267">
+<area shape="rect" id="node3" href="block_horas.html" title="block_horas" alt="" coords="412,49,553,129">
+<area shape="rect" id="node8" href="subespecialidad.html" title="subespecialidad" alt="" coords="353,387,612,517">
+<area shape="rect" id="node11" href="profesional.html" title="profesional" alt="" coords="416,231,549,311">
+<area shape="rect" id="node16" href="recurso.html" title="recurso" alt="" coords="7,457,129,537">
+<area shape="rect" id="node23" href="especialidad.html" title="especialidad" alt="" coords="175,231,308,334">
+<area shape="rect" id="node14" href="autoriza.html" title="autoriza" alt="" coords="716,284,839,364">
+<area shape="rect" id="node19" href="demanda.html" title="demanda" alt="" coords="713,697,841,777">
+<area shape="rect" id="node21" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="393,535,572,615">
+<area shape="rect" id="node25" href="obra_social.html" title="obra_social" alt="" coords="175,499,308,579">
+<area shape="rect" id="node27" href="plan.html" title="plan" alt="" coords="416,632,549,712">
+<area shape="rect" id="node31" href="profesional_ejerce.html" title="profesional_ejerce" alt="" coords="659,381,896,529">
+<area shape="rect" id="node34" href="realiza.html" title="realiza" alt="" coords="683,545,872,671">
 </map>
 
   <a name='diagram'><img id='impliedTwoDegreesImg' src='../diagrams/subespecialidad.implied2degrees.png' usemap='#impliedTwoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="autoriza.html" title="autoriza" alt="" coords="759,227,881,307">
-<area shape="rect" id="node3" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="224,9,403,89">
-<area shape="rect" id="node5" href="profesional.html" title="profesional" alt="" coords="489,227,679,647">
-<area shape="rect" id="node14" href="domicilio.html" title="domicilio" alt="" coords="247,500,380,580">
-<area shape="rect" id="node19" href="especialidad.html" title="especialidad" alt="" coords="5,239,139,342">
-<area shape="rect" id="node21" href="subespecialidad.html" title="subespecialidad" alt="" coords="184,135,443,265">
-<area shape="rect" id="node7" href="block_horas.html" title="block_horas" alt="" coords="960,96,1093,176">
-<area shape="rect" id="node9" href="tiene_especialidad.html" title="tiene_especialidad" alt="" coords="725,62,915,210">
-<area shape="rect" id="node26" href="requiere.html" title="requiere" alt="" coords="489,49,679,175">
-<area shape="rect" id="node35" href="turno_asignado.html" title="turno_asignado" alt="" coords="747,324,893,404">
+<area shape="rect" id="node1" href="atiende.html" title="atiende" alt="" coords="489,5,727,267">
+<area shape="rect" id="node3" href="block_horas.html" title="block_horas" alt="" coords="243,47,384,127">
+<area shape="rect" id="node8" href="subespecialidad.html" title="subespecialidad" alt="" coords="184,281,443,412">
+<area shape="rect" id="node11" href="profesional.html" title="profesional" alt="" coords="247,144,380,224">
+<area shape="rect" id="node15" href="especialidad.html" title="especialidad" alt="" coords="5,238,139,341">
+<area shape="rect" id="node16" href="profesional_ejerce.html" title="profesional_ejerce" alt="" coords="489,283,727,431">
+<area shape="rect" id="node19" href="realiza.html" title="realiza" alt="" coords="513,448,703,573">
+<area shape="rect" id="node21" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="224,447,403,527">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/subespecialidad.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

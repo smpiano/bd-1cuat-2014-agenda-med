@@ -565,7 +565,7 @@ PACIENTES.
 
      \item \textbf{hora\_fin:} hora en que el PROFESIONAL finaliza la atención de PACIENTES.
 
-     \item \textbf{dia:} día de la semana en que atiende el PROFESIONAL.
+     \item \textbf{dia:} día de la semana en que atiende el PROFESIONAL, Ej: lunes, martes, etc.
 
      \item \textbf{semana:} semana del año en que es válido el block.
 
@@ -579,7 +579,8 @@ PACIENTES.
      \item \textbf{acepta\_sobreturnos:} vale sí si el PROFESIONAL decide aceptar sobreturnos dentro 
      del block de horas, no si no.
 
-     \item \textbf{cantidad\_pacientes:} número de pacientes que el PROFESIONAL atenderá durante el tiempo que dure el block de horas.
+     \item \textbf{cantidad\_pacientes:} número de pacientes que el PROFESIONAL atenderá
+     durante el tiempo que dure el block de horas.
 
 \end{itemize}
 
@@ -941,7 +942,7 @@ Indica que TURNOS pertencen a un BLOCK HORA.
 \begin{itemize}
 	\item \textbf{codigo\_turno}
 	\item \textbf{tipo\_documento\_profesional}
-           \item \textbf{numero\_documento\_profesional} 
+	\item \textbf{numero\_documento\_profesional} 
 	\item \textbf{anio\_block\_hora} 
 	\item \textbf{mes\_block\_hora}
 	\item \textbf{semana\_block\_hora}
@@ -971,18 +972,14 @@ HORAS determinado.
 
 
 \begin{itemize}
-     		\item \textbf{tipo\_documento\_profesional}
-
-     		\item \textbf{numero\_documento\_profesional} 
-
-		\item \textbf{nombre} (especialidad)
-
-		\item \textbf{nombre} (subespecialidad)
-
+	\item \textbf{tipo\_documento\_profesional}
+	\item \textbf{numero\_documento\_profesional} 
+	\item \textbf{nombre} (especialidad)
+	\item \textbf{nombre} (subespecialidad)
 	\item \textbf{anio\_block\_hora} 
 	\item \textbf{mes\_block\_hora}
 	\item \textbf{semana\_block\_hora}
-	\item \textbf{día\_block\_hora} 
+	\item \textbf{dia\_block\_hora} 
 	\item \textbf{hora\_inicio\_block\_hora}
 	\item \textbf{hora\_fin\_block\_hora}
 
@@ -1611,6 +1608,28 @@ porcentaje\_excencion, documentacion
 
 \item 
 \textbf{CC}: (nombre\_usuario, tipo\_rol)
+
+\item 
+\textbf{Atributos con posible valor nulo}: -
+
+\end{itemize}
+%--------------------------------------------------
+\subsubsection{\textbf{Atiende}}
+
+\begin{itemize}
+
+\item 
+\textbf{Atributos}: anio, semana, dia, hora\_inicio, hora\_fin, tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, nombre\_subespecialidad
+
+\item 
+\textbf{PK}: (anio, semana, dia, hora\_inicio, hora\_fin, tipo\_documento\_profesional, numero\_documento\_profesional)
+
+\item
+\textbf{FK}: anio, semana, dia, hora\_inicio, hora\_fin, tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, nombre\_subespecialidad
+
+\item 
+\textbf{CC}: (anio, semana, dia, hora\_inicio, hora\_fin, tipo\_documento\_profesional, numero\_documento\_profesional),
+(anio, semana, dia, hora\_inicio, hora\_fin, nombre\_especialidad, nombre\_subespecialidad)
 
 \item 
 \textbf{Atributos con posible valor nulo}: -

@@ -19,38 +19,48 @@ digraph "twoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "atendido_por":"codigo_turno":w -> "turno":"codigo.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atendido_por":"numero_documento":w -> "paciente":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atendido_por":"tipo_documento":w -> "paciente":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "autoriza":"elipses":w -> "procedimiento_medico":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
-  "autoriza":"elipses":w -> "profesional":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "autoriza":"elipses":w -> "profesional":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "block_horas":"nombre_especialidad":w -> "tiene_especialidad":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "block_horas":"nombre_subespecialidad":w -> "tiene_especialidad":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "block_horas":"numero_documento":w -> "tiene_especialidad":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "block_horas":"tipo_documento":w -> "tiene_especialidad":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "comprobante":"codigo_turno":w -> "turno":"codigo.type":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende":"elipses":w -> "block_horas":"anio":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende":"elipses":w -> "block_horas":"dia":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende":"elipses":w -> "block_horas":"hora_fin":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende":"elipses":w -> "block_horas":"hora_inicio":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende":"elipses":w -> "profesional":"numero_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende":"elipses":w -> "block_horas":"semana":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende":"elipses":w -> "profesional":"tipo_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
+  "autoriza":"elipses":w -> "profesional":"numero_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
+  "autoriza":"elipses":w -> "profesional":"tipo_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
+  "comprobante":"codigo_turno":w -> "turno":"codigo.type":e [arrowhead=none dir=back arrowtail=teeodot];
+  "comprobante":"nombre_usuario":w -> "usuario":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "cubre":"elipses":w -> "procedimiento_medico":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
-  "procedimiento_medico":"recurso":w -> "recurso":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "requiere":"elipses":w -> "procedimiento_medico":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tiene_especialidad":"elipses":w -> "profesional":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "tiene_especialidad":"elipses":w -> "profesional":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno":"codigo_block_horas":w -> "block_horas":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno":"codigo_proced_medico":w -> "procedimiento_medico":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno_asignado":"codigo_turno":w -> "turno":"codigo.type":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno_asignado":"numero_documento":w -> "profesional":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno_asignado":"tipo_documento":w -> "profesional":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atendido_por" [
+  "cubre":"elipses":w -> "plan":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "cubre":"elipses":w -> "plan":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "demanda":"elipses":w -> "procedimiento_medico":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
+  "paciente":"nombre_obra_social":w -> "plan":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "paciente":"nombre_plan":w -> "plan":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "paciente":"numero_documento_persona":w -> "persona":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "paciente":"tipo_documento_persona":w -> "persona":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "profesional":"nombre_especialidad":w -> "especialidad":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "profesional":"numero_documento_persona":w -> "persona":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "profesional":"tipo_documento_persona":w -> "persona":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "realiza":"elipses":w -> "procedimiento_medico":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"anio_block_horas":w -> "block_horas":"anio":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"codigo_procedimiento_medico":w -> "procedimiento_medico":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"dia_block_horas":w -> "block_horas":"dia":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"hora_fin_block_horas":w -> "block_horas":"hora_fin":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"hora_inicio_block_horas":w -> "block_horas":"hora_inicio":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"numero_documento_paciente":w -> "paciente":"numero_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"numero_documento_profesional":w -> "profesional":"numero_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"semana_block_horas":w -> "block_horas":"semana":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"tipo_documento_paciente":w -> "paciente":"tipo_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
+  "turno":"tipo_documento_profesional":w -> "profesional":"tipo_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">atendido_por</TD></TR>
-      <TR><TD PORT="tipo_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento</TD></TR>
-      <TR><TD PORT="numero_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento</TD></TR>
-      <TR><TD PORT="codigo_turno" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo_turno</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">atiende</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
-    URL="atendido_por.html"
-    tooltip="atendido_por"
+    URL="atiende.html"
+    tooltip="atiende"
   ];
   "autoriza" [
     label=<
@@ -66,20 +76,16 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">block_horas</TD></TR>
-      <TR><TD PORT="codigo" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo</TD></TR>
+      <TR><TD PORT="anio" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">anio</TD></TR>
+      <TR><TD PORT="semana" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">semana</TD></TR>
+      <TR><TD PORT="dia" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">dia</TD></TR>
+      <TR><TD PORT="hora_inicio" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">hora_inicio</TD></TR>
+      <TR><TD PORT="hora_fin" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">hora_fin</TD></TR>
       <TR><TD PORT="acepta_sobreturno" COLSPAN="3" ALIGN="LEFT">acepta_sobreturno</TD></TR>
-      <TR><TD PORT="semana" COLSPAN="3" ALIGN="LEFT">semana</TD></TR>
-      <TR><TD PORT="dia" COLSPAN="3" ALIGN="LEFT">dia</TD></TR>
-      <TR><TD PORT="hora_desde" COLSPAN="3" ALIGN="LEFT">hora_desde</TD></TR>
-      <TR><TD PORT="hora_hasta" COLSPAN="3" ALIGN="LEFT">hora_hasta</TD></TR>
       <TR><TD PORT="tipo_agenda" COLSPAN="3" ALIGN="LEFT">tipo_agenda</TD></TR>
       <TR><TD PORT="bloqueado" COLSPAN="3" ALIGN="LEFT">bloqueado</TD></TR>
       <TR><TD PORT="cantidad_pacientes" COLSPAN="3" ALIGN="LEFT">cantidad_pacientes</TD></TR>
-      <TR><TD PORT="tipo_documento" COLSPAN="3" ALIGN="LEFT">tipo_documento</TD></TR>
-      <TR><TD PORT="numero_documento" COLSPAN="3" ALIGN="LEFT">numero_documento</TD></TR>
-      <TR><TD PORT="nombre_especialidad" COLSPAN="3" ALIGN="LEFT">nombre_especialidad</TD></TR>
-      <TR><TD PORT="nombre_subespecialidad" COLSPAN="3" ALIGN="LEFT">nombre_subespecialidad</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">10 &gt;</TD></TR>
     </TABLE>>
     URL="block_horas.html"
     tooltip="block_horas"
@@ -89,11 +95,11 @@ digraph "twoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">comprobante</TD></TR>
       <TR><TD PORT="codigo_turno" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo_turno</TD></TR>
-      <TR><TD PORT="numero" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero</TD></TR>
+      <TR><TD PORT="numero" COLSPAN="3" ALIGN="LEFT">numero</TD></TR>
       <TR><TD PORT="fecha" COLSPAN="3" ALIGN="LEFT">fecha</TD></TR>
       <TR><TD PORT="hora" COLSPAN="3" ALIGN="LEFT">hora</TD></TR>
-      <TR><TD PORT="usuario" COLSPAN="3" ALIGN="LEFT">usuario</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD PORT="nombre_usuario" COLSPAN="3" ALIGN="LEFT">nombre_usuario</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="comprobante.html"
     tooltip="comprobante"
@@ -108,15 +114,67 @@ digraph "twoDegreesRelationshipsDiagram" {
     URL="cubre.html"
     tooltip="cubre"
   ];
+  "demanda" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">demanda</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+    </TABLE>>
+    URL="demanda.html"
+    tooltip="demanda"
+  ];
+  "especialidad" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">especialidad</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+    </TABLE>>
+    URL="especialidad.html"
+    tooltip="especialidad"
+  ];
   "paciente" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">paciente</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD PORT="tipo_documento_persona" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento_persona</TD></TR>
+      <TR><TD PORT="numero_documento_persona" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento_persona</TD></TR>
+      <TR><TD PORT="numero_afiliado" COLSPAN="3" ALIGN="LEFT">numero_afiliado</TD></TR>
+      <TR><TD PORT="apellido_materno" COLSPAN="3" ALIGN="LEFT">apellido_materno</TD></TR>
+      <TR><TD PORT="apellido_paterno" COLSPAN="3" ALIGN="LEFT">apellido_paterno</TD></TR>
+      <TR><TD PORT="lugar_nacimiento" COLSPAN="3" ALIGN="LEFT">lugar_nacimiento</TD></TR>
+      <TR><TD PORT="fecha_nacimiento" COLSPAN="3" ALIGN="LEFT">fecha_nacimiento</TD></TR>
+      <TR><TD PORT="titular" COLSPAN="3" ALIGN="LEFT">titular</TD></TR>
+      <TR><TD PORT="historia_clinica" COLSPAN="3" ALIGN="LEFT">historia_clinica</TD></TR>
+      <TR><TD PORT="condicion_paciente" COLSPAN="3" ALIGN="LEFT">condicion_paciente</TD></TR>
+      <TR><TD PORT="condicion_iva" COLSPAN="3" ALIGN="LEFT">condicion_iva</TD></TR>
+      <TR><TD PORT="nombre_plan" COLSPAN="3" ALIGN="LEFT">nombre_plan</TD></TR>
+      <TR><TD PORT="nombre_obra_social" COLSPAN="3" ALIGN="LEFT">nombre_obra_social</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="paciente.html"
     tooltip="paciente"
+  ];
+  "persona" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">persona</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+    </TABLE>>
+    URL="persona.html"
+    tooltip="persona"
+  ];
+  "plan" [
+    label=<
+    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">plan</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+    </TABLE>>
+    URL="plan.html"
+    tooltip="plan"
   ];
   "procedimiento_medico" [
     label=<
@@ -127,8 +185,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="condiciones_paciente" COLSPAN="3" ALIGN="LEFT">condiciones_paciente</TD></TR>
       <TR><TD PORT="duracion" COLSPAN="3" ALIGN="LEFT">duracion</TD></TR>
       <TR><TD PORT="monto" COLSPAN="3" ALIGN="LEFT">monto</TD></TR>
-      <TR><TD PORT="recurso" COLSPAN="3" ALIGN="LEFT">recurso</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 1</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="procedimiento_medico.html"
     tooltip="procedimiento_medico"
@@ -137,70 +194,60 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">profesional</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD PORT="tipo_documento_persona" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento_persona</TD></TR>
+      <TR><TD PORT="numero_documento_persona" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento_persona</TD></TR>
+      <TR><TD PORT="matricula" COLSPAN="3" ALIGN="LEFT">matricula</TD></TR>
+      <TR><TD PORT="nombre_especialidad" COLSPAN="3" ALIGN="LEFT">nombre_especialidad</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
     </TABLE>>
     URL="profesional.html"
     tooltip="profesional"
   ];
-  "recurso" [
+  "realiza" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">recurso</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
-    </TABLE>>
-    URL="recurso.html"
-    tooltip="recurso"
-  ];
-  "requiere" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">requiere</TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">realiza</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
       <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
-    URL="requiere.html"
-    tooltip="requiere"
-  ];
-  "tiene_especialidad" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">tiene_especialidad</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
-    </TABLE>>
-    URL="tiene_especialidad.html"
-    tooltip="tiene_especialidad"
+    URL="realiza.html"
+    tooltip="realiza"
   ];
   "turno" [
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">turno</TD></TR>
       <TR><TD PORT="codigo" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo</TD><TD PORT="codigo.type" ALIGN="LEFT">int4[10]</TD></TR>
-      <TR><TD PORT="sobreturno" COLSPAN="2" ALIGN="LEFT">sobreturno</TD><TD PORT="sobreturno.type" ALIGN="LEFT">bool[1]</TD></TR>
+      <TR><TD PORT="sobreturno" COLSPAN="2" ALIGN="LEFT">sobreturno</TD><TD PORT="sobreturno.type" ALIGN="LEFT">bit[1]</TD></TR>
+      <TR><TD PORT="tipo" COLSPAN="2" ALIGN="LEFT">tipo</TD><TD PORT="tipo.type" ALIGN="LEFT">bpchar[100]</TD></TR>
       <TR><TD PORT="observaciones" COLSPAN="2" ALIGN="LEFT">observaciones</TD><TD PORT="observaciones.type" ALIGN="LEFT">bpchar[500]</TD></TR>
+      <TR><TD PORT="anulado" COLSPAN="2" ALIGN="LEFT">anulado</TD><TD PORT="anulado.type" ALIGN="LEFT">bit[1]</TD></TR>
       <TR><TD PORT="fecha" COLSPAN="2" ALIGN="LEFT">fecha</TD><TD PORT="fecha.type" ALIGN="LEFT">date[13]</TD></TR>
       <TR><TD PORT="lugar" COLSPAN="2" ALIGN="LEFT">lugar</TD><TD PORT="lugar.type" ALIGN="LEFT">bpchar[100]</TD></TR>
-      <TR><TD PORT="anulado" COLSPAN="2" ALIGN="LEFT">anulado</TD><TD PORT="anulado.type" ALIGN="LEFT">bool[1]</TD></TR>
-      <TR><TD PORT="tipo" COLSPAN="2" ALIGN="LEFT">tipo</TD><TD PORT="tipo.type" ALIGN="LEFT">bpchar[100]</TD></TR>
-      <TR><TD PORT="codigo_block_horas" COLSPAN="2" ALIGN="LEFT">codigo_block_horas</TD><TD PORT="codigo_block_horas.type" ALIGN="LEFT">int4[10]</TD></TR>
-      <TR><TD PORT="codigo_proced_medico" COLSPAN="2" ALIGN="LEFT">codigo_proced_medico</TD><TD PORT="codigo_proced_medico.type" ALIGN="LEFT">bpchar[10]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+      <TR><TD PORT="hora" COLSPAN="2" ALIGN="LEFT">hora</TD><TD PORT="hora.type" ALIGN="LEFT">int4[10]</TD></TR>
+      <TR><TD PORT="codigo_procedimiento_medico" COLSPAN="2" ALIGN="LEFT">codigo_procedimiento_medico</TD><TD PORT="codigo_procedimiento_medico.type" ALIGN="LEFT">bpchar[10]</TD></TR>
+      <TR><TD PORT="anio_block_horas" COLSPAN="2" ALIGN="LEFT">anio_block_horas</TD><TD PORT="anio_block_horas.type" ALIGN="LEFT">int4[10]</TD></TR>
+      <TR><TD PORT="semana_block_horas" COLSPAN="2" ALIGN="LEFT">semana_block_horas</TD><TD PORT="semana_block_horas.type" ALIGN="LEFT">int4[10]</TD></TR>
+      <TR><TD PORT="dia_block_horas" COLSPAN="2" ALIGN="LEFT">dia_block_horas</TD><TD PORT="dia_block_horas.type" ALIGN="LEFT">bpchar[10]</TD></TR>
+      <TR><TD PORT="hora_inicio_block_horas" COLSPAN="2" ALIGN="LEFT">hora_inicio_block_horas</TD><TD PORT="hora_inicio_block_horas.type" ALIGN="LEFT">time[15,6]</TD></TR>
+      <TR><TD PORT="hora_fin_block_horas" COLSPAN="2" ALIGN="LEFT">hora_fin_block_horas</TD><TD PORT="hora_fin_block_horas.type" ALIGN="LEFT">time[15,6]</TD></TR>
+      <TR><TD PORT="tipo_documento_profesional" COLSPAN="2" ALIGN="LEFT">tipo_documento_profesional</TD><TD PORT="tipo_documento_profesional.type" ALIGN="LEFT">bpchar[10]</TD></TR>
+      <TR><TD PORT="numero_documento_profesional" COLSPAN="2" ALIGN="LEFT">numero_documento_profesional</TD><TD PORT="numero_documento_profesional.type" ALIGN="LEFT">int4[10]</TD></TR>
+      <TR><TD PORT="tipo_documento_paciente" COLSPAN="2" ALIGN="LEFT">tipo_documento_paciente</TD><TD PORT="tipo_documento_paciente.type" ALIGN="LEFT">bpchar[10]</TD></TR>
+      <TR><TD PORT="numero_documento_paciente" COLSPAN="2" ALIGN="LEFT">numero_documento_paciente</TD><TD PORT="numero_documento_paciente.type" ALIGN="LEFT">int4[10]</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="turno.html"
     tooltip="turno"
   ];
-  "turno_asignado" [
+  "usuario" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">turno_asignado</TD></TR>
-      <TR><TD PORT="tipo_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento</TD></TR>
-      <TR><TD PORT="numero_documento" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento</TD></TR>
-      <TR><TD PORT="codigo_turno" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo_turno</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">usuario</TD></TR>
+      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
-    URL="turno_asignado.html"
-    tooltip="turno_asignado"
+    URL="usuario.html"
+    tooltip="usuario"
   ];
 }

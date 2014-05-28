@@ -34,7 +34,6 @@
 <table width='100%' border='0'>
 <tr valign='top'><td class='container' align='left' valign='top'>
 <form name='options' action=''>
- <label for='implied'><input type=checkbox id='implied'>Implied relationships</label>
  <label for='showRelatedCols'><input type=checkbox id='showRelatedCols'>Related columns</label>
  <label for='showConstNames'><input type=checkbox id='showConstNames'>Constraints</label>
  <label for='showComments'><input type=checkbox id='showComments'>Comments</label>
@@ -111,27 +110,27 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="autoriza.codigo_proced_medico refs procedimiento_medico.codigo via autoriza_codigo_proced_medico_fkey"><a href='autoriza.html'>autoriza</a><span class='relatedKey'>.codigo_proced_medico</span>
-    </td>
-    <td class='constraint detail'>autoriza_codigo_proced_medico_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="cubre.codigo_proced_medico refs procedimiento_medico.codigo via cubre_codigo_proced_medico_fkey"><a href='cubre.html'>cubre</a><span class='relatedKey'>.codigo_proced_medico</span>
     </td>
     <td class='constraint detail'>cubre_codigo_proced_medico_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="requiere.codigo_proced_medico refs procedimiento_medico.codigo via requiere_codigo_proced_medico_fkey"><a href='requiere.html'>requiere</a><span class='relatedKey'>.codigo_proced_medico</span>
+    <td class='relatedTable detail' title="demanda.codigo_proced_medico refs procedimiento_medico.codigo via demanda_codigo_proced_medico_fkey"><a href='demanda.html'>demanda</a><span class='relatedKey'>.codigo_proced_medico</span>
     </td>
-    <td class='constraint detail'>requiere_codigo_proced_medico_fkey<span title='Restrict delete:
+    <td class='constraint detail'>demanda_codigo_proced_medico_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="turno.codigo_proced_medico refs procedimiento_medico.codigo via turno_codigo_proced_medico_fkey"><a href='turno.html'>turno</a><span class='relatedKey'>.codigo_proced_medico</span>
+    <td class='relatedTable detail' title="realiza.codigo_proced_medico refs procedimiento_medico.codigo via realiza_codigo_proced_medico_fkey"><a href='realiza.html'>realiza</a><span class='relatedKey'>.codigo_proced_medico</span>
     </td>
-    <td class='constraint detail'>turno_codigo_proced_medico_fkey<span title='Restrict delete:
+    <td class='constraint detail'>realiza_codigo_proced_medico_fkey<span title='Restrict delete:
+ Parent cannot be deleted if children exist'>&nbsp;R</span></td>
+   </tr>
+   <tr class='relative odd' valign='top'>
+    <td class='relatedTable detail' title="turno.codigo_procedimiento_medico refs procedimiento_medico.codigo via turno_codigo_procedimiento_medico_fkey"><a href='turno.html'>turno</a><span class='relatedKey'>.codigo_procedimiento_medico</span>
+    </td>
+    <td class='constraint detail'>turno_codigo_procedimiento_medico_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
   </table>
@@ -183,28 +182,8 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
- <td class='detail'>recurso</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>100</td>
- <td class='detail' align='center' title='nullable'>&nbsp;&radic;&nbsp;</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='right'>null</td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="procedimiento_medico.recurso refs recurso.nombre via procedimiento_medico_recurso_fkey"><a href='recurso.html'>recurso</a><span class='relatedKey'>.nombre</span>
-    </td>
-    <td class='constraint detail'>procedimiento_medico_recurso_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
 </table>
-<p title='6 columns'>Table contained 0 rows at Mon May 26 22:43 ART 2014<p/>
+<p title='5 columns'>Table contained 0 rows at Wed May 28 17:52 ART 2014<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -230,47 +209,26 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from procedimiento_medico'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="autoriza.html" title="autoriza" alt="" coords="496,5,677,131">
-<area shape="rect" id="node3" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="176,262,445,461">
-<area shape="rect" id="node7" href="recurso.html" title="recurso" alt="" coords="7,379,129,459">
-<area shape="rect" id="node4" href="cubre.html" title="cubre" alt="" coords="496,148,677,319">
-<area shape="rect" id="node8" href="requiere.html" title="requiere" alt="" coords="492,336,681,461">
-<area shape="rect" id="node10" href="turno.html" title="turno" alt="" coords="496,479,677,740">
+<area shape="rect" id="node1" href="cubre.html" title="cubre" alt="" coords="351,5,532,176">
+<area shape="rect" id="node3" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="7,263,276,439">
+<area shape="rect" id="node4" href="demanda.html" title="demanda" alt="" coords="351,193,532,295">
+<area shape="rect" id="node6" href="realiza.html" title="realiza" alt="" coords="347,312,536,437">
+<area shape="rect" id="node8" href="turno.html" title="turno" alt="" coords="323,454,560,919">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/procedimiento_medico.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
-<map id="impliedTwoDegreesRelationshipsDiagram" name="impliedTwoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="atendido_por.html" title="atendido_por" alt="" coords="927,5,1065,85">
-<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="673,55,855,316">
-<area shape="rect" id="node6" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="353,429,623,627">
-<area shape="rect" id="node36" href="block_horas.html" title="block_horas" alt="" coords="421,133,555,213">
-<area shape="rect" id="node4" href="autoriza.html" title="autoriza" alt="" coords="905,689,1087,815">
-<area shape="rect" id="node8" href="profesional.html" title="profesional" alt="" coords="693,700,835,780">
-<area shape="rect" id="node19" href="recurso.html" title="recurso" alt="" coords="7,543,129,623">
-<area shape="rect" id="node17" href="especialidad.html" title="especialidad" alt="" coords="175,647,308,727">
-<area shape="rect" id="node27" href="subespecialidad.html" title="subespecialidad" alt="" coords="413,644,563,724">
-<area shape="rect" id="node10" href="comprobante.html" title="comprobante" alt="" coords="927,103,1065,183">
-<area shape="rect" id="node12" href="cubre.html" title="cubre" alt="" coords="673,333,855,504">
-<area shape="rect" id="node15" href="plan.html" title="plan" alt="" coords="421,332,555,412">
-<area shape="rect" id="node20" href="obra_social.html" title="obra_social" alt="" coords="175,357,308,437">
-<area shape="rect" id="node29" href="requiere.html" title="requiere" alt="" coords="669,557,859,683">
-<area shape="rect" id="node39" href="turno_asignado.html" title="turno_asignado" alt="" coords="923,592,1069,672">
-</map>
-
-  <a name='diagram'><img id='impliedTwoDegreesImg' src='../diagrams/procedimiento_medico.implied2degrees.png' usemap='#impliedTwoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="atendido_por.html" title="atendido_por" alt="" coords="749,5,888,85">
-<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="496,55,677,316">
-<area shape="rect" id="node6" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="176,430,445,629">
-<area shape="rect" id="node27" href="block_horas.html" title="block_horas" alt="" coords="244,213,377,293">
-<area shape="rect" id="node4" href="autoriza.html" title="autoriza" alt="" coords="728,383,909,508">
-<area shape="rect" id="node8" href="profesional.html" title="profesional" alt="" coords="516,333,657,413">
-<area shape="rect" id="node18" href="recurso.html" title="recurso" alt="" coords="7,547,129,627">
-<area shape="rect" id="node20" href="subespecialidad.html" title="subespecialidad" alt="" coords="236,333,385,413">
-<area shape="rect" id="node10" href="comprobante.html" title="comprobante" alt="" coords="749,103,888,183">
-<area shape="rect" id="node12" href="cubre.html" title="cubre" alt="" coords="496,624,677,795">
-<area shape="rect" id="node15" href="plan.html" title="plan" alt="" coords="244,645,377,725">
-<area shape="rect" id="node22" href="requiere.html" title="requiere" alt="" coords="492,431,681,556">
-<area shape="rect" id="node29" href="turno_asignado.html" title="turno_asignado" alt="" coords="745,285,892,365">
+<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="841,5,980,85">
+<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="559,6,796,471">
+<area shape="rect" id="node6" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="7,256,276,432">
+<area shape="rect" id="node14" href="paciente.html" title="paciente" alt="" coords="351,436,484,516">
+<area shape="rect" id="node23" href="block_horas.html" title="block_horas" alt="" coords="347,241,488,321">
+<area shape="rect" id="node30" href="profesional.html" title="profesional" alt="" coords="351,339,484,419">
+<area shape="rect" id="node4" href="cubre.html" title="cubre" alt="" coords="327,17,508,188">
+<area shape="rect" id="node8" href="plan.html" title="plan" alt="" coords="75,99,208,179">
+<area shape="rect" id="node10" href="demanda.html" title="demanda" alt="" coords="327,533,508,635">
+<area shape="rect" id="node13" href="recurso.html" title="recurso" alt="" coords="80,532,203,612">
+<area shape="rect" id="node17" href="realiza.html" title="realiza" alt="" coords="323,652,512,777">
+<area shape="rect" id="node20" href="subespecialidad.html" title="subespecialidad" alt="" coords="67,685,216,765">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/procedimiento_medico.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
