@@ -690,11 +690,16 @@ Asocia a un PACIENTE y al TURNO que le ha sido asignado.
 
 \textbf{Especificación de atributos}
 
+\begin{itemize}
+
      \item \textbf{tipo\_documento} (paciente)
 
      \item \textbf{numero\_documento} (paciente)
 
-     \item \textbf{codigo} (turno)
+    % \item \textbf{codigo} (turno)
+
+\end{itemize}
+
 
 \textbf{Especificación de identificador único}
 
@@ -718,8 +723,12 @@ Indica qué PROCEDIMIENTO MÉDICO motivó la solicitud del TURNO.
 
 \textbf{Especificación de atributos}
 
-     \item \textbf{codigo}(turno)
-	 \item \textbf{codigo}(procedimiento_medico)
+
+\begin{itemize}
+     	\item \textbf{codigo} (turno)
+	\item \textbf{codigo} (procedimiento\_medico)
+
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -737,11 +746,13 @@ Indica qué PLAN de OBRA SOCIAL cubre a un PACIENTE.
 
 \textbf{Especificación de atributos}
 
+\begin{itemize}
 	\item \textbf{nombre}(plan)
 	
-     \item \textbf{tipo\_documento}(paciente)
+	\item \textbf{tipo\_documento}(paciente)	
 
      \item \textbf{numero\_documento}(paciente)
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -800,11 +811,15 @@ un PROCEDIMIENTO MÉDICO.
 
 \textbf{Especificación de atributos}
 
+\begin{itemize}
+
      \item \textbf{nombre} (recurso)
 
      \item \textbf{tipo\_documento} (profesional)
 
      \item \textbf{numero\_documento} (profesional)
+
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -827,11 +842,15 @@ Indica qué SUBESPECIALIDAD realiza determinado PROCEDIMIENTO MEDICO.
 \textbf{Especificación de atributos}
 
 
+\begin{itemize}
      \item \textbf{codigo} (procedimiento\_medico)
 
      \item \textbf{codigo} (especialidad)
 
      \item \textbf{nombre} (subespecialidad)
+
+
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -854,6 +873,8 @@ Indica qué SUBESPECIALIDAD ejerce un PROFESIONAL del hospital.
 \textbf{Especificación de atributos}
 
 
+\begin{itemize}
+
      \item \textbf{codigo} (especialidad)
 
      \item \textbf{nombre} (subespecialidad)
@@ -862,6 +883,7 @@ Indica qué SUBESPECIALIDAD ejerce un PROFESIONAL del hospital.
 
      \item \textbf{numero\_documento} (profesional)
 
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -886,11 +908,16 @@ que predomine.
 
 \textbf{Especificación de atributos}
 
+
+\begin{itemize}
+
      \item \textbf{tipo\_documento} (profesional)
 
      \item \textbf{numero\_documento} (profesional)
 	 
 	 \item \textbf{nombre} (especialidad)
+
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -910,6 +937,8 @@ Indica que TURNOS pertencen a un BLOCK HORA.
 
 \textbf{Especificación de atributos}
 
+
+\begin{itemize}
 	\item \textbf{codigo} (turno)
 	\item \textbf{anio} (block\_hora)
 	\item \textbf{mes} (block\_hora)
@@ -917,6 +946,8 @@ Indica que TURNOS pertencen a un BLOCK HORA.
 	\item \textbf{día} (block\_hora)
 	\item \textbf{hora\_inicio} (block\_hora)
 	\item \textbf{hora\_fin} (block\_hora)
+
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -937,6 +968,7 @@ HORAS determinado.
 \textbf{Especificación de atributos}
 
 
+\begin{itemize}
 		\item \textbf{tipo\_documento} (profesional)
 
 		\item \textbf{numero\_documento} (profesional)
@@ -957,6 +989,8 @@ HORAS determinado.
 
 		\item \textbf{hora\_fin} (block\_hora)
 
+
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -988,9 +1022,15 @@ Indica que COMPROBANTES verifican la validez del TURNO solicitado.
 
 \textbf{Especificación de atributos}
 
+
+\begin{itemize}
+
      \item \textbf{codigo} (turno)
 
      \item \textbf{numero} (comprobante)
+
+
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -1010,9 +1050,15 @@ Indica como se clasifican las especialidades en subespecialidades.
 
 \textbf{Especificación de atributos}
 
+
+\begin{itemize}
+
      \item \textbf{nombre} (especialidad)
 
      \item \textbf{nombre} (subespecialidad)
+
+
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -1032,9 +1078,14 @@ Indica que planes ofrece una obra social.
 
 \textbf{Especificación de atributos}
 
+
+\begin{itemize}
      \item \textbf{nombre} (plan)
 
      \item \textbf{nombre} (obra\_social)
+
+
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -1054,11 +1105,16 @@ Indica que USUARIO de la aplicación generó un determinado COMPROBATE.
 
 \textbf{Especificación de atributos}
 
+
+\begin{itemize}
      \item \textbf{codigo} (turno)
 
      \item \textbf{numero} (comprobante)
 
      \item \textbf{nombre} (usuario)
+
+
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -1079,9 +1135,14 @@ Indica que ROLES tiene cada USUARIO.
 
 \textbf{Especificación de atributos}
 
+
+\begin{itemize}
+
      \item \textbf{nombre} (usuario)
 
      \item \textbf{tipo} (rol)
+
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
@@ -1102,9 +1163,13 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 
 \textbf{Especificación de atributos}
 
+
+\begin{itemize}
      \item \textbf{codigo} (procedimiento\_medico)
 
      \item \textbf{nombre} (recurso)
+
+\end{itemize}
 
 \textbf{Especificación de identificador único}
 
