@@ -282,9 +282,8 @@ Persona física que puede ser un paciente o un profesional.
 
 \begin{itemize}
 
-    \item \textbf{tipo\_documento}
+    \item \textbf{tipo\_documento + numero\_documento}
 
-    \item \textbf{numero\_documento}
 
 \end{itemize}
 
@@ -586,16 +585,7 @@ PACIENTES.
 \textbf{Especificación de identificador único}
 
 \begin{itemize}
-	\item \textbf{tipo\_documento\_profesional}
-	\item \textbf{numero\_documento\_profesional}
-	\item \textbf{nombre\_especialidad}
-	\item \textbf{nombre\_subespecialidad}
-	\item \textbf{anio}
-	\item \textbf{mes}
-	\item \textbf{semana}
-	\item \textbf{día}
-	\item \textbf{hora\_inicio}
-	\item \textbf{hora\_fin}
+	\item \textbf{tipo\_documento\_profesional + numero\_documento\_profesional + nombre\_especialidad + nombre\_subespecialidad + anio + mes + semana + dia + hora\_inicio + hora\_fin }
    
 
 \end{itemize}
@@ -624,9 +614,8 @@ PACIENTE reserva un turno.
 
 \begin{itemize}
 
-     \item \textbf{codigo\_turno}
+     \item \textbf{codigo\_turno + numero}
 
-     \item \textbf{numero}
 
 \end{itemize}
 
@@ -691,23 +680,13 @@ Asocia a un PACIENTE y al TURNO que le ha sido asignado.
 \textbf{Especificación de atributos}
 
 \begin{itemize}
-
-     \item \textbf{tipo\_documento\_paciente}
-
-     \item \textbf{numero\_documento\_paciente}
-
-    % \item \textbf{codigo\_turno}
-
+-
 \end{itemize}
 
 
 \textbf{Especificación de identificador único}
 
 \begin{itemize}
-
-     \item \textbf{tipo\_documento\_paciente}
-
-     \item \textbf{numero\_documento\_paciente}
 
      \item \textbf{codigo\_turno}
 
@@ -725,9 +704,7 @@ Indica qué PROCEDIMIENTO MÉDICO motivó la solicitud del TURNO.
 
 
 \begin{itemize}
-     	\item \textbf{codigo\_turno}
-	\item \textbf{codigo\_procedimiento\_medico}
-
+-
 \end{itemize}
 
 \textbf{Especificación de identificador único}
@@ -747,20 +724,14 @@ Indica qué PLAN de OBRA SOCIAL cubre a un PACIENTE.
 \textbf{Especificación de atributos}
 
 \begin{itemize}
-	\item \textbf{nombre\_plan}
-	
-	\item \textbf{tipo\_documento\_paciente}
-
-     \item \textbf{numero\_documento\_paciente}
+	-
 \end{itemize}
 
 \textbf{Especificación de identificador único}
 
 \begin{itemize}
 
-     \item \textbf{tipo\_documento\_paciente}
-
-     \item \textbf{numero\_documento\_paciente}
+     \item \textbf{tipo\_documento\_paciente + numero\_documento\_paciente}
 
 \end{itemize}
 
@@ -781,12 +752,6 @@ OBRA SOCIAL determinada en relación a un PROCEDIMIENTO MÉDICO.
 
      \item \textbf{porcentaje\_exención:} indica qué porcentaje de cobertura brinda
      el PLAN para el PROCEDIMIENTO MÉDICO.
-
-     \item \textbf{codigo\_procedimiento\_medico}
-
-     \item \textbf{nombre\_obra\_social} 
-
-     \item \textbf{nombre\_plan}
 	 
 \end{itemize}
 
@@ -794,11 +759,7 @@ OBRA SOCIAL determinada en relación a un PROCEDIMIENTO MÉDICO.
 
 \begin{itemize}
 
-     \item \textbf{codigo\_procedimiento\_medico}
-
-     \item \textbf{nombre\_obra\_social}
-
-     \item \textbf{nombre\_plan}
+     \item \textbf{codigo\_procedimiento\_medico + nombre\_obra\_social + nombre\_plan}
 
 \end{itemize}
 
@@ -812,24 +773,16 @@ un PROCEDIMIENTO MÉDICO.
 \textbf{Especificación de atributos}
 
 \begin{itemize}
-
-     \item \textbf{nombre\_recurso}
-
-     \item \textbf{tipo\_documento\_profesional}
-
-     \item \textbf{numero\_documento\_profesional}
-
+ -
 \end{itemize}
 
 \textbf{Especificación de identificador único}
 
 \begin{itemize}
 
-     \item \textbf{nombre\_recurso}
-
-     \item \textbf{tipo\_documento\_profesional}
-
-     \item \textbf{numero\_documento\_profesional}
+     \item \textbf{nombre\_recurso + tipo\_documento\_profesional + numero\_documento\_profesional}	 
+	 
+     \item \textbf{nombre\_recurso + matricula}
 
 \end{itemize}
 
@@ -843,25 +796,14 @@ Indica qué SUBESPECIALIDAD realiza determinado PROCEDIMIENTO MEDICO.
 
 
 \begin{itemize}
-     \item \textbf{codigo\_procedimiento\_medico}
-
-     \item \textbf{codigo\_especialidad}
-
-     \item \textbf{nombre\_subespecialidad}
-
-
+   -
 \end{itemize}
 
 \textbf{Especificación de identificador único}
 
 \begin{itemize}
 
-     \item \textbf{codigo\_procedimiento\_medico}
-
-     \item \textbf{codigo\_especialidad}
-
-     \item \textbf{nombre\_subespecialidad}
-
+     \item \textbf{codigo\_procedimiento\_medico + codigo\_especialidad + nombre\_subespecialidad}
 \end{itemize}
 
 \subsubsection{\textbf{ejerce}}
@@ -874,29 +816,18 @@ Indica qué SUBESPECIALIDAD ejerce un PROFESIONAL del hospital.
 
 
 \begin{itemize}
-
-     \item \textbf{codigo\_especialidad}
-
-     \item \textbf{nombre\_subespecialidad}
-
-     \item \textbf{tipo\_documento\_profesional}
-
-     \item \textbf{numero\_documento\_profesional}
-
+-
 \end{itemize}
 
 \textbf{Especificación de identificador único}
 
 \begin{itemize}
 
-    \item \textbf{codigo\_especialidad}
+    \item \textbf{codigo\_especialidad + nombre\_subespecialidad + tipo\_documento\_profesional + numero\_documento\_profesional}
 
-     \item \textbf{nombre\_subespecialidad}
-
-     \item \textbf{tipo\_documento\_profesional}
-
-     \item \textbf{numero\_documento\_profesional}
-
+    \item \textbf{codigo\_especialidad + legajo}
+	
+	
 \end{itemize}
 
 \subsubsection{\textbf{predomina}}
@@ -910,22 +841,16 @@ que predomine.
 
 
 \begin{itemize}
-
-     \item \textbf{tipo\_documento\_profesional}
-
-     \item \textbf{numero\_documento\_profesional} 
-	 
-	\item \textbf{nombre\_especialidad}
-
+-
 \end{itemize}
 
 \textbf{Especificación de identificador único}
 
 \begin{itemize}
 
-     \item \textbf{tipo\_documento\_profesional}
+     \item \textbf{tipo\_documento\_profesional + numero\_documento\_profesional}
 
-     \item \textbf{numero\_documento\_profesional} 
+     \item \textbf{legajo} 
 
 \end{itemize}
 
@@ -939,16 +864,7 @@ Indica que TURNOS pertencen a un BLOCK HORA.
 
 
 \begin{itemize}
-	\item \textbf{codigo\_turno}
-	\item \textbf{tipo\_documento\_profesional}
-           \item \textbf{numero\_documento\_profesional} 
-	\item \textbf{anio\_block\_hora} 
-	\item \textbf{mes\_block\_hora}
-	\item \textbf{semana\_block\_hora}
-	\item \textbf{día\_block\_hora} 
-	\item \textbf{hora\_inicio\_block\_hora}
-	\item \textbf{hora\_fin\_block\_hora}
-
+-
 \end{itemize}
 
 \textbf{Especificación de identificador único}
@@ -971,38 +887,18 @@ HORAS determinado.
 
 
 \begin{itemize}
-     		\item \textbf{tipo\_documento\_profesional}
-
-     		\item \textbf{numero\_documento\_profesional} 
-
-		\item \textbf{nombre} (especialidad)
-
-		\item \textbf{nombre} (subespecialidad)
-
-	\item \textbf{anio\_block\_hora} 
-	\item \textbf{mes\_block\_hora}
-	\item \textbf{semana\_block\_hora}
-	\item \textbf{día\_block\_hora} 
-	\item \textbf{hora\_inicio\_block\_hora}
-	\item \textbf{hora\_fin\_block\_hora}
-
-
+ -
 \end{itemize}
 
 \textbf{Especificación de identificador único}
 
 \begin{itemize}
 
-     \item \textbf{tipo\_documento\_profesional}
+     \item \textbf{tipo\_documento\_profesional + numero\_documento\_profesional+ anio\_block\_hora + mes\_block\_hora + semana\_block\_hora + día\_block\_hora + hora\_inicio\_block\_hora + hora\_fin\_block\_hora}
 
-     \item \textbf{numero\_documento\_profesional} 
+     \item \textbf{nombre\_especialidad + nombre\_subespecialidad + anio\_block\_hora + mes\_block\_hora + semana\_block\_hora + día\_block\_hora + hora\_inicio\_block\_hora + hora\_fin\_block\_hora} 
 		
-	\item \textbf{anio\_block\_hora} 
-	\item \textbf{mes\_block\_hora}
-	\item \textbf{semana\_block\_hora}
-	\item \textbf{día\_block\_hora} 
-	\item \textbf{hora\_inicio\_block\_hora}
-	\item \textbf{hora\_fin\_block\_hora}
+
 
 \end{itemize}
 
@@ -1016,11 +912,7 @@ Indica que COMPROBANTES verifican la validez del TURNO solicitado.
 
 
 \begin{itemize}
-
-     \item \textbf{codigo\_turno}
-
-     \item \textbf{numero\_comprobante} 
-
+-
 
 \end{itemize}
 
@@ -1029,7 +921,6 @@ Indica que COMPROBANTES verifican la validez del TURNO solicitado.
 \begin{itemize}
 
      \item \textbf{codigo\_turno}
-
 
 \end{itemize}
 
@@ -1044,12 +935,7 @@ Indica como se clasifican las especialidades en subespecialidades.
 
 
 \begin{itemize}
-
-     \item \textbf{nombre\_especialidad}
-
-     \item \textbf{nombre\_subespecialidad}
-
-
+-
 \end{itemize}
 
 \textbf{Especificación de identificador único}
@@ -1072,11 +958,7 @@ Indica que planes ofrece una obra social.
 
 
 \begin{itemize}
-     \item \textbf{nombre\_plan}
-
-     \item \textbf{nombre\_obra\_social}
-
-
+ -
 \end{itemize}
 
 \textbf{Especificación de identificador único}
@@ -1084,7 +966,6 @@ Indica que planes ofrece una obra social.
 \begin{itemize}
 
     \item \textbf{nombre\_plan}
-
 
 \end{itemize}
 
@@ -1099,12 +980,7 @@ Indica que USUARIO de la aplicación generó un determinado COMPROBATE.
 
 
 \begin{itemize}
-     \item \textbf{codigo\_turno}
-
-     \item \textbf{numero\_comprobante}
-
-     \item \textbf{nombre\_usuario}
-
+-
 
 \end{itemize}
 
@@ -1112,10 +988,7 @@ Indica que USUARIO de la aplicación generó un determinado COMPROBATE.
 
 \begin{itemize}
 
-     \item \textbf{codigo\_turno}
-
-     \item \textbf{numero\_comprobante}
-
+     \item \textbf{codigo\_turno + numero\_comprobante}
 
 \end{itemize}
 
@@ -1129,21 +1002,16 @@ Indica que ROLES tiene cada USUARIO.
 
 
 \begin{itemize}
-
-     \item \textbf{nombre\_usuario}
-
-     \item \textbf{tipo\_rol}
-
+-
 \end{itemize}
 
 \textbf{Especificación de identificador único}
 
 \begin{itemize}
 
-      \item \textbf{nombre\_usuario}
+      \item \textbf{nombre\_usuario + tipo\_rol}
 
-     \item \textbf{tipo\_rol}
-
+    
 \end{itemize}
 
 \subsubsection{\textbf{demanda}}
@@ -1154,12 +1022,9 @@ Indica que PROCEDIMIENTO MÉDICO demanda o requiere cierto RECURSO del hospital 
 para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 
 \textbf{Especificación de atributos}
-
-
+-
 \begin{itemize}
-     \item \textbf{codigo\_procedimiento\_medico} 
-
-     \item \textbf{nombre\_recurso}
+     \item \textbf{codigo\_procedimiento\_medico + nombre\_recurso} 
 
 \end{itemize}
 
