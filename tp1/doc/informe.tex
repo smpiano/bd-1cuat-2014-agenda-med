@@ -614,7 +614,7 @@ PACIENTE reserva un turno.
 
 \begin{itemize}
 
-     \item \textbf{codigo\_turno + numero}
+     \item \textbf{codigo\_turno}
 
 
 \end{itemize}
@@ -821,9 +821,8 @@ Indica qué SUBESPECIALIDAD ejerce un PROFESIONAL del hospital.
 \begin{itemize}
 
     \item \textbf{codigo\_especialidad + nombre\_subespecialidad + tipo\_documento\_profesional + numero\_documento\_profesional}
-
-    \item \textbf{codigo\_especialidad + legajo}
 	
+    \item \textbf{codigo\_especialidad + nombre\_subespecialidad + matricula}
 	
 \end{itemize}
 
@@ -846,7 +845,7 @@ que predomine.
 
      \item \textbf{tipo\_documento\_profesional + numero\_documento\_profesional}
 
-     \item \textbf{legajo} 
+     \item \textbf{matricula} 
 
 \end{itemize}
 
@@ -866,7 +865,7 @@ Indica que TURNOS pertencen a un BLOCK HORA.
 
 \begin{itemize}
 
-     \item \textbf{codigo} (turno)
+     \item \textbf{codigo\_turno}
 
 
 \end{itemize}
@@ -1019,9 +1018,7 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 
 \begin{itemize}
 
-     \item \textbf{codigo\_procedimiento\_medico} 
-
-     \item \textbf{nombre\_recurso}
+     \item \textbf{codigo\_procedimiento\_medico  + nombre\_recurso} 
 
 \end{itemize}
 
@@ -1037,7 +1034,7 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: tipo\_documento, numero\_documento, apellido, nombre, provincia, localidad, departamento, calle, numero, piso, codigo\_postal, email, telefono
+\textbf{Atributos}: (tipo\_documento, numero\_documento), apellido, nombre, provincia, localidad, departamento, calle, numero, piso, codigo\_postal, email, telefono
 
 \item 
 \textbf{PK}: (tipo\_documento, numero\_documento)
@@ -1058,13 +1055,13 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: tipo\_documento\_persona, numero\_documento\_persona, apellido\_paterno,apellido\_materno, lugar\_nacimiento, fecha\_nacimiento,  numero\_afiliado, titular, historia\_clinica, condicion\_iva, condicion\_paciente, nombre\_plan, nombre\_obra\_social
+\textbf{Atributos}: (tipo\_documento\_persona, numero\_documento\_persona), apellido\_paterno,apellido\_materno, lugar\_nacimiento, fecha\_nacimiento,  numero\_afiliado, titular, historia\_clinica, condicion\_iva, condicion\_paciente, nombre\_plan, nombre\_obra\_social
 
 \item 
 \textbf{PK}: (tipo\_documento\_persona, numero\_documento\_persona)
 
 \item
-\textbf{FK}:  tipo\_documento\_persona, numero\_documento\_persona, nombre\_plan, nombre\_obra\_social
+\textbf{FK}:  (tipo\_documento\_persona, numero\_documento\_persona), (nombre\_plan, nombre\_obra\_social)
 
 \item 
 \textbf{CC}: (tipo\_documento\_persona, numero\_documento\_persona), (numero\_afiliado)
@@ -1079,13 +1076,13 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: tipo\_documento\_persona, numero\_documento\_persona, matricula,  nombre\_especialidad
+\textbf{Atributos}: (tipo\_documento\_persona, numero\_documento\_persona), matricula,  nombre\_especialidad
 
 \item 
 \textbf{PK}: (tipo\_documento\_persona, numero\_documento\_persona)
 
 \item
-\textbf{FK}: tipo\_documento\_persona, numero\_documento\_persona, nombre\_especialidad
+\textbf{FK}: (tipo\_documento\_persona, numero\_documento\_persona), (nombre\_especialidad)
 
 \item 
 \textbf{CC}: (tipo\_documento\_persona, numero\_documento\_persona), (matricula)
@@ -1123,13 +1120,13 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: nombre\_obra\_social, nombre
+\textbf{Atributos}: (nombre\_obra\_social, nombre)
 
 \item 
 \textbf{PK}: (nombre\_obra\_social, nombre)
 
 \item
-\textbf{FK}: nombre\_obra\_social
+\textbf{FK}: (nombre\_obra\_social)
 
 \item 
 \textbf{CC}: (nombre\_obra\_social, nombre)
@@ -1144,7 +1141,7 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: nombre
+\textbf{Atributos}: (nombre)
 
 \item 
 \textbf{PK}: (nombre)
@@ -1165,7 +1162,7 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: nombre, descripcion
+\textbf{Atributos}: (nombre), descripcion
 
 \item 
 \textbf{PK}: (nombre)
@@ -1186,13 +1183,13 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: nombre\_especialidad, nombre, descripcion
+\textbf{Atributos}: (nombre\_especialidad, nombre), descripcion
 
 \item 
 \textbf{PK}: (nombre\_especialidad, nombre)
 
 \item
-\textbf{FK}: nombre\_especialidad
+\textbf{FK}: (nombre\_especialidad)
 
 \item 
 \textbf{CC}: (nombre\_especialidad, nombre)
@@ -1207,19 +1204,22 @@ para poder llevar a cabo el PROCEDIMIENTO MÉDICO.
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: codigo, sobreturno, tipo, observaciones, anulado, lugar, fecha, hora,  codigo\_procedimiento\_medico, 
-anio\_block\_horas, semana\_block\_horas, dia\_block\_horas, hora\_inicio\_block\_horas, hora\_fin\_block\_horas,
-tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, 
+\textbf{Atributos}: (codigo), sobreturno, tipo, observaciones, anulado, lugar, fecha, hora,  codigo\_procedimiento\_medico, 
+anio\_block\_horas, semana\_block\_horas, dia\_block\_horas, hora\_inicio\_block\_horas,\\
+ hora\_fin\_block\_horas, tipo\_documento\_profesional, 
+numero\_documento\_profesional, nombre\_especialidad, 
 nombre\_subespecialidad, tipo\_documento\_paciente, numero\_documento\_paciente
 
 \item 
 \textbf{PK}: (codigo)
 
 \item
-\textbf{FK}: codigo\_procedimiento\_medico, 
-anio\_block\_horas, semana\_block\_horas, dia\_block\_horas, hora\_inicio\_block\_horas, hora\_fin\_block\_horas,
-tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad,
-nombre\_subespecialidad, tipo\_documento\_paciente, numero\_documento\_paciente
+\textbf{FK}: (codigo\_procedimiento\_medico), 
+(anio\_block\_horas, semana\_block\_horas, dia\_block\_horas, hora\_inicio\_block\_horas, hora\_fin\_block\_horas,
+tipo\_documento\_profesional, \\
+numero\_documento\_profesional, nombre\_especialidad,
+nombre\_subespecialidad), \\
+(tipo\_documento\_paciente, numero\_documento\_paciente)
 
 \item 
 \textbf{CC}: (codigo)
@@ -1234,13 +1234,13 @@ nombre\_subespecialidad, tipo\_documento\_paciente, numero\_documento\_paciente
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: codigo\_turno, numero, fecha, hora, nombre\_usuario
+\textbf{Atributos}: (codigo\_turno), numero, fecha, hora, nombre\_usuario
 
 \item 
 \textbf{PK}: (codigo\_turno)
 
 \item
-\textbf{FK}:  nombre\_usuario, codigo\_turno
+\textbf{FK}:  (nombre\_usuario), (codigo\_turno)
 
 \item 
 \textbf{CC}: (codigo\_turno)
@@ -1255,7 +1255,7 @@ nombre\_subespecialidad, tipo\_documento\_paciente, numero\_documento\_paciente
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: nombre, clave
+\textbf{Atributos}: (nombre), clave
 
 \item 
 \textbf{PK}: (nombre)
@@ -1275,7 +1275,7 @@ nombre\_subespecialidad, tipo\_documento\_paciente, numero\_documento\_paciente
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: tipo, descripcion
+\textbf{Atributos}: (tipo), descripcion
 
 \item 
 \textbf{PK}: (tipo)
@@ -1297,7 +1297,7 @@ nombre\_subespecialidad, tipo\_documento\_paciente, numero\_documento\_paciente
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: codigo, descripcion, duracion, monto, condiciones\_paciente
+\textbf{Atributos}: (codigo), descripcion, duracion, monto, condiciones\_paciente
 
 \item 
 \textbf{PK}: (codigo)
@@ -1320,16 +1320,17 @@ nombre\_subespecialidad, tipo\_documento\_paciente, numero\_documento\_paciente
 \begin{itemize}
 
 \item 
-\textbf{Atributos}:  anio, semana, dia, hora\_inicio, hora\_fin, tipo\_agenda, acepta\_sobreturnos,  bloqueado, cantidad\_pacientes, tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, nombre\_subespecialidad
+\textbf{Atributos}:  (anio, semana, dia, hora\_inicio, hora\_fin, tipo\_agenda, acepta\_sobreturnos,  bloqueado, cantidad\_pacientes, tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, nombre\_subespecialidad)
 
 \item 
 \textbf{PK}: (anio, semana, dia, hora\_inicio, hora\_fin,tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, nombre\_subespecialidad)
 
 \item
-\textbf{FK}:  tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, nombre\_subespecialidad
+\textbf{FK}:  (tipo\_documento\_profesional, numero\_documento\_profesional), (nombre\_especialidad, nombre\_subespecialidad)
 
 \item 
-\textbf{CC}: (anio, semana, dia, hora\_inicio, hora\_fin,tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad, nombre\_subespecialidad)
+\textbf{CC}: (anio, semana, dia, hora\_inicio, hora\_fin,tipo\_documento\_profesional,\\
+ numero\_documento\_profesional, nombre\_especialidad, nombre\_subespecialidad)
 
 \item 
 \textbf{Atributos con posible valor nulo}: cantidad\_pacientes
@@ -1341,13 +1342,13 @@ nombre\_subespecialidad, tipo\_documento\_paciente, numero\_documento\_paciente
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_recurso
+\textbf{Atributos}: (tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_recurso)
 
 \item 
 \textbf{PK}: (tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_recurso)
 
 \item
-\textbf{FK}: tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_recurso
+\textbf{FK}: (tipo\_documento\_profesional, numero\_documento\_profesional), (nombre\_recurso)
 
 \item 
 \textbf{CC}: (tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_recurso)
@@ -1362,13 +1363,13 @@ nombre\_subespecialidad, tipo\_documento\_paciente, numero\_documento\_paciente
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: codigo\_procedimiento\_medico, nombre\_recurso
+\textbf{Atributos}: (codigo\_procedimiento\_medico, nombre\_recurso)
 
 \item 
 \textbf{PK}: (codigo\_procedimiento\_medico, nombre\_recurso)
 
 \item
-\textbf{FK}: codigo\_procedimiento\_medico, nombre\_recurso 
+\textbf{FK}: (codigo\_procedimiento\_medico), (nombre\_recurso) 
 
 \item 
 \textbf{CC}: (codigo\_procedimiento\_medico, nombre\_recurso)
@@ -1385,16 +1386,16 @@ nombre\_subespecialidad, tipo\_documento\_paciente, numero\_documento\_paciente
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad,
-nombre\_subespecialidad
+\textbf{Atributos}: (tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad,
+nombre\_subespecialidad)
 
 \item 
 \textbf{PK}: (tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad,
 nombre\_subespecialidad)
 
 \item
-\textbf{FK}: tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad,
-nombre\_subespecialidad
+\textbf{FK}: (tipo\_documento\_profesional, numero\_documento\_profesional), (nombre\_especialidad,
+nombre\_subespecialidad)
 
 \item 
 \textbf{CC}: (tipo\_documento\_profesional, numero\_documento\_profesional, nombre\_especialidad,
@@ -1410,13 +1411,13 @@ nombre\_subespecialidad)
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: nombre\_especialidad, nombre\_subespecialidad, codigo\_procedimiento\_medico
+\textbf{Atributos}: (nombre\_especialidad, nombre\_subespecialidad, codigo\_procedimiento\_medico)
 
 \item 
 \textbf{PK}: (nombre\_especialidad, nombre\_subespecialidad, codigo\_procedimiento\_medico)
 
 \item
-\textbf{FK}: nombre\_especialidad, nombre\_subespecialidad, codigo\_procedimiento\_medico 
+\textbf{FK}: (nombre\_especialidad, nombre\_subespecialidad), (codigo\_procedimiento\_medico)
 
 \item 
 \textbf{CC}: (nombre\_especialidad, nombre\_subespecialidad, codigo\_procedimiento\_medico)
@@ -1431,14 +1432,14 @@ nombre\_subespecialidad)
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: nombre\_obra\_social, nombre\_plan, codigo\_procedimiento\_medico,
+\textbf{Atributos}: (nombre\_obra\_social, nombre\_plan, codigo\_procedimiento\_medico),
 porcentaje\_excencion, documentacion
 
 \item 
 \textbf{PK}: (nombre\_obra\_social, nombre\_plan, codigo\_procedimiento\_medico)
 
 \item
-\textbf{FK}: nombre\_obra\_social, nombre\_plan, codigo\_procedimiento\_medico 
+\textbf{FK}: (nombre\_obra\_social, nombre\_plan), (codigo\_procedimiento\_medico)
 
 \item 
 \textbf{CC}:(nombre\_obra\_social, nombre\_plan, codigo\_procedimiento\_medico)
@@ -1453,13 +1454,13 @@ porcentaje\_excencion, documentacion
 \begin{itemize}
 
 \item 
-\textbf{Atributos}: nombre\_usuario, tipo\_rol
+\textbf{Atributos}: (nombre\_usuario, tipo\_rol)
 
 \item 
 \textbf{PK}: (nombre\_usuario, tipo\_rol)
 
 \item
-\textbf{FK}: nombre\_usuario, tipo\_rol 
+\textbf{FK}: (nombre\_usuario), (tipo\_rol)
 
 \item 
 \textbf{CC}: (nombre\_usuario, tipo\_rol)
