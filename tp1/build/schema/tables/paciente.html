@@ -101,7 +101,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='odd'>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>tipo_documento_persona</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>10</td>
@@ -110,7 +110,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="turno.[tipo_documento_paciente, numero_documento_paciente] refs paciente.[tipo_documento_persona, numero_documento_persona] via turno_tipo_documento_paciente_fkey"><a href='turno.html'>turno</a><span class='relatedKey'>.tipo_documento_paciente</span>
     </td>
     <td class='constraint detail'>turno_tipo_documento_paciente_fkey<span title='Restrict delete:
@@ -120,7 +120,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="paciente.[tipo_documento_persona, numero_documento_persona] refs persona.[tipo_documento, numero_documento] via paciente_tipo_documento_persona_fkey"><a href='persona.html'>persona</a><span class='relatedKey'>.tipo_documento</span>
     </td>
     <td class='constraint detail'>paciente_tipo_documento_persona_fkey<span title='Restrict delete:
@@ -130,7 +130,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='primaryKey' title='Primary Key'>numero_documento_persona</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -139,7 +139,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="turno.[tipo_documento_paciente, numero_documento_paciente] refs paciente.[tipo_documento_persona, numero_documento_persona] via turno_tipo_documento_paciente_fkey"><a href='turno.html'>turno</a><span class='relatedKey'>.numero_documento_paciente</span>
     </td>
     <td class='constraint detail'>turno_tipo_documento_paciente_fkey<span title='Restrict delete:
@@ -149,7 +149,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="paciente.[tipo_documento_persona, numero_documento_persona] refs persona.[tipo_documento, numero_documento] via paciente_tipo_documento_persona_fkey"><a href='persona.html'>persona</a><span class='relatedKey'>.numero_documento</span>
     </td>
     <td class='constraint detail'>paciente_tipo_documento_persona_fkey<span title='Restrict delete:
@@ -159,7 +159,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>numero_afiliado</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -170,7 +170,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>apellido_materno</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>200</td>
@@ -181,7 +181,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>apellido_paterno</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>200</td>
@@ -192,7 +192,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>lugar_nacimiento</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>200</td>
@@ -203,7 +203,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>fecha_nacimiento</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>13</td>
@@ -214,7 +214,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>titular</td>
  <td class='detail'>bit</td>
  <td class='detail' align='right'>1</td>
@@ -225,7 +225,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>historia_clinica</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -236,7 +236,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>condicion_paciente</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>500</td>
@@ -247,7 +247,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>condicion_iva</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
@@ -258,7 +258,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>nombre_plan</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
@@ -268,7 +268,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="paciente.[nombre_plan, nombre_obra_social] refs plan.[nombre_obra_social, nombre] via paciente_nombre_plan_fkey"><a href='plan.html'>plan</a><span class='relatedKey'>.nombre_obra_social</span>
     </td>
     <td class='constraint detail'>paciente_nombre_plan_fkey<span title='Restrict delete:
@@ -278,7 +278,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>nombre_obra_social</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
@@ -288,7 +288,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="paciente.[nombre_plan, nombre_obra_social] refs plan.[nombre_obra_social, nombre] via paciente_nombre_plan_fkey"><a href='plan.html'>plan</a><span class='relatedKey'>.nombre</span>
     </td>
     <td class='constraint detail'>paciente_nombre_plan_fkey<span title='Restrict delete:
@@ -299,7 +299,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='13 columns'>Table contained 0 rows at Tue Jun 17 13:17 ART 2014<p/>
+<p title='13 columns'>Table contained 0 rows at Tue Jun 17 16:18 ART 2014<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>

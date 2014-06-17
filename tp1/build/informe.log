@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.11.6)  17 JUN 2014 13:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.11.6)  17 JUN 2014 16:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -843,12 +843,12 @@ LaTeX Info: Redefining \% on input line 1.
 \openout3 = `informe.toc'.
 
  [3]
-<build/images/der.jpeg, id=21, 2072.74374pt x 1232.605pt>
+<build/images/der.jpeg, id=21, 2072.74374pt x 1233.60875pt>
 File: build/images/der.jpeg Graphic file (type jpg)
 
 <use build/images/der.jpeg>
 Package pdftex.def Info: build/images/der.jpeg used on input line 208.
-(pdftex.def)             Requested size: 674.6227pt x 401.17493pt.
+(pdftex.def)             Requested size: 674.6227pt x 401.50162pt.
  [4
 
 ]
@@ -856,142 +856,136 @@ Package pdftex.def Info: build/images/der.jpeg used on input line 208.
 LaTeX Warning: Text page 5 contains only floats.
 
 [5 <./build/images/der.jpeg>] [6] [7] [8] [9] [10] [11] [12] [13]
-Overfull \hbox (8.58794pt too wide) in paragraph at lines 948--949
+Overfull \hbox (8.58794pt too wide) in paragraph at lines 947--948
 []\T1/cmr/bx/n/10.95 tipo_documento_profesional + nu-me-ro_documento_profesiona
 l+ anio_block_hora
  []
 
 
-Overfull \hbox (35.82147pt too wide) in paragraph at lines 948--949
+Overfull \hbox (35.82147pt too wide) in paragraph at lines 947--948
 \T1/cmr/bx/n/10.95 + mes_block_hora + se-ma-na_block_hora + día_block_hora + ho
 -ra_inicio_block_hora
  []
 
 
-Overfull \hbox (32.84932pt too wide) in paragraph at lines 950--951
+Overfull \hbox (32.84932pt too wide) in paragraph at lines 949--950
 []\T1/cmr/bx/n/10.95 nombre_especialidad + nom-bre_subespecialidad + anio_block
 _hora + mes_block_hora
  []
 
 
-Overfull \hbox (62.7834pt too wide) in paragraph at lines 950--951
+Overfull \hbox (62.7834pt too wide) in paragraph at lines 949--950
 \T1/cmr/bx/n/10.95 + se-ma-na_block_hora + día_block_hora + ho-ra_inicio_block_
 hora + ho-ra_fin_block_hora 
  []
 
 [14] [15]
-Overfull \hbox (61.49066pt too wide) in paragraph at lines 1131--1132
+Overfull \hbox (61.49066pt too wide) in paragraph at lines 1130--1131
 []\T1/cmr/bx/n/10.95 Atributos\T1/cmr/m/n/10.95 : (ti-po_documento_persona, nu-
 me-ro_documento_persona), ape-lli-do_paterno,apellido_materno,
  []
 
 
-Overfull \hbox (31.82104pt too wide) in paragraph at lines 1137--1138
-[]\T1/cmr/bx/n/10.95 FK\T1/cmr/m/n/10.95 : (ti-po_documento_persona, nu-me-ro_d
-ocumento_persona), (nom-bre_plan, nom-bre_obra_social) 
- []
-
-
-Overfull \hbox (40.38098pt too wide) in paragraph at lines 1152--1153
+Overfull \hbox (40.38098pt too wide) in paragraph at lines 1150--1151
 []\T1/cmr/bx/n/10.95 Atributos\T1/cmr/m/n/10.95 : (ti-po_documento_persona, nu-
 me-ro_documento_persona), ma-tri-cu-la, nom-bre_especialidad 
  []
 
 [16]
-Overfull \hbox (77.62953pt too wide) in paragraph at lines 1280--1285
+Overfull \hbox (77.62953pt too wide) in paragraph at lines 1278--1283
 []\T1/cmr/bx/n/10.95 Atributos\T1/cmr/m/n/10.95 : (co-di-go), so-bre-turno, ti-
 po, ob-ser-va-cio-nes, anu-la-do, lu-gar, fe-cha, ho-ra, co-di-go_procedimiento
 _medico,
  []
 
 
-Overfull \hbox (30.8105pt too wide) in paragraph at lines 1280--1285
+Overfull \hbox (30.8105pt too wide) in paragraph at lines 1278--1283
 \T1/cmr/m/n/10.95 bre_especialidad, nom-bre_subespecialidad, ti-po_documento_pa
 ciente, nu-me-ro_documento_paciente 
  []
 
 
-Overfull \hbox (20.70268pt too wide) in paragraph at lines 1290--1296
+Overfull \hbox (20.70268pt too wide) in paragraph at lines 1288--1294
 []\T1/cmr/bx/n/10.95 FK\T1/cmr/m/n/10.95 : (co-di-go_procedimiento_medico), (an
 io_block_horas, se-ma-na_block_horas, dia_block_horas,
  []
 
 [17]
-Overfull \hbox (12.36806pt too wide) in paragraph at lines 1396--1397
+Overfull \hbox (12.36806pt too wide) in paragraph at lines 1394--1395
 \T1/cmr/m/n/10.95 quea-do, can-ti-dad_pacientes, ti-po_documento_profesional, n
 u-me-ro_documento_profesional, nom-
  []
 
 
-Overfull \hbox (67.91895pt too wide) in paragraph at lines 1399--1400
+Overfull \hbox (67.91895pt too wide) in paragraph at lines 1397--1398
 []\T1/cmr/bx/n/10.95 PK\T1/cmr/m/n/10.95 : (anio, se-ma-na, dia, ho-ra_inicio, 
 ho-ra_fin,tipo_documento_profesional, nu-me-ro_documento_profesional,
  []
 
 [18]
-Overfull \hbox (17.39891pt too wide) in paragraph at lines 1462--1464
+Overfull \hbox (17.39891pt too wide) in paragraph at lines 1460--1462
 []\T1/cmr/bx/n/10.95 Atributos\T1/cmr/m/n/10.95 : (ti-po_documento_profesional,
  nu-me-ro_documento_profesional, nom-bre_especialidad,
  []
 
 
-Overfull \hbox (9.83148pt too wide) in paragraph at lines 1466--1468
+Overfull \hbox (9.83148pt too wide) in paragraph at lines 1464--1466
 []\T1/cmr/bx/n/10.95 PK\T1/cmr/m/n/10.95 : (ti-po_documento_profesional, nu-me-
 ro_documento_profesional, nom-bre_especialidad, nom-
  []
 
 
-Overfull \hbox (9.56602pt too wide) in paragraph at lines 1474--1476
+Overfull \hbox (9.56602pt too wide) in paragraph at lines 1472--1474
 []\T1/cmr/bx/n/10.95 CC\T1/cmr/m/n/10.95 : (ti-po_documento_profesional, nu-me-
 ro_documento_profesional, nom-bre_especialidad, nom-
  []
 
 [19]
-Overfull \hbox (47.52496pt too wide) in paragraph at lines 1508--1510
+Overfull \hbox (47.52496pt too wide) in paragraph at lines 1506--1508
 []\T1/cmr/bx/n/10.95 Atributos\T1/cmr/m/n/10.95 : (nom-bre_obra_social, nom-bre
 _plan, co-di-go_procedimiento_medico), por-cen-ta-je_excencion,
  []
 
 
-Overfull \hbox (100.2906pt too wide) in paragraph at lines 1551--1552
+Overfull \hbox (100.2906pt too wide) in paragraph at lines 1549--1550
 []\T1/cmr/bx/n/10.95 Atributos\T1/cmr/m/n/10.95 : anio, se-ma-na, dia, ho-ra_in
 icio, ho-ra_fin, ti-po_documento_profesional, nu-me-ro_documento_profesional,
  []
 
 
-Overfull \hbox (71.5507pt too wide) in paragraph at lines 1554--1555
+Overfull \hbox (71.5507pt too wide) in paragraph at lines 1552--1553
 []\T1/cmr/bx/n/10.95 PK\T1/cmr/m/n/10.95 : (anio, se-ma-na, dia, ho-ra_inicio, 
 ho-ra_fin, ti-po_documento_profesional, nu-me-ro_documento_profesional) 
  []
 
 
-Overfull \hbox (65.4253pt too wide) in paragraph at lines 1557--1558
+Overfull \hbox (65.4253pt too wide) in paragraph at lines 1555--1556
 []\T1/cmr/bx/n/10.95 FK\T1/cmr/m/n/10.95 : anio, se-ma-na, dia, ho-ra_inicio, h
 o-ra_fin, ti-po_documento_profesional, nu-me-ro_documento_profesional,
  []
 
 
-Overfull \hbox (74.31134pt too wide) in paragraph at lines 1560--1562
+Overfull \hbox (74.31134pt too wide) in paragraph at lines 1558--1560
 []\T1/cmr/bx/n/10.95 CC\T1/cmr/m/n/10.95 : (anio, se-ma-na, dia, ho-ra_inicio, 
 ho-ra_fin, ti-po_documento_profesional, nu-me-ro_documento_profesional),
  []
 
-[20] <build/images/relacional.png, id=77, 1108.14pt x 1831.84375pt>
+[20] <build/images/relacional.png, id=78, 1108.14pt x 1831.84375pt>
 File: build/images/relacional.png Graphic file (type png)
 
 <use build/images/relacional.png>
-Package pdftex.def Info: build/images/relacional.png used on input line 1579.
+Package pdftex.def Info: build/images/relacional.png used on input line 1577.
 (pdftex.def)             Requested size: 426.79585pt x 711.31357pt.
 
 
-LaTeX Warning: Float too large for page by 5.49913pt on input line 1582.
+LaTeX Warning: Float too large for page by 5.49913pt on input line 1580.
 
 [21] [22 <./build/images/relacional.png>]
-Overfull \hbox (6.0pt too wide) in paragraph at lines 1594--1594
+Overfull \hbox (6.0pt too wide) in paragraph at lines 1592--1592
 [][][][][][][] 
  []
 
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 1594.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 1592.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
@@ -1009,328 +1003,328 @@ LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <9> not available
 ] [24] [25]) [26] [27
 
 ]
-<doc/enunciado.pdf, id=107, page=1, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=108, page=1, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 1>
-Package pdftex.def Info: doc/enunciado.pdf, page1 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page1 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 1>
-Package pdftex.def Info: doc/enunciado.pdf, page1 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page1 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 1>
-Package pdftex.def Info: doc/enunciado.pdf, page1 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page1 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 1>
-Package pdftex.def Info: doc/enunciado.pdf, page1 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page1 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
- [28 <./doc/enunciado.pdf>] <doc/enunciado.pdf, id=124, page=2, 614.295pt x 794
+ [28 <./doc/enunciado.pdf>] <doc/enunciado.pdf, id=125, page=2, 614.295pt x 794
 .97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 2>
-Package pdftex.def Info: doc/enunciado.pdf, page2 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page2 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 2>
-Package pdftex.def Info: doc/enunciado.pdf, page2 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page2 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 2>
-Package pdftex.def Info: doc/enunciado.pdf, page2 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page2 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [29 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=131, page=3, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=132, page=3, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 3>
-Package pdftex.def Info: doc/enunciado.pdf, page3 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page3 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 3>
-Package pdftex.def Info: doc/enunciado.pdf, page3 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page3 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 3>
-Package pdftex.def Info: doc/enunciado.pdf, page3 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page3 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [30 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=135, page=4, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=136, page=4, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 4>
-Package pdftex.def Info: doc/enunciado.pdf, page4 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page4 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 4>
-Package pdftex.def Info: doc/enunciado.pdf, page4 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page4 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 4>
-Package pdftex.def Info: doc/enunciado.pdf, page4 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page4 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [31 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=140, page=5, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=141, page=5, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 5>
-Package pdftex.def Info: doc/enunciado.pdf, page5 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page5 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 5>
-Package pdftex.def Info: doc/enunciado.pdf, page5 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page5 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 5>
-Package pdftex.def Info: doc/enunciado.pdf, page5 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page5 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [32 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=150, page=6, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=151, page=6, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 6>
-Package pdftex.def Info: doc/enunciado.pdf, page6 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page6 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 6>
-Package pdftex.def Info: doc/enunciado.pdf, page6 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page6 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 6>
-Package pdftex.def Info: doc/enunciado.pdf, page6 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page6 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [33 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=154, page=7, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=155, page=7, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 7>
-Package pdftex.def Info: doc/enunciado.pdf, page7 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page7 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 7>
-Package pdftex.def Info: doc/enunciado.pdf, page7 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page7 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 7>
-Package pdftex.def Info: doc/enunciado.pdf, page7 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page7 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [34 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=161, page=8, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=162, page=8, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 8>
-Package pdftex.def Info: doc/enunciado.pdf, page8 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page8 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 8>
-Package pdftex.def Info: doc/enunciado.pdf, page8 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page8 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 8>
-Package pdftex.def Info: doc/enunciado.pdf, page8 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page8 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [35 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=165, page=9, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=166, page=9, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 9>
-Package pdftex.def Info: doc/enunciado.pdf, page9 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page9 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 9>
-Package pdftex.def Info: doc/enunciado.pdf, page9 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page9 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 9>
-Package pdftex.def Info: doc/enunciado.pdf, page9 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page9 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [36 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=172, page=10, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=173, page=10, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 10>
-Package pdftex.def Info: doc/enunciado.pdf, page10 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page10 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 10>
-Package pdftex.def Info: doc/enunciado.pdf, page10 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page10 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 10>
-Package pdftex.def Info: doc/enunciado.pdf, page10 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page10 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [37 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=184, page=11, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=185, page=11, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 11>
-Package pdftex.def Info: doc/enunciado.pdf, page11 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page11 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 11>
-Package pdftex.def Info: doc/enunciado.pdf, page11 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page11 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 11>
-Package pdftex.def Info: doc/enunciado.pdf, page11 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page11 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [38 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=188, page=12, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=189, page=12, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 12>
-Package pdftex.def Info: doc/enunciado.pdf, page12 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page12 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 12>
-Package pdftex.def Info: doc/enunciado.pdf, page12 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page12 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 12>
-Package pdftex.def Info: doc/enunciado.pdf, page12 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page12 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [39 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=192, page=13, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=193, page=13, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 13>
-Package pdftex.def Info: doc/enunciado.pdf, page13 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page13 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 13>
-Package pdftex.def Info: doc/enunciado.pdf, page13 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page13 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 13>
-Package pdftex.def Info: doc/enunciado.pdf, page13 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page13 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [40 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=196, page=14, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=197, page=14, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 14>
-Package pdftex.def Info: doc/enunciado.pdf, page14 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page14 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 14>
-Package pdftex.def Info: doc/enunciado.pdf, page14 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page14 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 14>
-Package pdftex.def Info: doc/enunciado.pdf, page14 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page14 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [41 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=200, page=15, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=201, page=15, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 15>
-Package pdftex.def Info: doc/enunciado.pdf, page15 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page15 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 15>
-Package pdftex.def Info: doc/enunciado.pdf, page15 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page15 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 15>
-Package pdftex.def Info: doc/enunciado.pdf, page15 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page15 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [42 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=204, page=16, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=205, page=16, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 16>
-Package pdftex.def Info: doc/enunciado.pdf, page16 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page16 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 16>
-Package pdftex.def Info: doc/enunciado.pdf, page16 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page16 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 16>
-Package pdftex.def Info: doc/enunciado.pdf, page16 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page16 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [43 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=209, page=17, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=210, page=17, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 17>
-Package pdftex.def Info: doc/enunciado.pdf, page17 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page17 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 17>
-Package pdftex.def Info: doc/enunciado.pdf, page17 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page17 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 17>
-Package pdftex.def Info: doc/enunciado.pdf, page17 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page17 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [44 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=216, page=18, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=217, page=18, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 18>
-Package pdftex.def Info: doc/enunciado.pdf, page18 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page18 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 18>
-Package pdftex.def Info: doc/enunciado.pdf, page18 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page18 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 18>
-Package pdftex.def Info: doc/enunciado.pdf, page18 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page18 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [45 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=220, page=19, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=221, page=19, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 19>
-Package pdftex.def Info: doc/enunciado.pdf, page19 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page19 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 19>
-Package pdftex.def Info: doc/enunciado.pdf, page19 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page19 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 19>
-Package pdftex.def Info: doc/enunciado.pdf, page19 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page19 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [46 <./doc/enunciado.pdf>]
-<doc/enunciado.pdf, id=224, page=20, 614.295pt x 794.97pt>
+<doc/enunciado.pdf, id=225, page=20, 614.295pt x 794.97pt>
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 20>
-Package pdftex.def Info: doc/enunciado.pdf, page20 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page20 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
  <use doc/enunciado.pdf, page 20>
-Package pdftex.def Info: doc/enunciado.pdf, page20 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page20 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
 File: doc/enunciado.pdf Graphic file (type pdf)
 
 <use doc/enunciado.pdf, page 20>
-Package pdftex.def Info: doc/enunciado.pdf, page20 used on input line 1602.
+Package pdftex.def Info: doc/enunciado.pdf, page20 used on input line 1600.
 (pdftex.def)             Requested size: 430.00356pt x 556.4752pt.
  [47 <./doc/enunciado.pdf>] [48
 
@@ -1347,9 +1341,9 @@ Here is how much of TeX's memory you used:
  26140 words of font info for 71 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  42i,20n,50p,324b,2307s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/spiano/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1095.600pk>{/usr/s
-hare/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/spiano/.texmf-var/f
-onts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </home/spiano/.texmf-var/fonts/pk/lj
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/spiano/.t
+exmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> </home/spiano/.texmf-var/f
+onts/pk/ljfour/jknappen/ec/ecti1095.600pk> </home/spiano/.texmf-var/fonts/pk/lj
 four/jknappen/ec/ecbx2074.600pk> </home/spiano/.texmf-var/fonts/pk/ljfour/jknap
 pen/ec/ecbx1095.600pk> </home/spiano/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecb
 x1200.600pk> </home/spiano/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600p
@@ -1361,9 +1355,9 @@ our/jknappen/ec/ecrm1200.600pk> </home/spiano/.texmf-var/fonts/pk/ljfour/jknapp
 en/ec/ecbx1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucr
 b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb>
-Output written on build/informe.pdf (48 pages, 617497 bytes).
+Output written on build/informe.pdf (48 pages, 620699 bytes).
 PDF statistics:
- 640 PDF objects out of 1000 (max. 8388607)
+ 646 PDF objects out of 1000 (max. 8388607)
  197 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  121 words of extra memory for PDF output out of 10000 (max. 10000000)
