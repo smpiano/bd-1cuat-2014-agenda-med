@@ -66,7 +66,7 @@ digraph "oneDegreeRelationshipsDiagram" {
       <TR><TD PORT="condicion_iva" COLSPAN="3" ALIGN="LEFT">condicion_iva</TD></TR>
       <TR><TD PORT="nombre_plan" COLSPAN="3" ALIGN="LEFT">nombre_plan</TD></TR>
       <TR><TD PORT="nombre_obra_social" COLSPAN="3" ALIGN="LEFT">nombre_obra_social</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 4</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="paciente.html"
     tooltip="paciente"

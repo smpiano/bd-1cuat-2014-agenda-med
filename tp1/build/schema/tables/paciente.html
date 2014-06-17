@@ -101,26 +101,17 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </tr>
 </thead>
 <tbody valign='top'>
-<tr class='even'>
+<tr class='odd'>
  <td class='primaryKey' title='Primary Key'>tipo_documento_persona</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='center'></td>
  <td class='detail'></td>
+ <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="turno.[tipo_documento_paciente, numero_documento_paciente] refs paciente.[tipo_documento_persona, numero_documento_persona] via turno_tipo_documento_paciente_fkey"><a href='turno.html'>turno</a><span class='relatedKey'>.tipo_documento_paciente</span>
-    </td>
-    <td class='constraint detail'>turno_tipo_documento_paciente_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
-</td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="paciente.[tipo_documento_persona, numero_documento_persona] refs persona.[tipo_documento, numero_documento] via paciente_tipo_documento_persona_fkey"><a href='persona.html'>persona</a><span class='relatedKey'>.tipo_documento</span>
     </td>
     <td class='constraint detail'>paciente_tipo_documento_persona_fkey<span title='Restrict delete:
@@ -130,26 +121,17 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='primaryKey' title='Primary Key'>numero_documento_persona</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
  <td class='detail' align='center'></td>
  <td class='detail'></td>
+ <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="turno.[tipo_documento_paciente, numero_documento_paciente] refs paciente.[tipo_documento_persona, numero_documento_persona] via turno_tipo_documento_paciente_fkey"><a href='turno.html'>turno</a><span class='relatedKey'>.numero_documento_paciente</span>
-    </td>
-    <td class='constraint detail'>turno_tipo_documento_paciente_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
-</td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="paciente.[tipo_documento_persona, numero_documento_persona] refs persona.[tipo_documento, numero_documento] via paciente_tipo_documento_persona_fkey"><a href='persona.html'>persona</a><span class='relatedKey'>.numero_documento</span>
     </td>
     <td class='constraint detail'>paciente_tipo_documento_persona_fkey<span title='Restrict delete:
@@ -159,7 +141,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>numero_afiliado</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -170,7 +152,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>apellido_materno</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>200</td>
@@ -181,7 +163,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>apellido_paterno</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>200</td>
@@ -192,7 +174,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>lugar_nacimiento</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>200</td>
@@ -203,7 +185,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>fecha_nacimiento</td>
  <td class='detail'>date</td>
  <td class='detail' align='right'>13</td>
@@ -214,7 +196,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>titular</td>
  <td class='detail'>bit</td>
  <td class='detail' align='right'>1</td>
@@ -225,7 +207,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>historia_clinica</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
@@ -236,7 +218,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>condicion_paciente</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>500</td>
@@ -247,7 +229,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>condicion_iva</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
@@ -258,7 +240,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'> </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='odd'>
+<tr class='even'>
  <td class='detail'>nombre_plan</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
@@ -268,7 +250,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
+   <tr class='relative even' valign='top'>
     <td class='relatedTable detail' title="paciente.[nombre_plan, nombre_obra_social] refs plan.[nombre_obra_social, nombre] via paciente_nombre_plan_fkey"><a href='plan.html'>plan</a><span class='relatedKey'>.nombre_obra_social</span>
     </td>
     <td class='constraint detail'>paciente_nombre_plan_fkey<span title='Restrict delete:
@@ -278,7 +260,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  </td>
  <td class='comment detail'></td>
 </tr>
-<tr class='even'>
+<tr class='odd'>
  <td class='detail'>nombre_obra_social</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
@@ -288,7 +270,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'></td>
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
+   <tr class='relative odd' valign='top'>
     <td class='relatedTable detail' title="paciente.[nombre_plan, nombre_obra_social] refs plan.[nombre_obra_social, nombre] via paciente_nombre_plan_fkey"><a href='plan.html'>plan</a><span class='relatedKey'>.nombre</span>
     </td>
     <td class='constraint detail'>paciente_nombre_plan_fkey<span title='Restrict delete:
@@ -299,7 +281,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='13 columns'>Table contained 0 rows at Tue Jun 17 16:18 ART 2014<p/>
+<p title='13 columns'>Table contained 0 rows at Tue Jun 17 19:02 ART 2014<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -325,39 +307,30 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from paciente'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="paciente.html" title="paciente" alt="" coords="219,367,528,724">
-<area shape="rect" id="node3" href="plan.html" title="plan" alt="" coords="5,678,173,781">
-<area shape="rect" id="node6" href="persona.html" title="persona" alt="" coords="5,309,173,661">
-<area shape="rect" id="node8" href="turno.html" title="turno" alt="" coords="575,5,812,470">
+<area shape="rect" id="node1" href="paciente.html" title="paciente" alt="" coords="219,63,528,420">
+<area shape="rect" id="node3" href="plan.html" title="plan" alt="" coords="5,374,173,477">
+<area shape="rect" id="node6" href="persona.html" title="persona" alt="" coords="5,5,173,357">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/paciente.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="impliedTwoDegreesRelationshipsDiagram" name="impliedTwoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="1215,387,1353,467">
-<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="932,5,1169,470">
-<area shape="rect" id="node5" href="usuario.html" title="usuario" alt="" coords="180,621,303,701">
-<area shape="rect" id="node8" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="352,101,531,181">
-<area shape="rect" id="node15" href="paciente.html" title="paciente" alt="" coords="576,427,885,784">
-<area shape="rect" id="node24" href="profesional.html" title="profesional" alt="" coords="664,329,797,409">
-<area shape="rect" id="node28" href="block_horas.html" title="block_horas" alt="" coords="660,232,801,312">
-<area shape="rect" id="node6" href="cubre.html" title="cubre" alt="" coords="671,135,791,215">
-<area shape="rect" id="node10" href="plan.html" title="plan" alt="" coords="357,271,525,374">
-<area shape="rect" id="node12" href="obra_social.html" title="obra_social" alt="" coords="175,251,308,331">
-<area shape="rect" id="node14" href="recurso.html" title="recurso" alt="" coords="7,284,129,364">
-<area shape="rect" id="node19" href="persona.html" title="persona" alt="" coords="357,429,525,781">
+<area shape="rect" id="node1" href="cubre.html" title="cubre" alt="" coords="660,5,780,85">
+<area shape="rect" id="node3" href="plan.html" title="plan" alt="" coords="352,89,520,191">
+<area shape="rect" id="node5" href="obra_social.html" title="obra_social" alt="" coords="175,68,308,148">
+<area shape="rect" id="node7" href="recurso.html" title="recurso" alt="" coords="7,101,129,181">
+<area shape="rect" id="node8" href="paciente.html" title="paciente" alt="" coords="565,103,875,460">
+<area shape="rect" id="node12" href="persona.html" title="persona" alt="" coords="352,291,520,643">
+<area shape="rect" id="node15" href="usuario.html" title="usuario" alt="" coords="180,335,303,415">
+<area shape="rect" id="node18" href="profesional.html" title="profesional" alt="" coords="653,477,787,557">
 </map>
 
   <a name='diagram'><img id='impliedTwoDegreesImg' src='../diagrams/paciente.implied2degrees.png' usemap='#impliedTwoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="comprobante.html" title="comprobante" alt="" coords="1045,5,1184,85">
-<area shape="rect" id="node3" href="turno.html" title="turno" alt="" coords="763,6,1000,471">
-<area shape="rect" id="node6" href="procedimiento_medico.html" title="procedimiento_medico" alt="" coords="183,227,361,307">
-<area shape="rect" id="node10" href="paciente.html" title="paciente" alt="" coords="407,533,716,891">
-<area shape="rect" id="node18" href="profesional.html" title="profesional" alt="" coords="495,339,628,419">
-<area shape="rect" id="node22" href="block_horas.html" title="block_horas" alt="" coords="491,241,632,321">
-<area shape="rect" id="node4" href="cubre.html" title="cubre" alt="" coords="501,436,621,516">
-<area shape="rect" id="node8" href="plan.html" title="plan" alt="" coords="188,765,356,867">
-<area shape="rect" id="node17" href="obra_social.html" title="obra_social" alt="" coords="7,764,137,844">
-<area shape="rect" id="node14" href="persona.html" title="persona" alt="" coords="188,359,356,711">
+<area shape="rect" id="node1" href="cubre.html" title="cubre" alt="" coords="491,5,611,85">
+<area shape="rect" id="node3" href="plan.html" title="plan" alt="" coords="183,89,351,191">
+<area shape="rect" id="node12" href="obra_social.html" title="obra_social" alt="" coords="7,88,137,168">
+<area shape="rect" id="node5" href="paciente.html" title="paciente" alt="" coords="396,103,705,460">
+<area shape="rect" id="node9" href="persona.html" title="persona" alt="" coords="183,291,351,643">
+<area shape="rect" id="node13" href="profesional.html" title="profesional" alt="" coords="484,477,617,557">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/paciente.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

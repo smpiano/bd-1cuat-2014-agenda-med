@@ -102,7 +102,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody valign='top'>
 <tr class='odd'>
- <td class='primaryKey' title='Primary Key'>anio</td>
+ <td class='primaryKey' title='Primary Key'>codigo_block_hora</td>
  <td class='detail'>int4</td>
  <td class='detail' align='right'>10</td>
  <td class='detail' align='center'></td>
@@ -112,89 +112,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='detail'>
   <table border='0' width='100%' cellspacing='0' cellpadding='0'>
    <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="atiende.[anio, semana, dia, hora_inicio, hora_fin] refs block_horas.[anio, semana, dia, hora_inicio, hora_fin] via atiende_anio_fkey"><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.anio</span>
+    <td class='relatedTable detail' title="atiende.codigo_block_hora refs block_horas.codigo via atiende_codigo_block_hora_fkey"><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.codigo</span>
     </td>
-    <td class='constraint detail'>atiende_anio_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
- <td class='primaryKey' title='Primary Key'>semana</td>
- <td class='detail'>int4</td>
- <td class='detail' align='right'>10</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="atiende.[anio, semana, dia, hora_inicio, hora_fin] refs block_horas.[anio, semana, dia, hora_inicio, hora_fin] via atiende_anio_fkey"><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.semana</span>
-    </td>
-    <td class='constraint detail'>atiende_anio_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='odd'>
- <td class='primaryKey' title='Primary Key'>dia</td>
- <td class='detail'>bpchar</td>
- <td class='detail' align='right'>10</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="atiende.[anio, semana, dia, hora_inicio, hora_fin] refs block_horas.[anio, semana, dia, hora_inicio, hora_fin] via atiende_anio_fkey"><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.dia</span>
-    </td>
-    <td class='constraint detail'>atiende_anio_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='even'>
- <td class='primaryKey' title='Primary Key'>hora_inicio</td>
- <td class='detail'>time</td>
- <td class='detail' align='right'>15,6</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative even' valign='top'>
-    <td class='relatedTable detail' title="atiende.[anio, semana, dia, hora_inicio, hora_fin] refs block_horas.[anio, semana, dia, hora_inicio, hora_fin] via atiende_anio_fkey"><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.hora_inicio</span>
-    </td>
-    <td class='constraint detail'>atiende_anio_fkey<span title='Restrict delete:
- Parent cannot be deleted if children exist'>&nbsp;R</span></td>
-   </tr>
-  </table>
- </td>
- <td class='comment detail'></td>
-</tr>
-<tr class='odd'>
- <td class='primaryKey' title='Primary Key'>hora_fin</td>
- <td class='detail'>time</td>
- <td class='detail' align='right'>15,6</td>
- <td class='detail' align='center'></td>
- <td class='detail' align='center'></td>
- <td class='detail'></td>
- <td class='detail'></td>
- <td class='detail'>
-  <table border='0' width='100%' cellspacing='0' cellpadding='0'>
-   <tr class='relative odd' valign='top'>
-    <td class='relatedTable detail' title="atiende.[anio, semana, dia, hora_inicio, hora_fin] refs block_horas.[anio, semana, dia, hora_inicio, hora_fin] via atiende_anio_fkey"><a href='block_horas.html'>block_horas</a><span class='relatedKey'>.hora_fin</span>
-    </td>
-    <td class='constraint detail'>atiende_anio_fkey<span title='Restrict delete:
+    <td class='constraint detail'>atiende_codigo_block_hora_fkey<span title='Restrict delete:
  Parent cannot be deleted if children exist'>&nbsp;R</span></td>
    </tr>
   </table>
@@ -242,7 +162,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='even'>
- <td class='detail'>nombre_especialidad</td>
+ <td class='primaryKey' title='Primary Key'>nombre_especialidad</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
  <td class='detail' align='center'></td>
@@ -262,7 +182,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 <tr class='odd'>
- <td class='detail'>nombre_subespecialidad</td>
+ <td class='primaryKey' title='Primary Key'>nombre_subespecialidad</td>
  <td class='detail'>bpchar</td>
  <td class='detail' align='right'>100</td>
  <td class='detail' align='center'></td>
@@ -282,7 +202,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
  <td class='comment detail'></td>
 </tr>
 </table>
-<p title='9 columns'>Table contained 0 rows at Tue Jun 17 16:18 ART 2014<p/>
+<p title='5 columns'>Table contained 0 rows at Tue Jun 17 19:02 ART 2014<p/>
 </td></tr></table>
 <div class='indent'>
 <b>Indexes:</b>
@@ -297,9 +217,9 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </thead>
 <tbody>
  <tr>
-  <td class='primaryKey'>anio + semana + dia + hora_inicio + hora_fin + tipo_documento_profesional + numero_documento_profesional</td>
+  <td class='primaryKey'>codigo_block_hora + tipo_documento_profesional + numero_documento_profesional + nombre_especialidad + nombre_subespecialidad</td>
   <td class='detail'>Primary key</td>
-  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
+  <td class='detail' style='text-align:left;'><span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span>/<span title='Ascending'>Asc</span></td>
   <td class='constraint' style='text-align:left;'>atiende_pkey</td>
  </tr>
 </table>
@@ -308,38 +228,36 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <br><form action='get'><b>Close relationships</b><span class='degrees' id='degrees' title='Detail diminishes with increased separation from atiende'>
 &nbsp;within <label for='oneDegree'><input type='radio' name='degrees' id='oneDegree' checked>one</label>  <label for='twoDegrees'><input type='radio' name='degrees' id='twoDegrees'>two degrees</label> of separation</span><b>:</b></form>
 <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="atiende.html" title="atiende" alt="" coords="275,5,603,272">
-<area shape="rect" id="node3" href="block_horas.html" title="block_horas" alt="" coords="36,8,199,269">
-<area shape="rect" id="node8" href="subespecialidad.html" title="subespecialidad" alt="" coords="31,451,204,576">
-<area shape="rect" id="node11" href="profesional.html" title="profesional" alt="" coords="7,286,228,434">
+<area shape="rect" id="node1" href="atiende.html" title="atiende" alt="" coords="275,280,603,456">
+<area shape="rect" id="node3" href="block_horas.html" title="block_horas" alt="" coords="36,5,199,289">
+<area shape="rect" id="node5" href="subespecialidad.html" title="subespecialidad" alt="" coords="31,469,204,595">
+<area shape="rect" id="node8" href="profesional.html" title="profesional" alt="" coords="7,305,228,453">
 </map>
   <a name='diagram'><img id='oneDegreeImg' src='../diagrams/atiende.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="impliedTwoDegreesRelationshipsDiagram" name="impliedTwoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="atiende.html" title="atiende" alt="" coords="621,124,949,391">
-<area shape="rect" id="node3" href="block_horas.html" title="block_horas" alt="" coords="383,5,545,267">
-<area shape="rect" id="node8" href="subespecialidad.html" title="subespecialidad" alt="" coords="377,484,551,609">
-<area shape="rect" id="node11" href="profesional.html" title="profesional" alt="" coords="353,283,575,431">
-<area shape="rect" id="node16" href="recurso.html" title="recurso" alt="" coords="7,456,129,536">
-<area shape="rect" id="node22" href="especialidad.html" title="especialidad" alt="" coords="175,524,308,604">
-<area shape="rect" id="node26" href="persona.html" title="persona" alt="" coords="179,295,304,375">
-<area shape="rect" id="node14" href="autoriza.html" title="autoriza" alt="" coords="724,408,847,488">
-<area shape="rect" id="node19" href="ejerce.html" title="ejerce" alt="" coords="725,603,845,683">
-<area shape="rect" id="node28" href="realiza.html" title="realiza" alt="" coords="725,505,845,585">
-<area shape="rect" id="node33" href="turno.html" title="turno" alt="" coords="715,27,856,107">
+<area shape="rect" id="node1" href="atiende.html" title="atiende" alt="" coords="621,226,949,402">
+<area shape="rect" id="node3" href="block_horas.html" title="block_horas" alt="" coords="383,228,545,512">
+<area shape="rect" id="node5" href="subespecialidad.html" title="subespecialidad" alt="" coords="377,529,551,654">
+<area shape="rect" id="node8" href="profesional.html" title="profesional" alt="" coords="353,64,575,212">
+<area shape="rect" id="node12" href="recurso.html" title="recurso" alt="" coords="7,242,129,322">
+<area shape="rect" id="node18" href="especialidad.html" title="especialidad" alt="" coords="175,242,308,322">
+<area shape="rect" id="node22" href="persona.html" title="persona" alt="" coords="179,76,304,156">
+<area shape="rect" id="node10" href="autoriza.html" title="autoriza" alt="" coords="724,64,847,144">
+<area shape="rect" id="node15" href="ejerce.html" title="ejerce" alt="" coords="725,502,845,582">
+<area shape="rect" id="node24" href="realiza.html" title="realiza" alt="" coords="725,600,845,680">
 </map>
 
   <a name='diagram'><img id='impliedTwoDegreesImg' src='../diagrams/atiende.implied2degrees.png' usemap='#impliedTwoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>
 <map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="atiende.html" title="atiende" alt="" coords="452,107,780,373">
-<area shape="rect" id="node3" href="block_horas.html" title="block_horas" alt="" coords="213,5,376,267">
-<area shape="rect" id="node8" href="subespecialidad.html" title="subespecialidad" alt="" coords="208,448,381,573">
-<area shape="rect" id="node11" href="profesional.html" title="profesional" alt="" coords="184,283,405,431">
-<area shape="rect" id="node21" href="especialidad.html" title="especialidad" alt="" coords="5,437,139,517">
-<area shape="rect" id="node23" href="persona.html" title="persona" alt="" coords="9,295,135,375">
-<area shape="rect" id="node14" href="autoriza.html" title="autoriza" alt="" coords="555,391,677,471">
-<area shape="rect" id="node17" href="ejerce.html" title="ejerce" alt="" coords="556,585,676,665">
-<area shape="rect" id="node25" href="realiza.html" title="realiza" alt="" coords="556,488,676,568">
-<area shape="rect" id="node29" href="turno.html" title="turno" alt="" coords="545,9,687,89">
+<area shape="rect" id="node1" href="atiende.html" title="atiende" alt="" coords="452,167,780,343">
+<area shape="rect" id="node3" href="block_horas.html" title="block_horas" alt="" coords="213,169,376,453">
+<area shape="rect" id="node5" href="subespecialidad.html" title="subespecialidad" alt="" coords="208,469,381,595">
+<area shape="rect" id="node8" href="profesional.html" title="profesional" alt="" coords="184,5,405,153">
+<area shape="rect" id="node17" href="especialidad.html" title="especialidad" alt="" coords="5,308,139,388">
+<area shape="rect" id="node19" href="persona.html" title="persona" alt="" coords="9,16,135,96">
+<area shape="rect" id="node10" href="autoriza.html" title="autoriza" alt="" coords="555,16,677,96">
+<area shape="rect" id="node13" href="ejerce.html" title="ejerce" alt="" coords="556,443,676,523">
+<area shape="rect" id="node21" href="realiza.html" title="realiza" alt="" coords="556,540,676,620">
 </map>
 
   <a name='diagram'><img id='twoDegreesImg' src='../diagrams/atiende.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>

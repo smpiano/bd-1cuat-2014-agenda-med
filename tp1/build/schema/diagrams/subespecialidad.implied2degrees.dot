@@ -19,14 +19,10 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "atiende":"anio":w -> "block_horas":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atiende":"dia":w -> "block_horas":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atiende":"hora_fin":w -> "block_horas":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atiende":"hora_inicio":w -> "block_horas":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende":"codigo_block_hora":w -> "block_horas":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "atiende":"nombre_especialidad":w -> "subespecialidad":"nombre_especialidad.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "atiende":"nombre_subespecialidad":w -> "subespecialidad":"nombre.type":e [arrowhead=none dir=back arrowtail=crowodot];
   "atiende":"numero_documento_profesional":w -> "profesional":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atiende":"semana":w -> "block_horas":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "atiende":"tipo_documento_profesional":w -> "profesional":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
   "autoriza":"elipses":w -> "recurso":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
   "autoriza":"elipses":w -> "profesional":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -49,16 +45,12 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">atiende</TD></TR>
-      <TR><TD PORT="anio" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">anio</TD></TR>
-      <TR><TD PORT="semana" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">semana</TD></TR>
-      <TR><TD PORT="dia" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">dia</TD></TR>
-      <TR><TD PORT="hora_inicio" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">hora_inicio</TD></TR>
-      <TR><TD PORT="hora_fin" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">hora_fin</TD></TR>
+      <TR><TD PORT="codigo_block_hora" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo_block_hora</TD></TR>
       <TR><TD PORT="tipo_documento_profesional" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento_profesional</TD></TR>
       <TR><TD PORT="numero_documento_profesional" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento_profesional</TD></TR>
-      <TR><TD PORT="nombre_especialidad" COLSPAN="3" ALIGN="LEFT">nombre_especialidad</TD></TR>
-      <TR><TD PORT="nombre_subespecialidad" COLSPAN="3" ALIGN="LEFT">nombre_subespecialidad</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
+      <TR><TD PORT="nombre_especialidad" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_especialidad</TD></TR>
+      <TR><TD PORT="nombre_subespecialidad" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_subespecialidad</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
     </TABLE>>
     URL="atiende.html"
     tooltip="atiende"
@@ -78,7 +70,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">block_horas</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">10 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="block_horas.html"
     tooltip="block_horas"
@@ -142,7 +134,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">procedimiento_medico</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
     </TABLE>>
     URL="procedimiento_medico.html"
     tooltip="procedimiento_medico"
@@ -152,7 +144,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">profesional</TD></TR>
       <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="profesional.html"
     tooltip="profesional"

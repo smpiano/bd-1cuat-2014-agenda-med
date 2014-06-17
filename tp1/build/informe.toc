@@ -31,36 +31,36 @@
 \contentsline {subsubsection}{\numberline {2.2.9}\textbf {pertenece}}{14}
 \contentsline {subsubsection}{\numberline {2.2.10}\textbf {atiende}}{14}
 \contentsline {subsubsection}{\numberline {2.2.11}\textbf {verifica}}{14}
-\contentsline {subsubsection}{\numberline {2.2.12}\textbf {clasifica}}{14}
+\contentsline {subsubsection}{\numberline {2.2.12}\textbf {clasifica}}{15}
 \contentsline {subsubsection}{\numberline {2.2.13}\textbf {ofrece}}{15}
 \contentsline {subsubsection}{\numberline {2.2.14}\textbf {emite}}{15}
 \contentsline {subsubsection}{\numberline {2.2.15}\textbf {tiene}}{15}
-\contentsline {subsubsection}{\numberline {2.2.16}\textbf {demanda}}{15}
-\contentsline {section}{\numberline {3}\textbf {Modelo relacional}}{16}
-\contentsline {subsection}{\numberline {3.1}\textbf {Dise\IeC {\~n}o del modelo}}{16}
-\contentsline {subsubsection}{\numberline {3.1.1}\textbf {Persona}}{16}
-\contentsline {subsubsection}{\numberline {3.1.2}\textbf {Paciente}}{16}
-\contentsline {subsubsection}{\numberline {3.1.3}\textbf {Profesional}}{16}
-\contentsline {subsubsection}{\numberline {3.1.4}\textbf {Obra Social}}{16}
-\contentsline {subsubsection}{\numberline {3.1.5}\textbf {Plan}}{17}
-\contentsline {subsubsection}{\numberline {3.1.6}\textbf {Recurso}}{17}
-\contentsline {subsubsection}{\numberline {3.1.7}\textbf {Especialidad}}{17}
-\contentsline {subsubsection}{\numberline {3.1.8}\textbf {Subespecialidad}}{17}
-\contentsline {subsubsection}{\numberline {3.1.9}\textbf {Turno}}{17}
-\contentsline {subsubsection}{\numberline {3.1.10}\textbf {Comprobante}}{18}
-\contentsline {subsubsection}{\numberline {3.1.11}\textbf {Usuario}}{18}
-\contentsline {subsubsection}{\numberline {3.1.12}\textbf {Rol}}{18}
-\contentsline {subsubsection}{\numberline {3.1.13}\textbf {Procedimiento M\IeC {\'e}dico}}{18}
+\contentsline {subsubsection}{\numberline {2.2.16}\textbf {demanda}}{16}
+\contentsline {section}{\numberline {3}\textbf {Modelo relacional}}{17}
+\contentsline {subsection}{\numberline {3.1}\textbf {Dise\IeC {\~n}o del modelo}}{17}
+\contentsline {subsubsection}{\numberline {3.1.1}\textbf {Persona}}{17}
+\contentsline {subsubsection}{\numberline {3.1.2}\textbf {Paciente}}{17}
+\contentsline {subsubsection}{\numberline {3.1.3}\textbf {Profesional}}{17}
+\contentsline {subsubsection}{\numberline {3.1.4}\textbf {Obra Social}}{17}
+\contentsline {subsubsection}{\numberline {3.1.5}\textbf {Plan}}{18}
+\contentsline {subsubsection}{\numberline {3.1.6}\textbf {Recurso}}{18}
+\contentsline {subsubsection}{\numberline {3.1.7}\textbf {Especialidad}}{18}
+\contentsline {subsubsection}{\numberline {3.1.8}\textbf {Subespecialidad}}{18}
+\contentsline {subsubsection}{\numberline {3.1.9}\textbf {Turno}}{18}
+\contentsline {subsubsection}{\numberline {3.1.10}\textbf {Comprobante}}{19}
+\contentsline {subsubsection}{\numberline {3.1.11}\textbf {Usuario}}{19}
+\contentsline {subsubsection}{\numberline {3.1.12}\textbf {Rol}}{19}
+\contentsline {subsubsection}{\numberline {3.1.13}\textbf {Procedimiento M\IeC {\'e}dico}}{19}
 \contentsline {subsubsection}{\numberline {3.1.14}\textbf {Block de Horas}}{19}
-\contentsline {subsubsection}{\numberline {3.1.15}\textbf {Autoriza}}{19}
-\contentsline {subsubsection}{\numberline {3.1.16}\textbf {Demanda}}{19}
-\contentsline {subsubsection}{\numberline {3.1.17}\textbf {Ejerce}}{19}
-\contentsline {subsubsection}{\numberline {3.1.18}\textbf {Realiza}}{20}
-\contentsline {subsubsection}{\numberline {3.1.19}\textbf {Cubre}}{20}
-\contentsline {subsubsection}{\numberline {3.1.20}\textbf {Tiene}}{20}
-\contentsline {subsubsection}{\numberline {3.1.21}\textbf {Atiende}}{20}
-\contentsline {subsection}{\numberline {3.2}Diagrama relacional}{21}
-\contentsline {subsection}{\numberline {3.3}\textbf {Scripts de creaci\IeC {\'o}n}}{23}
-\contentsline {part}{II\hspace {1em}Ap\IeC {\'e}ndice}{27}
-\contentsline {section}{\numberline {A}Enunciado original}{27}
-\contentsline {section}{\numberline {B}\textbf {Forma de presentaci\IeC {\'o}n del trabajo pr\IeC {\'a}ctico}}{48}
+\contentsline {subsubsection}{\numberline {3.1.15}\textbf {Autoriza}}{20}
+\contentsline {subsubsection}{\numberline {3.1.16}\textbf {Demanda}}{20}
+\contentsline {subsubsection}{\numberline {3.1.17}\textbf {Ejerce}}{20}
+\contentsline {subsubsection}{\numberline {3.1.18}\textbf {Realiza}}{21}
+\contentsline {subsubsection}{\numberline {3.1.19}\textbf {Cubre}}{21}
+\contentsline {subsubsection}{\numberline {3.1.20}\textbf {Tiene}}{21}
+\contentsline {subsubsection}{\numberline {3.1.21}\textbf {Atiende}}{21}
+\contentsline {subsection}{\numberline {3.2}Diagrama relacional}{22}
+\contentsline {subsection}{\numberline {3.3}\textbf {Scripts de creaci\IeC {\'o}n}}{24}
+\contentsline {part}{II\hspace {1em}Ap\IeC {\'e}ndice}{28}
+\contentsline {section}{\numberline {A}Enunciado original}{28}
+\contentsline {section}{\numberline {B}\textbf {Forma de presentaci\IeC {\'o}n del trabajo pr\IeC {\'a}ctico}}{49}

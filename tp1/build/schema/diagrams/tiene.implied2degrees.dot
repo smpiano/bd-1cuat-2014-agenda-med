@@ -19,20 +19,9 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "comprobante":"elipses":w -> "usuario":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
   "persona":"elipses":w -> "usuario":"nombre":e [arrowhead=none dir=back arrowtail=crowodot style=dashed];
   "tiene":"nombre_usuario":w -> "usuario":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
   "tiene":"tipo_rol":w -> "rol":"tipo":e [arrowhead=none dir=back arrowtail=crowodot];
-  "comprobante" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">comprobante</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 2</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">  </TD></TR>
-    </TABLE>>
-    URL="comprobante.html"
-    tooltip="comprobante"
-  ];
   "persona" [
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
@@ -71,7 +60,7 @@ digraph "impliedTwoDegreesRelationshipsDiagram" {
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">usuario</TD></TR>
       <TR><TD PORT="nombre" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre</TD></TR>
       <TR><TD PORT="clave" COLSPAN="3" ALIGN="LEFT">clave</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">3 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">2 &gt;</TD></TR>
     </TABLE>>
     URL="usuario.html"
     tooltip="usuario"

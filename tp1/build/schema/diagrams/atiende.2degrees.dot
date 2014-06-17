@@ -19,14 +19,10 @@ digraph "twoDegreesRelationshipsDiagram" {
   edge [
     arrowsize="0.8"
   ];
-  "atiende":"anio":w -> "block_horas":"anio":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atiende":"dia":w -> "block_horas":"dia":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atiende":"hora_fin":w -> "block_horas":"hora_fin":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atiende":"hora_inicio":w -> "block_horas":"hora_inicio":e [arrowhead=none dir=back arrowtail=crowodot];
+  "atiende":"codigo_block_hora":w -> "block_horas":"codigo":e [arrowhead=none dir=back arrowtail=crowodot];
   "atiende":"nombre_especialidad":w -> "subespecialidad":"nombre_especialidad":e [arrowhead=none dir=back arrowtail=crowodot];
   "atiende":"nombre_subespecialidad":w -> "subespecialidad":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
   "atiende":"numero_documento_profesional":w -> "profesional":"numero_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
-  "atiende":"semana":w -> "block_horas":"semana":e [arrowhead=none dir=back arrowtail=crowodot];
   "atiende":"tipo_documento_profesional":w -> "profesional":"tipo_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
   "autoriza":"elipses":w -> "profesional":"numero_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
   "autoriza":"elipses":w -> "profesional":"tipo_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
@@ -38,27 +34,16 @@ digraph "twoDegreesRelationshipsDiagram" {
   "realiza":"elipses":w -> "subespecialidad":"nombre_especialidad":e [arrowhead=none dir=back arrowtail=crowodot];
   "realiza":"elipses":w -> "subespecialidad":"nombre":e [arrowhead=none dir=back arrowtail=crowodot];
   "subespecialidad":"nombre_especialidad":w -> "especialidad":"elipses":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno":"elipses":w -> "block_horas":"anio":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno":"elipses":w -> "block_horas":"dia":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno":"elipses":w -> "block_horas":"hora_fin":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno":"elipses":w -> "block_horas":"hora_inicio":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno":"elipses":w -> "profesional":"numero_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno":"elipses":w -> "block_horas":"semana":e [arrowhead=none dir=back arrowtail=crowodot];
-  "turno":"elipses":w -> "profesional":"tipo_documento_persona":e [arrowhead=none dir=back arrowtail=crowodot];
   "atiende" [
     label=<
     <TABLE BORDER="2" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">atiende</TD></TR>
-      <TR><TD PORT="anio" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">anio</TD><TD PORT="anio.type" ALIGN="LEFT">int4[10]</TD></TR>
-      <TR><TD PORT="semana" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">semana</TD><TD PORT="semana.type" ALIGN="LEFT">int4[10]</TD></TR>
-      <TR><TD PORT="dia" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">dia</TD><TD PORT="dia.type" ALIGN="LEFT">bpchar[10]</TD></TR>
-      <TR><TD PORT="hora_inicio" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">hora_inicio</TD><TD PORT="hora_inicio.type" ALIGN="LEFT">time[15,6]</TD></TR>
-      <TR><TD PORT="hora_fin" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">hora_fin</TD><TD PORT="hora_fin.type" ALIGN="LEFT">time[15,6]</TD></TR>
+      <TR><TD PORT="codigo_block_hora" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo_block_hora</TD><TD PORT="codigo_block_hora.type" ALIGN="LEFT">int4[10]</TD></TR>
       <TR><TD PORT="tipo_documento_profesional" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">tipo_documento_profesional</TD><TD PORT="tipo_documento_profesional.type" ALIGN="LEFT">bpchar[10]</TD></TR>
       <TR><TD PORT="numero_documento_profesional" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento_profesional</TD><TD PORT="numero_documento_profesional.type" ALIGN="LEFT">int4[10]</TD></TR>
-      <TR><TD PORT="nombre_especialidad" COLSPAN="2" ALIGN="LEFT">nombre_especialidad</TD><TD PORT="nombre_especialidad.type" ALIGN="LEFT">bpchar[100]</TD></TR>
-      <TR><TD PORT="nombre_subespecialidad" COLSPAN="2" ALIGN="LEFT">nombre_subespecialidad</TD><TD PORT="nombre_subespecialidad.type" ALIGN="LEFT">bpchar[100]</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 9</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 &gt;</TD></TR>
+      <TR><TD PORT="nombre_especialidad" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_especialidad</TD><TD PORT="nombre_especialidad.type" ALIGN="LEFT">bpchar[100]</TD></TR>
+      <TR><TD PORT="nombre_subespecialidad" COLSPAN="2" BGCOLOR="#bed1b8" ALIGN="LEFT">nombre_subespecialidad</TD><TD PORT="nombre_subespecialidad.type" ALIGN="LEFT">bpchar[100]</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 5</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 &gt;</TD></TR>
     </TABLE>>
     URL="atiende.html"
     tooltip="atiende"
@@ -77,16 +62,17 @@ digraph "twoDegreesRelationshipsDiagram" {
     label=<
     <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
       <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">block_horas</TD></TR>
-      <TR><TD PORT="anio" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">anio</TD></TR>
-      <TR><TD PORT="semana" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">semana</TD></TR>
-      <TR><TD PORT="dia" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">dia</TD></TR>
-      <TR><TD PORT="hora_inicio" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">hora_inicio</TD></TR>
-      <TR><TD PORT="hora_fin" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">hora_fin</TD></TR>
+      <TR><TD PORT="codigo" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">codigo</TD></TR>
+      <TR><TD PORT="anio" COLSPAN="3" ALIGN="LEFT">anio</TD></TR>
+      <TR><TD PORT="semana" COLSPAN="3" ALIGN="LEFT">semana</TD></TR>
+      <TR><TD PORT="dia" COLSPAN="3" ALIGN="LEFT">dia</TD></TR>
+      <TR><TD PORT="hora_inicio" COLSPAN="3" ALIGN="LEFT">hora_inicio</TD></TR>
+      <TR><TD PORT="hora_fin" COLSPAN="3" ALIGN="LEFT">hora_fin</TD></TR>
       <TR><TD PORT="acepta_sobreturno" COLSPAN="3" ALIGN="LEFT">acepta_sobreturno</TD></TR>
       <TR><TD PORT="tipo_agenda" COLSPAN="3" ALIGN="LEFT">tipo_agenda</TD></TR>
       <TR><TD PORT="bloqueado" COLSPAN="3" ALIGN="LEFT">bloqueado</TD></TR>
       <TR><TD PORT="cantidad_pacientes" COLSPAN="3" ALIGN="LEFT">cantidad_pacientes</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">10 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">  </TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
     </TABLE>>
     URL="block_horas.html"
     tooltip="block_horas"
@@ -129,7 +115,7 @@ digraph "twoDegreesRelationshipsDiagram" {
       <TR><TD PORT="numero_documento_persona" COLSPAN="3" BGCOLOR="#bed1b8" ALIGN="LEFT">numero_documento_persona</TD></TR>
       <TR><TD PORT="matricula" COLSPAN="3" ALIGN="LEFT">matricula</TD></TR>
       <TR><TD PORT="nombre_especialidad" COLSPAN="3" ALIGN="LEFT">nombre_especialidad</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">6 &gt;</TD></TR>
+      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 3</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">4 &gt;</TD></TR>
     </TABLE>>
     URL="profesional.html"
     tooltip="profesional"
@@ -155,15 +141,5 @@ digraph "twoDegreesRelationshipsDiagram" {
     </TABLE>>
     URL="subespecialidad.html"
     tooltip="subespecialidad"
-  ];
-  "turno" [
-    label=<
-    <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
-      <TR><TD COLSPAN="3" BGCOLOR="#9bab96" ALIGN="CENTER">turno</TD></TR>
-      <TR><TD PORT="elipses" COLSPAN="3" ALIGN="LEFT">...</TD></TR>
-      <TR><TD ALIGN="LEFT" BGCOLOR="#f7f7f7">&lt; 10</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">0 rows</TD><TD ALIGN="RIGHT" BGCOLOR="#f7f7f7">1 &gt;</TD></TR>
-    </TABLE>>
-    URL="turno.html"
-    tooltip="turno"
   ];
 }
