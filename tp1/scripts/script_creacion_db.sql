@@ -96,6 +96,7 @@ create table recurso(
 
 
 create table block_horas(
+	codigo				INTEGER NOT NULL,
 	anio				INTEGER NOT NULL,	
 	semana				INTEGER NOT NULL,
 	dia				CHAR(10) NOT NULL,
@@ -104,8 +105,8 @@ create table block_horas(
 	acepta_sobreturno		BIT,	
 	tipo_agenda			CHAR(100),
 	bloqueado			BIT,
-	cantidad_pacientes		INTEGER,
-    	PRIMARY KEY (anio, semana, dia, hora_inicio, hora_fin)
+	cantidad_pacientes		INTEGER,    
+	PRIMARY KEY (codigo)
 );
 
 
@@ -119,20 +120,14 @@ create table turno(
 	lugar				CHAR(100),
 	hora				INTEGER NOT NULL,	
 	codigo_procedimiento_medico	CHAR(10),
-	anio_block_horas		INTEGER NOT NULL,
-	semana_block_horas		INTEGER NOT NULL,
-	dia_block_horas			CHAR(10),
-	hora_inicio_block_horas		TIME NOT NULL,	
-	hora_fin_block_horas		TIME NOT NULL,
-	tipo_documento_profesional	CHAR(10) NOT NULL,	
-	numero_documento_profesional	INTEGER NOT NULL,
+	codigo_block_hora			INTEGER NOT NULL,
 	tipo_documento_paciente		CHAR(10) NOT NULL,	
 	numero_documento_paciente	INTEGER NOT NULL,	
 	PRIMARY KEY (codigo),
 	FOREIGN KEY (tipo_documento_profesional, numero_documento_profesional) REFERENCES profesional,
 	FOREIGN KEY (tipo_documento_paciente, numero_documento_paciente) REFERENCES paciente,
 	FOREIGN KEY (codigo_procedimiento_medico) REFERENCES procedimiento_medico,
-	FOREIGN KEY (anio_block_horas, semana_block_horas, dia_block_horas, hora_inicio_block_horas, hora_fin_block_horas) REFERENCES block_horas
+	FOREIGN KEY (codigo_block_hora) REFERENCES block_horas
 );	
 
 
@@ -225,17 +220,13 @@ create table tiene(
 
 
 create table atiende(
-	anio				INTEGER NOT NULL,	
-	semana				INTEGER NOT NULL,
-	dia				CHAR(10) NOT NULL,
-	hora_inicio			TIME NOT NULL,
-	hora_fin			TIME NOT NULL,
+	codigo_block_hora		INTEGER NOT NULL,
 	tipo_documento_profesional	CHAR(10) NOT NULL,	
 	numero_documento_profesional	INTEGER NOT NULL,
 	nombre_especialidad		CHAR(100) NOT NULL,
 	nombre_subespecialidad		CHAR(100) NOT NULL,
-	PRIMARY KEY (anio, semana, dia, hora_inicio, hora_fin, tipo_documento_profesional, numero_documento_profesional),
-	FOREIGN KEY (anio, semana, dia, hora_inicio, hora_fin) REFERENCES block_horas,
+	PRIMARY KEY (codigo_block_hora, tipo_documento_profesional, numero_documento_profesional, nombre_especialidad, nombre_subespecialidad),
+	FOREIGN KEY (codigo_block_hora) REFERENCES block_horas,
 	FOREIGN KEY (tipo_documento_profesional, numero_documento_profesional) REFERENCES profesional,
 	FOREIGN KEY (nombre_subespecialidad, nombre_especialidad) REFERENCES subespecialidad
 );
